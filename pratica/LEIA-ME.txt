@@ -1,0 +1,1 @@
+Bases em ZIP na pasta materiais. Para a primeira prática, extraia Diagnostico-base.zip. Para o projeto do período, extraia Formulario-base.zip. O modelo HTML é uma referência para testar após sua própria tentativa.
