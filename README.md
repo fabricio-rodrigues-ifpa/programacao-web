@@ -1,34 +1,41 @@
-# WebLab — Prof. Fabrício Rodrigues
+# WebLab - Prof. Fabrício Rodrigues
 
-Portal de atividades e materiais de Programação Web, com identidade própria.
+Programação Web para o Curso Técnico em Informática.
 
-Inclui três roteiros sugeridos (portfólio, página responsiva e catálogo com filtros),
-projetos-base para download e um guia de HTML, CSS e JavaScript.
+## Período de 16/10 a 18/12/2026
 
-## Publicar no GitHub Pages
+9 encontros às sextas-feiras, com 100 minutos cada. 18 aulas de 50 minutos,
+equivalentes a 15 horas de relógio. Sem aula em 20/11.
 
-1. Crie um repositório público chamado `programacao-web` na sua conta.
-2. Envie estes arquivos e a pasta `downloads` para a raiz do repositório.
-3. Em **Settings → Pages**, escolha **Deploy from a branch**.
-4. Selecione **main** e **/(root)** e clique em **Save**.
-5. Confira o endereço exibido pelo GitHub após a publicação.
+O percurso retoma a base de HTML, CSS e JavaScript e desenvolve um formulário
+de chamado de suporte ao laboratório com envio simulado.
 
-O `index.html` deve ficar na raiz, sem uma pasta extra ao redor. Envie o conteúdo
-extraído do pacote, não o arquivo ZIP completo.
+- `index.html`: página inicial, calendário e mapas.
+- `curso-dados.js`: conteúdo dos encontros, referências e questões públicas.
+- `curso.js`: páginas de aula e ficha de diagnóstico.
+- `curso.css`: aparência do percurso.
+- `aulas.html?id=aula-01`: roteiro de cada encontro.
+- `diagnostico.html`: ficha que exporta respostas localmente em TXT.
+- `materiais/`: PDFs, bases e pacote offline para estudantes.
+- `pratica/formulario-modelo.html`: modelo local com validação e resumo.
+- `revisao.html`: atividades de revisão da base.
 
-## Atualizar o conteúdo
+O gabarito e as notas do professor ficam fora deste repositório e do pacote dos
+alunos. O diagnóstico orienta a retomada e não recebe nota somativa.
 
-- `conteudo.js`: professor, ano, roteiros, passos e checklists.
-- `index.html`: apresentação, links e seções da página inicial.
-- `styles.css`: identidade visual e responsividade.
-- `guia.html`: material de consulta.
-- `downloads/`: projetos-base dos roteiros.
+## Uso offline
 
-O site usa HTML, CSS e JavaScript, sem instalação. Pode ser aberto por `index.html`.
-As fontes externas têm alternativas locais. Os checklists ficam salvos no
-navegador do aluno quando o armazenamento está disponível; não enviam atividades
-ao professor. Prazos, avaliações e canal de entrega são definidos em aula.
+Baixe `materiais/WebLab-Aluno-Offline.zip`, extraia e abra `index.html`.
+O pacote contém também as bases extraídas em `pratica/diagnostico-base` e
+`pratica/formulario-base`. Elas são cópias de trabalho ignoradas pelo Git neste
+checkout; os ZIPs públicos preservam seus arquivos.
 
-As atividades são propostas iniciais e podem ser ajustadas ao planejamento.
+Os links externos das referências precisam de conexão. A ficha digital não
+salva automaticamente nem envia respostas ao professor.
 
-[Documentação oficial do GitHub Pages](https://docs.github.com/pt/pages/getting-started-with-github-pages/creating-a-github-pages-site)
+## Publicação
+
+GitHub Pages publica a branch `main`, na pasta raiz. Os caminhos são relativos.
+O site é estático e não oferece backend, banco ou autenticação de chamados.
+
+[Acessar o WebLab](https://fabricio-rodrigues-ifpa.github.io/programacao-web/)

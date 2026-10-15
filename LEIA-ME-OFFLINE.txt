@@ -1,0 +1,18 @@
+WEBLAB - PACOTE DO ALUNO - 16/10 A 18/12/2026
+Professor Fabrício Rodrigues
+
+1. Extraia o ZIP para uma pasta do computador ou do pendrive.
+2. Abra index.html para navegar pelas aulas e mapas.
+3. A pasta materiais contém PDFs e arquivos para praticar.
+4. A primeira prática está em pratica/diagnostico-base/index.html.
+5. O projeto começa em pratica/formulario-base/index.html.
+6. Consulte pratica/formulario-modelo.html depois de sua própria tentativa.
+7. A ficha digital permite baixar um TXT com suas respostas. Não feche antes
+   de baixar: não há salvamento automático nem envio ao professor.
+
+Os exemplos funcionam sem internet e não exigem instalação.
+As referências externas precisam de conexão quando forem abertas.
+Use somente dados fictícios nos formulários de estudo.
+Combine em aula o canal para entregar sua atividade.
+
+Este pacote não contém gabarito nem notas do professor.
