@@ -10,7 +10,7 @@
   event.preventDefault();
   const dados=new FormData(form),nome=String(dados.get('nome')||'').trim(),turma=String(dados.get('turma')||'').trim();
   if(!nome||!turma){document.querySelector('#diagnostic-status').textContent='Preencha seu nome e sua turma antes de baixar.';return;}
-  const texto=['WEBLAB - DIAGNÓSTICO INDIVIDUAL','16/10/2026 - Prof. Fabrício Rodrigues','Nome: '+nome,'Turma: '+turma,'',...perguntas.flatMap(q=>[q.id+' - '+q.enunciado,String(dados.get(q.id)||'(sem resposta)'),'']),'REGISTRO DA PRÁTICA',String(dados.get('pratica')||'(sem registro)'),'','Facilidade: '+(dados.get('facilidade')||''),'Dúvida: '+(dados.get('duvida')||'')].join('\n');
+  const texto=['WEBLAB - DIAGNÓSTICO INDIVIDUAL','16/10/2026 - Prof. Fabrício Rodrigues','Nome: '+nome,'Turma: '+turma,'',...perguntas.flatMap(q=>[q.id+' - '+q.enunciado,String(dados.get(q.id)||'(sem resposta)'),'']),'REGISTRO DA PRÁTICA',String(dados.get('pratica')||'(sem registro)'),'','Facilidade: '+(dados.get('facilidade')||''),'Dúvida: '+(dados.get('duvida')||''),'Como um label encontra o campo correspondente? '+(dados.get('associacao')||'')].join('\n');
   const url=URL.createObjectURL(new Blob(['\uFEFF'+texto],{type:'text/plain;charset=utf-8'})),a=document.createElement('a');
   a.href=url;a.download='diagnostico-'+slug(turma)+'-'+slug(nome)+'.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
   document.querySelector('#diagnostic-status').textContent='Download preparado: '+a.download+'. Confira o arquivo na pasta Downloads e entregue-o ao professor durante a aula. Baixar não envia o arquivo automaticamente.';
