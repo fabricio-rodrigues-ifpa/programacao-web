@@ -110,6 +110,11 @@ window.WEBLAB_CURSO = {
       "id": "liveserver",
       "titulo": "Live Server de Ritwick Dey: abrir o projeto (em inglês)",
       "url": "https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer"
+    },
+    {
+      "id": "controles",
+      "titulo": "MDN: controles nativos de formulário (em inglês)",
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Basic_native_form_controls"
     }
   ],
   "perguntas": [
@@ -185,11 +190,12 @@ window.WEBLAB_CURSO = {
       "numero": "01",
       "eixo": "Diagnóstico",
       "titulo": "O que já sabemos sobre a web?",
-      "subtitulo": "Diagnóstico de HTML, CSS e JavaScript e primeiro contato com formulários",
+      "subtitulo": "Diagnóstico de HTML, CSS e JavaScript e fundamentos de formulários",
       "produto": "TXT identificado, projeto de diagnóstico em ZIP com registro de testes e primeiro formulário com dois campos.",
       "objetivos": [
         "Ler trechos de HTML, CSS e JavaScript e explicar o comportamento esperado.",
         "Localizar um erro de seletor e registrar como o corrigiu.",
+        "Explicar para que serve um formulário e relacionar uma informação a um controle adequado.",
         "Associar um rótulo a um campo no primeiro formulário."
       ],
       "retomada": "O portal anterior apresenta semântica HTML, Flexbox/Grid, responsividade, DOM, eventos e login simulado. A presença no material indica conteúdos trabalhados, e o diagnóstico verificará o domínio real da turma.",
@@ -197,6 +203,9 @@ window.WEBLAB_CURSO = {
         "Semântica e navegação",
         "Seletores e responsividade",
         "DOM e eventos",
+        "Finalidades dos formulários",
+        "Tipos de campo",
+        "Preenchimento, validação e envio",
         "Primeiro formulário"
       ],
       "secoes": [
@@ -216,6 +225,100 @@ window.WEBLAB_CURSO = {
           "codigo": ""
         },
         {
+          "titulo": "Fundamentos: o que é um formulário?",
+          "texto": [
+            "Um formulário é uma interface que permite informar dados e fazer escolhas para realizar uma tarefa. Em vez de apenas ler uma página, a pessoa participa: procura um conteúdo, responde a uma pesquisa ou solicita atendimento.",
+            "Antes do código, defina a finalidade, quem vai preencher, quais dados são necessários e qual resultado a pessoa espera. Um bom formulário pede somente o que ajuda a cumprir essa finalidade.",
+            "Converse com a turma: qual foi o último formulário que você usou? O que precisou informar e o que aconteceu depois?"
+          ],
+          "codigo": "",
+          "id": "fundamentos"
+        },
+        {
+          "titulo": "Tipos de formulário conforme a finalidade",
+          "texto": [
+            "Os nomes abaixo descrevem usos comuns. Cadastro, acesso e pesquisa não são valores do atributo type do HTML; cada formulário combina campos conforme sua finalidade."
+          ],
+          "tabela": [
+            [
+              "Finalidade",
+              "Exemplo de informação e resultado"
+            ],
+            [
+              "Cadastro ou inscrição",
+              "Informar dados para participar de uma atividade."
+            ],
+            [
+              "Acesso (login)",
+              "Apresentar credenciais para solicitar acesso a uma conta."
+            ],
+            [
+              "Pesquisa ou avaliação",
+              "Registrar opiniões, respostas ou preferências."
+            ],
+            [
+              "Contato ou suporte",
+              "Descrever uma dúvida ou um problema para solicitar atendimento."
+            ],
+            [
+              "Busca ou filtro",
+              "Informar um termo ou escolher critérios para encontrar resultados."
+            ]
+          ],
+          "codigo": "",
+          "id": "finalidades"
+        },
+        {
+          "titulo": "Tipos de campo: escolher pelo dado",
+          "texto": [
+            "O controle deve combinar com a informação solicitada. input possui vários tipos definidos pelo atributo type. textarea e select são elementos próprios.",
+            "Neste primeiro contato, reconheça as possibilidades. Na prática de hoje, usaremos apenas texto curto para equipamento e texto longo para descrição. Os demais controles serão construídos em 23/10."
+          ],
+          "tabela": [
+            [
+              "Informação desejada",
+              "Controle HTML e exemplo"
+            ],
+            [
+              "Texto em uma linha",
+              "input type=\"text\": código PC-07. Para contato, email; para senha, password."
+            ],
+            [
+              "Descrição em várias linhas",
+              "textarea: relato do problema."
+            ],
+            [
+              "Uma opção do grupo",
+              "input type=\"radio\" com o mesmo name, ou select: prioridade ou categoria."
+            ],
+            [
+              "Opções independentes",
+              "input type=\"checkbox\": sintomas observados."
+            ],
+            [
+              "Data ou quantidade",
+              "input type=\"date\" ou type=\"number\", conforme o dado. Um código como PC-07 continua sendo texto."
+            ],
+            [
+              "Escolha de arquivo",
+              "input type=\"file\": selecionar um anexo. Selecionar não significa enviar."
+            ]
+          ],
+          "codigo": "",
+          "id": "tipos-de-campo"
+        },
+        {
+          "titulo": "Mapa: do preenchimento ao resultado",
+          "texto": [
+            "Pessoa preenche ou escolhe → navegador confere as regras definidas → pessoa solicita a ação → sistema trata os dados → interface informa o resultado.",
+            "No projeto da turma, o JavaScript trata a ação no próprio navegador e o envio é simulado. A versão final mostrará um resumo local. Em um sistema conectado, uma requisição pode levar os dados a um servidor, que também deve validá-los e devolver uma resposta.",
+            "Preencher, validar, enviar e armazenar são etapas diferentes. Uma mensagem escrita na página só comprova o resultado que o sistema realmente verificou. A escolha de armazenar depende da finalidade e da implementação.",
+            "Antes de abrir o código: para um chamado de suporte, qual campo serve para PC-07? Qual serve para explicar o defeito? Que informação seria desnecessária? Justifique suas escolhas."
+          ],
+          "codigo": "",
+          "id": "caminho-dos-dados"
+        },
+        {
           "titulo": "A ponte para formulários",
           "texto": [
             "Um chamado de suporte precisa receber informações que uma página de divulgação apenas exibe. Começaremos com equipamento e descrição do problema. Os dados do exercício são fictícios e ficam no navegador.",
@@ -227,12 +330,14 @@ window.WEBLAB_CURSO = {
       "atividade": [
         "Abrir a ficha digital, informar nome e turma e responder individualmente. Baixar o TXT e entregar o arquivo ao professor durante a aula.",
         "Baixar Diagnostico-base.zip, extrair e abrir a pasta no VS Code. Iniciar index.html com Open with Live Server. Corrigir a classe CSS e o seletor JavaScript, incluir um cartão e testar dois cliques.",
-        "Criar um protótipo com equipamento e descrição, com rótulos associados.",
+        "Antes de abrir o formulário, identificar sua finalidade e justificar os campos para equipamento e descrição.",
+        "Baixar Formulario-base.zip em outra pasta. Abrir no VS Code com Live Server, localizar os dois campos, alterar um rótulo e testar sua associação.",
         "Registrar uma facilidade e uma dúvida para a próxima aula."
       ],
       "checklist": [
         "Expliquei uma decisão de HTML, uma de CSS e uma de JavaScript.",
         "Registrei o erro que encontrei e como testei a correção.",
+        "Expliquei a finalidade do chamado e por que equipamento usa texto e descrição usa textarea.",
         "Associei cada label ao id do campo."
       ],
       "avaliacao": "Observar separadamente HTML, CSS e JavaScript. Guardar evidências escritas e práticas antes de decidir quais conceitos retomar. O diagnóstico não compõe uma nota somativa.",
@@ -241,7 +346,10 @@ window.WEBLAB_CURSO = {
         "abner",
         "primeiro",
         "labels",
-        "liveserver"
+        "liveserver",
+        "controles",
+        "inputs",
+        "envio"
       ],
       "extensao": "Acrescentar um campo de contato fictício e justificar o tipo escolhido.",
       "apoio": "Oferecer uma pista por vez: conferir nome da classe, conferir id e usar o console. Registrar quando o aluno usou a pista.",
@@ -259,7 +367,16 @@ window.WEBLAB_CURSO = {
           "acao": "Discussão de estratégias e levantamento das dúvidas."
         },
         {
-          "acao": "Demonstração e criação do primeiro formulário com dois campos."
+          "acao": "Conversa sobre finalidade dos formulários, usos, tipos de campo e percurso dos dados."
+        },
+        {
+          "acao": "Demonstração de equipamento, descrição e associação dos rótulos."
+        },
+        {
+          "acao": "Abrir o formulário-base em outra pasta, alterar um texto e testar o rótulo."
+        },
+        {
+          "acao": "Apresentação do mapa do período."
         },
         {
           "acao": "Bilhete de saída e organização dos arquivos."
@@ -280,7 +397,7 @@ window.WEBLAB_CURSO = {
         "Escolher controles adequados a texto, escolha única e múltiplas opções.",
         "Usar required e restrições coerentes com o dado solicitado."
       ],
-      "retomada": "Retomar as dificuldades de HTML observadas em 16/10. A apresentação de um formulário organiza dados e precisa de campos identificáveis.",
+      "retomada": "Retomar as dificuldades de HTML observadas em 16/10 e a visão geral dos fundamentos de formulários. Agora construiremos os controles apresentados, com rótulos, names e regras coerentes.",
       "conceitos": [
         "form e label",
         "input, select e textarea",

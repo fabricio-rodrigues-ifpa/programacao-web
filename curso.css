@@ -7,3 +7,9 @@
 .delivery-steps{padding-left:1.3rem;max-width:55rem}.delivery-steps li{margin:.75rem 0}.guide-content{max-width:52rem;padding-bottom:3rem}.guide-content li{margin:.7rem 0}.diagnostic-question input{display:block;width:100%;font:inherit;padding:.8rem;border:1px solid #a8bc94;border-radius:.4rem;margin:.5rem 0 1.3rem}.lesson-content li,.guide-content code{overflow-wrap:anywhere}
 
 .return-nav{display:flex;gap:.8rem;flex-wrap:wrap;width:min(100% - 2rem,76rem);margin:2rem auto}.detail-wrap .return-nav{width:100%}.return-nav a{white-space:normal}.sub-header .header-inner{row-gap:1rem}
+
+.lesson-table-wrap { overflow-x: auto; margin: 1.2rem 0 1.8rem; }
+.lesson-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 13px; line-height: 1.7; }
+.lesson-table th, .lesson-table td { padding: 12px; border-bottom: 1px solid #dce4d3; vertical-align: top; overflow-wrap: anywhere; }
+.lesson-table th { background: #edf3e5; color: #254c31; }
+.lesson-table th:first-child { width: 33%; }
