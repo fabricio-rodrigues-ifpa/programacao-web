@@ -1,1 +1,1 @@
-Bases em ZIP na pasta materiais. Para a primeira prática, extraia Diagnostico-base.zip. Para o projeto do período, extraia Formulario-base.zip. O modelo HTML é uma referência para testar após sua própria tentativa.
+Bases em ZIP na pasta materiais. Extraia o ZIP, abra a pasta no VS Code e inicie index.html com Open with Live Server. O diagnóstico inclui respostas.html. Entregue o TXT identificado e a prática em ZIP ao professor na aula. Consulte como-usar.html no portal.
