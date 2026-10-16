@@ -6,10 +6,10 @@
   <meta name="theme-color" content="#183e35"><title>Guia rápido · WebLab</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css">
   <script src="conteudo.js" defer></script><script src="app.js" defer></script>
-</head>
+<link rel="stylesheet" href="curso.css"></head>
 <body>
   <a class="skip" href="#conteudo">Pular para o conteúdo</a>
-  <header class="site-header sub-header"><div class="wrap header-inner"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">&lt;/&gt;</span><span>WebLab<small>PROGRAMAÇÃO WEB</small></span></a><span class="teacher">Prof. <strong data-teacher>Fabrício Rodrigues</strong></span><a class="back-link" href="index.html#materiais">← Voltar aos materiais</a></div></header>
+  <header class="site-header sub-header"><div class="wrap header-inner"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">&lt;/&gt;</span><span>WebLab<small>PROGRAMAÇÃO WEB</small></span></a><span class="teacher">Prof. <strong data-teacher>Fabrício Rodrigues</strong></span><a class="button secondary" href="index.html#materiais">← Voltar aos materiais</a></div></header>
   <main id="conteudo" class="detail-wrap">
     <header class="detail-hero"><p class="breadcrumbs"><a href="index.html">WebLab</a> / Materiais / Guia rápido</p><p class="eyebrow">CONSULTE ENQUANTO CRIA</p><h1>HTML, CSS e JavaScript.<br>O essencial, por perto.</h1><p class="lead">Um ponto de apoio para revisar conceitos e experimentar. Leia os exemplos, altere os valores e observe o que muda.</p><nav class="guide-toc" aria-label="Seções do guia"><a href="#html">HTML</a><a href="#css">CSS</a><a href="#javascript">JavaScript</a><a href="#testes">Como testar</a><a href="#duvidas">Dúvidas comuns</a></nav><div class="detail-actions"><button type="button" class="button primary" data-print>Imprimir / salvar em PDF <span aria-hidden="true">↗</span></button></div></header>
     <div class="guide-content">
@@ -78,7 +78,7 @@ botao.addEventListener('click', () =&gt; {
       <section id="duvidas"><p class="eyebrow">05 / QUANDO ALGO NÃO FUNCIONA</p><h2>Comece por estas verificações.</h2><details><summary>Meu CSS não aparece. O que confiro?</summary><p>Compare o nome e o caminho do arquivo com o valor de href no link do HTML. Confira letras maiúsculas e minúsculas. Abra a aba de rede das ferramentas do navegador e veja se há um erro 404.</p></details><details><summary>Meu botão não faz nada. Por onde começo?</summary><p>Confira se o script foi carregado, se o seletor encontra o elemento e se o evento foi registrado. Leia a primeira mensagem de erro no console antes de alterar várias partes do código.</p></details><details><summary>A imagem funciona no meu computador, mas não no site.</summary><p>Verifique se a imagem foi enviada, se a extensão está correta e se o caminho é relativo ao arquivo HTML. Nomes de arquivo com letras maiúsculas e minúsculas diferentes podem falhar na hospedagem.</p></details><details><summary>Como salvo este guia em PDF?</summary><p>Use o botão “Imprimir / salvar em PDF” no início do guia e escolha a opção de PDF no seu navegador.</p></details></section>
       <p><strong>Prof. <span data-teacher>Fabrício Rodrigues</span> · WebLab · <span data-year>2026</span></strong></p>
     </div>
-  </main>
-  <footer class="site-footer"><div class="wrap footer-inner"><a class="back-link" href="index.html#materiais">← Voltar ao WebLab</a><p>Prof. <span data-teacher>Fabrício Rodrigues</span></p><span>Material didático · <span data-year>2026</span></span></div></footer>
+  <nav class="return-nav" aria-label="Voltar para outras páginas"><a class="button secondary" href="index.html">← Voltar ao início</a><a class="button secondary" href="index.html#encontros">← Voltar às aulas</a></nav></main>
+  <footer class="site-footer"><div class="wrap footer-inner"><a class="button secondary" href="index.html#materiais">← Voltar ao início</a><p>Prof. <span data-teacher>Fabrício Rodrigues</span></p><span>Material didático · <span data-year>2026</span></span></div></footer>
 </body>
 </html>

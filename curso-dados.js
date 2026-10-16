@@ -6,7 +6,6 @@ window.WEBLAB_CURSO = {
   "fim": "2026-12-18",
   "semAula": "2026-11-20",
   "encontros": 9,
-  "minutosPorEncontro": 100,
   "aulasDe50": 18,
   "horasRelogio": 15,
   "contexto": "Curso Técnico em Informática. Um computador por aluno. Planejamento proposto para a continuidade da turma.",
@@ -101,6 +100,16 @@ window.WEBLAB_CURSO = {
       "id": "textcontent",
       "titulo": "MDN: textContent",
       "url": "https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent"
+    },
+    {
+      "id": "vscode",
+      "titulo": "VS Code: arquivos e pastas (em inglês)",
+      "url": "https://code.visualstudio.com/docs/editing/workspaces/workspaces"
+    },
+    {
+      "id": "liveserver",
+      "titulo": "Live Server de Ritwick Dey: abrir o projeto (em inglês)",
+      "url": "https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer"
     }
   ],
   "perguntas": [
@@ -177,7 +186,7 @@ window.WEBLAB_CURSO = {
       "eixo": "Diagnóstico",
       "titulo": "O que já sabemos sobre a web?",
       "subtitulo": "Diagnóstico de HTML, CSS e JavaScript e primeiro contato com formulários",
-      "produto": "Ficha individual, página corrigida e primeiro formulário com dois campos.",
+      "produto": "TXT identificado, projeto de diagnóstico em ZIP com registro de testes e primeiro formulário com dois campos.",
       "objetivos": [
         "Ler trechos de HTML, CSS e JavaScript e explicar o comportamento esperado.",
         "Localizar um erro de seletor e registrar como o corrigiu.",
@@ -216,8 +225,8 @@ window.WEBLAB_CURSO = {
         }
       ],
       "atividade": [
-        "Responder à ficha individual do diagnóstico.",
-        "Corrigir a classe CSS e o seletor JavaScript da página-base, incluir um cartão e testar dois cliques.",
+        "Abrir a ficha digital, informar nome e turma e responder individualmente. Baixar o TXT e entregar o arquivo ao professor durante a aula.",
+        "Baixar Diagnostico-base.zip, extrair e abrir a pasta no VS Code. Iniciar index.html com Open with Live Server. Corrigir a classe CSS e o seletor JavaScript, incluir um cartão e testar dois cliques.",
         "Criar um protótipo com equipamento e descrição, com rótulos associados.",
         "Registrar uma facilidade e uma dúvida para a próxima aula."
       ],
@@ -226,41 +235,36 @@ window.WEBLAB_CURSO = {
         "Registrei o erro que encontrei e como testei a correção.",
         "Associei cada label ao id do campo."
       ],
-      "agenda": [
-        {
-          "minutos": 5,
-          "acao": "Acolhida, objetivo e orientação sobre o diagnóstico sem nota."
-        },
-        {
-          "minutos": 25,
-          "acao": "Respostas individuais às nove questões de leitura de código."
-        },
-        {
-          "minutos": 25,
-          "acao": "Prática individual com a página-base e observação do professor."
-        },
-        {
-          "minutos": 15,
-          "acao": "Discussão de estratégias e levantamento das dúvidas."
-        },
-        {
-          "minutos": 25,
-          "acao": "Demonstração e criação do primeiro formulário com dois campos."
-        },
-        {
-          "minutos": 5,
-          "acao": "Bilhete de saída e organização dos arquivos."
-        }
-      ],
       "avaliacao": "Observar separadamente HTML, CSS e JavaScript. Guardar evidências escritas e práticas antes de decidir quais conceitos retomar. O diagnóstico não compõe uma nota somativa.",
       "curiosidade": "Clicar em um rótulo associado pode levar o foco ao campo. Essa associação também ajuda tecnologias assistivas.",
       "refs": [
         "abner",
         "primeiro",
-        "labels"
+        "labels",
+        "liveserver"
       ],
       "extensao": "Acrescentar um campo de contato fictício e justificar o tipo escolhido.",
-      "apoio": "Oferecer uma pista por vez: conferir nome da classe, conferir id e usar o console. Registrar quando o aluno usou a pista."
+      "apoio": "Oferecer uma pista por vez: conferir nome da classe, conferir id e usar o console. Registrar quando o aluno usou a pista.",
+      "agenda": [
+        {
+          "acao": "Acolhida, objetivo e orientação sobre o diagnóstico sem nota."
+        },
+        {
+          "acao": "Respostas individuais às nove questões de leitura de código."
+        },
+        {
+          "acao": "Prática individual com a página-base e observação do professor."
+        },
+        {
+          "acao": "Discussão de estratégias e levantamento das dúvidas."
+        },
+        {
+          "acao": "Demonstração e criação do primeiro formulário com dois campos."
+        },
+        {
+          "acao": "Bilhete de saída e organização dos arquivos."
+        }
+      ]
     },
     {
       "id": "aula-02",
@@ -321,32 +325,6 @@ window.WEBLAB_CURSO = {
         "Radio e checkbox representam escolhas adequadas.",
         "As restrições têm instruções visíveis."
       ],
-      "agenda": [
-        {
-          "minutos": 10,
-          "acao": "Retomada das evidências de HTML do diagnóstico."
-        },
-        {
-          "minutos": 15,
-          "acao": "Modelagem dos dados do chamado e escolha dos controles."
-        },
-        {
-          "minutos": 20,
-          "acao": "Demonstração de label, id, name, fieldset e legend."
-        },
-        {
-          "minutos": 35,
-          "acao": "Construção individual do formulário e regras nativas."
-        },
-        {
-          "minutos": 15,
-          "acao": "Teste por um colega com casos vazios e inválidos."
-        },
-        {
-          "minutos": 5,
-          "acao": "Registro do que o navegador validou."
-        }
-      ],
       "avaliacao": "Conferir associação de rótulos, uso de name e escolha dos controles. Pedir que cada aluno explique um campo e uma restrição.",
       "curiosidade": "Um button dentro de um formulário pode atuar como envio quando o tipo não é especificado. Declarar type evita ações acidentais.",
       "refs": [
@@ -354,10 +332,31 @@ window.WEBLAB_CURSO = {
         "labels",
         "estrutura",
         "validacao",
-        "botao"
+        "botao",
+        "liveserver"
       ],
       "extensao": "Criar uma pequena tabela justificando tipo, name e regra de cada campo.",
-      "apoio": "Disponibilizar um campo pronto como modelo e pedir a criação dos demais por analogia."
+      "apoio": "Disponibilizar um campo pronto como modelo e pedir a criação dos demais por analogia.",
+      "agenda": [
+        {
+          "acao": "Retomada das evidências de HTML do diagnóstico."
+        },
+        {
+          "acao": "Modelagem dos dados do chamado e escolha dos controles."
+        },
+        {
+          "acao": "Demonstração de label, id, name, fieldset e legend."
+        },
+        {
+          "acao": "Construção individual do formulário e regras nativas."
+        },
+        {
+          "acao": "Teste por um colega com casos vazios e inválidos."
+        },
+        {
+          "acao": "Registro do que o navegador validou."
+        }
+      ]
     },
     {
       "id": "aula-03",
@@ -417,42 +416,37 @@ window.WEBLAB_CURSO = {
         "O foco é visível em links, botões e campos.",
         "As instruções não dependem apenas da cor."
       ],
-      "agenda": [
-        {
-          "minutos": 10,
-          "acao": "Leitura dos formulários produzidos e problemas de uso."
-        },
-        {
-          "minutos": 15,
-          "acao": "Demonstração de ordem de leitura, largura fluida e foco."
-        },
-        {
-          "minutos": 20,
-          "acao": "Construção guiada de uma grade responsiva."
-        },
-        {
-          "minutos": 35,
-          "acao": "Aplicação individual do CSS e testes de largura."
-        },
-        {
-          "minutos": 15,
-          "acao": "Teste de teclado por pares e correção de uma barreira."
-        },
-        {
-          "minutos": 5,
-          "acao": "Registro de uma decisão de acessibilidade."
-        }
-      ],
       "avaliacao": "Usar evidências de teste, não somente aparência. Cada aluno mostra uma largura pequena e percorre os controles pelo teclado.",
       "curiosidade": "A ordem visual pode mudar com CSS sem mudar a ordem de foco. Isso pode confundir quem navega usando o teclado.",
       "refs": [
         "css",
         "grid",
         "labels",
-        "mensagens"
+        "mensagens",
+        "liveserver"
       ],
       "extensao": "Testar o navegador com zoom de 200% e documentar uma melhoria.",
-      "apoio": "Fornecer uma grade inicial de uma coluna e construir a media query em conjunto."
+      "apoio": "Fornecer uma grade inicial de uma coluna e construir a media query em conjunto.",
+      "agenda": [
+        {
+          "acao": "Leitura dos formulários produzidos e problemas de uso."
+        },
+        {
+          "acao": "Demonstração de ordem de leitura, largura fluida e foco."
+        },
+        {
+          "acao": "Construção guiada de uma grade responsiva."
+        },
+        {
+          "acao": "Aplicação individual do CSS e testes de largura."
+        },
+        {
+          "acao": "Teste de teclado por pares e correção de uma barreira."
+        },
+        {
+          "acao": "Registro de uma decisão de acessibilidade."
+        }
+      ]
     },
     {
       "id": "aula-04",
@@ -513,42 +507,37 @@ window.WEBLAB_CURSO = {
         "Os checkbox usam getAll quando necessário.",
         "O resumo apresenta os dados como texto e informa a simulação."
       ],
-      "agenda": [
-        {
-          "minutos": 10,
-          "acao": "Retomada de seletores e eventos conforme o diagnóstico."
-        },
-        {
-          "minutos": 20,
-          "acao": "Demonstração do evento submit e da ação padrão."
-        },
-        {
-          "minutos": 20,
-          "acao": "Leitura guiada dos campos com FormData."
-        },
-        {
-          "minutos": 30,
-          "acao": "Implementação individual do resumo no DOM."
-        },
-        {
-          "minutos": 15,
-          "acao": "Testes pelo botão, teclado e console."
-        },
-        {
-          "minutos": 5,
-          "acao": "Explicação individual do papel de preventDefault."
-        }
-      ],
       "avaliacao": "Solicitar uma explicação sobre evento, coleta e atualização. Confirmar que o aluno distingue leitura local de envio a servidor.",
       "curiosidade": "Um campo pode ter id e aparecer na tela, mas não ser coletado pela chave esperada quando falta name.",
       "refs": [
         "submit",
         "formdata",
         "disabled",
-        "textcontent"
+        "textcontent",
+        "liveserver"
       ],
       "extensao": "Acrescentar um contador de caracteres com evento input, mantendo a regra minlength no HTML.",
-      "apoio": "Mostrar no console apenas um campo antes de construir o resumo completo."
+      "apoio": "Mostrar no console apenas um campo antes de construir o resumo completo.",
+      "agenda": [
+        {
+          "acao": "Retomada de seletores e eventos conforme o diagnóstico."
+        },
+        {
+          "acao": "Demonstração do evento submit e da ação padrão."
+        },
+        {
+          "acao": "Leitura guiada dos campos com FormData."
+        },
+        {
+          "acao": "Implementação individual do resumo no DOM."
+        },
+        {
+          "acao": "Testes pelo botão, teclado e console."
+        },
+        {
+          "acao": "Explicação individual do papel de preventDefault."
+        }
+      ]
     },
     {
       "id": "aula-05",
@@ -609,42 +598,37 @@ window.WEBLAB_CURSO = {
         "O erro desaparece depois da correção.",
         "Meus testes incluem ao menos um caso inválido e sua recuperação."
       ],
-      "agenda": [
-        {
-          "minutos": 10,
-          "acao": "Revisão das restrições e coleta das dificuldades."
-        },
-        {
-          "minutos": 20,
-          "acao": "Leitura de mensagens de erro e escolha da regra complementar."
-        },
-        {
-          "minutos": 20,
-          "acao": "Demonstração de input e setCustomValidity."
-        },
-        {
-          "minutos": 30,
-          "acao": "Implementação individual e criação dos casos de teste."
-        },
-        {
-          "minutos": 15,
-          "acao": "Teste por um colega e correção da recuperação do erro."
-        },
-        {
-          "minutos": 5,
-          "acao": "Registro da diferença entre validação e segurança."
-        }
-      ],
       "avaliacao": "Conferir a recuperação do erro e a explicação da regra. Evitar avaliar apenas se uma única entrada válida funcionou.",
       "curiosidade": "Uma mensagem personalizada não vazia mantém o controle inválido. Alterar o texto do campo, sozinho, não apaga a mensagem definida pelo código.",
       "refs": [
         "validacao",
         "custom",
         "mensagens",
-        "submit"
+        "submit",
+        "liveserver"
       ],
       "extensao": "Relacionar uma mensagem própria ao campo por aria-describedby e testar sua clareza com um colega.",
-      "apoio": "Aplicar a regra primeiro a dois campos simples, com valores visíveis no console."
+      "apoio": "Aplicar a regra primeiro a dois campos simples, com valores visíveis no console.",
+      "agenda": [
+        {
+          "acao": "Revisão das restrições e coleta das dificuldades."
+        },
+        {
+          "acao": "Leitura de mensagens de erro e escolha da regra complementar."
+        },
+        {
+          "acao": "Demonstração de input e setCustomValidity."
+        },
+        {
+          "acao": "Implementação individual e criação dos casos de teste."
+        },
+        {
+          "acao": "Teste por um colega e correção da recuperação do erro."
+        },
+        {
+          "acao": "Registro da diferença entre validação e segurança."
+        }
+      ]
     },
     {
       "id": "aula-06",
@@ -705,41 +689,36 @@ window.WEBLAB_CURSO = {
         "Meu projeto declara envio simulado.",
         "Os requisitos descrevem comportamentos que consigo testar."
       ],
-      "agenda": [
-        {
-          "minutos": 15,
-          "acao": "Retomada prática após o intervalo sem aula."
-        },
-        {
-          "minutos": 20,
-          "acao": "Discussão do percurso dos dados, GET, POST e HTTPS."
-        },
-        {
-          "minutos": 15,
-          "acao": "Mapa em papel e identificação dos limites do protótipo."
-        },
-        {
-          "minutos": 15,
-          "acao": "Apresentação dos requisitos e rubrica sugerida do projeto."
-        },
-        {
-          "minutos": 25,
-          "acao": "Planejamento individual e início das melhorias."
-        },
-        {
-          "minutos": 10,
-          "acao": "Conferência de viabilidade e próximos passos."
-        }
-      ],
       "avaliacao": "Ler o mapa e os requisitos. O aluno deve distinguir o resumo local de um recebimento real em servidor.",
       "curiosidade": "Um endereço com parâmetros de busca pode ser compartilhado como link. Esse é um uso comum de GET em pesquisas.",
       "refs": [
         "envio",
         "pages",
-        "primeiro"
+        "primeiro",
+        "liveserver"
       ],
       "extensao": "Inspecionar uma requisição de busca pública nas ferramentas do navegador, sem enviar dados pessoais.",
-      "apoio": "Usar cartões com “navegador”, “requisição”, “servidor” e “resposta” para organizar o mapa."
+      "apoio": "Usar cartões com “navegador”, “requisição”, “servidor” e “resposta” para organizar o mapa.",
+      "agenda": [
+        {
+          "acao": "Retomada prática após o intervalo sem aula."
+        },
+        {
+          "acao": "Discussão do percurso dos dados, GET, POST e HTTPS."
+        },
+        {
+          "acao": "Mapa em papel e identificação dos limites do protótipo."
+        },
+        {
+          "acao": "Apresentação dos requisitos e rubrica sugerida do projeto."
+        },
+        {
+          "acao": "Planejamento individual e início das melhorias."
+        },
+        {
+          "acao": "Conferência de viabilidade e próximos passos."
+        }
+      ]
     },
     {
       "id": "aula-07",
@@ -786,13 +765,21 @@ window.WEBLAB_CURSO = {
             "Confira novamente o layout e o teclado. Um comportamento novo pode criar uma barreira de uso em algo que já funcionava."
           ],
           "codigo": ""
+        },
+        {
+          "titulo": "Preparação para a avaliação de 11/12",
+          "texto": [
+            "Guarde a versão integrada e organize o README e o registro dos testes. Na aula seguinte, você entregará o projeto e explicará decisões de HTML, CSS e JavaScript. A publicação pode ser concluída depois da devolutiva; o projeto local também será avaliado."
+          ],
+          "codigo": ""
         }
       ],
       "atividade": [
         "Implementar a categoria “outro” e seu campo complementar.",
         "Atualizar hidden, disabled e required juntos.",
         "Organizar o script em funções pequenas.",
-        "Executar os casos de ida, volta e novo preenchimento."
+        "Executar os casos de ida, volta e novo preenchimento.",
+        "Preparar o README e registrar os seis casos de teste para a avaliação de 11/12."
       ],
       "checklist": [
         "O campo aparece apenas quando necessário.",
@@ -800,232 +787,210 @@ window.WEBLAB_CURSO = {
         "A coleta reflete o estado atual do formulário.",
         "Consigo explicar cada função do meu script."
       ],
-      "agenda": [
-        {
-          "minutos": 10,
-          "acao": "Reabertura dos requisitos e da última versão estável."
-        },
-        {
-          "minutos": 20,
-          "acao": "Demonstração de campo condicional e estados coerentes."
-        },
-        {
-          "minutos": 40,
-          "acao": "Desenvolvimento individual do projeto integrador."
-        },
-        {
-          "minutos": 15,
-          "acao": "Testes de transição de estado e correções."
-        },
-        {
-          "minutos": 10,
-          "acao": "Conferência da organização de funções e nomes."
-        },
-        {
-          "minutos": 5,
-          "acao": "Registro de uma melhoria e de uma dúvida."
-        }
-      ],
       "avaliacao": "Solicitar duas mudanças de categoria e a explicação das propriedades alteradas. Verificar o estado do campo, não só sua aparência.",
       "curiosidade": "Um campo com hidden no bloco pode continuar existindo no DOM. Um controle disabled normalmente fica fora de FormData.",
       "refs": [
         "disabled",
         "formdata",
-        "submit"
+        "submit",
+        "liveserver"
       ],
       "extensao": "Criar uma função que gere cada linha do resumo com createElement e textContent.",
-      "apoio": "Testar primeiro a mudança visual. Depois acrescentar disabled e required, observando a diferença."
+      "apoio": "Testar primeiro a mudança visual. Depois acrescentar disabled e required, observando a diferença.",
+      "agenda": [
+        {
+          "acao": "Reabertura dos requisitos e da última versão estável."
+        },
+        {
+          "acao": "Demonstração de campo condicional e estados coerentes."
+        },
+        {
+          "acao": "Desenvolvimento individual do projeto integrador."
+        },
+        {
+          "acao": "Testes de transição de estado e correções."
+        },
+        {
+          "acao": "Conferência da organização de funções e nomes."
+        },
+        {
+          "acao": "Registro de uma melhoria e de uma dúvida."
+        }
+      ]
     },
     {
       "id": "aula-08",
       "data": "2026-12-11",
       "dataCurta": "11/12",
       "numero": "08",
-      "eixo": "Testes e publicação",
-      "titulo": "O projeto nas mãos de outra pessoa",
-      "subtitulo": "Revisão por pares, correções e publicação no GitHub Pages",
-      "produto": "Projeto revisado, publicado e acompanhado de registro de testes.",
+      "eixo": "Avaliação",
+      "titulo": "Avaliação prática do formulário",
+      "subtitulo": "Entrega do projeto, testes e explicação individual",
+      "produto": "Projeto em ZIP, registro de seis testes e explicação individual entregue em 11/12.",
       "objetivos": [
-        "Executar casos de teste com entradas e resultados esperados.",
-        "Corrigir problemas com base em evidências.",
-        "Publicar e repetir os testes no endereço público."
+        "Demonstrar o formulário com uma entrada válida, um erro e sua correção.",
+        "Explicar decisões de HTML, CSS e JavaScript e testar uma alteração individual.",
+        "Entregar os arquivos do projeto, o README e o registro de testes."
       ],
-      "retomada": "A publicação já aparece na trilha anterior. O foco agora é verificar o comportamento no endereço publicado e documentar o projeto.",
+      "retomada": "Usar a versão integrada de 04/12. A avaliação principal acontece em 11/12, antes do último encontro, para permitir devolutiva e correções em 18/12.",
       "conceitos": [
-        "Casos válidos e inválidos",
-        "Teste de teclado e tela",
-        "Caminhos relativos",
-        "README e publicação"
+        "Avaliação prática individual",
+        "Casos de teste",
+        "Explicação do código",
+        "Entrega organizada"
       ],
       "secoes": [
         {
-          "titulo": "Teste é uma pergunta verificável",
+          "titulo": "O que será entregue",
           "texto": [
-            "Um caso descreve entrada, ação e resultado esperado. Inclua formulário vazio, formato de contato inadequado, contatos diferentes, descrição no limite, categoria “outro” e envio válido.",
-            "O colega registra o que observou e o autor tenta reproduzir o problema. Se houver uma correção, execute novamente os testes afetados. Não use dados privados de pessoas reais."
+            "Compacte a pasta do projeto com index.html, style.css, script.js, README e REGISTRO-DE-TESTES.txt. Identifique o ZIP com turma e nome. Entregue o arquivo ao professor durante a aula. O projeto deve abrir no VS Code com Live Server.",
+            "Registre seis situações: campos vazios, e-mail com formato inadequado, contatos diferentes, descrição curta, mudança para outro e retorno, e preenchimento válido. Em cada uma, escreva entrada, ação, resultado esperado e observado."
           ],
           "codigo": ""
         },
         {
-          "titulo": "A publicação tem uma pasta de origem",
+          "titulo": "Demonstração e compreensão individual",
           "texto": [
-            "Organize index.html, CSS, JavaScript e demais arquivos com caminhos relativos. Verifique letras maiúsculas e minúsculas nos nomes. Escreva no README como abrir e testar o projeto.",
-            "No GitHub Pages, selecione a origem de publicação disponível na sua conta e confira o resultado do processamento. Depois abra o endereço público e repita os testes principais."
+            "Mostre um caso válido, provoque um erro e demonstre sua correção. Explique um rótulo ou grupo HTML, uma regra CSS e o trecho JavaScript que coleta ou valida os dados.",
+            "Faça uma pequena alteração individual orientada pelo professor e registre o teste. Todos entregam também a explicação por escrito; o professor organiza a observação nas estações conforme o tamanho da turma."
           ],
           "codigo": ""
         },
         {
-          "titulo": "Revisão técnica e explicação individual",
+          "titulo": "Critérios da avaliação",
           "texto": [
-            "Dê prioridade a funções quebradas e barreiras de uso antes de efeitos visuais adicionais. A apresentação final deve mostrar uma entrada válida, um erro e sua recuperação.",
-            "Cada aluno prepara uma explicação sobre HTML, uma regra CSS e uma parte do JavaScript. Quem trabalhar com ajuda continua responsável por explicar o próprio código."
+            "Rubrica proposta, total de 10 pontos: HTML e rótulos (2), CSS e acessibilidade (2), JavaScript e validação (2), testes e documentação (2), explicação e alteração individual (2). Os critérios serão apresentados antes da realização.",
+            "A hospedagem pública não é condição para demonstrar o funcionamento local. Não use dados pessoais reais. O formulário continua com envio simulado. A devolutiva e as oportunidades de correção e recuperação ficam para 18/12, conforme as regras da turma."
           ],
           "codigo": ""
         }
       ],
       "atividade": [
-        "Trocar o computador com um colega e executar seis casos de teste.",
-        "Registrar dois problemas ou oportunidades de melhoria.",
-        "Corrigir o que for necessário e repetir os casos afetados.",
-        "Publicar, conferir os links e preparar a demonstração final."
+        "Conferir o projeto no Live Server e executar os seis casos de teste.",
+        "Entregar o ZIP identificado com código, README e registro de testes.",
+        "Demonstrar o formulário e explicar decisões de HTML, CSS e JavaScript.",
+        "Realizar e registrar uma pequena alteração individual solicitada pelo professor."
       ],
       "checklist": [
-        "Meus testes têm resultado esperado e observado.",
-        "A navegação por teclado e o celular foram conferidos.",
-        "A página pública carrega os arquivos corretamente.",
-        "O README informa o caráter simulado do projeto."
+        "O ZIP contém a pasta completa e abre no VS Code com Live Server.",
+        "Registrei resultados esperados e observados dos seis testes.",
+        "Entreguei minha explicação e a alteração individual testada.",
+        "Sei que a devolutiva e a recuperação acontecem em 18/12."
       ],
+      "avaliacao": "Aplicar a rubrica de 10 pontos em 11/12, usando projeto, testes e evidência individual. Organizar as observações por estações e completar a correção dos registros antes da devolutiva de 18/12. A publicação não substitui a compreensão.",
+      "curiosidade": "Um teste que registra a entrada e o resultado esperado pode ser repetido por outra pessoa e ajuda a localizar um defeito.",
+      "refs": [
+        "validacao",
+        "formdata",
+        "mensagens",
+        "liveserver"
+      ],
+      "extensao": "Preparar a publicação no GitHub Pages, sem substituir a entrega local e a explicação individual.",
+      "apoio": "Permitir consulta à documentação e registrar as pistas oferecidas. Aplicar os critérios anunciados e as adaptações previstas para a turma.",
       "agenda": [
         {
-          "minutos": 10,
-          "acao": "Apresentação da matriz de testes e das prioridades."
+          "acao": "Apresentação dos critérios e conferência da versão integrada."
         },
         {
-          "minutos": 25,
-          "acao": "Teste individual do projeto de um colega."
+          "acao": "Execução e registro individual dos seis testes."
         },
         {
-          "minutos": 25,
-          "acao": "Correções e repetição dos testes afetados."
+          "acao": "Demonstrações nas estações, explicação e alteração individual; registro escrito para todos."
         },
         {
-          "minutos": 25,
-          "acao": "Organização do repositório e publicação."
+          "acao": "Entrega do ZIP identificado e conferência dos arquivos."
         },
         {
-          "minutos": 10,
-          "acao": "Teste no endereço público e preparação da fala."
-        },
-        {
-          "minutos": 5,
-          "acao": "Registro de pendências para o fechamento."
+          "acao": "Autoavaliação e registro para devolutiva em 18/12."
         }
-      ],
-      "avaliacao": "Conferir o registro e uma correção reproduzível. Não reduzir a avaliação à existência de um endereço publicado.",
-      "curiosidade": "Um caminho que funciona no computador pode falhar na hospedagem se o nome do arquivo tiver letras maiúsculas e minúsculas diferentes.",
-      "refs": [
-        "publicar",
-        "pages",
-        "mensagens"
-      ],
-      "extensao": "Escrever no README uma limitação conhecida e uma melhoria futura viável.",
-      "apoio": "Usar um repositório de exemplo para mostrar a raiz de publicação, sem fazer a entrega no lugar do aluno."
+      ]
     },
     {
       "id": "aula-09",
       "data": "2026-12-18",
       "dataCurta": "18/12",
       "numero": "09",
-      "eixo": "Síntese",
-      "titulo": "O que conseguimos construir e explicar",
-      "subtitulo": "Demonstração, reavaliação e continuidade",
-      "produto": "Projeto final, explicação individual e comparação com o diagnóstico inicial.",
+      "eixo": "Devolutiva e recuperação",
+      "titulo": "Corrigir, recuperar e concluir",
+      "subtitulo": "Devolutiva da avaliação, recuperação e fechamento do percurso",
+      "produto": "Versão corrigida, registro das melhorias e recuperação, quando necessária, em 18/12.",
       "objetivos": [
-        "Demonstrar o formulário e justificar decisões técnicas.",
-        "Realizar uma pequena alteração com autonomia.",
-        "Comparar a aprendizagem atual com a evidência de outubro."
+        "Interpretar a devolutiva da avaliação de 11/12.",
+        "Corrigir o projeto e demonstrar novamente os critérios que precisam de reforço.",
+        "Comparar a aprendizagem atual com o diagnóstico inicial e organizar o portfólio."
       ],
-      "retomada": "Reabrir as respostas de 16/10 somente depois da nova tentativa individual, para observar a evolução sem copiar o raciocínio anterior.",
+      "retomada": "Reabrir o projeto e a devolutiva de 11/12. A avaliação principal já foi aplicada; este encontro permite corrigir, recuperar e encerrar o percurso.",
       "conceitos": [
-        "Apresentação técnica",
-        "Explicação individual",
-        "Reavaliação",
-        "Próximos passos"
+        "Devolutiva",
+        "Correção e novo teste",
+        "Recuperação",
+        "Portfólio e continuidade"
       ],
       "secoes": [
         {
-          "titulo": "Demonstração com evidência",
+          "titulo": "A devolutiva orienta a correção",
           "texto": [
-            "Apresente o objetivo do formulário, preencha um caso válido e mostre o resumo. Em seguida, provoque um erro e demonstre a recuperação. Explique que o envio é simulado.",
-            "Mostre uma decisão de HTML e acessibilidade, uma de layout e uma de JavaScript. A fala deve acompanhar o código e o comportamento observado."
+            "Leia o comentário do professor e localize no código a evidência de cada ponto. Escolha as correções prioritárias e escreva o que será alterado.",
+            "Depois da mudança, repita o caso que apresentou problema e os testes relacionados. Registre o resultado para mostrar o que melhorou."
           ],
           "codigo": ""
         },
         {
-          "titulo": "Uma alteração pequena, feita por você",
+          "titulo": "Recuperação com evidência individual",
           "texto": [
-            "Exemplos: acrescentar uma opção de categoria, mudar uma restrição com justificativa, alterar um texto do resumo ou ajustar um ponto de quebra. O professor escolhe uma mudança adequada ao trabalho e pede que o aluno teste o resultado.",
-            "A alteração ajuda a verificar compreensão. Não é uma corrida de digitação, e o professor pode oferecer uma pista registrada quando necessário."
+            "Quando necessário, refaça uma tarefa equivalente sobre os critérios que ainda precisam ser demonstrados, conforme a orientação do professor e as regras da turma. Explique a alteração e mostre o teste.",
+            "Quem já demonstrou os critérios pode aperfeiçoar acessibilidade, documentação ou publicação e ajudar a discutir estratégias, preservando a autoria individual."
           ],
           "codigo": ""
         },
         {
-          "titulo": "Comparação e continuidade",
+          "titulo": "Portfólio e continuidade",
           "texto": [
-            "Responda a uma nova versão curta das questões de HTML, CSS e JavaScript. Compare o que você explica agora com a primeira tentativa e registre uma evidência concreta de avanço.",
-            "O próximo percurso pode incluir requisições com fetch, API e backend com validação no servidor. Esses temas dependem da consolidação da base e ficam como continuidade, sem prometer que o protótipo atual já faz isso."
+            "Compare sua explicação atual com a primeira tentativa de outubro e registre um avanço concreto. Organize a versão final e os registros de teste.",
+            "Conclua ou revise a publicação no GitHub Pages, quando houver conexão. API, fetch e validação no servidor ficam como possibilidades de continuidade."
           ],
           "codigo": ""
         }
       ],
       "atividade": [
-        "Demonstrar envio válido, erro e recuperação.",
-        "Explicar decisões de HTML, CSS e JavaScript.",
-        "Fazer uma pequena alteração individual e testá-la.",
-        "Registrar o que aprendeu e uma pergunta para continuar estudando."
+        "Ler a devolutiva da avaliação de 11/12.",
+        "Corrigir os itens indicados e registrar novos testes.",
+        "Realizar a recuperação orientada, se necessária, e entregar a versão corrigida.",
+        "Organizar o portfólio, comparar com o diagnóstico e concluir a publicação quando possível."
       ],
       "checklist": [
-        "Demonstrei o formulário em vez de apenas mostrar a tela.",
-        "Expliquei uma regra e seu efeito no código.",
-        "Testei a alteração individual.",
-        "Comparei minha aprendizagem com a evidência inicial."
+        "Relacionei a devolutiva com o meu código.",
+        "Registrei a correção e repeti os testes.",
+        "Demonstrei os critérios retomados na recuperação, quando necessária.",
+        "Guardei minha versão final e uma evidência do que aprendi."
       ],
+      "avaliacao": "Devolver a avaliação aplicada em 11/12. Registrar as correções e aplicar recuperação com evidências equivalentes dos critérios pendentes, conforme as regras institucionais. Não deixar a primeira avaliação para o último encontro.",
+      "curiosidade": "Repetir o teste depois de corrigir ajuda a verificar se o problema foi resolvido e se outra parte continua funcionando.",
+      "refs": [
+        "publicar",
+        "pages",
+        "validacao",
+        "liveserver"
+      ],
+      "extensao": "Desenhar uma API futura, descrevendo os dados enviados e a resposta esperada.",
+      "apoio": "Retomar um critério por vez, usando a devolutiva e um exemplo curto, e pedir nova tentativa individual.",
       "agenda": [
         {
-          "minutos": 10,
-          "acao": "Organização e nova tentativa curta do diagnóstico."
+          "acao": "Devolutiva coletiva e orientações individuais da avaliação de 11/12."
         },
         {
-          "minutos": 15,
-          "acao": "Demonstração do formato de apresentação e critérios."
+          "acao": "Correções orientadas, novos testes e aprimoramentos."
         },
         {
-          "minutos": 40,
-          "acao": "Mostra em rodadas com visitas do professor às estações."
+          "acao": "Recuperação individual sobre critérios pendentes, conforme as regras da turma."
         },
         {
-          "minutos": 20,
-          "acao": "Alteração individual e explicação técnica nas estações."
+          "acao": "Organização do portfólio e conclusão da publicação quando possível."
         },
         {
-          "minutos": 10,
-          "acao": "Comparação das evidências e devolutiva."
-        },
-        {
-          "minutos": 5,
-          "acao": "Fechamento e organização do portfólio."
+          "acao": "Comparação com o diagnóstico e fechamento."
         }
-      ],
-      "avaliacao": "Usar rubrica sugerida e evidência individual. Ajustar número e duração das rodadas ao tamanho da turma, que ainda não foi informado.",
-      "curiosidade": "Explicar uma alteração pequena costuma revelar se compreendemos a relação entre seletor, evento e resultado na página.",
-      "refs": [
-        "primeiro",
-        "formdata",
-        "validacao",
-        "pages"
-      ],
-      "extensao": "Desenhar a API de uma versão futura, descrevendo os dados enviados e a resposta esperada.",
-      "apoio": "Permitir explicação acompanhada do código e perguntas curtas sobre uma parte por vez."
+      ]
     }
   ]
 };
