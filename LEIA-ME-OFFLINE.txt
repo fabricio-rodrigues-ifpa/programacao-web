@@ -8,10 +8,11 @@ Professor Fabrício Rodrigues
 4. A primeira prática está em pratica/diagnostico-base/index.html.
 5. O projeto começa em pratica/formulario-base/index.html.
 6. Consulte pratica/formulario-modelo.html depois de sua própria tentativa.
-7. A ficha digital, no site ou em pratica/diagnostico-base/respostas.html, baixa
-   um TXT com nome, turma e respostas. Entregue o TXT ao professor na aula.
+7. Abra diagnostico.html neste pacote para responder à ficha digital. Ela baixa
+   um TXT com nome, turma, respostas e registro da prática. Entregue o TXT na aula.
    Não feche antes de baixar: não há salvamento automático nem envio.
-8. Preencha REGISTRO-DE-TESTES.txt e entregue também a pasta da prática em ZIP.
+8. Registre os testes na ficha digital e entregue também a pasta da prática em ZIP.
+   Cada projeto contém apenas index.html, style.css e script.js, indentados.
 9. Avaliação em 11/12; devolutiva, correções e recuperação em 18/12.
 
 Os projetos não exigem pacotes npm. Para o fluxo da turma, VS Code e a extensão
