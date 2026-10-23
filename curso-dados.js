@@ -1,4 +1,3 @@
-/* Conteúdo do período. Edite os encontros e referências aqui. */
 window.WEBLAB_CURSO = {
   "titulo": "Formulários para a web",
   "professor": "Fabrício Rodrigues",
@@ -6,6 +5,7 @@ window.WEBLAB_CURSO = {
   "fim": "2026-12-18",
   "semAula": "2026-11-20",
   "encontros": 9,
+  "minutosPorEncontro": 100,
   "aulasDe50": 18,
   "horasRelogio": 15,
   "contexto": "Curso Técnico em Informática. Um computador por aluno. Planejamento proposto para a continuidade da turma.",
@@ -23,17 +23,17 @@ window.WEBLAB_CURSO = {
     },
     {
       "id": "inputs",
-      "titulo": "MDN: tipos de input",
+      "titulo": "MDN: tipos de input (em inglês)",
       "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/HTML5_input_types"
     },
     {
       "id": "labels",
-      "titulo": "W3C WAI: rótulos dos controles",
+      "titulo": "W3C WAI: rótulos dos controles (em inglês)",
       "url": "https://www.w3.org/WAI/tutorials/forms/labels/"
     },
     {
       "id": "estrutura",
-      "titulo": "W3C WAI: agrupamento de controles",
+      "titulo": "W3C WAI: agrupamento de controles (em inglês)",
       "url": "https://www.w3.org/WAI/tutorials/forms/grouping/"
     },
     {
@@ -43,7 +43,7 @@ window.WEBLAB_CURSO = {
     },
     {
       "id": "css",
-      "titulo": "MDN: estilização de formulários",
+      "titulo": "MDN: estilização de formulários (em inglês)",
       "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Styling_web_forms"
     },
     {
@@ -53,37 +53,37 @@ window.WEBLAB_CURSO = {
     },
     {
       "id": "submit",
-      "titulo": "MDN: evento submit",
+      "titulo": "MDN: evento submit (em inglês)",
       "url": "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event"
     },
     {
       "id": "formdata",
-      "titulo": "MDN: uso de FormData",
+      "titulo": "MDN: uso de FormData (em inglês)",
       "url": "https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest_API/Using_FormData_Objects"
     },
     {
       "id": "custom",
-      "titulo": "MDN: setCustomValidity",
+      "titulo": "MDN: setCustomValidity (em inglês)",
       "url": "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/setCustomValidity"
     },
     {
       "id": "mensagens",
-      "titulo": "W3C WAI: notificações e erros",
+      "titulo": "W3C WAI: notificações e erros (em inglês)",
       "url": "https://www.w3.org/WAI/tutorials/forms/notifications/"
     },
     {
       "id": "envio",
-      "titulo": "MDN: envio de dados",
+      "titulo": "MDN: envio de dados (em inglês)",
       "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Sending_and_retrieving_form_data"
     },
     {
       "id": "botao",
-      "titulo": "MDN: elemento button",
+      "titulo": "MDN: elemento button (em inglês)",
       "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button"
     },
     {
       "id": "disabled",
-      "titulo": "MDN: atributo disabled",
+      "titulo": "MDN: atributo disabled (em inglês)",
       "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/disabled"
     },
     {
@@ -98,7 +98,7 @@ window.WEBLAB_CURSO = {
     },
     {
       "id": "textcontent",
-      "titulo": "MDN: textContent",
+      "titulo": "MDN: textContent (em inglês)",
       "url": "https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent"
     },
     {
@@ -115,6 +115,11 @@ window.WEBLAB_CURSO = {
       "id": "controles",
       "titulo": "MDN: controles nativos de formulário (em inglês)",
       "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Basic_native_form_controls"
+    },
+    {
+      "id": "https",
+      "titulo": "MDN: HTTPS (em inglês)",
+      "url": "https://developer.mozilla.org/en-US/docs/Glossary/HTTPS"
     }
   ],
   "perguntas": [
@@ -340,19 +345,6 @@ window.WEBLAB_CURSO = {
         "Expliquei a finalidade do chamado e por que equipamento usa texto e descrição usa textarea.",
         "Associei cada label ao id do campo."
       ],
-      "avaliacao": "Observar separadamente HTML, CSS e JavaScript. Guardar evidências escritas e práticas antes de decidir quais conceitos retomar. O diagnóstico não compõe uma nota somativa.",
-      "curiosidade": "Clicar em um rótulo associado pode levar o foco ao campo. Essa associação também ajuda tecnologias assistivas.",
-      "refs": [
-        "abner",
-        "primeiro",
-        "labels",
-        "liveserver",
-        "controles",
-        "inputs",
-        "envio"
-      ],
-      "extensao": "Acrescentar um campo de contato fictício e justificar o tipo escolhido.",
-      "apoio": "Oferecer uma pista por vez: conferir nome da classe, conferir id e usar o console. Registrar quando o aluno usou a pista.",
       "agenda": [
         {
           "acao": "Acolhida, objetivo e orientação sobre o diagnóstico sem nota."
@@ -381,7 +373,20 @@ window.WEBLAB_CURSO = {
         {
           "acao": "Bilhete de saída e organização dos arquivos."
         }
-      ]
+      ],
+      "avaliacao": "Observar separadamente HTML, CSS e JavaScript. Guardar evidências escritas e práticas antes de decidir quais conceitos retomar. O diagnóstico não compõe uma nota somativa.",
+      "curiosidade": "Clicar em um rótulo associado pode levar o foco ao campo. Essa associação também ajuda tecnologias assistivas.",
+      "refs": [
+        "abner",
+        "primeiro",
+        "labels",
+        "liveserver",
+        "controles",
+        "inputs",
+        "envio"
+      ],
+      "extensao": "Acrescentar um campo de contato fictício e justificar o tipo escolhido.",
+      "apoio": "Oferecer uma pista por vez: conferir nome da classe, conferir id e usar o console. Registrar quando o aluno usou a pista."
     },
     {
       "id": "aula-02",
@@ -389,15 +394,15 @@ window.WEBLAB_CURSO = {
       "dataCurta": "23/10",
       "numero": "02",
       "eixo": "HTML",
-      "titulo": "Campos com significado",
-      "subtitulo": "Estrutura, rótulos e regras nativas do formulário",
-      "produto": "Versão 1 do formulário com campos e restrições HTML.",
+      "titulo": "Formulários: fundamentos e campos HTML",
+      "subtitulo": "Finalidade, estrutura, controles e validação nativa",
+      "produto": "Pasta com index.html, style.css e script.js em ZIP, acompanhada do registro de testes em TXT.",
       "objetivos": [
-        "Distinguir id, name, type e value.",
-        "Escolher controles adequados a texto, escolha única e múltiplas opções.",
-        "Usar required e restrições coerentes com o dado solicitado."
+        "Explicar para que serve um formulário e escolher os dados necessários.",
+        "Associar rótulos e distinguir id, name, type e value.",
+        "Construir escolhas únicas, múltiplas e campos com regras nativas."
       ],
-      "retomada": "Retomar as dificuldades de HTML observadas em 16/10 e a visão geral dos fundamentos de formulários. Agora construiremos os controles apresentados, com rótulos, names e regras coerentes.",
+      "retomada": "Retome HTML, CSS e eventos vistos anteriormente. Se o primeiro formulário ficou pendente em 16/10, comece pelo campo de solicitante já fornecido nesta base.",
       "conceitos": [
         "form e label",
         "input, select e textarea",
@@ -406,72 +411,563 @@ window.WEBLAB_CURSO = {
       ],
       "secoes": [
         {
-          "titulo": "Um campo tem mais de um nome",
+          "titulo": "Fundamentos antes das tags",
           "texto": [
-            "id identifica um elemento na página e conecta o label. name identifica o dado coletado. type define o comportamento do controle, e value representa seu valor. Os ids devem ser únicos no documento.",
-            "Use rótulos visíveis. Um placeholder pode dar um exemplo curto, mas desaparece durante o preenchimento e não substitui o label."
+            "Um formulário permite informar dados e fazer escolhas para realizar uma tarefa. A finalidade orienta os campos: num chamado precisamos identificar o equipamento, classificar o problema e descrevê-lo.",
+            "Cadastro, login, pesquisa, contato e busca são finalidades. text, email e radio são tipos de controle; não são categorias de formulário. Nesta aula construiremos a estrutura HTML. CSS e JavaScript já fornecidos apenas mantêm o exemplo legível e a simulação local."
           ],
-          "codigo": "<label for=\"contato\">E-mail de contato fictício</label>\n<input id=\"contato\" name=\"contato\" type=\"email\" required>"
+          "codigo": "",
+          "refs": [
+            "primeiro",
+            "controles"
+          ]
         },
         {
-          "titulo": "Controles adequados ao problema",
+          "titulo": "O papel de form, label e dos atributos",
           "texto": [
-            "Use input text para um código de equipamento como PC-07. Esse código não é uma quantidade para calcular. Use select para escolher uma categoria e textarea para descrever o defeito.",
-            "Radio permite uma escolha em um grupo com o mesmo name. Checkbox permite marcar opções independentes. Agrupe opções relacionadas em fieldset, com legend que explique o conjunto."
+            "form reúne os controles da tarefa. label informa o que preencher. O for do label deve corresponder ao id do campo. Clique no rótulo para verificar a associação. Um placeholder é só um exemplo e não substitui o rótulo.",
+            "id identifica o elemento no documento. name identifica o dado na coleta. type escolhe o comportamento. value representa o valor do controle. Dois campos podem participar do mesmo grupo pelo name, mas seus ids devem ser únicos. Um código como PC-07 é texto, não uma quantidade."
           ],
-          "codigo": "<fieldset>\n  <legend>Prioridade do chamado</legend>\n  <label><input type=\"radio\" name=\"prioridade\" value=\"normal\" required> Normal</label>\n  <label><input type=\"radio\" name=\"prioridade\" value=\"alta\"> Alta</label>\n</fieldset>"
+          "codigo": "<label for=\"contato\">E-mail fictício (obrigatório)</label>\n<input id=\"contato\" name=\"contato\" type=\"email\" required>",
+          "refs": [
+            "labels",
+            "inputs"
+          ]
         },
         {
-          "titulo": "Regras que o navegador já conhece",
+          "titulo": "Uma lista de opções com select",
           "texto": [
-            "required pede um valor. type=email confere um formato de e-mail, sem provar que a caixa existe. minlength e maxlength delimitam comprimentos. min e max se aplicam, por exemplo, a quantidades numéricas.",
-            "Explique a regra antes do erro. Se a descrição precisa de pelo menos 20 caracteres, apresente essa orientação junto ao campo. Comece com validação nativa e teste o formulário sem JavaScript."
+            "select reúne opções conhecidas; cada option tem um valor de dados e um texto visível. A opção inicial com value vazio permite que required peça uma escolha.",
+            "No chamado, use hardware, software, rede e outro. Nesta aula, escolher outro ainda não abre um campo adicional. Esse comportamento será construído em 04/12."
           ],
-          "codigo": "<label for=\"descricao\">Descrição do problema</label>\n<p id=\"ajuda\">Escreva pelo menos 20 caracteres.</p>\n<textarea id=\"descricao\" name=\"descricao\" required\n  minlength=\"20\" maxlength=\"500\" aria-describedby=\"ajuda\"></textarea>"
+          "codigo": "<label for=\"categoria\">Categoria (obrigatório)</label>\n<select id=\"categoria\" name=\"categoria\" required>\n  <option value=\"\">Escolha uma categoria</option>\n  <option value=\"hardware\">Hardware</option>\n  <option value=\"software\">Software</option>\n  <option value=\"rede\">Rede</option>\n  <option value=\"outro\">Outro</option>\n</select>",
+          "refs": [
+            "controles"
+          ]
+        },
+        {
+          "titulo": "Escolha única com radio",
+          "texto": [
+            "Radios com o mesmo name formam um grupo de escolha única. Values diferentes distinguem as respostas. fieldset reúne o grupo e legend explica a pergunta.",
+            "Escolha prioridade normal ou alta. O required em um radio do grupo exige que uma opção daquele grupo seja escolhida. Não crie names diferentes para cada alternativa."
+          ],
+          "codigo": "<fieldset>\n  <legend>Prioridade (obrigatória)</legend>\n  <label><input type=\"radio\" name=\"prioridade\"\n    value=\"normal\" required> Normal</label>\n  <label><input type=\"radio\" name=\"prioridade\"\n    value=\"alta\"> Alta</label>\n</fieldset>",
+          "refs": [
+            "estrutura",
+            "inputs"
+          ]
+        },
+        {
+          "titulo": "Escolhas independentes com checkbox",
+          "texto": [
+            "Checkboxes permitem marcar nenhuma, uma ou várias opções independentes. Use sintomas opcionais: Lentidão e Mensagem de erro.",
+            "Os dois controles podem ter o mesmo name e values diferentes. Na coleta com JavaScript, usaremos getAll para recuperar todas as escolhas, em 06/11. required em um checkbox exige aquele checkbox específico; não significa “pelo menos um do conjunto”."
+          ],
+          "codigo": "<fieldset>\n  <legend>Sintomas (opcionais)</legend>\n  <label><input type=\"checkbox\" name=\"sintomas\"\n    value=\"Lentidão\"> Lentidão</label>\n  <label><input type=\"checkbox\" name=\"sintomas\"\n    value=\"Mensagem de erro\"> Mensagem de erro</label>\n</fieldset>",
+          "refs": [
+            "controles",
+            "estrutura"
+          ]
+        },
+        {
+          "titulo": "Texto longo e regras nativas",
+          "texto": [
+            "textarea recebe a descrição. A instrução informa de 20 a 500 caracteres, e aria-describedby associa a ajuda ao campo. required, minlength e maxlength são regras que o navegador pode conferir.",
+            "type=email verifica um formato, sem comprovar a existência da caixa de e-mail. As mensagens variam por navegador. A versão desta aula testa as regras HTML; comparação entre e-mails e texto formado só por espaços ficam para 13/11."
+          ],
+          "codigo": "<label for=\"descricao\">Descrição (obrigatória)</label>\n<p id=\"ajuda-descricao\">Use de 20 a 500 caracteres.</p>\n<textarea id=\"descricao\" name=\"descricao\" rows=\"5\"\n  required minlength=\"20\" maxlength=\"500\"\n  aria-describedby=\"ajuda-descricao\"></textarea>",
+          "refs": [
+            "validacao",
+            "labels"
+          ]
         }
       ],
       "atividade": [
-        "Definir quais dados são necessários a um chamado fictício.",
-        "Criar campos de solicitante fictício, contato, equipamento, categoria, prioridade e descrição.",
-        "Adicionar duas opções independentes em checkbox para sintomas observados.",
-        "Testar campos vazios, e-mail sem formato adequado e descrição curta."
+        "Baixar o projeto desta aula, extrair os três arquivos e abrir a pasta no VS Code. Executar index.html com Live Server.",
+        "Usar o campo de solicitante como modelo. Acrescentar equipamento (texto, 2 a 20 caracteres), contato (email), categoria (select), prioridade (radio), descrição (20 a 500 caracteres) e os dois sintomas opcionais (checkbox).",
+        "Associar rótulos, usar names coerentes e deixar visível o que é obrigatório. Manter o script de simulação fornecido.",
+        "Salvar, testar os casos e explicar a diferença entre id e name usando um campo do seu projeto."
       ],
       "checklist": [
-        "Todos os campos têm rótulo e name.",
-        "Os ids são únicos e correspondem aos labels.",
-        "Radio e checkbox representam escolhas adequadas.",
-        "As restrições têm instruções visíveis."
+        "Implementei os requisitos da atividade desta aula.",
+        "Testei os casos da tabela e registrei o resultado observado.",
+        "Consigo explicar uma decisão e uma correção.",
+        "Guardei o ZIP e o TXT com nome, turma e aula."
       ],
-      "avaliacao": "Conferir associação de rótulos, uso de name e escolha dos controles. Pedir que cada aluno explique um campo e uma restrição.",
-      "curiosidade": "Um button dentro de um formulário pode atuar como envio quando o tipo não é especificado. Declarar type evita ações acidentais.",
-      "refs": [
-        "inputs",
-        "labels",
-        "estrutura",
-        "validacao",
-        "botao",
-        "liveserver"
-      ],
-      "extensao": "Criar uma pequena tabela justificando tipo, name e regra de cada campo.",
-      "apoio": "Disponibilizar um campo pronto como modelo e pedir a criação dos demais por analogia.",
       "agenda": [
         {
-          "acao": "Retomada das evidências de HTML do diagnóstico."
+          "acao": "Retomada e observação do problema."
         },
         {
-          "acao": "Modelagem dos dados do chamado e escolha dos controles."
+          "acao": "Explicação dos conceitos e demonstração dos exemplos."
         },
         {
-          "acao": "Demonstração de label, id, name, fieldset e legend."
+          "acao": "Construção individual no VS Code."
         },
         {
-          "acao": "Construção individual do formulário e regras nativas."
+          "acao": "Testes por um colega e correções."
         },
         {
-          "acao": "Teste por um colega com casos vazios e inválidos."
+          "acao": "Explicação, registro e entrega dos arquivos."
+        }
+      ],
+      "avaliacao": "Observar o resultado, os testes e uma explicação individual. O uso de uma base pronta não comprova que o aluno consegue explicar o código.",
+      "curiosidade": "Um button dentro de um formulário pode atuar como envio quando o tipo não é especificado. Declarar type evita ações acidentais.",
+      "refs": [
+        "primeiro",
+        "controles",
+        "labels",
+        "inputs",
+        "estrutura",
+        "validacao",
+        "vscode",
+        "liveserver"
+      ],
+      "extensao": "Explique uma alternativa de implementação e compare seu comportamento com o requisito. Conclua primeiro os casos essenciais.",
+      "apoio": "Oferecer um campo pronto e pedir os demais por analogia. Se o tempo apertar, priorizar contato, categoria, descrição e o grupo radio; completar os sintomas com apoio.",
+      "mapa": [
+        [
+          "Finalidade",
+          "Exemplo de uso"
+        ],
+        [
+          "Cadastro ou inscrição",
+          "Registrar participação em uma atividade."
+        ],
+        [
+          "Busca ou filtro",
+          "Encontrar informações."
+        ],
+        [
+          "Contato ou suporte",
+          "Descrever uma solicitação."
+        ],
+        [
+          "No projeto da turma",
+          "Preparar um chamado fictício; sem envio real."
+        ]
+      ],
+      "testes": [
+        [
+          "Caso",
+          "Resultado esperado"
+        ],
+        [
+          "Campos obrigatórios vazios",
+          "O navegador impede a simulação."
+        ],
+        [
+          "Contato sem formato de e-mail",
+          "O campo de contato fica inválido."
+        ],
+        [
+          "Descrição digitada com menos de 20 caracteres",
+          "O navegador pede completar o texto."
+        ],
+        [
+          "Clique no rótulo do equipamento",
+          "O foco vai para o campo correspondente."
+        ],
+        [
+          "Marcar duas prioridades em sequência",
+          "Só a última permanece marcada."
+        ],
+        [
+          "Marcar os dois sintomas",
+          "As duas opções permanecem marcadas."
+        ],
+        [
+          "Preenchimento válido",
+          "Mensagem local; nenhuma navegação de envio."
+        ]
+      ],
+      "erros": [
+        "name não substitui id na associação com label.",
+        "Um select com opção inicial já válida não testa a escolha obrigatória.",
+        "Não acrescente novalidate: queremos observar a validação HTML."
+      ],
+      "saida": "Qual é o papel de name? Qual teste mostrou que seu formulário estava funcionando?",
+      "slidePDF": "materiais/Slides-Aula-02.pdf",
+      "aulaPDF": "materiais/Aula-02-Formularios.pdf",
+      "projetoZIP": "materiais/Aula-02-Projeto.zip",
+      "modelo": "pratica/aula-02-modelo.html",
+      "campos": [
+        [
+          "Solicitante",
+          "text",
+          "2 a 60 caracteres; obrigatório."
+        ],
+        [
+          "Equipamento",
+          "text",
+          "2 a 20 caracteres; obrigatório."
+        ],
+        [
+          "Contato",
+          "email",
+          "Formato e preenchimento obrigatório."
+        ],
+        [
+          "Categoria",
+          "select",
+          "Opção inicial vazia; escolha obrigatória."
+        ],
+        [
+          "Prioridade",
+          "radio",
+          "Normal ou Alta; uma escolha obrigatória."
+        ],
+        [
+          "Descrição",
+          "textarea",
+          "20 a 500 caracteres; obrigatório."
+        ],
+        [
+          "Sintomas",
+          "checkbox",
+          "Lentidão e Mensagem de erro; opcionais."
+        ]
+      ],
+      "slides": [
+        {
+          "titulo": "Formulários: fundamentos e campos HTML",
+          "texto": [
+            "Finalidade, estrutura, controles e validação nativa",
+            "Prof. Fabrício Rodrigues"
+          ],
+          "tipo": "capa",
+          "numero": 1,
+          "aula": "02",
+          "data": "23/10"
         },
         {
-          "acao": "Registro do que o navegador validou."
+          "titulo": "O que vamos construir",
+          "texto": [
+            "Explicar para que serve um formulário e escolher os dados necessários.",
+            "Associar rótulos e distinguir id, name, type e value.",
+            "Construir escolhas únicas, múltiplas e campos com regras nativas."
+          ],
+          "tipo": "texto",
+          "numero": 2,
+          "aula": "02",
+          "data": "23/10"
+        },
+        {
+          "titulo": "Ponto de partida",
+          "texto": [
+            "Retome HTML, CSS e eventos vistos anteriormente. Se o primeiro formulário ficou pendente em 16/10, comece pelo campo de solicitante já fornecido nesta base.",
+            "Abra o projeto deste encontro no VS Code. Salve uma cópia própria antes de alterar."
+          ],
+          "tipo": "texto",
+          "numero": 3,
+          "aula": "02",
+          "data": "23/10"
+        },
+        {
+          "titulo": "Mapa da aula",
+          "texto": [],
+          "tipo": "tabela",
+          "tabela": [
+            [
+              "Finalidade",
+              "Exemplo de uso"
+            ],
+            [
+              "Cadastro ou inscrição",
+              "Registrar participação em uma atividade."
+            ],
+            [
+              "Busca ou filtro",
+              "Encontrar informações."
+            ],
+            [
+              "Contato ou suporte",
+              "Descrever uma solicitação."
+            ],
+            [
+              "No projeto da turma",
+              "Preparar um chamado fictício; sem envio real."
+            ]
+          ],
+          "numero": 4,
+          "aula": "02",
+          "data": "23/10"
+        },
+        {
+          "titulo": "Fundamentos antes das tags",
+          "texto": [
+            "Um formulário permite informar dados e fazer escolhas para realizar uma tarefa. A finalidade orienta os campos: num chamado precisamos identificar o equipamento, classificar o problema e descrevê-lo.",
+            "Cadastro, login, pesquisa, contato e busca são finalidades. text, email e radio são tipos de controle; não são categorias de formulário. Nesta aula construiremos a estrutura HTML. CSS e JavaScript já fornecidos apenas mantêm o exemplo legível e a simulação local."
+          ],
+          "tipo": "texto",
+          "refs": [
+            "primeiro",
+            "controles"
+          ],
+          "numero": 5,
+          "aula": "02",
+          "data": "23/10"
+        },
+        {
+          "titulo": "O papel de form, label e dos atributos",
+          "texto": [
+            "form reúne os controles da tarefa. label informa o que preencher. O for do label deve corresponder ao id do campo. Clique no rótulo para verificar a associação. Um placeholder é só um exemplo e não substitui o rótulo.",
+            "id identifica o elemento no documento. name identifica o dado na coleta. type escolhe o comportamento. value representa o valor do controle. Dois campos podem participar do mesmo grupo pelo name, mas seus ids devem ser únicos. Um código como PC-07 é texto, não uma quantidade."
+          ],
+          "tipo": "texto",
+          "refs": [
+            "labels",
+            "inputs"
+          ],
+          "numero": 6,
+          "aula": "02",
+          "data": "23/10"
+        },
+        {
+          "titulo": "Exemplo: O papel de form, label e dos atributos",
+          "texto": [
+            "Observe o papel de cada linha e compare com o arquivo do projeto."
+          ],
+          "tipo": "codigo",
+          "codigo": "<label for=\"contato\">E-mail fictício (obrigatório)</label>\n<input id=\"contato\" name=\"contato\" type=\"email\" required>",
+          "refs": [
+            "labels",
+            "inputs"
+          ],
+          "numero": 7,
+          "aula": "02",
+          "data": "23/10"
+        },
+        {
+          "titulo": "Uma lista de opções com select",
+          "texto": [
+            "select reúne opções conhecidas; cada option tem um valor de dados e um texto visível. A opção inicial com value vazio permite que required peça uma escolha.",
+            "No chamado, use hardware, software, rede e outro. Nesta aula, escolher outro ainda não abre um campo adicional. Esse comportamento será construído em 04/12."
+          ],
+          "tipo": "texto",
+          "refs": [
+            "controles"
+          ],
+          "numero": 8,
+          "aula": "02",
+          "data": "23/10"
+        },
+        {
+          "titulo": "Exemplo: Uma lista de opções com select",
+          "texto": [
+            "Observe o papel de cada linha e compare com o arquivo do projeto."
+          ],
+          "tipo": "codigo",
+          "codigo": "<label for=\"categoria\">Categoria (obrigatório)</label>\n<select id=\"categoria\" name=\"categoria\" required>\n  <option value=\"\">Escolha uma categoria</option>\n  <option value=\"hardware\">Hardware</option>\n  <option value=\"software\">Software</option>\n  <option value=\"rede\">Rede</option>\n  <option value=\"outro\">Outro</option>\n</select>",
+          "refs": [
+            "controles"
+          ],
+          "numero": 9,
+          "aula": "02",
+          "data": "23/10"
+        },
+        {
+          "titulo": "Escolha única com radio",
+          "texto": [
+            "Radios com o mesmo name formam um grupo de escolha única. Values diferentes distinguem as respostas. fieldset reúne o grupo e legend explica a pergunta.",
+            "Escolha prioridade normal ou alta. O required em um radio do grupo exige que uma opção daquele grupo seja escolhida. Não crie names diferentes para cada alternativa."
+          ],
+          "tipo": "texto",
+          "refs": [
+            "estrutura",
+            "inputs"
+          ],
+          "numero": 10,
+          "aula": "02",
+          "data": "23/10"
+        },
+        {
+          "titulo": "Exemplo: Escolha única com radio",
+          "texto": [
+            "Observe o papel de cada linha e compare com o arquivo do projeto."
+          ],
+          "tipo": "codigo",
+          "codigo": "<fieldset>\n  <legend>Prioridade (obrigatória)</legend>\n  <label><input type=\"radio\" name=\"prioridade\"\n    value=\"normal\" required> Normal</label>\n  <label><input type=\"radio\" name=\"prioridade\"\n    value=\"alta\"> Alta</label>\n</fieldset>",
+          "refs": [
+            "estrutura",
+            "inputs"
+          ],
+          "numero": 11,
+          "aula": "02",
+          "data": "23/10"
+        },
+        {
+          "titulo": "Escolhas independentes com checkbox",
+          "texto": [
+            "Checkboxes permitem marcar nenhuma, uma ou várias opções independentes. Use sintomas opcionais: Lentidão e Mensagem de erro.",
+            "Os dois controles podem ter o mesmo name e values diferentes. Na coleta com JavaScript, usaremos getAll para recuperar todas as escolhas, em 06/11. required em um checkbox exige aquele checkbox específico; não significa “pelo menos um do conjunto”."
+          ],
+          "tipo": "texto",
+          "refs": [
+            "controles",
+            "estrutura"
+          ],
+          "numero": 12,
+          "aula": "02",
+          "data": "23/10"
+        },
+        {
+          "titulo": "Exemplo: Escolhas independentes com checkbox",
+          "texto": [
+            "Observe o papel de cada linha e compare com o arquivo do projeto."
+          ],
+          "tipo": "codigo",
+          "codigo": "<fieldset>\n  <legend>Sintomas (opcionais)</legend>\n  <label><input type=\"checkbox\" name=\"sintomas\"\n    value=\"Lentidão\"> Lentidão</label>\n  <label><input type=\"checkbox\" name=\"sintomas\"\n    value=\"Mensagem de erro\"> Mensagem de erro</label>\n</fieldset>",
+          "refs": [
+            "controles",
+            "estrutura"
+          ],
+          "numero": 13,
+          "aula": "02",
+          "data": "23/10"
+        },
+        {
+          "titulo": "Texto longo e regras nativas",
+          "texto": [
+            "textarea recebe a descrição. A instrução informa de 20 a 500 caracteres, e aria-describedby associa a ajuda ao campo. required, minlength e maxlength são regras que o navegador pode conferir.",
+            "type=email verifica um formato, sem comprovar a existência da caixa de e-mail. As mensagens variam por navegador. A versão desta aula testa as regras HTML; comparação entre e-mails e texto formado só por espaços ficam para 13/11."
+          ],
+          "tipo": "texto",
+          "refs": [
+            "validacao",
+            "labels"
+          ],
+          "numero": 14,
+          "aula": "02",
+          "data": "23/10"
+        },
+        {
+          "titulo": "Exemplo: Texto longo e regras nativas",
+          "texto": [
+            "Observe o papel de cada linha e compare com o arquivo do projeto."
+          ],
+          "tipo": "codigo",
+          "codigo": "<label for=\"descricao\">Descrição (obrigatória)</label>\n<p id=\"ajuda-descricao\">Use de 20 a 500 caracteres.</p>\n<textarea id=\"descricao\" name=\"descricao\" rows=\"5\"\n  required minlength=\"20\" maxlength=\"500\"\n  aria-describedby=\"ajuda-descricao\"></textarea>",
+          "refs": [
+            "validacao",
+            "labels"
+          ],
+          "numero": 15,
+          "aula": "02",
+          "data": "23/10"
+        },
+        {
+          "titulo": "Atividade no VS Code",
+          "texto": [
+            "Baixar o projeto desta aula, extrair os três arquivos e abrir a pasta no VS Code. Executar index.html com Live Server.",
+            "Usar o campo de solicitante como modelo. Acrescentar equipamento (texto, 2 a 20 caracteres), contato (email), categoria (select), prioridade (radio), descrição (20 a 500 caracteres) e os dois sintomas opcionais (checkbox)."
+          ],
+          "tipo": "texto",
+          "numero": 16,
+          "aula": "02",
+          "data": "23/10"
+        },
+        {
+          "titulo": "Atividade: conferência e explicação",
+          "texto": [
+            "Associar rótulos, usar names coerentes e deixar visível o que é obrigatório. Manter o script de simulação fornecido.",
+            "Salvar, testar os casos e explicar a diferença entre id e name usando um campo do seu projeto."
+          ],
+          "tipo": "texto",
+          "numero": 17,
+          "aula": "02",
+          "data": "23/10"
+        },
+        {
+          "titulo": "Conferência dos testes",
+          "texto": [],
+          "tipo": "tabela",
+          "tabela": [
+            [
+              "Caso",
+              "Resultado esperado"
+            ],
+            [
+              "Campos obrigatórios vazios",
+              "O navegador impede a simulação."
+            ],
+            [
+              "Contato sem formato de e-mail",
+              "O campo de contato fica inválido."
+            ],
+            [
+              "Descrição digitada com menos de 20 caracteres",
+              "O navegador pede completar o texto."
+            ],
+            [
+              "Clique no rótulo do equipamento",
+              "O foco vai para o campo correspondente."
+            ],
+            [
+              "Marcar duas prioridades em sequência",
+              "Só a última permanece marcada."
+            ]
+          ],
+          "numero": 18,
+          "aula": "02",
+          "data": "23/10"
+        },
+        {
+          "titulo": "Conferência dos testes (continuação)",
+          "texto": [],
+          "tipo": "tabela",
+          "tabela": [
+            [
+              "Caso",
+              "Resultado esperado"
+            ],
+            [
+              "Marcar os dois sintomas",
+              "As duas opções permanecem marcadas."
+            ],
+            [
+              "Preenchimento válido",
+              "Mensagem local; nenhuma navegação de envio."
+            ]
+          ],
+          "numero": 19,
+          "aula": "02",
+          "data": "23/10"
+        },
+        {
+          "titulo": "Erros que merecem atenção",
+          "texto": [
+            "name não substitui id na associação com label.",
+            "Um select com opção inicial já válida não testa a escolha obrigatória.",
+            "Não acrescente novalidate: queremos observar a validação HTML."
+          ],
+          "tipo": "texto",
+          "numero": 20,
+          "aula": "02",
+          "data": "23/10"
+        },
+        {
+          "titulo": "Registro e entrega",
+          "texto": [
+            "Salve index.html, style.css e script.js. Compacte a pasta em ZIP.",
+            "Abra o registro de testes da aula, informe nome e turma e baixe o TXT.",
+            "Entregue ZIP e TXT ao professor na aula. Os downloads não são enviados automaticamente."
+          ],
+          "tipo": "texto",
+          "numero": 21,
+          "aula": "02",
+          "data": "23/10"
+        },
+        {
+          "titulo": "Uma explicação para fechar",
+          "texto": [
+            "Qual é o papel de name? Qual teste mostrou que seu formulário estava funcionando?",
+            "Guarde a versão desta aula: ela será o ponto de partida para a continuidade."
+          ],
+          "tipo": "texto",
+          "numero": 22,
+          "aula": "02",
+          "data": "23/10"
         }
       ]
     },
@@ -482,14 +978,14 @@ window.WEBLAB_CURSO = {
       "numero": "03",
       "eixo": "CSS e acessibilidade",
       "titulo": "Um formulário legível em qualquer tela",
-      "subtitulo": "Layout, foco, instruções e navegação pelo teclado",
-      "produto": "Versão 2 com layout responsivo e teste de teclado.",
+      "subtitulo": "CSS, responsividade, instruções e navegação pelo teclado",
+      "produto": "Pasta com index.html, style.css e script.js em ZIP, acompanhada do registro de testes em TXT.",
       "objetivos": [
-        "Organizar os campos sem prejudicar a ordem de leitura.",
-        "Adaptar o layout ao celular e ao computador.",
-        "Manter foco visível e instruções compreensíveis."
+        "Organizar os campos em uma e duas colunas sem rolagem horizontal.",
+        "Manter rótulos, instruções e foco legíveis.",
+        "Testar teclado e ampliação sem depender somente da aparência."
       ],
-      "retomada": "Reaplicar o box model e o CSS Grid apresentados no trabalho anterior. Os campos continuam sendo controles HTML nativos.",
+      "retomada": "Retome o projeto e a explicação da aula anterior. Se não tiver os arquivos, baixe a base deste encontro: ela contém o ponto de partida necessário.",
       "conceitos": [
         "Box model",
         "Grid e media query",
@@ -498,70 +994,431 @@ window.WEBLAB_CURSO = {
       ],
       "secoes": [
         {
-          "titulo": "A ordem começa no HTML",
+          "titulo": "Layout começa pela tela estreita",
           "texto": [
-            "Organize os campos em uma sequência que faça sentido antes de criar colunas. A leitura no celular e a ordem da tecla Tab devem acompanhar essa sequência. O CSS pode mudar a aparência, mas não deve tornar a navegação confusa.",
-            "Use largura fluida, espaçamento consistente e fonte legível. Evite definir altura fixa para textarea quando isso impedir a leitura."
+            "Abra a base com o HTML completo da aula anterior. A regra global box-sizing inclui borda e preenchimento na largura calculada. Evite campos com largura fixa maior que a tela.",
+            "Uma grade com gap organiza os campos em uma coluna. O código fornecido já mantém inputs com largura de 100% e min-width:0. O objetivo da aula é completar o layout sem alterar os names e as regras HTML."
           ],
-          "codigo": "* { box-sizing: border-box; }\ninput, select, textarea, button { font: inherit; }\ninput:not([type=\"radio\"]):not([type=\"checkbox\"]),\nselect, textarea { width: 100%; padding: .7rem; }\n.campo { display: grid; gap: .35rem; }"
+          "codigo": "* { box-sizing: border-box; }\n.campos {\n  display: grid;\n  gap: 1.2rem;\n}\n.campo { min-width: 0; }",
+          "refs": [
+            "css"
+          ]
         },
         {
-          "titulo": "Colunas quando houver espaço",
+          "titulo": "Duas colunas quando há espaço",
           "texto": [
-            "Comece com uma coluna. Adicione duas colunas em telas maiores e mantenha a descrição ocupando a largura necessária. Teste com a janela estreita e com ampliação de texto, em vez de confiar apenas em uma captura de tela."
+            "A media query entra a partir de 48rem. Até esse limite, a grade continua em uma coluna. O campo de descrição ocupa a linha inteira por meio da classe largo.",
+            "O ponto de mudança pertence a este projeto. Ele não define um tipo fixo de aparelho: observe quando os campos deixam de caber com conforto."
           ],
-          "codigo": ".campos { display: grid; gap: 1rem; }\n@media (min-width: 48rem) {\n  .campos { grid-template-columns: 1fr 1fr; }\n  .campo-largo { grid-column: 1 / -1; }\n}"
+          "codigo": "@media (min-width: 48rem) {\n  .campos { grid-template-columns: 1fr 1fr; }\n  .largo { grid-column: 1 / -1; }\n}",
+          "refs": [
+            "grid",
+            "css"
+          ]
         },
         {
-          "titulo": "Pistas que não dependem só da cor",
+          "titulo": "Foco visível e ordem de leitura",
           "texto": [
-            "A borda vermelha, sozinha, não explica um erro. Escreva o que precisa mudar e mantenha a orientação próxima do campo. Não apague o contorno de foco sem oferecer uma alternativa visível.",
-            "Navegue com Tab e Shift+Tab, acione os controles pelo teclado e clique nos labels. Confira se textos continuam legíveis e se a página evita rolagem horizontal."
+            "Tab percorre os controles e Shift+Tab retorna. A ordem do HTML deve acompanhar a ordem de leitura; não use tabindex positivo para reorganizar o formulário.",
+            "focus-visible mostra uma indicação clara para navegação. Não remova o contorno sem oferecer indicação equivalente. Rótulos e instruções continuam visíveis durante o preenchimento."
           ],
-          "codigo": ":focus-visible {\n  outline: 3px solid #54753a;\n  outline-offset: 3px;\n}\n.ajuda { color: #52634d; font-size: .95rem; }"
+          "codigo": ":focus-visible {\n  outline: 3px solid #6a8f32;\n  outline-offset: 4px;\n}",
+          "refs": [
+            "labels",
+            "css"
+          ]
+        },
+        {
+          "titulo": "Teste da experiência",
+          "texto": [
+            "Teste aproximadamente 360px, 768px e 1280px, além da ampliação do navegador em 200%. Compare largura, tamanho dos textos, quebra das instruções e acesso aos botões.",
+            "No modo responsivo do navegador, altere a largura e observe o resultado. Medir apenas a quantidade de colunas não comprova que o formulário ficou utilizável."
+          ],
+          "codigo": "",
+          "refs": [
+            "css",
+            "labels"
+          ]
         }
       ],
       "atividade": [
-        "Aplicar uma identidade visual própria ao formulário existente.",
-        "Usar uma coluna no celular e duas onde houver espaço.",
-        "Manter a descrição em uma área ampla e os labels próximos dos campos.",
-        "Trocar o computador com um colega e testar apenas pelo teclado."
+        "Abrir a base desta aula ou continuar o HTML concluído no encontro anterior.",
+        "Completar a media query para duas colunas e fazer a descrição ocupar a largura da grade.",
+        "Acrescentar foco visível e revisar espaçamentos dos grupos e das instruções.",
+        "Pedir a um colega que percorra o formulário pelo teclado e repetir os testes nas larguras indicadas."
       ],
       "checklist": [
-        "O formulário funciona em 360px e em uma tela larga.",
-        "A tecla Tab segue uma ordem compreensível.",
-        "O foco é visível em links, botões e campos.",
-        "As instruções não dependem apenas da cor."
+        "Implementei os requisitos da atividade desta aula.",
+        "Testei os casos da tabela e registrei o resultado observado.",
+        "Consigo explicar uma decisão e uma correção.",
+        "Guardei o ZIP e o TXT com nome, turma e aula."
       ],
-      "avaliacao": "Usar evidências de teste, não somente aparência. Cada aluno mostra uma largura pequena e percorre os controles pelo teclado.",
+      "agenda": [
+        {
+          "acao": "Retomada e observação do problema."
+        },
+        {
+          "acao": "Explicação dos conceitos e demonstração dos exemplos."
+        },
+        {
+          "acao": "Construção individual no VS Code."
+        },
+        {
+          "acao": "Testes por um colega e correções."
+        },
+        {
+          "acao": "Explicação, registro e entrega dos arquivos."
+        }
+      ],
+      "avaliacao": "Observar o resultado, os testes e uma explicação individual. O uso de uma base pronta não comprova que o aluno consegue explicar o código.",
       "curiosidade": "A ordem visual pode mudar com CSS sem mudar a ordem de foco. Isso pode confundir quem navega usando o teclado.",
       "refs": [
         "css",
         "grid",
         "labels",
-        "mensagens",
+        "vscode",
         "liveserver"
       ],
-      "extensao": "Testar o navegador com zoom de 200% e documentar uma melhoria.",
-      "apoio": "Fornecer uma grade inicial de uma coluna e construir a media query em conjunto.",
-      "agenda": [
+      "extensao": "Explique uma alternativa de implementação e compare seu comportamento com o requisito. Conclua primeiro os casos essenciais.",
+      "apoio": "Entregar a grade de uma coluna pronta. Trabalhar primeiro foco e espaço entre campos; depois acrescentar a media query.",
+      "mapa": [
+        [
+          "Camada",
+          "Responsabilidade"
+        ],
+        [
+          "HTML",
+          "Preserva rótulos, grupos e regras."
+        ],
+        [
+          "CSS",
+          "Organiza largura, espaçamento e foco."
+        ],
+        [
+          "Teclado",
+          "Permite percorrer e acionar os controles."
+        ],
+        [
+          "Conferência",
+          "Telas estreitas, ampliação e sequência de foco."
+        ]
+      ],
+      "testes": [
+        [
+          "Caso",
+          "Resultado esperado"
+        ],
+        [
+          "Tela de aproximadamente 360px",
+          "Uma coluna; controles sem corte lateral."
+        ],
+        [
+          "Tela larga a partir de 48rem",
+          "Duas colunas; descrição ocupa a linha."
+        ],
+        [
+          "Tab e Shift+Tab",
+          "Foco visível, sequência compreensível."
+        ],
+        [
+          "Ampliação de 200%",
+          "Conteúdo legível e controles alcançáveis."
+        ],
+        [
+          "Texto longo na instrução",
+          "Quebra de linha sem sobrepor outro campo."
+        ],
+        [
+          "Preenchimento inválido",
+          "Regras HTML da aula anterior continuam ativas."
+        ]
+      ],
+      "erros": [
+        "Trocar a aparência de um campo não deve retirar seu rótulo.",
+        "Uma largura fixa de 900px pode quebrar a versão estreita.",
+        "Não usar cor como única indicação de erro ou obrigatoriedade."
+      ],
+      "saida": "Qual decisão ajudou a tela estreita? Como você conferiu o foco?",
+      "slidePDF": "materiais/Slides-Aula-03.pdf",
+      "aulaPDF": "materiais/Aula-03-Formularios.pdf",
+      "projetoZIP": "materiais/Aula-03-Projeto.zip",
+      "modelo": "pratica/aula-03-modelo.html",
+      "slides": [
         {
-          "acao": "Leitura dos formulários produzidos e problemas de uso."
+          "titulo": "Um formulário legível em qualquer tela",
+          "texto": [
+            "CSS, responsividade, instruções e navegação pelo teclado",
+            "Prof. Fabrício Rodrigues"
+          ],
+          "tipo": "capa",
+          "numero": 1,
+          "aula": "03",
+          "data": "30/10"
         },
         {
-          "acao": "Demonstração de ordem de leitura, largura fluida e foco."
+          "titulo": "O que vamos construir",
+          "texto": [
+            "Organizar os campos em uma e duas colunas sem rolagem horizontal.",
+            "Manter rótulos, instruções e foco legíveis.",
+            "Testar teclado e ampliação sem depender somente da aparência."
+          ],
+          "tipo": "texto",
+          "numero": 2,
+          "aula": "03",
+          "data": "30/10"
         },
         {
-          "acao": "Construção guiada de uma grade responsiva."
+          "titulo": "Ponto de partida",
+          "texto": [
+            "Retome o projeto e a explicação da aula anterior. Se não tiver os arquivos, baixe a base deste encontro: ela contém o ponto de partida necessário.",
+            "Abra o projeto deste encontro no VS Code. Salve uma cópia própria antes de alterar."
+          ],
+          "tipo": "texto",
+          "numero": 3,
+          "aula": "03",
+          "data": "30/10"
         },
         {
-          "acao": "Aplicação individual do CSS e testes de largura."
+          "titulo": "Mapa da aula",
+          "texto": [],
+          "tipo": "tabela",
+          "tabela": [
+            [
+              "Camada",
+              "Responsabilidade"
+            ],
+            [
+              "HTML",
+              "Preserva rótulos, grupos e regras."
+            ],
+            [
+              "CSS",
+              "Organiza largura, espaçamento e foco."
+            ],
+            [
+              "Teclado",
+              "Permite percorrer e acionar os controles."
+            ],
+            [
+              "Conferência",
+              "Telas estreitas, ampliação e sequência de foco."
+            ]
+          ],
+          "numero": 4,
+          "aula": "03",
+          "data": "30/10"
         },
         {
-          "acao": "Teste de teclado por pares e correção de uma barreira."
+          "titulo": "Layout começa pela tela estreita",
+          "texto": [
+            "Abra a base com o HTML completo da aula anterior. A regra global box-sizing inclui borda e preenchimento na largura calculada. Evite campos com largura fixa maior que a tela.",
+            "Uma grade com gap organiza os campos em uma coluna. O código fornecido já mantém inputs com largura de 100% e min-width:0. O objetivo da aula é completar o layout sem alterar os names e as regras HTML."
+          ],
+          "tipo": "texto",
+          "refs": [
+            "css"
+          ],
+          "numero": 5,
+          "aula": "03",
+          "data": "30/10"
         },
         {
-          "acao": "Registro de uma decisão de acessibilidade."
+          "titulo": "Exemplo: Layout começa pela tela estreita",
+          "texto": [
+            "Observe o papel de cada linha e compare com o arquivo do projeto."
+          ],
+          "tipo": "codigo",
+          "codigo": "* { box-sizing: border-box; }\n.campos {\n  display: grid;\n  gap: 1.2rem;\n}\n.campo { min-width: 0; }",
+          "refs": [
+            "css"
+          ],
+          "numero": 6,
+          "aula": "03",
+          "data": "30/10"
+        },
+        {
+          "titulo": "Duas colunas quando há espaço",
+          "texto": [
+            "A media query entra a partir de 48rem. Até esse limite, a grade continua em uma coluna. O campo de descrição ocupa a linha inteira por meio da classe largo.",
+            "O ponto de mudança pertence a este projeto. Ele não define um tipo fixo de aparelho: observe quando os campos deixam de caber com conforto."
+          ],
+          "tipo": "texto",
+          "refs": [
+            "grid",
+            "css"
+          ],
+          "numero": 7,
+          "aula": "03",
+          "data": "30/10"
+        },
+        {
+          "titulo": "Exemplo: Duas colunas quando há espaço",
+          "texto": [
+            "Observe o papel de cada linha e compare com o arquivo do projeto."
+          ],
+          "tipo": "codigo",
+          "codigo": "@media (min-width: 48rem) {\n  .campos { grid-template-columns: 1fr 1fr; }\n  .largo { grid-column: 1 / -1; }\n}",
+          "refs": [
+            "grid",
+            "css"
+          ],
+          "numero": 8,
+          "aula": "03",
+          "data": "30/10"
+        },
+        {
+          "titulo": "Foco visível e ordem de leitura",
+          "texto": [
+            "Tab percorre os controles e Shift+Tab retorna. A ordem do HTML deve acompanhar a ordem de leitura; não use tabindex positivo para reorganizar o formulário.",
+            "focus-visible mostra uma indicação clara para navegação. Não remova o contorno sem oferecer indicação equivalente. Rótulos e instruções continuam visíveis durante o preenchimento."
+          ],
+          "tipo": "texto",
+          "refs": [
+            "labels",
+            "css"
+          ],
+          "numero": 9,
+          "aula": "03",
+          "data": "30/10"
+        },
+        {
+          "titulo": "Exemplo: Foco visível e ordem de leitura",
+          "texto": [
+            "Observe o papel de cada linha e compare com o arquivo do projeto."
+          ],
+          "tipo": "codigo",
+          "codigo": ":focus-visible {\n  outline: 3px solid #6a8f32;\n  outline-offset: 4px;\n}",
+          "refs": [
+            "labels",
+            "css"
+          ],
+          "numero": 10,
+          "aula": "03",
+          "data": "30/10"
+        },
+        {
+          "titulo": "Teste da experiência",
+          "texto": [
+            "Teste aproximadamente 360px, 768px e 1280px, além da ampliação do navegador em 200%. Compare largura, tamanho dos textos, quebra das instruções e acesso aos botões.",
+            "No modo responsivo do navegador, altere a largura e observe o resultado. Medir apenas a quantidade de colunas não comprova que o formulário ficou utilizável."
+          ],
+          "tipo": "texto",
+          "refs": [
+            "css",
+            "labels"
+          ],
+          "numero": 11,
+          "aula": "03",
+          "data": "30/10"
+        },
+        {
+          "titulo": "Atividade no VS Code",
+          "texto": [
+            "Abrir a base desta aula ou continuar o HTML concluído no encontro anterior.",
+            "Completar a media query para duas colunas e fazer a descrição ocupar a largura da grade."
+          ],
+          "tipo": "texto",
+          "numero": 12,
+          "aula": "03",
+          "data": "30/10"
+        },
+        {
+          "titulo": "Atividade: conferência e explicação",
+          "texto": [
+            "Acrescentar foco visível e revisar espaçamentos dos grupos e das instruções.",
+            "Pedir a um colega que percorra o formulário pelo teclado e repetir os testes nas larguras indicadas."
+          ],
+          "tipo": "texto",
+          "numero": 13,
+          "aula": "03",
+          "data": "30/10"
+        },
+        {
+          "titulo": "Conferência dos testes",
+          "texto": [],
+          "tipo": "tabela",
+          "tabela": [
+            [
+              "Caso",
+              "Resultado esperado"
+            ],
+            [
+              "Tela de aproximadamente 360px",
+              "Uma coluna; controles sem corte lateral."
+            ],
+            [
+              "Tela larga a partir de 48rem",
+              "Duas colunas; descrição ocupa a linha."
+            ],
+            [
+              "Tab e Shift+Tab",
+              "Foco visível, sequência compreensível."
+            ],
+            [
+              "Ampliação de 200%",
+              "Conteúdo legível e controles alcançáveis."
+            ],
+            [
+              "Texto longo na instrução",
+              "Quebra de linha sem sobrepor outro campo."
+            ]
+          ],
+          "numero": 14,
+          "aula": "03",
+          "data": "30/10"
+        },
+        {
+          "titulo": "Conferência dos testes (continuação)",
+          "texto": [],
+          "tipo": "tabela",
+          "tabela": [
+            [
+              "Caso",
+              "Resultado esperado"
+            ],
+            [
+              "Preenchimento inválido",
+              "Regras HTML da aula anterior continuam ativas."
+            ]
+          ],
+          "numero": 15,
+          "aula": "03",
+          "data": "30/10"
+        },
+        {
+          "titulo": "Erros que merecem atenção",
+          "texto": [
+            "Trocar a aparência de um campo não deve retirar seu rótulo.",
+            "Uma largura fixa de 900px pode quebrar a versão estreita.",
+            "Não usar cor como única indicação de erro ou obrigatoriedade."
+          ],
+          "tipo": "texto",
+          "numero": 16,
+          "aula": "03",
+          "data": "30/10"
+        },
+        {
+          "titulo": "Registro e entrega",
+          "texto": [
+            "Salve index.html, style.css e script.js. Compacte a pasta em ZIP.",
+            "Abra o registro de testes da aula, informe nome e turma e baixe o TXT.",
+            "Entregue ZIP e TXT ao professor na aula. Os downloads não são enviados automaticamente."
+          ],
+          "tipo": "texto",
+          "numero": 17,
+          "aula": "03",
+          "data": "30/10"
+        },
+        {
+          "titulo": "Uma explicação para fechar",
+          "texto": [
+            "Qual decisão ajudou a tela estreita? Como você conferiu o foco?",
+            "Guarde a versão desta aula: ela será o ponto de partida para a continuidade."
+          ],
+          "tipo": "texto",
+          "numero": 18,
+          "aula": "03",
+          "data": "30/10"
         }
       ]
     },
@@ -572,14 +1429,14 @@ window.WEBLAB_CURSO = {
       "numero": "04",
       "eixo": "JavaScript",
       "titulo": "Os dados aparecem na página",
-      "subtitulo": "Evento submit, FormData e resumo da solicitação",
-      "produto": "Versão 3 que apresenta um resumo sem recarregar a página.",
+      "subtitulo": "Evento submit, FormData e resumo local com JavaScript",
+      "produto": "Pasta com index.html, style.css e script.js em ZIP, acompanhada do registro de testes em TXT.",
       "objetivos": [
-        "Tratar o evento submit no formulário.",
-        "Ler os valores por meio de FormData e names coerentes.",
-        "Atualizar texto no DOM sem interpretar a entrada como HTML."
+        "Escutar submit no formulário e impedir a navegação na simulação.",
+        "Coletar campos por name, preservando múltiplos checkboxes.",
+        "Montar um resumo com elementos do DOM e textContent."
       ],
-      "retomada": "Os eventos de clique e a manipulação do DOM já aparecem no acervo anterior. Agora o evento relevante pertence ao formulário.",
+      "retomada": "Retome o projeto e a explicação da aula anterior. Se não tiver os arquivos, baixe a base deste encontro: ela contém o ponto de partida necessário.",
       "conceitos": [
         "submit e preventDefault",
         "FormData.get e getAll",
@@ -590,69 +1447,439 @@ window.WEBLAB_CURSO = {
         {
           "titulo": "O evento pertence ao formulário",
           "texto": [
-            "Escute submit no form para contemplar o envio pelo botão e pelo teclado. event.preventDefault() cancela a ação padrão desse envio. Ele não salva os dados e não cria um servidor.",
-            "Na simulação, o JavaScript mostra um resumo local. Uma mensagem deve dizer que o chamado não foi enviado a um serviço real."
+            "Usar submit permite tratar o botão e a submissão pelo teclado. A validação HTML interativa acontece antes do submit: campos inválidos podem impedir que esse evento aconteça.",
+            "preventDefault interrompe a ação padrão nesta demonstração. Ele não valida, não envia para um servidor e não grava os dados. A base já oferece um bloqueio de navegação; substitua a mensagem pelo processamento do resumo."
           ],
-          "codigo": "const form = document.querySelector(\"#chamado\");\nconst resumo = document.querySelector(\"#resumo\");\nform.addEventListener(\"submit\", (event) => {\n  event.preventDefault();\n  const dados = new FormData(form);\n  resumo.textContent = `Equipamento: ${dados.get(\"equipamento\")}`;\n});"
+          "codigo": "form.addEventListener('submit', (event) => {\n  event.preventDefault();\n  const dados = new FormData(form);\n  mostrarResumo(dados);\n});",
+          "refs": [
+            "submit",
+            "validacao"
+          ]
         },
         {
-          "titulo": "As chaves vêm do name",
+          "titulo": "Coleta por name",
           "texto": [
-            "new FormData(form) coleta os controles elegíveis. Um campo sem name não aparece como uma entrada com a chave esperada. Checkbox desmarcado e controle disabled não entram normalmente nessa coleta.",
-            "Use get para um valor e getAll quando vários controles compartilham o mesmo name, como uma lista de sintomas. Uma string pode receber trim para retirar espaços no começo e no fim."
+            "new FormData(form) monta os pares de dados dos controles participantes. get recupera um valor; getAll recupera todos os valores com o mesmo name. Checkboxes desmarcados não entram na coleta.",
+            "Um campo com id e sem name continua aparecendo na tela, mas não entra como par nome/valor na coleta. Os sintomas selecionados precisam aparecer juntos no resumo."
           ],
-          "codigo": "const dados = new FormData(form);\nconst descricao = String(dados.get(\"descricao\") || \"\").trim();\nconst sintomas = dados.getAll(\"sintomas\");\nconsole.log(descricao, sintomas);"
+          "codigo": "const dados = new FormData(form);\nconst contato = dados.get('contato');\nconst sintomas = dados.getAll('sintomas');\n// getAll preserva várias opções com o mesmo name.",
+          "refs": [
+            "formdata"
+          ]
         },
         {
-          "titulo": "Um resumo que continua sendo texto",
+          "titulo": "Resumo como conteúdo, sem interpretar HTML",
           "texto": [
-            "Use textContent para exibir os valores digitados. Assim, uma entrada parecida com uma tag aparece como texto. Evite construir HTML diretamente com o conteúdo preenchido pelo visitante.",
-            "Uma região de status pode avisar que o resumo mudou. O teste precisa verificar o conteúdo exibido, o caminho pelo teclado e a ausência de erros no console."
+            "Crie dt e dd para cada item da lista de descrição. textContent apresenta o valor como texto. Não use innerHTML para inserir o que a pessoa digitou.",
+            "Limpe o resumo anterior antes de montar o novo. Depois torne a seção visível e leve o foco ao título com tabindex=-1. O resumo corresponde à última simulação, não a um registro persistente."
           ],
-          "codigo": "<p id=\"resumo\" role=\"status\" aria-live=\"polite\"></p>"
+          "codigo": "function adicionarLinha(titulo, valor) {\n  const dt = document.createElement('dt');\n  const dd = document.createElement('dd');\n  dt.textContent = titulo;\n  dd.textContent = String(valor);\n  resumo.append(dt, dd);\n}",
+          "refs": [
+            "textcontent",
+            "formdata"
+          ]
+        },
+        {
+          "titulo": "Estado do formulário depois da tentativa",
+          "texto": [
+            "Uma falha de validação deve manter os valores para correção. Um novo envio deve substituir o resumo anterior, sem duplicar linhas.",
+            "O botão Novo preenchimento é type=button. Ele pode chamar reset, ocultar o resumo e devolver o foco ao primeiro campo. Avise que o projeto perde os dados quando a página é recarregada."
+          ],
+          "codigo": "",
+          "refs": [
+            "botao",
+            "submit"
+          ]
         }
       ],
       "atividade": [
-        "Escutar submit com addEventListener no form.",
-        "Coletar equipamento, categoria, prioridade e descrição.",
-        "Mostrar um resumo com textContent e aviso de simulação.",
-        "Testar envio pelo botão e pela tecla Enter em um campo apropriado."
+        "Abrir a base da aula com HTML e CSS concluídos.",
+        "Substituir o tratamento de submit pela coleta com FormData e pela chamada que monta o resumo.",
+        "Mostrar solicitante, equipamento, contato, categoria, prioridade, descrição e todos os sintomas selecionados.",
+        "Acrescentar a limpeza do resumo em uma nova simulação e o botão de novo preenchimento."
       ],
       "checklist": [
-        "O envio não recarrega a página na simulação.",
-        "FormData encontra os names definidos no HTML.",
-        "Os checkbox usam getAll quando necessário.",
-        "O resumo apresenta os dados como texto e informa a simulação."
+        "Implementei os requisitos da atividade desta aula.",
+        "Testei os casos da tabela e registrei o resultado observado.",
+        "Consigo explicar uma decisão e uma correção.",
+        "Guardei o ZIP e o TXT com nome, turma e aula."
       ],
-      "avaliacao": "Solicitar uma explicação sobre evento, coleta e atualização. Confirmar que o aluno distingue leitura local de envio a servidor.",
+      "agenda": [
+        {
+          "acao": "Retomada e observação do problema."
+        },
+        {
+          "acao": "Explicação dos conceitos e demonstração dos exemplos."
+        },
+        {
+          "acao": "Construção individual no VS Code."
+        },
+        {
+          "acao": "Testes por um colega e correções."
+        },
+        {
+          "acao": "Explicação, registro e entrega dos arquivos."
+        }
+      ],
+      "avaliacao": "Observar o resultado, os testes e uma explicação individual. O uso de uma base pronta não comprova que o aluno consegue explicar o código.",
       "curiosidade": "Um campo pode ter id e aparecer na tela, mas não ser coletado pela chave esperada quando falta name.",
       "refs": [
         "submit",
+        "validacao",
         "formdata",
-        "disabled",
         "textcontent",
+        "botao",
+        "vscode",
         "liveserver"
       ],
-      "extensao": "Acrescentar um contador de caracteres com evento input, mantendo a regra minlength no HTML.",
-      "apoio": "Mostrar no console apenas um campo antes de construir o resumo completo.",
-      "agenda": [
+      "extensao": "Explique uma alternativa de implementação e compare seu comportamento com o requisito. Conclua primeiro os casos essenciais.",
+      "apoio": "Começar mostrando somente solicitante e descrição. Depois acrescentar os demais campos e getAll.",
+      "mapa": [
+        [
+          "Passo",
+          "O que acontece"
+        ],
+        [
+          "Preencher",
+          "A pessoa informa dados fictícios."
+        ],
+        [
+          "Validar",
+          "O navegador aplica as regras HTML."
+        ],
+        [
+          "submit",
+          "O evento chega ao formulário válido."
+        ],
+        [
+          "JavaScript",
+          "Impede a navegação e apresenta o resumo local."
+        ]
+      ],
+      "testes": [
+        [
+          "Caso",
+          "Resultado esperado"
+        ],
+        [
+          "Campo obrigatório vazio",
+          "O resumo não aparece."
+        ],
+        [
+          "Preenchimento válido",
+          "Resumo local com os valores informados."
+        ],
+        [
+          "Dois sintomas marcados",
+          "Ambos aparecem no resumo."
+        ],
+        [
+          "Nenhum sintoma marcado",
+          "Mensagem de nenhuma opção selecionada."
+        ],
+        [
+          "Texto com <b>exemplo</b> na descrição",
+          "As marcas aparecem como texto, sem formatação HTML."
+        ],
+        [
+          "Duas simulações válidas",
+          "O resumo mais recente substitui o anterior."
+        ],
+        [
+          "Novo preenchimento",
+          "Campos reiniciados e foco no primeiro campo."
+        ]
+      ],
+      "erros": [
+        "Escutar somente click do botão deixa de representar a tarefa do formulário.",
+        "get recupera um único valor; sintomas exigem getAll.",
+        "Resumo na tela não significa que o chamado foi enviado ou salvo."
+      ],
+      "saida": "Como o name chega ao FormData? Por que usar textContent no resumo?",
+      "slidePDF": "materiais/Slides-Aula-04.pdf",
+      "aulaPDF": "materiais/Aula-04-Formularios.pdf",
+      "projetoZIP": "materiais/Aula-04-Projeto.zip",
+      "modelo": "pratica/aula-04-modelo.html",
+      "slides": [
         {
-          "acao": "Retomada de seletores e eventos conforme o diagnóstico."
+          "titulo": "Os dados aparecem na página",
+          "texto": [
+            "Evento submit, FormData e resumo local com JavaScript",
+            "Prof. Fabrício Rodrigues"
+          ],
+          "tipo": "capa",
+          "numero": 1,
+          "aula": "04",
+          "data": "06/11"
         },
         {
-          "acao": "Demonstração do evento submit e da ação padrão."
+          "titulo": "O que vamos construir",
+          "texto": [
+            "Escutar submit no formulário e impedir a navegação na simulação.",
+            "Coletar campos por name, preservando múltiplos checkboxes.",
+            "Montar um resumo com elementos do DOM e textContent."
+          ],
+          "tipo": "texto",
+          "numero": 2,
+          "aula": "04",
+          "data": "06/11"
         },
         {
-          "acao": "Leitura guiada dos campos com FormData."
+          "titulo": "Ponto de partida",
+          "texto": [
+            "Retome o projeto e a explicação da aula anterior. Se não tiver os arquivos, baixe a base deste encontro: ela contém o ponto de partida necessário.",
+            "Abra o projeto deste encontro no VS Code. Salve uma cópia própria antes de alterar."
+          ],
+          "tipo": "texto",
+          "numero": 3,
+          "aula": "04",
+          "data": "06/11"
         },
         {
-          "acao": "Implementação individual do resumo no DOM."
+          "titulo": "Mapa da aula",
+          "texto": [],
+          "tipo": "tabela",
+          "tabela": [
+            [
+              "Passo",
+              "O que acontece"
+            ],
+            [
+              "Preencher",
+              "A pessoa informa dados fictícios."
+            ],
+            [
+              "Validar",
+              "O navegador aplica as regras HTML."
+            ],
+            [
+              "submit",
+              "O evento chega ao formulário válido."
+            ],
+            [
+              "JavaScript",
+              "Impede a navegação e apresenta o resumo local."
+            ]
+          ],
+          "numero": 4,
+          "aula": "04",
+          "data": "06/11"
         },
         {
-          "acao": "Testes pelo botão, teclado e console."
+          "titulo": "O evento pertence ao formulário",
+          "texto": [
+            "Usar submit permite tratar o botão e a submissão pelo teclado. A validação HTML interativa acontece antes do submit: campos inválidos podem impedir que esse evento aconteça.",
+            "preventDefault interrompe a ação padrão nesta demonstração. Ele não valida, não envia para um servidor e não grava os dados. A base já oferece um bloqueio de navegação; substitua a mensagem pelo processamento do resumo."
+          ],
+          "tipo": "texto",
+          "refs": [
+            "submit",
+            "validacao"
+          ],
+          "numero": 5,
+          "aula": "04",
+          "data": "06/11"
         },
         {
-          "acao": "Explicação individual do papel de preventDefault."
+          "titulo": "Exemplo: O evento pertence ao formulário",
+          "texto": [
+            "Observe o papel de cada linha e compare com o arquivo do projeto."
+          ],
+          "tipo": "codigo",
+          "codigo": "form.addEventListener('submit', (event) => {\n  event.preventDefault();\n  const dados = new FormData(form);\n  mostrarResumo(dados);\n});",
+          "refs": [
+            "submit",
+            "validacao"
+          ],
+          "numero": 6,
+          "aula": "04",
+          "data": "06/11"
+        },
+        {
+          "titulo": "Coleta por name",
+          "texto": [
+            "new FormData(form) monta os pares de dados dos controles participantes. get recupera um valor; getAll recupera todos os valores com o mesmo name. Checkboxes desmarcados não entram na coleta.",
+            "Um campo com id e sem name continua aparecendo na tela, mas não entra como par nome/valor na coleta. Os sintomas selecionados precisam aparecer juntos no resumo."
+          ],
+          "tipo": "texto",
+          "refs": [
+            "formdata"
+          ],
+          "numero": 7,
+          "aula": "04",
+          "data": "06/11"
+        },
+        {
+          "titulo": "Exemplo: Coleta por name",
+          "texto": [
+            "Observe o papel de cada linha e compare com o arquivo do projeto."
+          ],
+          "tipo": "codigo",
+          "codigo": "const dados = new FormData(form);\nconst contato = dados.get('contato');\nconst sintomas = dados.getAll('sintomas');\n// getAll preserva várias opções com o mesmo name.",
+          "refs": [
+            "formdata"
+          ],
+          "numero": 8,
+          "aula": "04",
+          "data": "06/11"
+        },
+        {
+          "titulo": "Resumo como conteúdo, sem interpretar HTML",
+          "texto": [
+            "Crie dt e dd para cada item da lista de descrição. textContent apresenta o valor como texto. Não use innerHTML para inserir o que a pessoa digitou.",
+            "Limpe o resumo anterior antes de montar o novo. Depois torne a seção visível e leve o foco ao título com tabindex=-1. O resumo corresponde à última simulação, não a um registro persistente."
+          ],
+          "tipo": "texto",
+          "refs": [
+            "textcontent",
+            "formdata"
+          ],
+          "numero": 9,
+          "aula": "04",
+          "data": "06/11"
+        },
+        {
+          "titulo": "Exemplo: Resumo como conteúdo, sem interpretar HTML",
+          "texto": [
+            "Observe o papel de cada linha e compare com o arquivo do projeto."
+          ],
+          "tipo": "codigo",
+          "codigo": "function adicionarLinha(titulo, valor) {\n  const dt = document.createElement('dt');\n  const dd = document.createElement('dd');\n  dt.textContent = titulo;\n  dd.textContent = String(valor);\n  resumo.append(dt, dd);\n}",
+          "refs": [
+            "textcontent",
+            "formdata"
+          ],
+          "numero": 10,
+          "aula": "04",
+          "data": "06/11"
+        },
+        {
+          "titulo": "Estado do formulário depois da tentativa",
+          "texto": [
+            "Uma falha de validação deve manter os valores para correção. Um novo envio deve substituir o resumo anterior, sem duplicar linhas.",
+            "O botão Novo preenchimento é type=button. Ele pode chamar reset, ocultar o resumo e devolver o foco ao primeiro campo. Avise que o projeto perde os dados quando a página é recarregada."
+          ],
+          "tipo": "texto",
+          "refs": [
+            "botao",
+            "submit"
+          ],
+          "numero": 11,
+          "aula": "04",
+          "data": "06/11"
+        },
+        {
+          "titulo": "Atividade no VS Code",
+          "texto": [
+            "Abrir a base da aula com HTML e CSS concluídos.",
+            "Substituir o tratamento de submit pela coleta com FormData e pela chamada que monta o resumo."
+          ],
+          "tipo": "texto",
+          "numero": 12,
+          "aula": "04",
+          "data": "06/11"
+        },
+        {
+          "titulo": "Atividade: conferência e explicação",
+          "texto": [
+            "Mostrar solicitante, equipamento, contato, categoria, prioridade, descrição e todos os sintomas selecionados.",
+            "Acrescentar a limpeza do resumo em uma nova simulação e o botão de novo preenchimento."
+          ],
+          "tipo": "texto",
+          "numero": 13,
+          "aula": "04",
+          "data": "06/11"
+        },
+        {
+          "titulo": "Conferência dos testes",
+          "texto": [],
+          "tipo": "tabela",
+          "tabela": [
+            [
+              "Caso",
+              "Resultado esperado"
+            ],
+            [
+              "Campo obrigatório vazio",
+              "O resumo não aparece."
+            ],
+            [
+              "Preenchimento válido",
+              "Resumo local com os valores informados."
+            ],
+            [
+              "Dois sintomas marcados",
+              "Ambos aparecem no resumo."
+            ],
+            [
+              "Nenhum sintoma marcado",
+              "Mensagem de nenhuma opção selecionada."
+            ],
+            [
+              "Texto com <b>exemplo</b> na descrição",
+              "As marcas aparecem como texto, sem formatação HTML."
+            ]
+          ],
+          "numero": 14,
+          "aula": "04",
+          "data": "06/11"
+        },
+        {
+          "titulo": "Conferência dos testes (continuação)",
+          "texto": [],
+          "tipo": "tabela",
+          "tabela": [
+            [
+              "Caso",
+              "Resultado esperado"
+            ],
+            [
+              "Duas simulações válidas",
+              "O resumo mais recente substitui o anterior."
+            ],
+            [
+              "Novo preenchimento",
+              "Campos reiniciados e foco no primeiro campo."
+            ]
+          ],
+          "numero": 15,
+          "aula": "04",
+          "data": "06/11"
+        },
+        {
+          "titulo": "Erros que merecem atenção",
+          "texto": [
+            "Escutar somente click do botão deixa de representar a tarefa do formulário.",
+            "get recupera um único valor; sintomas exigem getAll.",
+            "Resumo na tela não significa que o chamado foi enviado ou salvo."
+          ],
+          "tipo": "texto",
+          "numero": 16,
+          "aula": "04",
+          "data": "06/11"
+        },
+        {
+          "titulo": "Registro e entrega",
+          "texto": [
+            "Salve index.html, style.css e script.js. Compacte a pasta em ZIP.",
+            "Abra o registro de testes da aula, informe nome e turma e baixe o TXT.",
+            "Entregue ZIP e TXT ao professor na aula. Os downloads não são enviados automaticamente."
+          ],
+          "tipo": "texto",
+          "numero": 17,
+          "aula": "04",
+          "data": "06/11"
+        },
+        {
+          "titulo": "Uma explicação para fechar",
+          "texto": [
+            "Como o name chega ao FormData? Por que usar textContent no resumo?",
+            "Guarde a versão desta aula: ela será o ponto de partida para a continuidade."
+          ],
+          "tipo": "texto",
+          "numero": 18,
+          "aula": "04",
+          "data": "06/11"
         }
       ]
     },
@@ -663,14 +1890,14 @@ window.WEBLAB_CURSO = {
       "numero": "05",
       "eixo": "Validação",
       "titulo": "Mensagens que ajudam a corrigir",
-      "subtitulo": "Regras complementares, erros e casos de teste",
-      "produto": "Versão 4 com uma regra de confirmação de contato e mensagens claras.",
+      "subtitulo": "Regras complementares, validade personalizada e casos de teste",
+      "produto": "Pasta com index.html, style.css e script.js em ZIP, acompanhada do registro de testes em TXT.",
       "objetivos": [
-        "Distinguir restrição HTML e regra complementar em JavaScript.",
-        "Limpar uma mensagem personalizada quando o valor muda.",
-        "Testar entradas válidas, inválidas e limites."
+        "Comparar o contato com sua confirmação sem perder as regras nativas.",
+        "Criar e limpar mensagens com setCustomValidity.",
+        "Registrar casos válidos, inválidos e limites da descrição."
       ],
-      "retomada": "Retomar required, minlength e type=email. A regra nova compara dois campos, sem substituir as regras que o HTML já oferece.",
+      "retomada": "Retome o projeto e a explicação da aula anterior. Se não tiver os arquivos, baixe a base deste encontro: ela contém o ponto de partida necessário.",
       "conceitos": [
         "checkValidity e reportValidity",
         "setCustomValidity",
@@ -679,71 +1906,415 @@ window.WEBLAB_CURSO = {
       ],
       "secoes": [
         {
-          "titulo": "Uma regra que compara dois campos",
+          "titulo": "Comparação de dois campos",
           "texto": [
-            "Acrescente um campo para repetir o contato fictício. A confirmação deve coincidir com o primeiro contato. Deixe a regra explícita e apresente a ajuda antes da tentativa de envio.",
-            "O exemplo trabalha uma comparação simples de strings. A atividade usa dados fictícios, sem senhas ou documentos pessoais. A validação do navegador ajuda o preenchimento, mas um sistema real também verifica os dados no servidor."
+            "A base acrescenta o campo de confirmação com type=email e required. Isso confere cada formato, mas não prova que os dois valores são iguais.",
+            "A função compara os valores e define uma mensagem quando diferem. String vazia limpa a validade personalizada. Escute input nos dois campos, pois qualquer um pode mudar depois."
           ],
-          "codigo": ""
+          "codigo": "function conferirContato() {\n  const diferente = confirmar.value !== contato.value;\n  confirmar.setCustomValidity(\n    confirmar.value && diferente ? 'Repita o mesmo e-mail.' : ''\n  );\n}\ncontato.addEventListener('input', conferirContato);\nconfirmar.addEventListener('input', conferirContato);",
+          "refs": [
+            "custom",
+            "validacao"
+          ]
         },
         {
-          "titulo": "Mensagem personalizada precisa ser limpa",
+          "titulo": "Descrição e limites do teste",
           "texto": [
-            "setCustomValidity recebe uma mensagem quando o valor não atende à regra. Uma string vazia limpa o erro personalizado. Atualize a regra quando qualquer um dos dois contatos mudar para não manter um erro antigo.",
-            "A validação nativa pode impedir o evento submit quando há um campo inválido. Por isso, preparar e atualizar a regra no evento input evita depender apenas do submit."
+            "minlength e maxlength tratam o comprimento do valor. Nesta aula acrescentamos a regra de pelo menos 20 caracteres depois de trim, para não aceitar uma descrição formada só por espaços.",
+            "A função limpa a mensagem quando o texto passa. Teste digitando no campo; restrições de comprimento nativas têm particularidades quando um script atribui o valor diretamente. Não altere o valor do aluno em silêncio."
           ],
-          "codigo": "const contato = document.querySelector(\"#contato\");\nconst confirmar = document.querySelector(\"#confirmar\");\nfunction conferirContato() {\n  const diferente = confirmar.value.trim() !== contato.value.trim();\n  confirmar.setCustomValidity(diferente ? \"Repita o mesmo contato.\" : \"\");\n}\ncontato.addEventListener(\"input\", conferirContato);\nconfirmar.addEventListener(\"input\", conferirContato);"
+          "codigo": "function conferirDescricao() {\n  const curta = descricao.value.length > 0\n    && descricao.value.trim().length < 20;\n  descricao.setCustomValidity(\n    curta ? 'Descreva o problema com pelo menos 20 caracteres.' : ''\n  );\n}\ndescricao.addEventListener('input', conferirDescricao);",
+          "refs": [
+            "custom",
+            "validacao"
+          ]
         },
         {
-          "titulo": "Teste a regra e a recuperação",
+          "titulo": "Nova tentativa sem mensagens antigas",
           "texto": [
-            "Verifique campo vazio, formato inválido, valores diferentes e correção depois de uma falha. O formulário deve permitir nova tentativa sem exigir que a pessoa reescreva os campos corretos.",
-            "Registre entrada, resultado esperado, resultado observado e ajuste realizado. Uma descrição de erro deve explicar o próximo passo, e não apenas dizer “inválido”."
+            "Antes de montar o resumo, atualize as verificações e consulte reportValidity. Os listeners de input são essenciais para limpar um erro anterior que bloquearia a próxima submissão.",
+            "Ao reiniciar, faça reset e limpe a validade personalizada. Mostrar um aviso não deve apagar os campos nem transferir a culpa para a pessoa. A mensagem precisa indicar como corrigir."
           ],
-          "codigo": "if (!form.reportValidity()) {\n  return;\n}\n// Depois de validar, gerar o resumo local."
+          "codigo": "form.addEventListener('submit', (event) => {\n  event.preventDefault();\n  conferirContato();\n  conferirDescricao();\n  if (!form.reportValidity()) return;\n  mostrarResumo(new FormData(form));\n});",
+          "refs": [
+            "custom",
+            "mensagens"
+          ]
         }
       ],
       "atividade": [
-        "Criar a confirmação do contato fictício com label e name.",
-        "Comparar os campos e limpar o erro personalizado após a correção.",
-        "Exibir uma orientação legível junto ao campo.",
-        "Registrar pelo menos quatro testes, incluindo a recuperação do erro."
+        "Abrir a base e localizar os campos contato, confirmar e descricao.",
+        "Implementar a comparação e registrar input nos dois e-mails.",
+        "Acrescentar a regra da descrição com trim e limpar as mensagens quando o valor for corrigido.",
+        "Repetir a tentativa após cada correção e registrar os limites e o reinício."
       ],
       "checklist": [
-        "As restrições HTML continuam funcionando.",
-        "A regra de comparação atualiza quando os valores mudam.",
-        "O erro desaparece depois da correção.",
-        "Meus testes incluem ao menos um caso inválido e sua recuperação."
+        "Implementei os requisitos da atividade desta aula.",
+        "Testei os casos da tabela e registrei o resultado observado.",
+        "Consigo explicar uma decisão e uma correção.",
+        "Guardei o ZIP e o TXT com nome, turma e aula."
       ],
-      "avaliacao": "Conferir a recuperação do erro e a explicação da regra. Evitar avaliar apenas se uma única entrada válida funcionou.",
-      "curiosidade": "Uma mensagem personalizada não vazia mantém o controle inválido. Alterar o texto do campo, sozinho, não apaga a mensagem definida pelo código.",
-      "refs": [
-        "validacao",
-        "custom",
-        "mensagens",
-        "submit",
-        "liveserver"
-      ],
-      "extensao": "Relacionar uma mensagem própria ao campo por aria-describedby e testar sua clareza com um colega.",
-      "apoio": "Aplicar a regra primeiro a dois campos simples, com valores visíveis no console.",
       "agenda": [
         {
-          "acao": "Revisão das restrições e coleta das dificuldades."
+          "acao": "Retomada e observação do problema."
         },
         {
-          "acao": "Leitura de mensagens de erro e escolha da regra complementar."
+          "acao": "Explicação dos conceitos e demonstração dos exemplos."
         },
         {
-          "acao": "Demonstração de input e setCustomValidity."
+          "acao": "Construção individual no VS Code."
         },
         {
-          "acao": "Implementação individual e criação dos casos de teste."
+          "acao": "Testes por um colega e correções."
         },
         {
-          "acao": "Teste por um colega e correção da recuperação do erro."
+          "acao": "Explicação, registro e entrega dos arquivos."
+        }
+      ],
+      "avaliacao": "Observar o resultado, os testes e uma explicação individual. O uso de uma base pronta não comprova que o aluno consegue explicar o código.",
+      "curiosidade": "Uma mensagem personalizada não vazia mantém o controle inválido. Alterar o texto do campo, sozinho, não apaga a mensagem definida pelo código.",
+      "refs": [
+        "custom",
+        "validacao",
+        "mensagens",
+        "vscode",
+        "liveserver"
+      ],
+      "extensao": "Explique uma alternativa de implementação e compare seu comportamento com o requisito. Conclua primeiro os casos essenciais.",
+      "apoio": "Implementar primeiro a igualdade dos e-mails. Usar uma tabela com entrada e mensagem esperada antes de escrever a função da descrição.",
+      "mapa": [
+        [
+          "Regra",
+          "Camada do protótipo"
+        ],
+        [
+          "Obrigatoriedade e formato",
+          "Atributos HTML."
+        ],
+        [
+          "Confirmação de contato",
+          "JavaScript compara dois campos."
+        ],
+        [
+          "Descrição útil",
+          "JavaScript confere o texto sem espaços nas pontas."
+        ],
+        [
+          "Aplicação real",
+          "Servidor precisaria conferir as regras novamente."
+        ]
+      ],
+      "testes": [
+        [
+          "Caso",
+          "Resultado esperado"
+        ],
+        [
+          "E-mails diferentes",
+          "Mensagem de repetir o mesmo contato."
+        ],
+        [
+          "Corrigir o segundo e-mail",
+          "A mensagem antiga é limpa."
+        ],
+        [
+          "Mudar o primeiro depois da confirmação",
+          "A divergência volta a ser identificada."
+        ],
+        [
+          "Descrição formada por espaços",
+          "A regra complementar bloqueia a simulação."
+        ],
+        [
+          "Descrição digitada com 19 caracteres úteis",
+          "A simulação fica bloqueada."
+        ],
+        [
+          "Descrição digitada com 20 caracteres úteis",
+          "A regra de tamanho permite continuar."
+        ],
+        [
+          "Novo preenchimento após erro",
+          "Não permanece mensagem personalizada antiga."
+        ]
+      ],
+      "erros": [
+        "Mensagem personalizada sem limpeza mantém o campo inválido.",
+        "Comparar apenas no click não cobre todas as formas de tentativa.",
+        "Validação no navegador não substitui a conferência em um servidor real."
+      ],
+      "saida": "Quando sua mensagem é limpa? Que teste demonstrou a correção do erro anterior?",
+      "slidePDF": "materiais/Slides-Aula-05.pdf",
+      "aulaPDF": "materiais/Aula-05-Formularios.pdf",
+      "projetoZIP": "materiais/Aula-05-Projeto.zip",
+      "modelo": "pratica/aula-05-modelo.html",
+      "slides": [
+        {
+          "titulo": "Mensagens que ajudam a corrigir",
+          "texto": [
+            "Regras complementares, validade personalizada e casos de teste",
+            "Prof. Fabrício Rodrigues"
+          ],
+          "tipo": "capa",
+          "numero": 1,
+          "aula": "05",
+          "data": "13/11"
         },
         {
-          "acao": "Registro da diferença entre validação e segurança."
+          "titulo": "O que vamos construir",
+          "texto": [
+            "Comparar o contato com sua confirmação sem perder as regras nativas.",
+            "Criar e limpar mensagens com setCustomValidity.",
+            "Registrar casos válidos, inválidos e limites da descrição."
+          ],
+          "tipo": "texto",
+          "numero": 2,
+          "aula": "05",
+          "data": "13/11"
+        },
+        {
+          "titulo": "Ponto de partida",
+          "texto": [
+            "Retome o projeto e a explicação da aula anterior. Se não tiver os arquivos, baixe a base deste encontro: ela contém o ponto de partida necessário.",
+            "Abra o projeto deste encontro no VS Code. Salve uma cópia própria antes de alterar."
+          ],
+          "tipo": "texto",
+          "numero": 3,
+          "aula": "05",
+          "data": "13/11"
+        },
+        {
+          "titulo": "Mapa da aula",
+          "texto": [],
+          "tipo": "tabela",
+          "tabela": [
+            [
+              "Regra",
+              "Camada do protótipo"
+            ],
+            [
+              "Obrigatoriedade e formato",
+              "Atributos HTML."
+            ],
+            [
+              "Confirmação de contato",
+              "JavaScript compara dois campos."
+            ],
+            [
+              "Descrição útil",
+              "JavaScript confere o texto sem espaços nas pontas."
+            ],
+            [
+              "Aplicação real",
+              "Servidor precisaria conferir as regras novamente."
+            ]
+          ],
+          "numero": 4,
+          "aula": "05",
+          "data": "13/11"
+        },
+        {
+          "titulo": "Comparação de dois campos",
+          "texto": [
+            "A base acrescenta o campo de confirmação com type=email e required. Isso confere cada formato, mas não prova que os dois valores são iguais.",
+            "A função compara os valores e define uma mensagem quando diferem. String vazia limpa a validade personalizada. Escute input nos dois campos, pois qualquer um pode mudar depois."
+          ],
+          "tipo": "texto",
+          "refs": [
+            "custom",
+            "validacao"
+          ],
+          "numero": 5,
+          "aula": "05",
+          "data": "13/11"
+        },
+        {
+          "titulo": "Exemplo: Comparação de dois campos",
+          "texto": [
+            "Observe o papel de cada linha e compare com o arquivo do projeto."
+          ],
+          "tipo": "codigo",
+          "codigo": "function conferirContato() {\n  const diferente = confirmar.value !== contato.value;\n  confirmar.setCustomValidity(\n    confirmar.value && diferente ? 'Repita o mesmo e-mail.' : ''\n  );\n}\ncontato.addEventListener('input', conferirContato);\nconfirmar.addEventListener('input', conferirContato);",
+          "refs": [
+            "custom",
+            "validacao"
+          ],
+          "numero": 6,
+          "aula": "05",
+          "data": "13/11"
+        },
+        {
+          "titulo": "Descrição e limites do teste",
+          "texto": [
+            "minlength e maxlength tratam o comprimento do valor. Nesta aula acrescentamos a regra de pelo menos 20 caracteres depois de trim, para não aceitar uma descrição formada só por espaços.",
+            "A função limpa a mensagem quando o texto passa. Teste digitando no campo; restrições de comprimento nativas têm particularidades quando um script atribui o valor diretamente. Não altere o valor do aluno em silêncio."
+          ],
+          "tipo": "texto",
+          "refs": [
+            "custom",
+            "validacao"
+          ],
+          "numero": 7,
+          "aula": "05",
+          "data": "13/11"
+        },
+        {
+          "titulo": "Exemplo: Descrição e limites do teste",
+          "texto": [
+            "Observe o papel de cada linha e compare com o arquivo do projeto."
+          ],
+          "tipo": "codigo",
+          "codigo": "function conferirDescricao() {\n  const curta = descricao.value.length > 0\n    && descricao.value.trim().length < 20;\n  descricao.setCustomValidity(\n    curta ? 'Descreva o problema com pelo menos 20 caracteres.' : ''\n  );\n}\ndescricao.addEventListener('input', conferirDescricao);",
+          "refs": [
+            "custom",
+            "validacao"
+          ],
+          "numero": 8,
+          "aula": "05",
+          "data": "13/11"
+        },
+        {
+          "titulo": "Nova tentativa sem mensagens antigas",
+          "texto": [
+            "Antes de montar o resumo, atualize as verificações e consulte reportValidity. Os listeners de input são essenciais para limpar um erro anterior que bloquearia a próxima submissão.",
+            "Ao reiniciar, faça reset e limpe a validade personalizada. Mostrar um aviso não deve apagar os campos nem transferir a culpa para a pessoa. A mensagem precisa indicar como corrigir."
+          ],
+          "tipo": "texto",
+          "refs": [
+            "custom",
+            "mensagens"
+          ],
+          "numero": 9,
+          "aula": "05",
+          "data": "13/11"
+        },
+        {
+          "titulo": "Exemplo: Nova tentativa sem mensagens antigas",
+          "texto": [
+            "Observe o papel de cada linha e compare com o arquivo do projeto."
+          ],
+          "tipo": "codigo",
+          "codigo": "form.addEventListener('submit', (event) => {\n  event.preventDefault();\n  conferirContato();\n  conferirDescricao();\n  if (!form.reportValidity()) return;\n  mostrarResumo(new FormData(form));\n});",
+          "refs": [
+            "custom",
+            "mensagens"
+          ],
+          "numero": 10,
+          "aula": "05",
+          "data": "13/11"
+        },
+        {
+          "titulo": "Atividade no VS Code",
+          "texto": [
+            "Abrir a base e localizar os campos contato, confirmar e descricao.",
+            "Implementar a comparação e registrar input nos dois e-mails."
+          ],
+          "tipo": "texto",
+          "numero": 11,
+          "aula": "05",
+          "data": "13/11"
+        },
+        {
+          "titulo": "Atividade: conferência e explicação",
+          "texto": [
+            "Acrescentar a regra da descrição com trim e limpar as mensagens quando o valor for corrigido.",
+            "Repetir a tentativa após cada correção e registrar os limites e o reinício."
+          ],
+          "tipo": "texto",
+          "numero": 12,
+          "aula": "05",
+          "data": "13/11"
+        },
+        {
+          "titulo": "Conferência dos testes",
+          "texto": [],
+          "tipo": "tabela",
+          "tabela": [
+            [
+              "Caso",
+              "Resultado esperado"
+            ],
+            [
+              "E-mails diferentes",
+              "Mensagem de repetir o mesmo contato."
+            ],
+            [
+              "Corrigir o segundo e-mail",
+              "A mensagem antiga é limpa."
+            ],
+            [
+              "Mudar o primeiro depois da confirmação",
+              "A divergência volta a ser identificada."
+            ],
+            [
+              "Descrição formada por espaços",
+              "A regra complementar bloqueia a simulação."
+            ],
+            [
+              "Descrição digitada com 19 caracteres úteis",
+              "A simulação fica bloqueada."
+            ]
+          ],
+          "numero": 13,
+          "aula": "05",
+          "data": "13/11"
+        },
+        {
+          "titulo": "Conferência dos testes (continuação)",
+          "texto": [],
+          "tipo": "tabela",
+          "tabela": [
+            [
+              "Caso",
+              "Resultado esperado"
+            ],
+            [
+              "Descrição digitada com 20 caracteres úteis",
+              "A regra de tamanho permite continuar."
+            ],
+            [
+              "Novo preenchimento após erro",
+              "Não permanece mensagem personalizada antiga."
+            ]
+          ],
+          "numero": 14,
+          "aula": "05",
+          "data": "13/11"
+        },
+        {
+          "titulo": "Erros que merecem atenção",
+          "texto": [
+            "Mensagem personalizada sem limpeza mantém o campo inválido.",
+            "Comparar apenas no click não cobre todas as formas de tentativa.",
+            "Validação no navegador não substitui a conferência em um servidor real."
+          ],
+          "tipo": "texto",
+          "numero": 15,
+          "aula": "05",
+          "data": "13/11"
+        },
+        {
+          "titulo": "Registro e entrega",
+          "texto": [
+            "Salve index.html, style.css e script.js. Compacte a pasta em ZIP.",
+            "Abra o registro de testes da aula, informe nome e turma e baixe o TXT.",
+            "Entregue ZIP e TXT ao professor na aula. Os downloads não são enviados automaticamente."
+          ],
+          "tipo": "texto",
+          "numero": 16,
+          "aula": "05",
+          "data": "13/11"
+        },
+        {
+          "titulo": "Uma explicação para fechar",
+          "texto": [
+            "Quando sua mensagem é limpa? Que teste demonstrou a correção do erro anterior?",
+            "Guarde a versão desta aula: ela será o ponto de partida para a continuidade."
+          ],
+          "tipo": "texto",
+          "numero": 17,
+          "aula": "05",
+          "data": "13/11"
         }
       ]
     },
@@ -754,14 +2325,14 @@ window.WEBLAB_CURSO = {
       "numero": "06",
       "eixo": "Web e projeto",
       "titulo": "O caminho dos dados",
-      "subtitulo": "GET, POST, HTTPS e definição do projeto integrador",
-      "produto": "Especificação curta do projeto e mapa do percurso dos dados.",
+      "subtitulo": "GET, POST, HTTPS e contrato do projeto integrador",
+      "produto": "Pasta com index.html, style.css e script.js em ZIP, acompanhada do registro de testes em TXT.",
       "objetivos": [
-        "Explicar cliente, requisição e servidor em linguagem simples.",
-        "Distinguir parâmetros de GET e corpo de POST.",
-        "Definir o que o protótipo local faz e o que exigiria backend."
+        "Distinguir uma simulação local de uma requisição a um serviço.",
+        "Comparar GET e POST e explicar o papel do HTTPS.",
+        "Documentar campos e regras de um serviço futuro sem inventar um backend."
       ],
-      "retomada": "Não haverá aula em 20/11. Reabrir a versão anterior e conferir o resumo antes de apresentar conceitos novos.",
+      "retomada": "Retome o projeto e a explicação da aula anterior. Se não tiver os arquivos, baixe a base deste encontro: ela contém o ponto de partida necessário.",
       "conceitos": [
         "Cliente e servidor",
         "action e method",
@@ -770,70 +2341,417 @@ window.WEBLAB_CURSO = {
       ],
       "secoes": [
         {
-          "titulo": "Uma requisição precisa de destino",
+          "titulo": "Os limites do protótipo",
           "texto": [
-            "O navegador pode enviar um formulário a uma URL indicada por action. method define como essa requisição se organiza. Em GET, os campos enviados aparecem normalmente na consulta da URL. Em POST, os dados ficam no corpo da requisição.",
-            "POST não significa criptografia. HTTPS protege o tráfego entre os pontos da conexão. Um serviço real precisa receber, validar e tratar os dados."
+            "Até aqui o JavaScript trabalha somente na página. Mostrar um resumo não faz uma requisição de envio. O GitHub Pages publica os arquivos estáticos do curso; não executa um serviço próprio para receber chamados.",
+            "Uma aplicação real precisaria de uma rota de servidor e de regras de recebimento. Nesta aula documentaremos esse contrato e compararemos representações, sem enviar dados a um endereço externo."
           ],
-          "codigo": "<!-- Exemplo conceitual: esta rota não existe no WebLab. -->\n<form action=\"/api/chamados\" method=\"post\">\n  <!-- controles com name -->\n</form>"
+          "codigo": "",
+          "refs": [
+            "pages",
+            "envio"
+          ]
         },
         {
-          "titulo": "O limite do protótipo está explícito",
+          "titulo": "GET e os parâmetros da URL",
           "texto": [
-            "GitHub Pages hospeda conteúdo estático. O nosso projeto usa HTML, CSS e JavaScript no navegador e simula o envio. Publicar esses arquivos não cria automaticamente uma API, um banco de dados ou uma caixa de chamados.",
-            "Um backend futuro receberia a requisição, faria novas validações, aplicaria regras e retornaria uma resposta. Esse desenvolvimento fica fora das 15 horas deste percurso."
+            "GET costuma ser usado para recuperar informações. Em um formulário com method=get, os pares de dados podem compor a query da URL. Eles podem aparecer no histórico e ser compartilhados junto com o endereço.",
+            "O exemplo gera uma string com URLSearchParams e a mostra como texto. exemplo.test é um domínio de exemplo; o projeto não navega para ele. Observe como nomes, espaços e caracteres são representados."
           ],
-          "codigo": ""
+          "codigo": "const dados = new FormData(form);\nconst parametros = new URLSearchParams(dados);\nconst exemplo = 'https://exemplo.test/chamados?'\n  + parametros.toString();\n// Apenas exibir o texto. Não navegar para esse endereço.",
+          "refs": [
+            "envio"
+          ]
         },
         {
-          "titulo": "Requisitos do projeto integrador",
+          "titulo": "POST, HTTPS e conferência no servidor",
           "texto": [
-            "O produto final será um formulário de suporte para um laboratório fictício. Ele deve organizar campos, orientar o preenchimento, validar entradas e mostrar um resumo local acessível.",
-            "Defina uma categoria de problema que abra um campo complementar, como “outro”. Escreva seus casos de teste e as partes que cada aluno consegue explicar, mesmo quando houver colaboração."
+            "Em um formulário HTML com method=post, os dados podem seguir no corpo da requisição. POST sozinho não criptografa dados. HTTPS protege o tráfego em trânsito. Não coloque informações sensíveis em uma URL por achar que o método resolveu toda a proteção.",
+            "O servidor deve conferir formato, tamanho, escolhas permitidas e demais regras. O usuário pode alterar a página ou enviar outra requisição. A validação HTML e o JavaScript servem à experiência local e precisam de conferência no serviço real."
           ],
-          "codigo": ""
+          "codigo": "",
+          "refs": [
+            "envio",
+            "https"
+          ]
+        },
+        {
+          "titulo": "Contrato do integrador",
+          "texto": [
+            "Documente no HTML um bloco de contrato: finalidade, método escolhido, rota proposta, campos e regras a aplicar no servidor. Identifique claramente que a rota não está implementada.",
+            "A base exibe exemplos de URL GET e de um corpo para POST depois da simulação. São representações de estudo. Complete o contrato e confronte seus nomes de campos com o que FormData realmente coleta."
+          ],
+          "codigo": "<!-- Exemplo de contrato para uma aplicação futura.\nMétodo: POST. Rota proposta: /chamados.\nO servidor deve validar os campos novamente.\nEste projeto estático não implementa essa rota.\n-->",
+          "refs": [
+            "envio",
+            "formdata"
+          ]
         }
       ],
       "atividade": [
-        "Desenhar o percurso do preenchimento ao resumo local.",
-        "Marcar no mapa onde entraria um servidor real.",
-        "Escrever os requisitos do projeto integrador e os campos necessários.",
-        "Escolher seis casos de teste e planejar as melhorias restantes."
+        "Abrir a base da aula e observar o resumo e as representações de estudo.",
+        "Comparar onde os valores apareceriam em GET e POST e explicar por que não houve envio real.",
+        "Completar o contrato no HTML: finalidade, POST, rota proposta /chamados, campos, regras e indicação de serviço ainda não implementado.",
+        "Conferir se os names coletados correspondem ao contrato e registrar o escopo do integrador."
       ],
       "checklist": [
-        "Expliquei uma diferença entre GET e POST.",
-        "Reconheci que POST sozinho não cifra dados.",
-        "Meu projeto declara envio simulado.",
-        "Os requisitos descrevem comportamentos que consigo testar."
+        "Implementei os requisitos da atividade desta aula.",
+        "Testei os casos da tabela e registrei o resultado observado.",
+        "Consigo explicar uma decisão e uma correção.",
+        "Guardei o ZIP e o TXT com nome, turma e aula."
       ],
-      "avaliacao": "Ler o mapa e os requisitos. O aluno deve distinguir o resumo local de um recebimento real em servidor.",
-      "curiosidade": "Um endereço com parâmetros de busca pode ser compartilhado como link. Esse é um uso comum de GET em pesquisas.",
-      "refs": [
-        "envio",
-        "pages",
-        "primeiro",
-        "liveserver"
-      ],
-      "extensao": "Inspecionar uma requisição de busca pública nas ferramentas do navegador, sem enviar dados pessoais.",
-      "apoio": "Usar cartões com “navegador”, “requisição”, “servidor” e “resposta” para organizar o mapa.",
       "agenda": [
         {
-          "acao": "Retomada prática após o intervalo sem aula."
+          "acao": "Retomada e observação do problema."
         },
         {
-          "acao": "Discussão do percurso dos dados, GET, POST e HTTPS."
+          "acao": "Explicação dos conceitos e demonstração dos exemplos."
         },
         {
-          "acao": "Mapa em papel e identificação dos limites do protótipo."
+          "acao": "Construção individual no VS Code."
         },
         {
-          "acao": "Apresentação dos requisitos e rubrica sugerida do projeto."
+          "acao": "Testes por um colega e correções."
         },
         {
-          "acao": "Planejamento individual e início das melhorias."
+          "acao": "Explicação, registro e entrega dos arquivos."
+        }
+      ],
+      "avaliacao": "Observar o resultado, os testes e uma explicação individual. O uso de uma base pronta não comprova que o aluno consegue explicar o código.",
+      "curiosidade": "Um endereço com parâmetros de busca pode ser compartilhado como link. Esse é um uso comum de GET em pesquisas.",
+      "refs": [
+        "pages",
+        "envio",
+        "https",
+        "formdata",
+        "vscode",
+        "liveserver"
+      ],
+      "extensao": "Explique uma alternativa de implementação e compare seu comportamento com o requisito. Conclua primeiro os casos essenciais.",
+      "apoio": "Usar a tabela de comparação e uma URL fictícia já formada. Pedir a explicação antes de editar o contrato.",
+      "mapa": [
+        [
+          "Situação",
+          "Representação"
+        ],
+        [
+          "Busca de dados com GET",
+          "Parâmetros podem aparecer na URL."
+        ],
+        [
+          "Envio com POST",
+          "Dados de formulário podem seguir no corpo."
+        ],
+        [
+          "HTTPS",
+          "Protege o tráfego em trânsito."
+        ],
+        [
+          "Projeto no GitHub Pages",
+          "Site estático; não implementa recebimento de chamados."
+        ]
+      ],
+      "testes": [
+        [
+          "Caso",
+          "Resultado esperado"
+        ],
+        [
+          "Simulação com dados fictícios",
+          "Resumo e representações locais, sem envio."
+        ],
+        [
+          "Espaços no nome",
+          "URL de exemplo com parâmetros codificados."
+        ],
+        [
+          "Dois sintomas selecionados",
+          "Representação de POST preserva a lista."
+        ],
+        [
+          "Contrato sem indicar implementação futura",
+          "Revisar para não prometer serviço existente."
+        ],
+        [
+          "POST sem HTTPS no argumento",
+          "Explicar que POST não oferece criptografia."
+        ],
+        [
+          "Campo sem name",
+          "Identificar a ausência na coleta e corrigir o contrato."
+        ]
+      ],
+      "erros": [
+        "O corpo de POST não é uma garantia de criptografia.",
+        "Não afirmar que o Pages recebeu, validou ou armazenou o chamado.",
+        "Um contrato é uma proposta; não é prova de que o endpoint existe."
+      ],
+      "saida": "Qual parte do seu projeto roda no navegador? O que ainda faltaria num serviço real?",
+      "slidePDF": "materiais/Slides-Aula-06.pdf",
+      "aulaPDF": "materiais/Aula-06-Formularios.pdf",
+      "projetoZIP": "materiais/Aula-06-Projeto.zip",
+      "modelo": "pratica/aula-06-modelo.html",
+      "slides": [
+        {
+          "titulo": "O caminho dos dados",
+          "texto": [
+            "GET, POST, HTTPS e contrato do projeto integrador",
+            "Prof. Fabrício Rodrigues"
+          ],
+          "tipo": "capa",
+          "numero": 1,
+          "aula": "06",
+          "data": "27/11"
         },
         {
-          "acao": "Conferência de viabilidade e próximos passos."
+          "titulo": "O que vamos construir",
+          "texto": [
+            "Distinguir uma simulação local de uma requisição a um serviço.",
+            "Comparar GET e POST e explicar o papel do HTTPS.",
+            "Documentar campos e regras de um serviço futuro sem inventar um backend."
+          ],
+          "tipo": "texto",
+          "numero": 2,
+          "aula": "06",
+          "data": "27/11"
+        },
+        {
+          "titulo": "Ponto de partida",
+          "texto": [
+            "Retome o projeto e a explicação da aula anterior. Se não tiver os arquivos, baixe a base deste encontro: ela contém o ponto de partida necessário.",
+            "Abra o projeto deste encontro no VS Code. Salve uma cópia própria antes de alterar."
+          ],
+          "tipo": "texto",
+          "numero": 3,
+          "aula": "06",
+          "data": "27/11"
+        },
+        {
+          "titulo": "Mapa da aula",
+          "texto": [],
+          "tipo": "tabela",
+          "tabela": [
+            [
+              "Situação",
+              "Representação"
+            ],
+            [
+              "Busca de dados com GET",
+              "Parâmetros podem aparecer na URL."
+            ],
+            [
+              "Envio com POST",
+              "Dados de formulário podem seguir no corpo."
+            ],
+            [
+              "HTTPS",
+              "Protege o tráfego em trânsito."
+            ],
+            [
+              "Projeto no GitHub Pages",
+              "Site estático; não implementa recebimento de chamados."
+            ]
+          ],
+          "numero": 4,
+          "aula": "06",
+          "data": "27/11"
+        },
+        {
+          "titulo": "Os limites do protótipo",
+          "texto": [
+            "Até aqui o JavaScript trabalha somente na página. Mostrar um resumo não faz uma requisição de envio. O GitHub Pages publica os arquivos estáticos do curso; não executa um serviço próprio para receber chamados.",
+            "Uma aplicação real precisaria de uma rota de servidor e de regras de recebimento. Nesta aula documentaremos esse contrato e compararemos representações, sem enviar dados a um endereço externo."
+          ],
+          "tipo": "texto",
+          "refs": [
+            "pages",
+            "envio"
+          ],
+          "numero": 5,
+          "aula": "06",
+          "data": "27/11"
+        },
+        {
+          "titulo": "GET e os parâmetros da URL",
+          "texto": [
+            "GET costuma ser usado para recuperar informações. Em um formulário com method=get, os pares de dados podem compor a query da URL. Eles podem aparecer no histórico e ser compartilhados junto com o endereço.",
+            "O exemplo gera uma string com URLSearchParams e a mostra como texto. exemplo.test é um domínio de exemplo; o projeto não navega para ele. Observe como nomes, espaços e caracteres são representados."
+          ],
+          "tipo": "texto",
+          "refs": [
+            "envio"
+          ],
+          "numero": 6,
+          "aula": "06",
+          "data": "27/11"
+        },
+        {
+          "titulo": "Exemplo: GET e os parâmetros da URL",
+          "texto": [
+            "Observe o papel de cada linha e compare com o arquivo do projeto."
+          ],
+          "tipo": "codigo",
+          "codigo": "const dados = new FormData(form);\nconst parametros = new URLSearchParams(dados);\nconst exemplo = 'https://exemplo.test/chamados?'\n  + parametros.toString();\n// Apenas exibir o texto. Não navegar para esse endereço.",
+          "refs": [
+            "envio"
+          ],
+          "numero": 7,
+          "aula": "06",
+          "data": "27/11"
+        },
+        {
+          "titulo": "POST, HTTPS e conferência no servidor",
+          "texto": [
+            "Em um formulário HTML com method=post, os dados podem seguir no corpo da requisição. POST sozinho não criptografa dados. HTTPS protege o tráfego em trânsito. Não coloque informações sensíveis em uma URL por achar que o método resolveu toda a proteção.",
+            "O servidor deve conferir formato, tamanho, escolhas permitidas e demais regras. O usuário pode alterar a página ou enviar outra requisição. A validação HTML e o JavaScript servem à experiência local e precisam de conferência no serviço real."
+          ],
+          "tipo": "texto",
+          "refs": [
+            "envio",
+            "https"
+          ],
+          "numero": 8,
+          "aula": "06",
+          "data": "27/11"
+        },
+        {
+          "titulo": "Contrato do integrador",
+          "texto": [
+            "Documente no HTML um bloco de contrato: finalidade, método escolhido, rota proposta, campos e regras a aplicar no servidor. Identifique claramente que a rota não está implementada.",
+            "A base exibe exemplos de URL GET e de um corpo para POST depois da simulação. São representações de estudo. Complete o contrato e confronte seus nomes de campos com o que FormData realmente coleta."
+          ],
+          "tipo": "texto",
+          "refs": [
+            "envio",
+            "formdata"
+          ],
+          "numero": 9,
+          "aula": "06",
+          "data": "27/11"
+        },
+        {
+          "titulo": "Exemplo: Contrato do integrador",
+          "texto": [
+            "Observe o papel de cada linha e compare com o arquivo do projeto."
+          ],
+          "tipo": "codigo",
+          "codigo": "<!-- Exemplo de contrato para uma aplicação futura.\nMétodo: POST. Rota proposta: /chamados.\nO servidor deve validar os campos novamente.\nEste projeto estático não implementa essa rota.\n-->",
+          "refs": [
+            "envio",
+            "formdata"
+          ],
+          "numero": 10,
+          "aula": "06",
+          "data": "27/11"
+        },
+        {
+          "titulo": "Atividade no VS Code",
+          "texto": [
+            "Abrir a base da aula e observar o resumo e as representações de estudo.",
+            "Comparar onde os valores apareceriam em GET e POST e explicar por que não houve envio real."
+          ],
+          "tipo": "texto",
+          "numero": 11,
+          "aula": "06",
+          "data": "27/11"
+        },
+        {
+          "titulo": "Atividade: conferência e explicação",
+          "texto": [
+            "Completar o contrato no HTML: finalidade, POST, rota proposta /chamados, campos, regras e indicação de serviço ainda não implementado.",
+            "Conferir se os names coletados correspondem ao contrato e registrar o escopo do integrador."
+          ],
+          "tipo": "texto",
+          "numero": 12,
+          "aula": "06",
+          "data": "27/11"
+        },
+        {
+          "titulo": "Conferência dos testes",
+          "texto": [],
+          "tipo": "tabela",
+          "tabela": [
+            [
+              "Caso",
+              "Resultado esperado"
+            ],
+            [
+              "Simulação com dados fictícios",
+              "Resumo e representações locais, sem envio."
+            ],
+            [
+              "Espaços no nome",
+              "URL de exemplo com parâmetros codificados."
+            ],
+            [
+              "Dois sintomas selecionados",
+              "Representação de POST preserva a lista."
+            ],
+            [
+              "Contrato sem indicar implementação futura",
+              "Revisar para não prometer serviço existente."
+            ],
+            [
+              "POST sem HTTPS no argumento",
+              "Explicar que POST não oferece criptografia."
+            ]
+          ],
+          "numero": 13,
+          "aula": "06",
+          "data": "27/11"
+        },
+        {
+          "titulo": "Conferência dos testes (continuação)",
+          "texto": [],
+          "tipo": "tabela",
+          "tabela": [
+            [
+              "Caso",
+              "Resultado esperado"
+            ],
+            [
+              "Campo sem name",
+              "Identificar a ausência na coleta e corrigir o contrato."
+            ]
+          ],
+          "numero": 14,
+          "aula": "06",
+          "data": "27/11"
+        },
+        {
+          "titulo": "Erros que merecem atenção",
+          "texto": [
+            "O corpo de POST não é uma garantia de criptografia.",
+            "Não afirmar que o Pages recebeu, validou ou armazenou o chamado.",
+            "Um contrato é uma proposta; não é prova de que o endpoint existe."
+          ],
+          "tipo": "texto",
+          "numero": 15,
+          "aula": "06",
+          "data": "27/11"
+        },
+        {
+          "titulo": "Registro e entrega",
+          "texto": [
+            "Salve index.html, style.css e script.js. Compacte a pasta em ZIP.",
+            "Abra o registro de testes da aula, informe nome e turma e baixe o TXT.",
+            "Entregue ZIP e TXT ao professor na aula. Os downloads não são enviados automaticamente."
+          ],
+          "tipo": "texto",
+          "numero": 16,
+          "aula": "06",
+          "data": "27/11"
+        },
+        {
+          "titulo": "Uma explicação para fechar",
+          "texto": [
+            "Qual parte do seu projeto roda no navegador? O que ainda faltaria num serviço real?",
+            "Guarde a versão desta aula: ela será o ponto de partida para a continuidade."
+          ],
+          "tipo": "texto",
+          "numero": 17,
+          "aula": "06",
+          "data": "27/11"
         }
       ]
     },
@@ -844,14 +2762,14 @@ window.WEBLAB_CURSO = {
       "numero": "07",
       "eixo": "Integração",
       "titulo": "Um formulário que reage ao contexto",
-      "subtitulo": "Campos condicionais e organização do código",
-      "produto": "Versão integradora com campo complementar condicional.",
+      "subtitulo": "Campos condicionais, estado e organização das funções",
+      "produto": "Pasta com index.html, style.css e script.js em ZIP, acompanhada do registro de testes em TXT.",
       "objetivos": [
-        "Mostrar um campo quando a escolha exige mais detalhes.",
-        "Manter hidden, disabled e required coerentes.",
-        "Organizar a lógica em funções pequenas e explicáveis."
+        "Mostrar um campo adicional somente quando sua opção for escolhida.",
+        "Coordenar hidden, disabled e required.",
+        "Repetir a coleta e o reinício sem valores de uma opção antiga."
       ],
-      "retomada": "Reaplicar alternância de estado e DOM, presentes nos exemplos anteriores de cards e detalhes.",
+      "retomada": "Retome o projeto e a explicação da aula anterior. Se não tiver os arquivos, baixe a base deste encontro: ela contém o ponto de partida necessário.",
       "conceitos": [
         "Evento change",
         "hidden e disabled",
@@ -860,78 +2778,393 @@ window.WEBLAB_CURSO = {
       ],
       "secoes": [
         {
-          "titulo": "A pergunta seguinte depende da resposta",
+          "titulo": "A interface responde a uma escolha",
           "texto": [
-            "Quando a categoria for “outro”, o formulário pede uma explicação adicional. Quando a categoria mudar, o campo complementar deve deixar de ser obrigatório e não participar da coleta.",
-            "Esconder um elemento não significa desabilitar o controle. Ajuste o estado de forma explícita. Depois de voltar a “outro”, o controle deve funcionar novamente."
+            "O HTML da base já contém o bloco de outra categoria e um input inicialmente disabled. A função de estado deve ler o select e atualizar o conjunto de propriedades.",
+            "Registre change no select e chame a função ao iniciar a página. Organize a regra em uma função, para também aplicá-la depois de reset. Não espalhe a mesma decisão em vários handlers."
           ],
-          "codigo": "function atualizarOutro() {\n  const ativo = categoria.value === \"outro\";\n  blocoOutro.hidden = !ativo;\n  outro.disabled = !ativo;\n  outro.required = ativo;\n  if (!ativo) outro.value = \"\";\n}\ncategoria.addEventListener(\"change\", atualizarOutro);\natualizarOutro();"
+          "codigo": "function atualizarOutro() {\n  const ativo = categoria.value === 'outro';\n  blocoOutro.hidden = !ativo;\n  outro.disabled = !ativo;\n  outro.required = ativo;\n  if (!ativo) outro.value = '';\n}\ncategoria.addEventListener('change', atualizarOutro);\natualizarOutro();",
+          "refs": [
+            "disabled",
+            "submit"
+          ]
         },
         {
-          "titulo": "Funções com uma responsabilidade",
+          "titulo": "Esconder não desativa o controle",
           "texto": [
-            "Separe atualizarOutro, conferirContato e gerarResumo. Dê nomes que indiquem o que cada função faz. Isso torna mais simples localizar erros e explicar uma alteração durante a apresentação.",
-            "Ao oferecer uma ação para começar um novo chamado, limpe também o resumo e os erros personalizados. Evite apagar o trabalho em andamento por meio de um botão de reset pouco claro."
+            "hidden altera a apresentação do bloco. Um campo obrigatório somente escondido ainda pode interferir na validação. disabled retira o controle da validação e da coleta normal de dados.",
+            "required deve ficar ativo apenas quando o campo é necessário. Ao desativar a opção, o projeto apaga o valor antigo para não sugerir um dado que deixou de pertencer à escolha atual."
           ],
-          "codigo": ""
+          "codigo": "// hidden controla a apresentação do bloco.\n// disabled retira o campo da validação e do FormData.\n// required pede um valor quando o campo está ativo.",
+          "refs": [
+            "disabled",
+            "formdata"
+          ]
         },
         {
-          "titulo": "Integração se verifica com mudanças de estado",
+          "titulo": "Conferência do fluxo inteiro",
           "texto": [
-            "Teste “outro”, preencha detalhes, volte a uma categoria comum e gere o resumo. Depois reabra “outro” e confirme se a regra continua adequada.",
-            "Confira novamente o layout e o teclado. Um comportamento novo pode criar uma barreira de uso em algo que já funcionava."
+            "Teste entrar em Outro, tentar sem preencher, informar um detalhe e gerar o resumo. Depois retorne a Hardware e confira que o detalhe não aparece na coleta.",
+            "Use Novo preenchimento para conferir reset e reaplicação do estado. Revise a comparação dos e-mails e as mensagens: acrescentar uma condição não deve quebrar as regras anteriores."
           ],
-          "codigo": ""
-        },
-        {
-          "titulo": "Preparação para a avaliação de 11/12",
-          "texto": [
-            "Guarde a versão integrada e organize o README e o registro dos testes. Na aula seguinte, você entregará o projeto e explicará decisões de HTML, CSS e JavaScript. A publicação pode ser concluída depois da devolutiva; o projeto local também será avaliado."
-          ],
-          "codigo": ""
+          "codigo": "",
+          "refs": [
+            "custom",
+            "disabled"
+          ]
         }
       ],
       "atividade": [
-        "Implementar a categoria “outro” e seu campo complementar.",
-        "Atualizar hidden, disabled e required juntos.",
-        "Organizar o script em funções pequenas.",
-        "Executar os casos de ida, volta e novo preenchimento.",
-        "Preparar o README e registrar os seis casos de teste para a avaliação de 11/12."
+        "Abrir a base e localizar o select, o bloco oculto e o campo adicional.",
+        "Criar a função de estado, escutar change e aplicá-la na inicialização.",
+        "Manter o campo adicional obrigatório apenas em Outro e incluir seu valor no resumo somente quando coletado.",
+        "Testar todas as transições e executar novamente os casos de validação das aulas anteriores."
       ],
       "checklist": [
-        "O campo aparece apenas quando necessário.",
-        "Um campo desativado não bloqueia o envio.",
-        "A coleta reflete o estado atual do formulário.",
-        "Consigo explicar cada função do meu script."
+        "Implementei os requisitos da atividade desta aula.",
+        "Testei os casos da tabela e registrei o resultado observado.",
+        "Consigo explicar uma decisão e uma correção.",
+        "Guardei o ZIP e o TXT com nome, turma e aula."
       ],
-      "avaliacao": "Solicitar duas mudanças de categoria e a explicação das propriedades alteradas. Verificar o estado do campo, não só sua aparência.",
+      "agenda": [
+        {
+          "acao": "Retomada e observação do problema."
+        },
+        {
+          "acao": "Explicação dos conceitos e demonstração dos exemplos."
+        },
+        {
+          "acao": "Construção individual no VS Code."
+        },
+        {
+          "acao": "Testes por um colega e correções."
+        },
+        {
+          "acao": "Explicação, registro e entrega dos arquivos."
+        }
+      ],
+      "avaliacao": "Observar o resultado, os testes e uma explicação individual. O uso de uma base pronta não comprova que o aluno consegue explicar o código.",
       "curiosidade": "Um campo com hidden no bloco pode continuar existindo no DOM. Um controle disabled normalmente fica fora de FormData.",
       "refs": [
         "disabled",
-        "formdata",
         "submit",
+        "formdata",
+        "custom",
+        "vscode",
         "liveserver"
       ],
-      "extensao": "Criar uma função que gere cada linha do resumo com createElement e textContent.",
-      "apoio": "Testar primeiro a mudança visual. Depois acrescentar disabled e required, observando a diferença.",
-      "agenda": [
+      "extensao": "Explique uma alternativa de implementação e compare seu comportamento com o requisito. Conclua primeiro os casos essenciais.",
+      "apoio": "Desenhar uma tabela com dois estados antes de escrever a função. Testar cada propriedade separadamente e só então integrar o resumo.",
+      "mapa": [
+        [
+          "Categoria",
+          "Estado do campo adicional"
+        ],
+        [
+          "Outra opção não escolhida",
+          "Bloco oculto, campo desabilitado e não obrigatório."
+        ],
+        [
+          "Outro escolhido",
+          "Bloco visível, campo habilitado e obrigatório."
+        ],
+        [
+          "Retorno a uma categoria comum",
+          "Limpar o valor antigo e desativar o campo."
+        ],
+        [
+          "Coleta",
+          "Somente os campos participantes entram no FormData."
+        ]
+      ],
+      "testes": [
+        [
+          "Caso",
+          "Resultado esperado"
+        ],
+        [
+          "Abertura com categoria vazia",
+          "Campo adicional oculto e desabilitado."
+        ],
+        [
+          "Escolher Outro sem detalhar",
+          "Campo visível e obrigatório."
+        ],
+        [
+          "Outro com detalhe e dados válidos",
+          "Resumo inclui a outra categoria."
+        ],
+        [
+          "Trocar de Outro para Hardware",
+          "Bloco oculto e valor antigo limpo."
+        ],
+        [
+          "Gerar resumo após sair de Outro",
+          "Não inclui outra_categoria."
+        ],
+        [
+          "Novo preenchimento",
+          "Estado inicial reaplicado."
+        ]
+      ],
+      "erros": [
+        "hidden sozinho não expressa a participação do campo.",
+        "Não deixar required ativo num campo desabilitado por lógica incompleta.",
+        "reset não substitui a reaplicação explícita da regra de estado."
+      ],
+      "saida": "Que diferença existe entre esconder um campo e desabilitá-lo?",
+      "slidePDF": "materiais/Slides-Aula-07.pdf",
+      "aulaPDF": "materiais/Aula-07-Formularios.pdf",
+      "projetoZIP": "materiais/Aula-07-Projeto.zip",
+      "modelo": "pratica/aula-07-modelo.html",
+      "slides": [
         {
-          "acao": "Reabertura dos requisitos e da última versão estável."
+          "titulo": "Um formulário que reage ao contexto",
+          "texto": [
+            "Campos condicionais, estado e organização das funções",
+            "Prof. Fabrício Rodrigues"
+          ],
+          "tipo": "capa",
+          "numero": 1,
+          "aula": "07",
+          "data": "04/12"
         },
         {
-          "acao": "Demonstração de campo condicional e estados coerentes."
+          "titulo": "O que vamos construir",
+          "texto": [
+            "Mostrar um campo adicional somente quando sua opção for escolhida.",
+            "Coordenar hidden, disabled e required.",
+            "Repetir a coleta e o reinício sem valores de uma opção antiga."
+          ],
+          "tipo": "texto",
+          "numero": 2,
+          "aula": "07",
+          "data": "04/12"
         },
         {
-          "acao": "Desenvolvimento individual do projeto integrador."
+          "titulo": "Ponto de partida",
+          "texto": [
+            "Retome o projeto e a explicação da aula anterior. Se não tiver os arquivos, baixe a base deste encontro: ela contém o ponto de partida necessário.",
+            "Abra o projeto deste encontro no VS Code. Salve uma cópia própria antes de alterar."
+          ],
+          "tipo": "texto",
+          "numero": 3,
+          "aula": "07",
+          "data": "04/12"
         },
         {
-          "acao": "Testes de transição de estado e correções."
+          "titulo": "Mapa da aula",
+          "texto": [],
+          "tipo": "tabela",
+          "tabela": [
+            [
+              "Categoria",
+              "Estado do campo adicional"
+            ],
+            [
+              "Outra opção não escolhida",
+              "Bloco oculto, campo desabilitado e não obrigatório."
+            ],
+            [
+              "Outro escolhido",
+              "Bloco visível, campo habilitado e obrigatório."
+            ],
+            [
+              "Retorno a uma categoria comum",
+              "Limpar o valor antigo e desativar o campo."
+            ],
+            [
+              "Coleta",
+              "Somente os campos participantes entram no FormData."
+            ]
+          ],
+          "numero": 4,
+          "aula": "07",
+          "data": "04/12"
         },
         {
-          "acao": "Conferência da organização de funções e nomes."
+          "titulo": "A interface responde a uma escolha",
+          "texto": [
+            "O HTML da base já contém o bloco de outra categoria e um input inicialmente disabled. A função de estado deve ler o select e atualizar o conjunto de propriedades.",
+            "Registre change no select e chame a função ao iniciar a página. Organize a regra em uma função, para também aplicá-la depois de reset. Não espalhe a mesma decisão em vários handlers."
+          ],
+          "tipo": "texto",
+          "refs": [
+            "disabled",
+            "submit"
+          ],
+          "numero": 5,
+          "aula": "07",
+          "data": "04/12"
         },
         {
-          "acao": "Registro de uma melhoria e de uma dúvida."
+          "titulo": "Exemplo: A interface responde a uma escolha",
+          "texto": [
+            "Observe o papel de cada linha e compare com o arquivo do projeto."
+          ],
+          "tipo": "codigo",
+          "codigo": "function atualizarOutro() {\n  const ativo = categoria.value === 'outro';\n  blocoOutro.hidden = !ativo;\n  outro.disabled = !ativo;\n  outro.required = ativo;\n  if (!ativo) outro.value = '';\n}\ncategoria.addEventListener('change', atualizarOutro);\natualizarOutro();",
+          "refs": [
+            "disabled",
+            "submit"
+          ],
+          "numero": 6,
+          "aula": "07",
+          "data": "04/12"
+        },
+        {
+          "titulo": "Esconder não desativa o controle",
+          "texto": [
+            "hidden altera a apresentação do bloco. Um campo obrigatório somente escondido ainda pode interferir na validação. disabled retira o controle da validação e da coleta normal de dados.",
+            "required deve ficar ativo apenas quando o campo é necessário. Ao desativar a opção, o projeto apaga o valor antigo para não sugerir um dado que deixou de pertencer à escolha atual."
+          ],
+          "tipo": "texto",
+          "refs": [
+            "disabled",
+            "formdata"
+          ],
+          "numero": 7,
+          "aula": "07",
+          "data": "04/12"
+        },
+        {
+          "titulo": "Exemplo: Esconder não desativa o controle",
+          "texto": [
+            "Observe o papel de cada linha e compare com o arquivo do projeto."
+          ],
+          "tipo": "codigo",
+          "codigo": "// hidden controla a apresentação do bloco.\n// disabled retira o campo da validação e do FormData.\n// required pede um valor quando o campo está ativo.",
+          "refs": [
+            "disabled",
+            "formdata"
+          ],
+          "numero": 8,
+          "aula": "07",
+          "data": "04/12"
+        },
+        {
+          "titulo": "Conferência do fluxo inteiro",
+          "texto": [
+            "Teste entrar em Outro, tentar sem preencher, informar um detalhe e gerar o resumo. Depois retorne a Hardware e confira que o detalhe não aparece na coleta.",
+            "Use Novo preenchimento para conferir reset e reaplicação do estado. Revise a comparação dos e-mails e as mensagens: acrescentar uma condição não deve quebrar as regras anteriores."
+          ],
+          "tipo": "texto",
+          "refs": [
+            "custom",
+            "disabled"
+          ],
+          "numero": 9,
+          "aula": "07",
+          "data": "04/12"
+        },
+        {
+          "titulo": "Atividade no VS Code",
+          "texto": [
+            "Abrir a base e localizar o select, o bloco oculto e o campo adicional.",
+            "Criar a função de estado, escutar change e aplicá-la na inicialização."
+          ],
+          "tipo": "texto",
+          "numero": 10,
+          "aula": "07",
+          "data": "04/12"
+        },
+        {
+          "titulo": "Atividade: conferência e explicação",
+          "texto": [
+            "Manter o campo adicional obrigatório apenas em Outro e incluir seu valor no resumo somente quando coletado.",
+            "Testar todas as transições e executar novamente os casos de validação das aulas anteriores."
+          ],
+          "tipo": "texto",
+          "numero": 11,
+          "aula": "07",
+          "data": "04/12"
+        },
+        {
+          "titulo": "Conferência dos testes",
+          "texto": [],
+          "tipo": "tabela",
+          "tabela": [
+            [
+              "Caso",
+              "Resultado esperado"
+            ],
+            [
+              "Abertura com categoria vazia",
+              "Campo adicional oculto e desabilitado."
+            ],
+            [
+              "Escolher Outro sem detalhar",
+              "Campo visível e obrigatório."
+            ],
+            [
+              "Outro com detalhe e dados válidos",
+              "Resumo inclui a outra categoria."
+            ],
+            [
+              "Trocar de Outro para Hardware",
+              "Bloco oculto e valor antigo limpo."
+            ],
+            [
+              "Gerar resumo após sair de Outro",
+              "Não inclui outra_categoria."
+            ]
+          ],
+          "numero": 12,
+          "aula": "07",
+          "data": "04/12"
+        },
+        {
+          "titulo": "Conferência dos testes (continuação)",
+          "texto": [],
+          "tipo": "tabela",
+          "tabela": [
+            [
+              "Caso",
+              "Resultado esperado"
+            ],
+            [
+              "Novo preenchimento",
+              "Estado inicial reaplicado."
+            ]
+          ],
+          "numero": 13,
+          "aula": "07",
+          "data": "04/12"
+        },
+        {
+          "titulo": "Erros que merecem atenção",
+          "texto": [
+            "hidden sozinho não expressa a participação do campo.",
+            "Não deixar required ativo num campo desabilitado por lógica incompleta.",
+            "reset não substitui a reaplicação explícita da regra de estado."
+          ],
+          "tipo": "texto",
+          "numero": 14,
+          "aula": "07",
+          "data": "04/12"
+        },
+        {
+          "titulo": "Registro e entrega",
+          "texto": [
+            "Salve index.html, style.css e script.js. Compacte a pasta em ZIP.",
+            "Abra o registro de testes da aula, informe nome e turma e baixe o TXT.",
+            "Entregue ZIP e TXT ao professor na aula. Os downloads não são enviados automaticamente."
+          ],
+          "tipo": "texto",
+          "numero": 15,
+          "aula": "07",
+          "data": "04/12"
+        },
+        {
+          "titulo": "Uma explicação para fechar",
+          "texto": [
+            "Que diferença existe entre esconder um campo e desabilitá-lo?",
+            "Guarde a versão desta aula: ela será o ponto de partida para a continuidade."
+          ],
+          "tipo": "texto",
+          "numero": 16,
+          "aula": "07",
+          "data": "04/12"
         }
       ]
     },
@@ -941,15 +3174,15 @@ window.WEBLAB_CURSO = {
       "dataCurta": "11/12",
       "numero": "08",
       "eixo": "Avaliação",
-      "titulo": "Avaliação prática do formulário",
-      "subtitulo": "Entrega do projeto, testes e explicação individual",
-      "produto": "Projeto em ZIP, registro de seis testes e explicação individual entregue em 11/12.",
+      "titulo": "Avaliação prática: inscrição em oficina",
+      "subtitulo": "Aplicação individual dos conhecimentos de formulários",
+      "produto": "Pasta com index.html, style.css e script.js em ZIP, acompanhada do registro de testes em TXT.",
       "objetivos": [
-        "Demonstrar o formulário com uma entrada válida, um erro e sua correção.",
-        "Explicar decisões de HTML, CSS e JavaScript e testar uma alteração individual.",
-        "Entregar os arquivos do projeto, o README e o registro de testes."
+        "Construir um formulário para um contexto diferente do chamado.",
+        "Demonstrar estrutura, responsividade, coleta e validação.",
+        "Registrar testes e explicar uma decisão de implementação."
       ],
-      "retomada": "Usar a versão integrada de 04/12. A avaliação principal acontece em 11/12, antes do último encontro, para permitir devolutiva e correções em 18/12.",
+      "retomada": "Retome o projeto e a explicação da aula anterior. Se não tiver os arquivos, baixe a base deste encontro: ela contém o ponto de partida necessário.",
       "conceitos": [
         "Avaliação prática individual",
         "Casos de teste",
@@ -958,67 +3191,386 @@ window.WEBLAB_CURSO = {
       ],
       "secoes": [
         {
-          "titulo": "O que será entregue",
+          "titulo": "Situação da avaliação",
           "texto": [
-            "Compacte a pasta do projeto com index.html, style.css, script.js, README e REGISTRO-DE-TESTES.txt. Identifique o ZIP com turma e nome. Entregue o arquivo ao professor durante a aula. O projeto deve abrir no VS Code com Live Server.",
-            "Registre seis situações: campos vazios, e-mail com formato inadequado, contatos diferentes, descrição curta, mudança para outro e retorno, e preenchimento válido. Em cada uma, escreva entrada, ação, resultado esperado e observado."
+            "Uma oficina de informática precisa de um protótipo de inscrição. Use somente dados fictícios e mantenha o envio simulado. O professor explicará as regras de consulta e os critérios antes do início.",
+            "O participante deve escolher uma oficina (Redes, Hardware, Web ou Outra oficina) e um turno (Manhã ou Tarde). Materiais que levará são opcionais: Caderno e Notebook."
           ],
-          "codigo": ""
+          "codigo": "",
+          "refs": [
+            "primeiro",
+            "controles"
+          ]
         },
         {
-          "titulo": "Demonstração e compreensão individual",
+          "titulo": "Especificação dos campos",
           "texto": [
-            "Mostre um caso válido, provoque um erro e demonstre sua correção. Explique um rótulo ou grupo HTML, uma regra CSS e o trecho JavaScript que coleta ou valida os dados.",
-            "Faça uma pequena alteração individual orientada pelo professor e registre o teste. Todos entregam também a explicação por escrito; o professor organiza a observação nas estações conforme o tamanho da turma."
+            "Participante fictício: texto de 2 a 60 caracteres. Contato e confirmação: formato de e-mail, obrigatórios e iguais. Oficina: select obrigatório com opção inicial vazia. Turno: uma opção obrigatória em radio.",
+            "Objetivo da participação: de 20 a 500 caracteres úteis. Ao escolher Outra oficina, mostrar Tema sugerido, habilitá-lo e torná-lo obrigatório. Ao sair dessa escolha, limpar e desabilitar esse campo."
           ],
-          "codigo": ""
+          "codigo": "",
+          "refs": [
+            "validacao",
+            "disabled"
+          ]
         },
         {
-          "titulo": "Critérios da avaliação",
+          "titulo": "Comportamento e entrega",
           "texto": [
-            "Rubrica proposta, total de 10 pontos: HTML e rótulos (2), CSS e acessibilidade (2), JavaScript e validação (2), testes e documentação (2), explicação e alteração individual (2). Os critérios serão apresentados antes da realização.",
-            "A hospedagem pública não é condição para demonstrar o funcionamento local. Não use dados pessoais reais. O formulário continua com envio simulado. A devolutiva e as oportunidades de correção e recuperação ficam para 18/12, conforme as regras da turma."
+            "Mostrar um resumo local com os dados da inscrição, preservando os dois materiais opcionais se marcados. Tratar valores como texto. Não enviar nem gravar em servidor.",
+            "O formulário deve funcionar em tela estreita e pelo teclado. Manter valores após uma tentativa inválida. O reinício precisa limpar as mensagens e o estado condicional. Entregar os três arquivos em ZIP e o registro TXT."
           ],
-          "codigo": ""
+          "codigo": "",
+          "refs": [
+            "formdata",
+            "labels"
+          ]
         }
       ],
       "atividade": [
-        "Conferir o projeto no Live Server e executar os seis casos de teste.",
-        "Entregar o ZIP identificado com código, README e registro de testes.",
-        "Demonstrar o formulário e explicar decisões de HTML, CSS e JavaScript.",
-        "Realizar e registrar uma pequena alteração individual solicitada pelo professor."
+        "Ler os requisitos e os critérios com o professor. Baixar a base da avaliação.",
+        "Construir individualmente o HTML, completar CSS e JavaScript conforme a especificação.",
+        "Realizar os testes da tabela e registrar os resultados reais, inclusive o que ainda falhou.",
+        "Entregar ZIP e TXT e explicar um campo, uma regra e um teste ao professor."
       ],
       "checklist": [
-        "O ZIP contém a pasta completa e abre no VS Code com Live Server.",
-        "Registrei resultados esperados e observados dos seis testes.",
-        "Entreguei minha explicação e a alteração individual testada.",
-        "Sei que a devolutiva e a recuperação acontecem em 18/12."
+        "Implementei os requisitos da atividade desta aula.",
+        "Testei os casos da tabela e registrei o resultado observado.",
+        "Consigo explicar uma decisão e uma correção.",
+        "Guardei o ZIP e o TXT com nome, turma e aula."
       ],
-      "avaliacao": "Aplicar a rubrica de 10 pontos em 11/12, usando projeto, testes e evidência individual. Organizar as observações por estações e completar a correção dos registros antes da devolutiva de 18/12. A publicação não substitui a compreensão.",
-      "curiosidade": "Um teste que registra a entrada e o resultado esperado pode ser repetido por outra pessoa e ajuda a localizar um defeito.",
-      "refs": [
-        "validacao",
-        "formdata",
-        "mensagens",
-        "liveserver"
-      ],
-      "extensao": "Preparar a publicação no GitHub Pages, sem substituir a entrega local e a explicação individual.",
-      "apoio": "Permitir consulta à documentação e registrar as pistas oferecidas. Aplicar os critérios anunciados e as adaptações previstas para a turma.",
       "agenda": [
         {
-          "acao": "Apresentação dos critérios e conferência da versão integrada."
+          "acao": "Leitura da proposta e dos critérios."
         },
         {
-          "acao": "Execução e registro individual dos seis testes."
+          "acao": "Construção individual da solução."
         },
         {
-          "acao": "Demonstrações nas estações, explicação e alteração individual; registro escrito para todos."
+          "acao": "Testes e explicação individual."
         },
         {
-          "acao": "Entrega do ZIP identificado e conferência dos arquivos."
+          "acao": "Registro e entrega dos arquivos."
+        }
+      ],
+      "avaliacao": "Observar o resultado, os testes e uma explicação individual. O uso de uma base pronta não comprova que o aluno consegue explicar o código.",
+      "curiosidade": "Um teste que registra a entrada e o resultado esperado pode ser repetido por outra pessoa e ajuda a localizar um defeito.",
+      "refs": [
+        "primeiro",
+        "controles",
+        "validacao",
+        "disabled",
+        "formdata",
+        "labels",
+        "vscode",
+        "liveserver"
+      ],
+      "extensao": "Explique uma alternativa de implementação e compare seu comportamento com o requisito. Conclua primeiro os casos essenciais.",
+      "apoio": "Aplicar somente os apoios compatíveis com as regras de avaliação da turma e registrar o apoio. Ajustar exigências conforme adaptações já previstas pelo professor.",
+      "mapa": [
+        [
+          "Critério",
+          "Valor proposto"
+        ],
+        [
+          "HTML e controles adequados",
+          "2 pontos."
+        ],
+        [
+          "CSS, rótulos e teclado",
+          "2 pontos."
+        ],
+        [
+          "Coleta e resumo local",
+          "2 pontos."
+        ],
+        [
+          "Validação e campo condicional",
+          "2 pontos."
+        ],
+        [
+          "Testes e explicação individual",
+          "2 pontos."
+        ]
+      ],
+      "testes": [
+        [
+          "Caso",
+          "Resultado esperado"
+        ],
+        [
+          "Obrigatórios vazios",
+          "Bloqueio da tentativa."
+        ],
+        [
+          "E-mails diferentes e depois corrigidos",
+          "Erro comunicado e mensagem limpa ao corrigir."
+        ],
+        [
+          "Outra oficina sem tema",
+          "Tema obrigatório."
+        ],
+        [
+          "Trocar de Outra oficina para Web",
+          "Tema deixa a validação e a coleta."
+        ],
+        [
+          "Caderno e Notebook marcados",
+          "Resumo preserva os dois materiais."
+        ],
+        [
+          "Texto com sinais de tag no objetivo",
+          "Aparece como texto literal."
+        ],
+        [
+          "Tela estreita e teclado",
+          "Campos alcançáveis e foco visível."
+        ],
+        [
+          "Novo preenchimento",
+          "Regras e estado voltam à condição inicial."
+        ]
+      ],
+      "erros": [
+        "A entrega visual não substitui a explicação do código.",
+        "Não importar o resumo completo do projeto de chamado sem adaptar os names.",
+        "O registro de teste precisa distinguir previsão e resultado observado."
+      ],
+      "saida": "Qual requisito você demonstrou com maior autonomia? Qual precisa corrigir?",
+      "slidePDF": "materiais/Slides-Aula-08.pdf",
+      "aulaPDF": "materiais/Aula-08-Formularios.pdf",
+      "projetoZIP": "materiais/Aula-08-Projeto.zip",
+      "modelo": null,
+      "slides": [
+        {
+          "titulo": "Avaliação prática: inscrição em oficina",
+          "texto": [
+            "Aplicação individual dos conhecimentos de formulários",
+            "Prof. Fabrício Rodrigues"
+          ],
+          "tipo": "capa",
+          "numero": 1,
+          "aula": "08",
+          "data": "11/12"
         },
         {
-          "acao": "Autoavaliação e registro para devolutiva em 18/12."
+          "titulo": "O que vamos construir",
+          "texto": [
+            "Construir um formulário para um contexto diferente do chamado.",
+            "Demonstrar estrutura, responsividade, coleta e validação.",
+            "Registrar testes e explicar uma decisão de implementação."
+          ],
+          "tipo": "texto",
+          "numero": 2,
+          "aula": "08",
+          "data": "11/12"
+        },
+        {
+          "titulo": "Ponto de partida",
+          "texto": [
+            "Retome o projeto e a explicação da aula anterior. Se não tiver os arquivos, baixe a base deste encontro: ela contém o ponto de partida necessário.",
+            "Abra o projeto deste encontro no VS Code. Salve uma cópia própria antes de alterar."
+          ],
+          "tipo": "texto",
+          "numero": 3,
+          "aula": "08",
+          "data": "11/12"
+        },
+        {
+          "titulo": "Mapa da aula",
+          "texto": [],
+          "tipo": "tabela",
+          "tabela": [
+            [
+              "Critério",
+              "Valor proposto"
+            ],
+            [
+              "HTML e controles adequados",
+              "2 pontos."
+            ],
+            [
+              "CSS, rótulos e teclado",
+              "2 pontos."
+            ],
+            [
+              "Coleta e resumo local",
+              "2 pontos."
+            ],
+            [
+              "Validação e campo condicional",
+              "2 pontos."
+            ],
+            [
+              "Testes e explicação individual",
+              "2 pontos."
+            ]
+          ],
+          "numero": 4,
+          "aula": "08",
+          "data": "11/12"
+        },
+        {
+          "titulo": "Situação da avaliação",
+          "texto": [
+            "Uma oficina de informática precisa de um protótipo de inscrição. Use somente dados fictícios e mantenha o envio simulado. O professor explicará as regras de consulta e os critérios antes do início.",
+            "O participante deve escolher uma oficina (Redes, Hardware, Web ou Outra oficina) e um turno (Manhã ou Tarde). Materiais que levará são opcionais: Caderno e Notebook."
+          ],
+          "tipo": "texto",
+          "refs": [
+            "primeiro",
+            "controles"
+          ],
+          "numero": 5,
+          "aula": "08",
+          "data": "11/12"
+        },
+        {
+          "titulo": "Especificação dos campos",
+          "texto": [
+            "Participante fictício: texto de 2 a 60 caracteres. Contato e confirmação: formato de e-mail, obrigatórios e iguais. Oficina: select obrigatório com opção inicial vazia. Turno: uma opção obrigatória em radio.",
+            "Objetivo da participação: de 20 a 500 caracteres úteis. Ao escolher Outra oficina, mostrar Tema sugerido, habilitá-lo e torná-lo obrigatório. Ao sair dessa escolha, limpar e desabilitar esse campo."
+          ],
+          "tipo": "texto",
+          "refs": [
+            "validacao",
+            "disabled"
+          ],
+          "numero": 6,
+          "aula": "08",
+          "data": "11/12"
+        },
+        {
+          "titulo": "Comportamento e entrega",
+          "texto": [
+            "Mostrar um resumo local com os dados da inscrição, preservando os dois materiais opcionais se marcados. Tratar valores como texto. Não enviar nem gravar em servidor.",
+            "O formulário deve funcionar em tela estreita e pelo teclado. Manter valores após uma tentativa inválida. O reinício precisa limpar as mensagens e o estado condicional. Entregar os três arquivos em ZIP e o registro TXT."
+          ],
+          "tipo": "texto",
+          "refs": [
+            "formdata",
+            "labels"
+          ],
+          "numero": 7,
+          "aula": "08",
+          "data": "11/12"
+        },
+        {
+          "titulo": "Atividade no VS Code",
+          "texto": [
+            "Ler os requisitos e os critérios com o professor. Baixar a base da avaliação.",
+            "Construir individualmente o HTML, completar CSS e JavaScript conforme a especificação."
+          ],
+          "tipo": "texto",
+          "numero": 8,
+          "aula": "08",
+          "data": "11/12"
+        },
+        {
+          "titulo": "Atividade: conferência e explicação",
+          "texto": [
+            "Realizar os testes da tabela e registrar os resultados reais, inclusive o que ainda falhou.",
+            "Entregar ZIP e TXT e explicar um campo, uma regra e um teste ao professor."
+          ],
+          "tipo": "texto",
+          "numero": 9,
+          "aula": "08",
+          "data": "11/12"
+        },
+        {
+          "titulo": "Conferência dos testes",
+          "texto": [],
+          "tipo": "tabela",
+          "tabela": [
+            [
+              "Caso",
+              "Resultado esperado"
+            ],
+            [
+              "Obrigatórios vazios",
+              "Bloqueio da tentativa."
+            ],
+            [
+              "E-mails diferentes e depois corrigidos",
+              "Erro comunicado e mensagem limpa ao corrigir."
+            ],
+            [
+              "Outra oficina sem tema",
+              "Tema obrigatório."
+            ],
+            [
+              "Trocar de Outra oficina para Web",
+              "Tema deixa a validação e a coleta."
+            ],
+            [
+              "Caderno e Notebook marcados",
+              "Resumo preserva os dois materiais."
+            ]
+          ],
+          "numero": 10,
+          "aula": "08",
+          "data": "11/12"
+        },
+        {
+          "titulo": "Conferência dos testes (continuação)",
+          "texto": [],
+          "tipo": "tabela",
+          "tabela": [
+            [
+              "Caso",
+              "Resultado esperado"
+            ],
+            [
+              "Texto com sinais de tag no objetivo",
+              "Aparece como texto literal."
+            ],
+            [
+              "Tela estreita e teclado",
+              "Campos alcançáveis e foco visível."
+            ],
+            [
+              "Novo preenchimento",
+              "Regras e estado voltam à condição inicial."
+            ]
+          ],
+          "numero": 11,
+          "aula": "08",
+          "data": "11/12"
+        },
+        {
+          "titulo": "Erros que merecem atenção",
+          "texto": [
+            "A entrega visual não substitui a explicação do código.",
+            "Não importar o resumo completo do projeto de chamado sem adaptar os names.",
+            "O registro de teste precisa distinguir previsão e resultado observado."
+          ],
+          "tipo": "texto",
+          "numero": 12,
+          "aula": "08",
+          "data": "11/12"
+        },
+        {
+          "titulo": "Registro e entrega",
+          "texto": [
+            "Salve index.html, style.css e script.js. Compacte a pasta em ZIP.",
+            "Abra o registro de testes da aula, informe nome e turma e baixe o TXT.",
+            "Entregue ZIP e TXT ao professor na aula. Os downloads não são enviados automaticamente."
+          ],
+          "tipo": "texto",
+          "numero": 13,
+          "aula": "08",
+          "data": "11/12"
+        },
+        {
+          "titulo": "Uma explicação para fechar",
+          "texto": [
+            "Qual requisito você demonstrou com maior autonomia? Qual precisa corrigir?",
+            "Guarde a versão desta aula: ela será o ponto de partida para a continuidade."
+          ],
+          "tipo": "texto",
+          "numero": 14,
+          "aula": "08",
+          "data": "11/12"
         }
       ]
     },
@@ -1029,14 +3581,14 @@ window.WEBLAB_CURSO = {
       "numero": "09",
       "eixo": "Devolutiva e recuperação",
       "titulo": "Corrigir, recuperar e concluir",
-      "subtitulo": "Devolutiva da avaliação, recuperação e fechamento do percurso",
-      "produto": "Versão corrigida, registro das melhorias e recuperação, quando necessária, em 18/12.",
+      "subtitulo": "Devolutiva, depuração e nova evidência de aprendizagem",
+      "produto": "Pasta com index.html, style.css e script.js em ZIP, acompanhada do registro de testes em TXT.",
       "objetivos": [
-        "Interpretar a devolutiva da avaliação de 11/12.",
-        "Corrigir o projeto e demonstrar novamente os critérios que precisam de reforço.",
-        "Comparar a aprendizagem atual com o diagnóstico inicial e organizar o portfólio."
+        "Interpretar a devolutiva com base em critérios e testes.",
+        "Localizar e corrigir defeitos de rótulo, coleta e estado.",
+        "Demonstrar novamente os critérios pendentes."
       ],
-      "retomada": "Reabrir o projeto e a devolutiva de 11/12. A avaliação principal já foi aplicada; este encontro permite corrigir, recuperar e encerrar o percurso.",
+      "retomada": "Retome o projeto e a explicação da aula anterior. Se não tiver os arquivos, baixe a base deste encontro: ela contém o ponto de partida necessário.",
       "conceitos": [
         "Devolutiva",
         "Correção e novo teste",
@@ -1045,69 +3597,419 @@ window.WEBLAB_CURSO = {
       ],
       "secoes": [
         {
-          "titulo": "A devolutiva orienta a correção",
+          "titulo": "Devolutiva sem presumir os resultados",
           "texto": [
-            "Leia o comentário do professor e localize no código a evidência de cada ponto. Escolha as correções prioritárias e escreva o que será alterado.",
-            "Depois da mudança, repita o caso que apresentou problema e os testes relacionados. Registre o resultado para mostrar o que melhorou."
+            "O professor devolve a avaliação real com os critérios e as evidências observadas. Não existe uma nota antecipada neste material. Escolha o que precisa retomar a partir dessa devolutiva.",
+            "O projeto de recuperação contém defeitos intencionais para investigar. Quem já demonstrou os critérios pode explicar os defeitos e ampliar os testes, conforme orientação do professor."
           ],
-          "codigo": ""
+          "codigo": "",
+          "refs": [
+            "labels",
+            "mensagens"
+          ]
         },
         {
-          "titulo": "Recuperação com evidência individual",
+          "titulo": "Investigação de rótulos e coleta",
           "texto": [
-            "Quando necessário, refaça uma tarefa equivalente sobre os critérios que ainda precisam ser demonstrados, conforme a orientação do professor e as regras da turma. Explique a alteração e mostre o teste.",
-            "Quem já demonstrou os critérios pode aperfeiçoar acessibilidade, documentação ou publicação e ajudar a discutir estratégias, preservando a autoria individual."
+            "Clique no rótulo de contato e observe o foco. Compare for com o id. Depois confira se o campo possui name e se a coleta usa o formulário correto.",
+            "Faça uma mudança por vez e repita o mesmo teste. Um formulário vazio de dados no resumo pode indicar um problema de coleta, mesmo que os campos tenham sido preenchidos."
           ],
-          "codigo": ""
+          "codigo": "const dados = new FormData(form);\nconst contato = dados.get('contato');\nconst sintomas = dados.getAll('sintomas');\n// getAll preserva várias opções com o mesmo name.",
+          "refs": [
+            "labels",
+            "formdata"
+          ]
         },
         {
-          "titulo": "Portfólio e continuidade",
+          "titulo": "Estado e nova tentativa",
           "texto": [
-            "Compare sua explicação atual com a primeira tentativa de outubro e registre um avanço concreto. Organize a versão final e os registros de teste.",
-            "Conclua ou revise a publicação no GitHub Pages, quando houver conexão. API, fetch e validação no servidor ficam como possibilidades de continuidade."
+            "Alterne a opção Outra oficina e confira visibilidade, obrigatoriedade e participação do tema sugerido. Compare as propriedades com a tabela de estados estudada.",
+            "Documente o problema, a hipótese, a alteração feita e o resultado depois da correção. Use uma tarefa equivalente para demonstrar os critérios ainda pendentes; siga as regras de recuperação da turma."
           ],
-          "codigo": ""
+          "codigo": "// hidden controla a apresentação do bloco.\n// disabled retira o campo da validação e do FormData.\n// required pede um valor quando o campo está ativo.",
+          "refs": [
+            "disabled",
+            "custom"
+          ]
         }
       ],
       "atividade": [
-        "Ler a devolutiva da avaliação de 11/12.",
-        "Corrigir os itens indicados e registrar novos testes.",
-        "Realizar a recuperação orientada, se necessária, e entregar a versão corrigida.",
-        "Organizar o portfólio, comparar com o diagnóstico e concluir a publicação quando possível."
+        "Ler a devolutiva e escolher os critérios a retomar com o professor.",
+        "Abrir a base de recuperação e investigar os defeitos de rótulo, name, coleta e campo condicional.",
+        "Corrigir uma hipótese por vez e repetir os testes.",
+        "Entregar a versão corrigida com o registro do progresso e explicar uma correção sem ler a solução."
       ],
       "checklist": [
-        "Relacionei a devolutiva com o meu código.",
-        "Registrei a correção e repeti os testes.",
-        "Demonstrei os critérios retomados na recuperação, quando necessária.",
-        "Guardei minha versão final e uma evidência do que aprendi."
+        "Implementei os requisitos da atividade desta aula.",
+        "Testei os casos da tabela e registrei o resultado observado.",
+        "Consigo explicar uma decisão e uma correção.",
+        "Guardei o ZIP e o TXT com nome, turma e aula."
       ],
-      "avaliacao": "Devolver a avaliação aplicada em 11/12. Registrar as correções e aplicar recuperação com evidências equivalentes dos critérios pendentes, conforme as regras institucionais. Não deixar a primeira avaliação para o último encontro.",
-      "curiosidade": "Repetir o teste depois de corrigir ajuda a verificar se o problema foi resolvido e se outra parte continua funcionando.",
-      "refs": [
-        "publicar",
-        "pages",
-        "validacao",
-        "liveserver"
-      ],
-      "extensao": "Desenhar uma API futura, descrevendo os dados enviados e a resposta esperada.",
-      "apoio": "Retomar um critério por vez, usando a devolutiva e um exemplo curto, e pedir nova tentativa individual.",
       "agenda": [
         {
-          "acao": "Devolutiva coletiva e orientações individuais da avaliação de 11/12."
+          "acao": "Devolutiva dos critérios com evidências."
         },
         {
-          "acao": "Correções orientadas, novos testes e aprimoramentos."
+          "acao": "Investigação dos defeitos do projeto de recuperação."
         },
         {
-          "acao": "Recuperação individual sobre critérios pendentes, conforme as regras da turma."
+          "acao": "Correções orientadas e nova tentativa."
         },
         {
-          "acao": "Organização do portfólio e conclusão da publicação quando possível."
+          "acao": "Repetição dos testes e explicação individual."
         },
         {
-          "acao": "Comparação com o diagnóstico e fechamento."
+          "acao": "Registro do progresso e fechamento."
+        }
+      ],
+      "avaliacao": "Observar o resultado, os testes e uma explicação individual. O uso de uma base pronta não comprova que o aluno consegue explicar o código.",
+      "curiosidade": "Repetir o teste depois de corrigir ajuda a verificar se o problema foi resolvido e se outra parte continua funcionando.",
+      "refs": [
+        "labels",
+        "mensagens",
+        "formdata",
+        "disabled",
+        "custom",
+        "vscode",
+        "liveserver"
+      ],
+      "extensao": "Explique uma alternativa de implementação e compare seu comportamento com o requisito. Conclua primeiro os casos essenciais.",
+      "apoio": "Separar os defeitos por categoria. Oferecer uma pista localizada e registrar o apoio, reduzindo-o na nova demonstração.",
+      "mapa": [
+        [
+          "Etapa",
+          "Evidência"
+        ],
+        [
+          "Devolutiva",
+          "Critério, resultado observado e ponto a corrigir."
+        ],
+        [
+          "Correção",
+          "Hipótese, alteração e novo teste."
+        ],
+        [
+          "Recuperação",
+          "Tarefa equivalente do critério pendente."
+        ],
+        [
+          "Fechamento",
+          "Explicação individual e versão corrigida."
+        ]
+      ],
+      "testes": [
+        [
+          "Caso",
+          "Resultado esperado após a correção"
+        ],
+        [
+          "Clicar no rótulo de contato",
+          "O foco chega ao contato."
+        ],
+        [
+          "Preencher contato e gerar resumo",
+          "O valor informado aparece no resumo."
+        ],
+        [
+          "Escolher Outra oficina",
+          "Tema fica habilitado e obrigatório."
+        ],
+        [
+          "Sair de Outra oficina",
+          "Tema fica oculto e fora da coleta."
+        ],
+        [
+          "Corrigir um valor inválido",
+          "A próxima tentativa pode ocorrer."
+        ],
+        [
+          "Repetir o caso da avaliação",
+          "A evidência do critério pendente fica registrada."
+        ]
+      ],
+      "erros": [
+        "Trocar vários trechos ao mesmo tempo dificulta identificar a causa.",
+        "Uma mensagem de sucesso sozinha não comprova o conteúdo do resumo.",
+        "Recuperação deve produzir nova evidência do critério, conforme as regras da turma."
+      ],
+      "saida": "Qual era a causa do erro, como você a corrigiu e qual teste confirmou a mudança?",
+      "slidePDF": "materiais/Slides-Aula-09.pdf",
+      "aulaPDF": "materiais/Aula-09-Formularios.pdf",
+      "projetoZIP": "materiais/Aula-09-Projeto.zip",
+      "modelo": null,
+      "slides": [
+        {
+          "titulo": "Corrigir, recuperar e concluir",
+          "texto": [
+            "Devolutiva, depuração e nova evidência de aprendizagem",
+            "Prof. Fabrício Rodrigues"
+          ],
+          "tipo": "capa",
+          "numero": 1,
+          "aula": "09",
+          "data": "18/12"
+        },
+        {
+          "titulo": "O que vamos construir",
+          "texto": [
+            "Interpretar a devolutiva com base em critérios e testes.",
+            "Localizar e corrigir defeitos de rótulo, coleta e estado.",
+            "Demonstrar novamente os critérios pendentes."
+          ],
+          "tipo": "texto",
+          "numero": 2,
+          "aula": "09",
+          "data": "18/12"
+        },
+        {
+          "titulo": "Ponto de partida",
+          "texto": [
+            "Retome o projeto e a explicação da aula anterior. Se não tiver os arquivos, baixe a base deste encontro: ela contém o ponto de partida necessário.",
+            "Abra o projeto deste encontro no VS Code. Salve uma cópia própria antes de alterar."
+          ],
+          "tipo": "texto",
+          "numero": 3,
+          "aula": "09",
+          "data": "18/12"
+        },
+        {
+          "titulo": "Mapa da aula",
+          "texto": [],
+          "tipo": "tabela",
+          "tabela": [
+            [
+              "Etapa",
+              "Evidência"
+            ],
+            [
+              "Devolutiva",
+              "Critério, resultado observado e ponto a corrigir."
+            ],
+            [
+              "Correção",
+              "Hipótese, alteração e novo teste."
+            ],
+            [
+              "Recuperação",
+              "Tarefa equivalente do critério pendente."
+            ],
+            [
+              "Fechamento",
+              "Explicação individual e versão corrigida."
+            ]
+          ],
+          "numero": 4,
+          "aula": "09",
+          "data": "18/12"
+        },
+        {
+          "titulo": "Devolutiva sem presumir os resultados",
+          "texto": [
+            "O professor devolve a avaliação real com os critérios e as evidências observadas. Não existe uma nota antecipada neste material. Escolha o que precisa retomar a partir dessa devolutiva.",
+            "O projeto de recuperação contém defeitos intencionais para investigar. Quem já demonstrou os critérios pode explicar os defeitos e ampliar os testes, conforme orientação do professor."
+          ],
+          "tipo": "texto",
+          "refs": [
+            "labels",
+            "mensagens"
+          ],
+          "numero": 5,
+          "aula": "09",
+          "data": "18/12"
+        },
+        {
+          "titulo": "Investigação de rótulos e coleta",
+          "texto": [
+            "Clique no rótulo de contato e observe o foco. Compare for com o id. Depois confira se o campo possui name e se a coleta usa o formulário correto.",
+            "Faça uma mudança por vez e repita o mesmo teste. Um formulário vazio de dados no resumo pode indicar um problema de coleta, mesmo que os campos tenham sido preenchidos."
+          ],
+          "tipo": "texto",
+          "refs": [
+            "labels",
+            "formdata"
+          ],
+          "numero": 6,
+          "aula": "09",
+          "data": "18/12"
+        },
+        {
+          "titulo": "Exemplo: Investigação de rótulos e coleta",
+          "texto": [
+            "Observe o papel de cada linha e compare com o arquivo do projeto."
+          ],
+          "tipo": "codigo",
+          "codigo": "const dados = new FormData(form);\nconst contato = dados.get('contato');\nconst sintomas = dados.getAll('sintomas');\n// getAll preserva várias opções com o mesmo name.",
+          "refs": [
+            "labels",
+            "formdata"
+          ],
+          "numero": 7,
+          "aula": "09",
+          "data": "18/12"
+        },
+        {
+          "titulo": "Estado e nova tentativa",
+          "texto": [
+            "Alterne a opção Outra oficina e confira visibilidade, obrigatoriedade e participação do tema sugerido. Compare as propriedades com a tabela de estados estudada.",
+            "Documente o problema, a hipótese, a alteração feita e o resultado depois da correção. Use uma tarefa equivalente para demonstrar os critérios ainda pendentes; siga as regras de recuperação da turma."
+          ],
+          "tipo": "texto",
+          "refs": [
+            "disabled",
+            "custom"
+          ],
+          "numero": 8,
+          "aula": "09",
+          "data": "18/12"
+        },
+        {
+          "titulo": "Exemplo: Estado e nova tentativa",
+          "texto": [
+            "Observe o papel de cada linha e compare com o arquivo do projeto."
+          ],
+          "tipo": "codigo",
+          "codigo": "// hidden controla a apresentação do bloco.\n// disabled retira o campo da validação e do FormData.\n// required pede um valor quando o campo está ativo.",
+          "refs": [
+            "disabled",
+            "custom"
+          ],
+          "numero": 9,
+          "aula": "09",
+          "data": "18/12"
+        },
+        {
+          "titulo": "Atividade no VS Code",
+          "texto": [
+            "Ler a devolutiva e escolher os critérios a retomar com o professor.",
+            "Abrir a base de recuperação e investigar os defeitos de rótulo, name, coleta e campo condicional."
+          ],
+          "tipo": "texto",
+          "numero": 10,
+          "aula": "09",
+          "data": "18/12"
+        },
+        {
+          "titulo": "Atividade: conferência e explicação",
+          "texto": [
+            "Corrigir uma hipótese por vez e repetir os testes.",
+            "Entregar a versão corrigida com o registro do progresso e explicar uma correção sem ler a solução."
+          ],
+          "tipo": "texto",
+          "numero": 11,
+          "aula": "09",
+          "data": "18/12"
+        },
+        {
+          "titulo": "Conferência dos testes",
+          "texto": [],
+          "tipo": "tabela",
+          "tabela": [
+            [
+              "Caso",
+              "Resultado esperado após a correção"
+            ],
+            [
+              "Clicar no rótulo de contato",
+              "O foco chega ao contato."
+            ],
+            [
+              "Preencher contato e gerar resumo",
+              "O valor informado aparece no resumo."
+            ],
+            [
+              "Escolher Outra oficina",
+              "Tema fica habilitado e obrigatório."
+            ],
+            [
+              "Sair de Outra oficina",
+              "Tema fica oculto e fora da coleta."
+            ],
+            [
+              "Corrigir um valor inválido",
+              "A próxima tentativa pode ocorrer."
+            ]
+          ],
+          "numero": 12,
+          "aula": "09",
+          "data": "18/12"
+        },
+        {
+          "titulo": "Conferência dos testes (continuação)",
+          "texto": [],
+          "tipo": "tabela",
+          "tabela": [
+            [
+              "Caso",
+              "Resultado esperado após a correção"
+            ],
+            [
+              "Repetir o caso da avaliação",
+              "A evidência do critério pendente fica registrada."
+            ]
+          ],
+          "numero": 13,
+          "aula": "09",
+          "data": "18/12"
+        },
+        {
+          "titulo": "Erros que merecem atenção",
+          "texto": [
+            "Trocar vários trechos ao mesmo tempo dificulta identificar a causa.",
+            "Uma mensagem de sucesso sozinha não comprova o conteúdo do resumo.",
+            "Recuperação deve produzir nova evidência do critério, conforme as regras da turma."
+          ],
+          "tipo": "texto",
+          "numero": 14,
+          "aula": "09",
+          "data": "18/12"
+        },
+        {
+          "titulo": "Registro e entrega",
+          "texto": [
+            "Salve index.html, style.css e script.js. Compacte a pasta em ZIP.",
+            "Abra o registro de testes da aula, informe nome e turma e baixe o TXT.",
+            "Entregue ZIP e TXT ao professor na aula. Os downloads não são enviados automaticamente."
+          ],
+          "tipo": "texto",
+          "numero": 15,
+          "aula": "09",
+          "data": "18/12"
+        },
+        {
+          "titulo": "Uma explicação para fechar",
+          "texto": [
+            "Qual era a causa do erro, como você a corrigiu e qual teste confirmou a mudança?",
+            "Guarde a versão desta aula: ela será o ponto de partida para a continuidade."
+          ],
+          "tipo": "texto",
+          "numero": 16,
+          "aula": "09",
+          "data": "18/12"
         }
       ]
     }
+  ],
+  "atualizado": "22/10/2026",
+  "rubrica": [
+    [
+      "HTML e controles",
+      "2"
+    ],
+    [
+      "CSS e acessibilidade de uso",
+      "2"
+    ],
+    [
+      "Coleta e resumo local",
+      "2"
+    ],
+    [
+      "Validação e estado condicional",
+      "2"
+    ],
+    [
+      "Testes e explicação individual",
+      "2"
+    ]
   ]
 };

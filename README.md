@@ -1,11 +1,14 @@
-# WebLab — Programação Web
+# WebLab - Programação Web
 
-Professor Fabrício Rodrigues.
+Professor Fabrício Rodrigues. Curso Técnico em Informática.
 
-Projetos HTML/CSS/JS para VS Code com Live Server. Consulte [como baixar, abrir e entregar](como-usar.html).
+Módulo completo de formulários: oito aulas de 23/10 a 18/12/2026, além da abertura de 16/10.
+Cada encontro possui conteúdo, slides, PDF, projeto para VS Code com Live Server e registro de testes.
+Os projetos têm somente index.html, style.css e script.js, com indentação.
 
-Diagnóstico: TXT com nome e turma + projeto em ZIP, entregues ao professor durante a aula. Não há envio automático.
+Da aula 02 em diante, entregar o projeto em ZIP e o registro de testes em TXT durante a aula.
+A ficha de diagnóstico pertence à abertura de 16/10. As páginas não enviam nem salvam respostas automaticamente.
 
-Avaliação principal: 11/12/2026. Devolutiva, correções e recuperação: 18/12/2026. Sem aula em 20/11.
-
-As tarefas dos estudantes não apresentam duração em minutos. A agenda de condução fica no plano privado do professor. Referências clicáveis ao final de cada aula e no guia.
+Sem aula em 20/11. Avaliação em 11/12. Devolutiva e recuperação em 18/12.
+As referências são clicáveis. As tarefas públicas não possuem duração em minutos.
+As soluções, as falas e os PowerPoints com notas ficam no pacote reservado ao professor.

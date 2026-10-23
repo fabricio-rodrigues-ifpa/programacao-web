@@ -13,3 +13,15 @@
 .lesson-table th, .lesson-table td { padding: 12px; border-bottom: 1px solid #dce4d3; vertical-align: top; overflow-wrap: anywhere; }
 .lesson-table th { background: #edf3e5; color: #254c31; }
 .lesson-table th:first-child { width: 33%; }
+
+.download-row { padding: 1.5rem 0; border-bottom: 1px solid var(--line); }
+.download-row h3 { margin-top: 0; }
+.detail-aside .detail-actions { display: grid; gap: .6rem; }
+.slide-page { width: min(100% - 2rem, 76rem); margin: 2rem auto; }
+.lesson-presentation { padding: clamp(1.2rem, 4vw, 3rem); border: 1px solid #d5dfcc; background: #fafbf7; min-height: 33rem; }
+.lesson-presentation h1 { font-size: clamp(1.8rem, 3.5vw, 3rem); line-height: 1.15; }
+.lesson-presentation p { font-size: clamp(1.05rem, 2vw, 1.6rem); }
+.lesson-presentation pre { font-size: clamp(.9rem, 1.5vw, 1.25rem); overflow: auto; }
+.slide-controls { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin: 1rem 0; }
+.diagnostic-question select, .diagnostic-question input { width: 100%; font: inherit; padding: .7rem; margin-bottom: 1rem; }
+@media print { .detail-actions, .slide-controls, .site-header, .detail-aside, .return-nav { display: none !important; } .lesson-content { width: 100%; } }
