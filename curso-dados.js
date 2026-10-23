@@ -402,7 +402,7 @@ window.WEBLAB_CURSO = {
         "Associar rótulos e distinguir id, name, type e value.",
         "Construir escolhas únicas, múltiplas e campos com regras nativas."
       ],
-      "retomada": "Retome HTML, CSS e eventos vistos anteriormente. Se o primeiro formulário ficou pendente em 16/10, comece pelo campo de solicitante já fornecido nesta base.",
+      "retomada": "Abra o projeto-base de 23/10 no VS Code com Live Server. Ele já tem título, estilos e apoio de simulação, mas ainda não tem formulário nem campos. Vamos construir juntos em index.html. Continue esta mesma pasta nas aulas seguintes; os ZIPs por data são bases de apoio para recuperar o ponto de partida.",
       "conceitos": [
         "form e label",
         "input, select e textarea",
@@ -411,82 +411,35 @@ window.WEBLAB_CURSO = {
       ],
       "secoes": [
         {
-          "titulo": "Fundamentos antes das tags",
+          "titulo": "Para que serve um formulário?",
           "texto": [
-            "Um formulário permite informar dados e fazer escolhas para realizar uma tarefa. A finalidade orienta os campos: num chamado precisamos identificar o equipamento, classificar o problema e descrevê-lo.",
-            "Cadastro, login, pesquisa, contato e busca são finalidades. text, email e radio são tipos de controle; não são categorias de formulário. Nesta aula construiremos a estrutura HTML. CSS e JavaScript já fornecidos apenas mantêm o exemplo legível e a simulação local."
+            "Um formulário reúne informações que uma pessoa fornece para uma tarefa: pesquisar, entrar em uma conta, fazer uma inscrição ou pedir suporte. O controle deve combinar com o dado esperado.",
+            "Nosso caso é um chamado de suporte ao laboratório. Vamos usar dados fictícios. Neste primeiro encontro, o navegador confere regras HTML e mostra uma mensagem local; não cria um chamado real."
           ],
           "codigo": "",
           "refs": [
-            "primeiro",
-            "controles"
+            "primeiro"
           ]
         },
         {
-          "titulo": "O papel de form, label e dos atributos",
+          "titulo": "Tags, atributos e organização",
           "texto": [
-            "form reúne os controles da tarefa. label informa o que preencher. O for do label deve corresponder ao id do campo. Clique no rótulo para verificar a associação. Um placeholder é só um exemplo e não substitui o rótulo.",
-            "id identifica o elemento no documento. name identifica o dado na coleta. type escolhe o comportamento. value representa o valor do controle. Dois campos podem participar do mesmo grupo pelo name, mas seus ids devem ser únicos. Um código como PC-07 é texto, não uma quantidade."
+            "Tags criam os elementos: form, label, input, select, option, textarea, fieldset, legend e button. Atributos configuram esses elementos: id, for, name, type, value e required.",
+            "O for do label corresponde ao id do campo. O name identifica o dado. Textos de orientação e rótulos continuam visíveis; placeholder não substitui label.",
+            "A classe campo agrupa visualmente cada rótulo e seu controle. A classe campos organiza o conjunto; CSS não define quais dados são coletados.",
+            "Nos grupos de radio e checkbox deste projeto, o input fica dentro do label: essa associação implícita dispensa for nesses exemplos."
           ],
-          "codigo": "<label for=\"contato\">E-mail fictício (obrigatório)</label>\n<input id=\"contato\" name=\"contato\" type=\"email\" required>",
+          "codigo": "",
           "refs": [
-            "labels",
-            "inputs"
-          ]
-        },
-        {
-          "titulo": "Uma lista de opções com select",
-          "texto": [
-            "select reúne opções conhecidas; cada option tem um valor de dados e um texto visível. A opção inicial com value vazio permite que required peça uma escolha.",
-            "No chamado, use hardware, software, rede e outro. Nesta aula, escolher outro ainda não abre um campo adicional. Esse comportamento será construído em 04/12."
-          ],
-          "codigo": "<label for=\"categoria\">Categoria (obrigatório)</label>\n<select id=\"categoria\" name=\"categoria\" required>\n  <option value=\"\">Escolha uma categoria</option>\n  <option value=\"hardware\">Hardware</option>\n  <option value=\"software\">Software</option>\n  <option value=\"rede\">Rede</option>\n  <option value=\"outro\">Outro</option>\n</select>",
-          "refs": [
-            "controles"
-          ]
-        },
-        {
-          "titulo": "Escolha única com radio",
-          "texto": [
-            "Radios com o mesmo name formam um grupo de escolha única. Values diferentes distinguem as respostas. fieldset reúne o grupo e legend explica a pergunta.",
-            "Escolha prioridade normal ou alta. O required em um radio do grupo exige que uma opção daquele grupo seja escolhida. Não crie names diferentes para cada alternativa."
-          ],
-          "codigo": "<fieldset>\n  <legend>Prioridade (obrigatória)</legend>\n  <label><input type=\"radio\" name=\"prioridade\"\n    value=\"normal\" required> Normal</label>\n  <label><input type=\"radio\" name=\"prioridade\"\n    value=\"alta\"> Alta</label>\n</fieldset>",
-          "refs": [
-            "estrutura",
-            "inputs"
-          ]
-        },
-        {
-          "titulo": "Escolhas independentes com checkbox",
-          "texto": [
-            "Checkboxes permitem marcar nenhuma, uma ou várias opções independentes. Use sintomas opcionais: Lentidão e Mensagem de erro.",
-            "Os dois controles podem ter o mesmo name e values diferentes. Na coleta com JavaScript, usaremos getAll para recuperar todas as escolhas, em 06/11. required em um checkbox exige aquele checkbox específico; não significa “pelo menos um do conjunto”."
-          ],
-          "codigo": "<fieldset>\n  <legend>Sintomas (opcionais)</legend>\n  <label><input type=\"checkbox\" name=\"sintomas\"\n    value=\"Lentidão\"> Lentidão</label>\n  <label><input type=\"checkbox\" name=\"sintomas\"\n    value=\"Mensagem de erro\"> Mensagem de erro</label>\n</fieldset>",
-          "refs": [
-            "controles",
-            "estrutura"
-          ]
-        },
-        {
-          "titulo": "Texto longo e regras nativas",
-          "texto": [
-            "textarea recebe a descrição. A instrução informa de 20 a 500 caracteres, e aria-describedby associa a ajuda ao campo. required, minlength e maxlength são regras que o navegador pode conferir.",
-            "type=email verifica um formato, sem comprovar a existência da caixa de e-mail. As mensagens variam por navegador. A versão desta aula testa as regras HTML; comparação entre e-mails e texto formado só por espaços ficam para 13/11."
-          ],
-          "codigo": "<label for=\"descricao\">Descrição (obrigatória)</label>\n<p id=\"ajuda-descricao\">Use de 20 a 500 caracteres.</p>\n<textarea id=\"descricao\" name=\"descricao\" rows=\"5\"\n  required minlength=\"20\" maxlength=\"500\"\n  aria-describedby=\"ajuda-descricao\"></textarea>",
-          "refs": [
-            "validacao",
             "labels"
           ]
         }
       ],
       "atividade": [
-        "Baixar o projeto desta aula, extrair os três arquivos e abrir a pasta no VS Code. Executar index.html com Live Server.",
-        "Usar o campo de solicitante como modelo. Acrescentar equipamento (texto, 2 a 20 caracteres), contato (email), categoria (select), prioridade (radio), descrição (20 a 500 caracteres) e os dois sintomas opcionais (checkbox).",
-        "Associar rótulos, usar names coerentes e deixar visível o que é obrigatório. Manter o script de simulação fornecido.",
-        "Salvar, testar os casos e explicar a diferença entre id e name usando um campo do seu projeto."
+        "Extraia Aula-02-Projeto.zip, abra a pasta no VS Code e execute index.html com Live Server. Confirme que a página ainda não tem campos.",
+        "Mantenha o navegador ao lado do editor. Acompanhe as oito etapas: leia a finalidade, insira o trecho no lugar indicado, salve e confira o resultado.",
+        "Ao concluir os campos, teste vazio, formato de e-mail, limites da descrição, prioridade e sintomas. Use dados fictícios.",
+        "Registre os testes na ficha da aula 02. Baixe o TXT, compacte somente index.html, style.css e script.js e entregue os dois arquivos na aula."
       ],
       "checklist": [
         "Implementei os requisitos da atividade desta aula.",
@@ -496,19 +449,19 @@ window.WEBLAB_CURSO = {
       ],
       "agenda": [
         {
-          "acao": "Retomada e observação do problema."
+          "acao": "Relacionar formulários a tarefas reais e abrir o projeto-base."
         },
         {
-          "acao": "Explicação dos conceitos e demonstração dos exemplos."
+          "acao": "Distinguir tags e atributos e criar o contêiner form."
         },
         {
-          "acao": "Construção individual no VS Code."
+          "acao": "Construir os campos em etapas, salvando e conferindo após cada inserção."
         },
         {
-          "acao": "Testes por um colega e correções."
+          "acao": "Testar regras e comparar radio com checkbox."
         },
         {
-          "acao": "Explicação, registro e entrega dos arquivos."
+          "acao": "Explicar uma escolha, registrar testes e entregar ZIP e TXT."
         }
       ],
       "avaliacao": "Observar o resultado, os testes e uma explicação individual. O uso de uma base pronta não comprova que o aluno consegue explicar o código.",
@@ -524,7 +477,7 @@ window.WEBLAB_CURSO = {
         "liveserver"
       ],
       "extensao": "Explique uma alternativa de implementação e compare seu comportamento com o requisito. Conclua primeiro os casos essenciais.",
-      "apoio": "Oferecer um campo pronto e pedir os demais por analogia. Se o tempo apertar, priorizar contato, categoria, descrição e o grupo radio; completar os sintomas com apoio.",
+      "apoio": "Oferecer um campo pronto e pedir os demais por analogia. Se o tempo apertar, priorizar contato, categoria, descrição e o grupo radio; completar os sintomas com apoio. Use a imagem para conferir o controle e a sequência do quadro para localizar cada alteração. Não avance para a etapa seguinte antes de salvar e observar a atual.",
       "mapa": [
         [
           "Finalidade",
@@ -630,10 +583,10 @@ window.WEBLAB_CURSO = {
       ],
       "slides": [
         {
-          "titulo": "Formulários: fundamentos e campos HTML",
+          "titulo": "Formulários: construir para entender",
           "texto": [
-            "Finalidade, estrutura, controles e validação nativa",
-            "Prof. Fabrício Rodrigues"
+            "Do pedido de ajuda ao primeiro formulário.",
+            "HTML hoje; CSS e JavaScript nos próximos encontros."
           ],
           "tipo": "capa",
           "numero": 1,
@@ -641,246 +594,238 @@ window.WEBLAB_CURSO = {
           "data": "23/10"
         },
         {
-          "titulo": "O que vamos construir",
+          "titulo": "Uma pessoa precisa pedir ajuda",
           "texto": [
-            "Explicar para que serve um formulário e escolher os dados necessários.",
-            "Associar rótulos e distinguir id, name, type e value.",
-            "Construir escolhas únicas, múltiplas e campos com regras nativas."
+            "O computador PC-07 está lento. Quais informações ajudam o suporte?",
+            "Observe o formulário e relacione cada campo a uma necessidade."
           ],
-          "tipo": "texto",
+          "tipo": "conceito",
+          "figura": "materiais/Figura-02-contexto.png",
           "numero": 2,
           "aula": "02",
           "data": "23/10"
         },
         {
-          "titulo": "Ponto de partida",
+          "titulo": "Qual controle combina com o dado?",
           "texto": [
-            "Retome HTML, CSS e eventos vistos anteriormente. Se o primeiro formulário ficou pendente em 16/10, comece pelo campo de solicitante já fornecido nesta base.",
-            "Abra o projeto deste encontro no VS Code. Salve uma cópia própria antes de alterar."
+            "Texto curto → input. Texto longo → textarea.",
+            "Uma opção → select ou radio. Várias opções → checkbox."
           ],
-          "tipo": "texto",
-          "numero": 3,
-          "aula": "02",
-          "data": "23/10"
-        },
-        {
-          "titulo": "Mapa da aula",
-          "texto": [],
-          "tipo": "tabela",
-          "tabela": [
+          "tipo": "conceito",
+          "mapa": [
             [
-              "Finalidade",
-              "Exemplo de uso"
+              "Texto curto",
+              "input"
             ],
             [
-              "Cadastro ou inscrição",
-              "Registrar participação em uma atividade."
+              "Texto longo",
+              "textarea"
             ],
             [
-              "Busca ou filtro",
-              "Encontrar informações."
+              "Uma escolha",
+              "select / radio"
             ],
             [
-              "Contato ou suporte",
-              "Descrever uma solicitação."
-            ],
-            [
-              "No projeto da turma",
-              "Preparar um chamado fictício; sem envio real."
+              "Várias escolhas",
+              "checkbox"
             ]
           ],
+          "numero": 3,
+          "aula": "02",
+          "data": "23/10",
+          "semSetas": true
+        },
+        {
+          "titulo": "Agora: abrir a base no VS Code",
+          "texto": [
+            "Baixe e extraia o projeto da aula 02. Abra a pasta e use Live Server em index.html.",
+            "A página começa sem campos. Hoje vamos editar somente index.html."
+          ],
+          "tipo": "conceito",
+          "figura": "materiais/Figura-02-base.png",
           "numero": 4,
           "aula": "02",
           "data": "23/10"
         },
         {
-          "titulo": "Fundamentos antes das tags",
+          "titulo": "Tag cria; atributo configura",
           "texto": [
-            "Um formulário permite informar dados e fazer escolhas para realizar uma tarefa. A finalidade orienta os campos: num chamado precisamos identificar o equipamento, classificar o problema e descrevê-lo.",
-            "Cadastro, login, pesquisa, contato e busca são finalidades. text, email e radio são tipos de controle; não são categorias de formulário. Nesta aula construiremos a estrutura HTML. CSS e JavaScript já fornecidos apenas mantêm o exemplo legível e a simulação local."
+            "label é a tag. for é um atributo. Seu valor precisa coincidir com o id do input.",
+            "name identifica o dado; type escolhe o comportamento."
           ],
-          "tipo": "texto",
-          "refs": [
-            "primeiro",
-            "controles"
+          "tipo": "conceito",
+          "codigo": "<label for=\"contato\">E-mail fictício</label>\n<input id=\"contato\" name=\"contato\"\n  type=\"email\" required>",
+          "mapa": [
+            [
+              "label / input",
+              "Tags"
+            ],
+            [
+              "for / id / name / type",
+              "Atributos"
+            ]
           ],
           "numero": 5,
           "aula": "02",
           "data": "23/10"
         },
         {
-          "titulo": "O papel de form, label e dos atributos",
+          "titulo": "1 · Criar o formulário",
           "texto": [
-            "form reúne os controles da tarefa. label informa o que preencher. O for do label deve corresponder ao id do campo. Clique no rótulo para verificar a associação. Um placeholder é só um exemplo e não substitui o rótulo.",
-            "id identifica o elemento no documento. name identifica o dado na coleta. type escolhe o comportamento. value representa o valor do controle. Dois campos podem participar do mesmo grupo pelo name, mas seus ids devem ser únicos. Um código como PC-07 é texto, não uma quantidade."
+            "Um contorno branco, ainda sem campos.",
+            "Confira que existe um único form, com abertura e fechamento."
           ],
-          "tipo": "texto",
-          "refs": [
-            "labels",
-            "inputs"
-          ],
+          "tipo": "passo",
+          "codigo": "<form id=\"formulario\">\n  <div class=\"campos\">\n    <!-- CAMPOS: inserir aqui -->\n  </div>\n  <!-- GRUPOS: inserir aqui -->\n  <!-- BOTÃO: inserir aqui -->\n</form>",
+          "onde": "index.html: substitua o comentário INÍCIO DO FORMULÁRIO dentro de main.",
+          "quadro": "form abre e fecha o conjunto. div organiza o layout; não coleta dados.",
+          "figura": "materiais/Figura-02-form.png",
           "numero": 6,
           "aula": "02",
-          "data": "23/10"
+          "data": "23/10",
+          "codigoSlide": "<form id=\"formulario\">\n  <div class=\"campos\">\n    <!-- CAMPOS: inserir aqui -->\n  </div>\n  <!-- GRUPOS: inserir aqui -->\n  <!-- BOTÃO: inserir aqui -->\n</form>"
         },
         {
-          "titulo": "Exemplo: O papel de form, label e dos atributos",
+          "titulo": "2 · Identificar quem pede ajuda",
           "texto": [
-            "Observe o papel de cada linha e compare com o arquivo do projeto."
+            "Um rótulo e uma caixa para texto curto.",
+            "Clique no rótulo: o cursor deve ir para a caixa."
           ],
-          "tipo": "codigo",
-          "codigo": "<label for=\"contato\">E-mail fictício (obrigatório)</label>\n<input id=\"contato\" name=\"contato\" type=\"email\" required>",
-          "refs": [
-            "labels",
-            "inputs"
-          ],
+          "tipo": "passo",
+          "codigo": "<div class=\"campo\">\n  <label for=\"solicitante\">Solicitante fictício (obrigatório)</label>\n  <input id=\"solicitante\" name=\"solicitante\"\n    type=\"text\" required minlength=\"2\" maxlength=\"60\"\n    autocomplete=\"off\">\n</div>",
+          "onde": "index.html: antes do comentário CAMPOS, dentro de div.campos. Mantenha o comentário para inserir os próximos campos.",
+          "quadro": "label identifica. for = id. name dá nome ao dado. input não tem tag de fechamento.",
+          "figura": "materiais/Figura-02-texto.png",
           "numero": 7,
           "aula": "02",
-          "data": "23/10"
+          "data": "23/10",
+          "codigoSlide": "<label for=\"solicitante\">Solicitante fictício</label>\n<input id=\"solicitante\" name=\"solicitante\"\n  type=\"text\" required\n  minlength=\"2\" maxlength=\"60\">"
         },
         {
-          "titulo": "Uma lista de opções com select",
+          "titulo": "3 · Escolher o tipo adequado",
           "texto": [
-            "select reúne opções conhecidas; cada option tem um valor de dados e um texto visível. A opção inicial com value vazio permite que required peça uma escolha.",
-            "No chamado, use hardware, software, rede e outro. Nesta aula, escolher outro ainda não abre um campo adicional. Esse comportamento será construído em 04/12."
+            "Duas novas caixas; o equipamento aceita letras e números.",
+            "Digite PC-07 e um e-mail fictício. O teste de formato será feito com o botão na etapa 8."
           ],
-          "tipo": "texto",
-          "refs": [
-            "controles"
-          ],
+          "tipo": "passo",
+          "codigo": "<div class=\"campo\">\n  <label for=\"equipamento\">Equipamento (obrigatório)</label>\n  <input id=\"equipamento\" name=\"equipamento\" type=\"text\"\n    required minlength=\"2\" maxlength=\"20\" placeholder=\"Ex.: PC-07\"\n    aria-describedby=\"ajuda-equipamento\">\n  <p class=\"ajuda\" id=\"ajuda-equipamento\">Use um código, não uma quantidade.</p>\n</div>\n<div class=\"campo\">\n  <label for=\"contato\">E-mail fictício (obrigatório)</label>\n  <input id=\"contato\" name=\"contato\" type=\"email\" required\n    autocomplete=\"off\" placeholder=\"estudante@example.com\">\n</div>",
+          "onde": "index.html: depois do solicitante, antes do comentário CAMPOS.",
+          "quadro": "type=\"text\": código PC-07. type=\"email\": formato de endereço. required é atributo.",
+          "figura": "materiais/Figura-02-tipos.png",
           "numero": 8,
           "aula": "02",
-          "data": "23/10"
+          "data": "23/10",
+          "codigoSlide": "<label for=\"equipamento\">Equipamento</label>\n<input id=\"equipamento\" name=\"equipamento\"\n  type=\"text\" required>\n\n<label for=\"contato\">E-mail fictício</label>\n<input id=\"contato\" name=\"contato\"\n  type=\"email\" required>"
         },
         {
-          "titulo": "Exemplo: Uma lista de opções com select",
+          "titulo": "4 · Oferecer opções com select",
           "texto": [
-            "Observe o papel de cada linha e compare com o arquivo do projeto."
+            "Uma lista com quatro categorias e uma instrução inicial.",
+            "Abra a lista e escolha Rede. Em 23/10, Outro é apenas uma opção; não abre campo extra."
           ],
-          "tipo": "codigo",
-          "codigo": "<label for=\"categoria\">Categoria (obrigatório)</label>\n<select id=\"categoria\" name=\"categoria\" required>\n  <option value=\"\">Escolha uma categoria</option>\n  <option value=\"hardware\">Hardware</option>\n  <option value=\"software\">Software</option>\n  <option value=\"rede\">Rede</option>\n  <option value=\"outro\">Outro</option>\n</select>",
-          "refs": [
-            "controles"
-          ],
+          "tipo": "passo",
+          "codigo": "<div class=\"campo\">\n  <label for=\"categoria\">Categoria (obrigatório)</label>\n  <select id=\"categoria\" name=\"categoria\" required>\n    <option value=\"\">Escolha uma opção</option>\n    <option value=\"hardware\">Hardware</option>\n    <option value=\"software\">Software</option>\n    <option value=\"rede\">Rede</option>\n    <option value=\"outro\">Outro</option>\n  </select>\n</div>",
+          "onde": "index.html: após contato, antes do comentário CAMPOS.",
+          "quadro": "select contém option. A opção inicial tem value=\"\"; required exige outra escolha.",
+          "figura": "materiais/Figura-02-select.png",
           "numero": 9,
           "aula": "02",
-          "data": "23/10"
+          "data": "23/10",
+          "codigoSlide": "<label for=\"categoria\">Categoria (obrigatório)</label>\n<select id=\"categoria\" name=\"categoria\" required>\n  <option value=\"\">Escolha uma opção</option>\n  <option value=\"hardware\">Hardware</option>\n  <option value=\"software\">Software</option>\n  <option value=\"rede\">Rede</option>\n  <option value=\"outro\">Outro</option>\n</select>"
         },
         {
-          "titulo": "Escolha única com radio",
+          "titulo": "5 · Dar espaço para a descrição",
           "texto": [
-            "Radios com o mesmo name formam um grupo de escolha única. Values diferentes distinguem as respostas. fieldset reúne o grupo e legend explica a pergunta.",
-            "Escolha prioridade normal ou alta. O required em um radio do grupo exige que uma opção daquele grupo seja escolhida. Não crie names diferentes para cada alternativa."
+            "Uma caixa de várias linhas com instrução de tamanho.",
+            "Escreva uma frase que descreva um defeito fictício. O limite será testado após a etapa 8."
           ],
-          "tipo": "texto",
-          "refs": [
-            "estrutura",
-            "inputs"
-          ],
+          "tipo": "passo",
+          "codigo": "<div class=\"campo largo\">\n  <label for=\"descricao\">Descrição do problema (obrigatório)</label>\n  <p class=\"ajuda\" id=\"ajuda-descricao\">Use de 20 a 500 caracteres.</p>\n  <textarea id=\"descricao\" name=\"descricao\" rows=\"5\"\n    required minlength=\"20\" maxlength=\"500\"\n    aria-describedby=\"ajuda-descricao\"></textarea>\n</div>",
+          "onde": "index.html: depois da categoria, antes do comentário CAMPOS.",
+          "quadro": "textarea abre e fecha. rows altera a altura inicial. minlength e maxlength definem limites.",
+          "figura": "materiais/Figura-02-textarea.png",
           "numero": 10,
           "aula": "02",
-          "data": "23/10"
+          "data": "23/10",
+          "codigoSlide": "<label for=\"descricao\">Descrição do problema</label>\n<p id=\"ajuda-descricao\">20 a 500 caracteres.</p>\n<textarea id=\"descricao\" name=\"descricao\"\n  rows=\"5\" required\n  minlength=\"20\" maxlength=\"500\"\n  aria-describedby=\"ajuda-descricao\"></textarea>"
         },
         {
-          "titulo": "Exemplo: Escolha única com radio",
+          "titulo": "6 · Marcar uma única prioridade",
           "texto": [
-            "Observe o papel de cada linha e compare com o arquivo do projeto."
+            "Duas alternativas dentro do grupo Prioridade.",
+            "Marque Normal e depois Alta: a primeira deve ser desmarcada."
           ],
-          "tipo": "codigo",
+          "tipo": "passo",
           "codigo": "<fieldset>\n  <legend>Prioridade (obrigatória)</legend>\n  <label><input type=\"radio\" name=\"prioridade\"\n    value=\"normal\" required> Normal</label>\n  <label><input type=\"radio\" name=\"prioridade\"\n    value=\"alta\"> Alta</label>\n</fieldset>",
-          "refs": [
-            "estrutura",
-            "inputs"
-          ],
+          "onde": "index.html: depois do fechamento de div.campos e antes do comentário GRUPOS.",
+          "quadro": "fieldset agrupa, legend dá título. Radios com o mesmo name formam uma escolha única.",
+          "figura": "materiais/Figura-02-radio.png",
           "numero": 11,
           "aula": "02",
-          "data": "23/10"
+          "data": "23/10",
+          "codigoSlide": "<fieldset>\n  <legend>Prioridade (obrigatória)</legend>\n  <label><input type=\"radio\" name=\"prioridade\"\n    value=\"normal\" required> Normal</label>\n  <label><input type=\"radio\" name=\"prioridade\"\n    value=\"alta\"> Alta</label>\n</fieldset>"
         },
         {
-          "titulo": "Escolhas independentes com checkbox",
+          "titulo": "7 · Aceitar mais de um sintoma",
           "texto": [
-            "Checkboxes permitem marcar nenhuma, uma ou várias opções independentes. Use sintomas opcionais: Lentidão e Mensagem de erro.",
-            "Os dois controles podem ter o mesmo name e values diferentes. Na coleta com JavaScript, usaremos getAll para recuperar todas as escolhas, em 06/11. required em um checkbox exige aquele checkbox específico; não significa “pelo menos um do conjunto”."
+            "Duas caixas que podem permanecer marcadas juntas.",
+            "Marque as duas; depois desmarque uma. Nenhum sintoma é obrigatório."
           ],
-          "tipo": "texto",
-          "refs": [
-            "controles",
-            "estrutura"
-          ],
+          "tipo": "passo",
+          "codigo": "<fieldset>\n  <legend>Sintomas (opcionais)</legend>\n  <label><input type=\"checkbox\" name=\"sintomas\"\n    value=\"Lentidão\"> Lentidão</label>\n  <label><input type=\"checkbox\" name=\"sintomas\"\n    value=\"Mensagem de erro\"> Mensagem de erro</label>\n</fieldset>",
+          "onde": "index.html: após o fieldset de prioridade e antes do comentário GRUPOS.",
+          "quadro": "Checkboxes são independentes. O mesmo name permite coletar uma lista de sintomas.",
+          "figura": "materiais/Figura-02-checkbox.png",
           "numero": 12,
           "aula": "02",
-          "data": "23/10"
+          "data": "23/10",
+          "codigoSlide": "<fieldset>\n  <legend>Sintomas (opcionais)</legend>\n  <label><input type=\"checkbox\" name=\"sintomas\"\n    value=\"Lentidão\"> Lentidão</label>\n  <label><input type=\"checkbox\" name=\"sintomas\"\n    value=\"Mensagem de erro\">\n    Mensagem de erro</label>\n</fieldset>"
         },
         {
-          "titulo": "Exemplo: Escolhas independentes com checkbox",
+          "titulo": "8 · Testar o formulário",
           "texto": [
-            "Observe o papel de cada linha e compare com o arquivo do projeto."
+            "O botão fica habilitado pelo script fornecido após salvar a página.",
+            "Teste vazio, e-mail inválido e dados válidos. O resultado válido é uma mensagem local, sem resumo ainda."
           ],
-          "tipo": "codigo",
-          "codigo": "<fieldset>\n  <legend>Sintomas (opcionais)</legend>\n  <label><input type=\"checkbox\" name=\"sintomas\"\n    value=\"Lentidão\"> Lentidão</label>\n  <label><input type=\"checkbox\" name=\"sintomas\"\n    value=\"Mensagem de erro\"> Mensagem de erro</label>\n</fieldset>",
-          "refs": [
-            "controles",
-            "estrutura"
-          ],
+          "tipo": "passo",
+          "codigo": "<div class=\"acoes\">\n  <button id=\"simular\" type=\"submit\" disabled>\n    Testar campos\n  </button>\n</div>",
+          "onde": "index.html: substitua o comentário BOTÃO, ainda dentro de form, depois dos grupos.",
+          "quadro": "button type=\"submit\" dispara a tentativa. O apoio em script.js impede o envio real.",
+          "figura": "materiais/Figura-02-botao.png",
           "numero": 13,
           "aula": "02",
-          "data": "23/10"
+          "data": "23/10",
+          "codigoSlide": "<div class=\"acoes\">\n  <button id=\"simular\" type=\"submit\" disabled>\n    Testar campos\n  </button>\n</div>"
         },
         {
-          "titulo": "Texto longo e regras nativas",
+          "titulo": "Conferir a estrutura construída",
           "texto": [
-            "textarea recebe a descrição. A instrução informa de 20 a 500 caracteres, e aria-describedby associa a ajuda ao campo. required, minlength e maxlength são regras que o navegador pode conferir.",
-            "type=email verifica um formato, sem comprovar a existência da caixa de e-mail. As mensagens variam por navegador. A versão desta aula testa as regras HTML; comparação entre e-mails e texto formado só por espaços ficam para 13/11."
+            "Os campos ficam dentro de div.campos; os dois fieldsets vêm depois dessa div.",
+            "Tudo, inclusive o botão, fica dentro de um único form."
           ],
-          "tipo": "texto",
-          "refs": [
-            "validacao",
-            "labels"
-          ],
+          "tipo": "conceito",
+          "codigo": "<main>\n  <form id=\"formulario\">\n    <div class=\"campos\">\n      <!-- campos de texto e lista -->\n    </div>\n    <!-- prioridade e sintomas -->\n    <!-- botão -->\n  </form>\n  <p id=\"status\" role=\"status\"></p>\n</main>",
           "numero": 14,
           "aula": "02",
           "data": "23/10"
         },
         {
-          "titulo": "Exemplo: Texto longo e regras nativas",
+          "titulo": "Por que o navegador bloqueou?",
           "texto": [
-            "Observe o papel de cada linha e compare com o arquivo do projeto."
+            "required exige preenchimento; type=\"email\" confere o formato.",
+            "A descrição exige 20 a 500 caracteres. Essas regras não provam que os dados são verdadeiros."
           ],
-          "tipo": "codigo",
-          "codigo": "<label for=\"descricao\">Descrição (obrigatória)</label>\n<p id=\"ajuda-descricao\">Use de 20 a 500 caracteres.</p>\n<textarea id=\"descricao\" name=\"descricao\" rows=\"5\"\n  required minlength=\"20\" maxlength=\"500\"\n  aria-describedby=\"ajuda-descricao\"></textarea>",
-          "refs": [
-            "validacao",
-            "labels"
-          ],
+          "tipo": "conceito",
+          "figura": "materiais/Figura-02-regras.png",
           "numero": 15,
           "aula": "02",
           "data": "23/10"
         },
         {
-          "titulo": "Atividade no VS Code",
-          "texto": [
-            "Baixar o projeto desta aula, extrair os três arquivos e abrir a pasta no VS Code. Executar index.html com Live Server.",
-            "Usar o campo de solicitante como modelo. Acrescentar equipamento (texto, 2 a 20 caracteres), contato (email), categoria (select), prioridade (radio), descrição (20 a 500 caracteres) e os dois sintomas opcionais (checkbox)."
-          ],
-          "tipo": "texto",
-          "numero": 16,
-          "aula": "02",
-          "data": "23/10"
-        },
-        {
-          "titulo": "Atividade: conferência e explicação",
-          "texto": [
-            "Associar rótulos, usar names coerentes e deixar visível o que é obrigatório. Manter o script de simulação fornecido.",
-            "Salvar, testar os casos e explicar a diferença entre id e name usando um campo do seu projeto."
-          ],
-          "tipo": "texto",
-          "numero": 17,
-          "aula": "02",
-          "data": "23/10"
-        },
-        {
           "titulo": "Conferência dos testes",
-          "texto": [],
+          "texto": [
+            "Preveja o resultado antes de clicar. Depois registre o observado."
+          ],
           "tipo": "tabela",
           "tabela": [
             [
@@ -898,6 +843,57 @@ window.WEBLAB_CURSO = {
             [
               "Descrição digitada com menos de 20 caracteres",
               "O navegador pede completar o texto."
+            ]
+          ],
+          "numero": 16,
+          "aula": "02",
+          "data": "23/10"
+        },
+        {
+          "titulo": "Radio ou checkbox?",
+          "texto": [
+            "Prioridade: só uma pode ficar marcada.",
+            "Sintomas: duas, uma ou nenhuma podem ficar marcadas."
+          ],
+          "tipo": "conceito",
+          "figura": "materiais/Figura-02-escolhas.png",
+          "numero": 17,
+          "aula": "02",
+          "data": "23/10"
+        },
+        {
+          "titulo": "O nome do dado",
+          "texto": [
+            "id liga o rótulo ao campo. name identifica o dado que será coletado.",
+            "Nas próximas aulas, FormData vai ler esses nomes. Hoje confira o HTML."
+          ],
+          "tipo": "conceito",
+          "mapa": [
+            [
+              "for=\"contato\"",
+              "id=\"contato\""
+            ],
+            [
+              "name=\"contato\"",
+              "chave do dado"
+            ]
+          ],
+          "numero": 18,
+          "aula": "02",
+          "data": "23/10",
+          "semSetas": true
+        },
+        {
+          "titulo": "Agora: conferir sem copiar o modelo",
+          "texto": [
+            "Faça os demais casos da ficha: tamanho da descrição, prioridade e sintomas.",
+            "Se falhar, revise uma regra por vez; salve e teste de novo."
+          ],
+          "tipo": "tabela",
+          "tabela": [
+            [
+              "Caso",
+              "Resultado esperado"
             ],
             [
               "Clique no rótulo do equipamento",
@@ -906,20 +902,6 @@ window.WEBLAB_CURSO = {
             [
               "Marcar duas prioridades em sequência",
               "Só a última permanece marcada."
-            ]
-          ],
-          "numero": 18,
-          "aula": "02",
-          "data": "23/10"
-        },
-        {
-          "titulo": "Conferência dos testes (continuação)",
-          "texto": [],
-          "tipo": "tabela",
-          "tabela": [
-            [
-              "Caso",
-              "Resultado esperado"
             ],
             [
               "Marcar os dois sintomas",
@@ -935,26 +917,13 @@ window.WEBLAB_CURSO = {
           "data": "23/10"
         },
         {
-          "titulo": "Erros que merecem atenção",
-          "texto": [
-            "name não substitui id na associação com label.",
-            "Um select com opção inicial já válida não testa a escolha obrigatória.",
-            "Não acrescente novalidate: queremos observar a validação HTML."
-          ],
-          "tipo": "texto",
-          "numero": 20,
-          "aula": "02",
-          "data": "23/10"
-        },
-        {
           "titulo": "Registro e entrega",
           "texto": [
-            "Salve index.html, style.css e script.js. Compacte a pasta em ZIP.",
-            "Abra o registro de testes da aula, informe nome e turma e baixe o TXT.",
-            "Entregue ZIP e TXT ao professor na aula. Os downloads não são enviados automaticamente."
+            "No portal, abra Registrar testes na aula 02 e baixe o TXT identificado.",
+            "Entregue o projeto em ZIP com os três arquivos e o TXT durante a aula. Não há envio automático."
           ],
-          "tipo": "texto",
-          "numero": 21,
+          "tipo": "conceito",
+          "numero": 20,
           "aula": "02",
           "data": "23/10"
         },
@@ -962,12 +931,133 @@ window.WEBLAB_CURSO = {
           "titulo": "Uma explicação para fechar",
           "texto": [
             "Qual é o papel de name? Qual teste mostrou que seu formulário estava funcionando?",
-            "Guarde a versão desta aula: ela será o ponto de partida para a continuidade."
+            "Mostre no seu HTML uma tag, um atributo e um teste que você realizou."
           ],
-          "tipo": "texto",
+          "tipo": "conceito",
+          "numero": 21,
+          "aula": "02",
+          "data": "23/10"
+        },
+        {
+          "titulo": "O mesmo projeto continua",
+          "texto": [
+            "Guarde sua pasta: em 30/10 vamos melhorar o layout com CSS.",
+            "Não exigimos confirmação de e-mail, resumo ou campo condicional hoje."
+          ],
+          "tipo": "conceito",
+          "mapa": [
+            [
+              "23/10 · HTML",
+              "Campos e regras"
+            ],
+            [
+              "30/10 · CSS",
+              "Layout e foco"
+            ],
+            [
+              "06/11 · JavaScript",
+              "Coleta e resumo"
+            ]
+          ],
           "numero": 22,
           "aula": "02",
           "data": "23/10"
+        }
+      ],
+      "passos": [
+        {
+          "titulo": "1 · Criar o formulário",
+          "onde": "index.html: substitua o comentário INÍCIO DO FORMULÁRIO dentro de main.",
+          "quadro": "form abre e fecha o conjunto. div organiza o layout; não coleta dados.",
+          "codigo": "<form id=\"formulario\">\n  <div class=\"campos\">\n    <!-- CAMPOS: inserir aqui -->\n  </div>\n  <!-- GRUPOS: inserir aqui -->\n  <!-- BOTÃO: inserir aqui -->\n</form>",
+          "resultado": "Um contorno branco, ainda sem campos.",
+          "teste": "Confira que existe um único form, com abertura e fechamento.",
+          "figura": "materiais/Figura-02-form.png",
+          "exibirFigura": true
+        },
+        {
+          "titulo": "2 · Identificar quem pede ajuda",
+          "onde": "index.html: antes do comentário CAMPOS, dentro de div.campos. Mantenha o comentário para inserir os próximos campos.",
+          "quadro": "label identifica. for = id. name dá nome ao dado. input não tem tag de fechamento.",
+          "codigo": "<div class=\"campo\">\n  <label for=\"solicitante\">Solicitante fictício (obrigatório)</label>\n  <input id=\"solicitante\" name=\"solicitante\"\n    type=\"text\" required minlength=\"2\" maxlength=\"60\"\n    autocomplete=\"off\">\n</div>",
+          "resultado": "Um rótulo e uma caixa para texto curto.",
+          "teste": "Clique no rótulo: o cursor deve ir para a caixa.",
+          "figura": "materiais/Figura-02-texto.png",
+          "exibirFigura": true
+        },
+        {
+          "titulo": "3 · Escolher o tipo adequado",
+          "onde": "index.html: depois do solicitante, antes do comentário CAMPOS.",
+          "quadro": "type=\"text\": código PC-07. type=\"email\": formato de endereço. required é atributo.",
+          "codigo": "<div class=\"campo\">\n  <label for=\"equipamento\">Equipamento (obrigatório)</label>\n  <input id=\"equipamento\" name=\"equipamento\" type=\"text\"\n    required minlength=\"2\" maxlength=\"20\" placeholder=\"Ex.: PC-07\"\n    aria-describedby=\"ajuda-equipamento\">\n  <p class=\"ajuda\" id=\"ajuda-equipamento\">Use um código, não uma quantidade.</p>\n</div>\n<div class=\"campo\">\n  <label for=\"contato\">E-mail fictício (obrigatório)</label>\n  <input id=\"contato\" name=\"contato\" type=\"email\" required\n    autocomplete=\"off\" placeholder=\"estudante@example.com\">\n</div>",
+          "resultado": "Duas novas caixas; o equipamento aceita letras e números.",
+          "teste": "Digite PC-07 e um e-mail fictício. O teste de formato será feito com o botão na etapa 8.",
+          "figura": "materiais/Figura-02-tipos.png",
+          "exibirFigura": true
+        },
+        {
+          "titulo": "4 · Oferecer opções com select",
+          "onde": "index.html: após contato, antes do comentário CAMPOS.",
+          "quadro": "select contém option. A opção inicial tem value=\"\"; required exige outra escolha.",
+          "codigo": "<div class=\"campo\">\n  <label for=\"categoria\">Categoria (obrigatório)</label>\n  <select id=\"categoria\" name=\"categoria\" required>\n    <option value=\"\">Escolha uma opção</option>\n    <option value=\"hardware\">Hardware</option>\n    <option value=\"software\">Software</option>\n    <option value=\"rede\">Rede</option>\n    <option value=\"outro\">Outro</option>\n  </select>\n</div>",
+          "resultado": "Uma lista com quatro categorias e uma instrução inicial.",
+          "teste": "Abra a lista e escolha Rede. Em 23/10, Outro é apenas uma opção; não abre campo extra.",
+          "figura": "materiais/Figura-02-select.png",
+          "exibirFigura": true
+        },
+        {
+          "titulo": "5 · Dar espaço para a descrição",
+          "onde": "index.html: depois da categoria, antes do comentário CAMPOS.",
+          "quadro": "textarea abre e fecha. rows altera a altura inicial. minlength e maxlength definem limites.",
+          "codigo": "<div class=\"campo largo\">\n  <label for=\"descricao\">Descrição do problema (obrigatório)</label>\n  <p class=\"ajuda\" id=\"ajuda-descricao\">Use de 20 a 500 caracteres.</p>\n  <textarea id=\"descricao\" name=\"descricao\" rows=\"5\"\n    required minlength=\"20\" maxlength=\"500\"\n    aria-describedby=\"ajuda-descricao\"></textarea>\n</div>",
+          "resultado": "Uma caixa de várias linhas com instrução de tamanho.",
+          "teste": "Escreva uma frase que descreva um defeito fictício. O limite será testado após a etapa 8.",
+          "figura": "materiais/Figura-02-textarea.png",
+          "exibirFigura": true
+        },
+        {
+          "titulo": "6 · Marcar uma única prioridade",
+          "onde": "index.html: depois do fechamento de div.campos e antes do comentário GRUPOS.",
+          "quadro": "fieldset agrupa, legend dá título. Radios com o mesmo name formam uma escolha única. Aqui o input fica dentro do label: associação implícita.",
+          "codigo": "<fieldset>\n  <legend>Prioridade (obrigatória)</legend>\n  <label><input type=\"radio\" name=\"prioridade\"\n    value=\"normal\" required> Normal</label>\n  <label><input type=\"radio\" name=\"prioridade\"\n    value=\"alta\"> Alta</label>\n</fieldset>",
+          "resultado": "Duas alternativas dentro do grupo Prioridade.",
+          "teste": "Marque Normal e depois Alta: a primeira deve ser desmarcada.",
+          "figura": "materiais/Figura-02-radio.png",
+          "exibirFigura": true
+        },
+        {
+          "titulo": "7 · Aceitar mais de um sintoma",
+          "onde": "index.html: após o fieldset de prioridade e antes do comentário GRUPOS.",
+          "quadro": "Checkboxes são independentes. O mesmo name permite coletar uma lista de sintomas.",
+          "codigo": "<fieldset>\n  <legend>Sintomas (opcionais)</legend>\n  <label><input type=\"checkbox\" name=\"sintomas\"\n    value=\"Lentidão\"> Lentidão</label>\n  <label><input type=\"checkbox\" name=\"sintomas\"\n    value=\"Mensagem de erro\"> Mensagem de erro</label>\n</fieldset>",
+          "resultado": "Duas caixas que podem permanecer marcadas juntas.",
+          "teste": "Marque as duas; depois desmarque uma. Nenhum sintoma é obrigatório.",
+          "figura": "materiais/Figura-02-checkbox.png",
+          "exibirFigura": true
+        },
+        {
+          "titulo": "8 · Testar o formulário",
+          "onde": "index.html: substitua o comentário BOTÃO, ainda dentro de form, depois dos grupos.",
+          "quadro": "button type=\"submit\" dispara a tentativa. O apoio em script.js impede o envio real.",
+          "codigo": "<div class=\"acoes\">\n  <button id=\"simular\" type=\"submit\" disabled>\n    Testar campos\n  </button>\n</div>",
+          "resultado": "O botão fica habilitado pelo script fornecido após salvar a página.",
+          "teste": "Teste vazio, e-mail inválido e dados válidos. O resultado válido é uma mensagem local, sem resumo ainda.",
+          "figura": "materiais/Figura-02-botao.png",
+          "exibirFigura": true
+        }
+      ],
+      "codigoConferencia": [
+        {
+          "nome": "index.html",
+          "codigo": "<!doctype html>\n<html lang=\"pt-BR\">\n  <head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <title>\n      Chamado de suporte ao laboratório - WebLab\n    </title>\n    <link rel=\"stylesheet\" href=\"style.css\">\n    <script src=\"script.js\" defer>\n    </script>\n  </head>\n  <body>\n    <header>\n      <a class=\"voltar\"\n        href=\"https://fabricio-rodrigues-ifpa.github.io/programacao-web/aulas.html?id=aula-02\">\n        ← Voltar à aula no portal (internet)\n      </a>\n      <h1>\n        Chamado de suporte ao laboratório\n      </h1>\n      <p>\n        Projeto contínuo: construa o formulário com as oito etapas da aula de 23/10.\n      </p>\n      <p class=\"aviso\">\n        Simulação local com dados fictícios. Não abre uma solicitação real.\n      </p>\n    </header>\n    <main>\n      <form id=\"formulario\">\n        <div class=\"campos\">\n          <div class=\"campo\">\n            <label for=\"solicitante\">\n              Solicitante fictício (obrigatório)\n            </label>\n            <input id=\"solicitante\" name=\"solicitante\" type=\"text\" required minlength=\"2\" maxlength=\"60\"\n              autocomplete=\"off\">\n          </div>\n          <div class=\"campo\">\n            <label for=\"equipamento\">\n              Equipamento (obrigatório)\n            </label>\n            <input id=\"equipamento\" name=\"equipamento\" type=\"text\" required minlength=\"2\" maxlength=\"20\"\n              placeholder=\"Ex.: PC-07\" aria-describedby=\"ajuda-equipamento\">\n            <p class=\"ajuda\" id=\"ajuda-equipamento\">\n              Use um código, não uma quantidade.\n            </p>\n          </div>\n          <div class=\"campo\">\n            <label for=\"contato\">\n              E-mail fictício (obrigatório)\n            </label>\n            <input id=\"contato\" name=\"contato\" type=\"email\" required autocomplete=\"off\"\n              placeholder=\"estudante@example.com\">\n          </div>\n          <div class=\"campo\">\n            <label for=\"categoria\">\n              Categoria (obrigatório)\n            </label>\n            <select id=\"categoria\" name=\"categoria\" required>\n              <option value=\"\">\n                Escolha uma opção\n              </option>\n              <option value=\"hardware\">\n                Hardware\n              </option>\n              <option value=\"software\">\n                Software\n              </option>\n              <option value=\"rede\">\n                Rede\n              </option>\n              <option value=\"outro\">\n                Outro\n              </option>\n            </select>\n          </div>\n          <div class=\"campo largo\">\n            <label for=\"descricao\">\n              Descrição do problema (obrigatório)\n            </label>\n            <p class=\"ajuda\" id=\"ajuda-descricao\">\n              Use de 20 a 500 caracteres.\n            </p>\n            <textarea id=\"descricao\" name=\"descricao\" rows=\"5\" required minlength=\"20\" maxlength=\"500\"\n              aria-describedby=\"ajuda-descricao\"></textarea>\n          </div>\n          <!-- CAMPOS: inserir aqui -->\n        </div>\n        <fieldset>\n          <legend>\n            Prioridade (obrigatória)\n          </legend>\n          <label>\n            <input type=\"radio\" name=\"prioridade\" value=\"normal\" required>\n            Normal\n          </label>\n          <label>\n            <input type=\"radio\" name=\"prioridade\" value=\"alta\">\n            Alta\n          </label>\n        </fieldset>\n        <fieldset>\n          <legend>\n            Sintomas (opcionais)\n          </legend>\n          <label>\n            <input type=\"checkbox\" name=\"sintomas\" value=\"Lentidão\">\n            Lentidão\n          </label>\n          <label>\n            <input type=\"checkbox\" name=\"sintomas\" value=\"Mensagem de erro\">\n            Mensagem de erro\n          </label>\n        </fieldset>\n        <!-- GRUPOS: inserir aqui -->\n        <div class=\"acoes\">\n          <button id=\"simular\" type=\"submit\" disabled>\n            Testar campos\n          </button>\n        </div>\n      </form>\n      <p id=\"status\" role=\"status\">\n      </p>\n      <noscript>\n        <p>\n          Ative JavaScript para habilitar a simulação. Você pode estudar o HTML e o CSS sem executar o envio.\n        </p>\n      </noscript>\n      <p>\n        <a class=\"voltar\"\n          href=\"https://fabricio-rodrigues-ifpa.github.io/programacao-web/aulas.html?id=aula-02\">\n          ← Voltar à aula no portal (internet)\n        </a>\n      </p>\n    </main>\n    <footer>\n      WebLab - Prof. Fabrício Rodrigues - 2026\n    </footer>\n  </body>\n</html>\n"
+        },
+        {
+          "nome": "style.css",
+          "codigo": "* { box-sizing: border-box; }\nbody {\n  margin: 0;\n  font: 1rem/1.65 Arial, sans-serif;\n  color: #183e35;\n  background: #f6f8f1;\n}\nheader, main, footer { width: min(100% - 2rem, 64rem); margin: auto; }\nheader, footer { padding: 1.5rem 0; }\nh1, h2 { line-height: 1.2; }\na { color: #315c30; }\nform, .painel { padding: 1.5rem; border: 1px solid #cad7bd; background: #fff; }\n.campos, .campo { display: grid; gap: .55rem; }\n.campos { gap: 1.2rem; }\n.campo { min-width: 0; align-content: start; }\nlabel, legend { font-weight: bold; }\n.campo > input, .campo > select, .campo > textarea {\n  width: 100%; min-width: 0; padding: .75rem;\n  border: 1px solid #738a68; border-radius: .25rem;\n  color: #183e35; background: #fff;\n}\nbutton, input, select, textarea { font: inherit; }\ntextarea { resize: vertical; }\nfieldset { margin: 1.4rem 0; padding: 1rem; border: 1px solid #9caf8b; }\nfieldset label { display: block; font-weight: normal; margin: .5rem 0; }\n.ajuda { font-size: .9rem; margin: 0; color: #455a3d; }\n.aviso { padding: 1rem; border-left: 4px solid #56783e; background: #e9f1de; }\n.acoes { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.2rem; }\nbutton, .voltar { display: inline-block; padding: .7rem 1rem; border: 1px solid #315c30; }\nbutton { cursor: pointer; background: #183e35; color: #fff; }\nbutton:disabled { cursor: not-allowed; opacity: .65; }\n.voltar { color: #183e35; background: #fff; text-decoration: none; }\n#resultado { margin-top: 1.5rem; }\ndt { font-weight: bold; margin-top: .7rem; }\ndd { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }\npre { white-space: pre-wrap; overflow-wrap: anywhere; }\n[hidden] { display: none !important; }\n\n:focus-visible {\n  outline: 3px solid #6a8f32;\n  outline-offset: 4px;\n}\n"
+        },
+        {
+          "nome": "script.js",
+          "codigo": "'use strict';\n// Apoio fornecido: esta aula altera somente index.html.\nconst form = document.querySelector('#formulario');\nconst status = document.querySelector('#status');\nconst botao = document.querySelector('#simular');\n// A página inicial ainda não tem form nem botão. Salve após cada etapa.\nif (form) {\n  form.addEventListener('input', () => { status.textContent = ''; });\n  form.addEventListener('submit', (event) => {\n    event.preventDefault();\n    status.textContent = 'As regras HTML permitiram esta tentativa. Simulação local; nenhum envio ao servidor.';\n  });\n  if (botao) botao.disabled = false;\n}\n"
         }
       ]
     },
@@ -985,7 +1075,7 @@ window.WEBLAB_CURSO = {
         "Manter rótulos, instruções e foco legíveis.",
         "Testar teclado e ampliação sem depender somente da aparência."
       ],
-      "retomada": "Retome o projeto e a explicação da aula anterior. Se não tiver os arquivos, baixe a base deste encontro: ela contém o ponto de partida necessário.",
+      "retomada": "Continue a mesma pasta do chamado de suporte criada em 23/10. Faça uma cópia de segurança antes de alterar. Se precisar recuperar o ponto de partida, extraia a base de apoio desta data em outra pasta. Retome o projeto e a explicação da aula anterior. Se não tiver os arquivos, baixe a base deste encontro: ela contém o ponto de partida necessário.",
       "conceitos": [
         "Box model",
         "Grid e media query",
@@ -1042,7 +1132,7 @@ window.WEBLAB_CURSO = {
         }
       ],
       "atividade": [
-        "Abrir a base desta aula ou continuar o HTML concluído no encontro anterior.",
+        "Continue seu chamado de suporte da aula anterior; se precisar, use o ZIP da data como base de apoio. Abra a pasta no VS Code e execute index.html com Live Server.",
         "Completar a media query para duas colunas e fazer a descrição ocupar a largura da grade.",
         "Acrescentar foco visível e revisar espaçamentos dos grupos e das instruções.",
         "Pedir a um colega que percorra o formulário pelo teclado e repetir os testes nas larguras indicadas."
@@ -1080,7 +1170,7 @@ window.WEBLAB_CURSO = {
         "liveserver"
       ],
       "extensao": "Explique uma alternativa de implementação e compare seu comportamento com o requisito. Conclua primeiro os casos essenciais.",
-      "apoio": "Entregar a grade de uma coluna pronta. Trabalhar primeiro foco e espaço entre campos; depois acrescentar a media query.",
+      "apoio": "Entregar a grade de uma coluna pronta. Trabalhar primeiro foco e espaço entre campos; depois acrescentar a media query. Use a imagem para conferir o controle e a sequência do quadro para localizar cada alteração. Não avance para a etapa seguinte antes de salvar e observar a atual.",
       "mapa": [
         [
           "Camada",
@@ -1148,7 +1238,7 @@ window.WEBLAB_CURSO = {
           "titulo": "Um formulário legível em qualquer tela",
           "texto": [
             "CSS, responsividade, instruções e navegação pelo teclado",
-            "Prof. Fabrício Rodrigues"
+            "Continue o chamado de suporte."
           ],
           "tipo": "capa",
           "numero": 1,
@@ -1158,103 +1248,59 @@ window.WEBLAB_CURSO = {
         {
           "titulo": "O que vamos construir",
           "texto": [
-            "Organizar os campos em uma e duas colunas sem rolagem horizontal.",
-            "Manter rótulos, instruções e foco legíveis.",
-            "Testar teclado e ampliação sem depender somente da aparência."
+            "CSS, responsividade, instruções e navegação pelo teclado",
+            "Relacione o resultado visível às alterações desta aula."
           ],
           "tipo": "texto",
           "numero": 2,
           "aula": "03",
-          "data": "30/10"
-        },
-        {
-          "titulo": "Ponto de partida",
-          "texto": [
-            "Retome o projeto e a explicação da aula anterior. Se não tiver os arquivos, baixe a base deste encontro: ela contém o ponto de partida necessário.",
-            "Abra o projeto deste encontro no VS Code. Salve uma cópia própria antes de alterar."
-          ],
-          "tipo": "texto",
-          "numero": 3,
-          "aula": "03",
-          "data": "30/10"
+          "data": "30/10",
+          "figura": "materiais/Figura-03-layout.png"
         },
         {
           "titulo": "Mapa da aula",
-          "texto": [],
-          "tipo": "tabela",
-          "tabela": [
-            [
-              "Camada",
-              "Responsabilidade"
-            ],
-            [
-              "HTML",
-              "Preserva rótulos, grupos e regras."
-            ],
-            [
-              "CSS",
-              "Organiza largura, espaçamento e foco."
-            ],
-            [
-              "Teclado",
-              "Permite percorrer e acionar os controles."
-            ],
-            [
-              "Conferência",
-              "Telas estreitas, ampliação e sequência de foco."
-            ]
-          ],
-          "numero": 4,
-          "aula": "03",
-          "data": "30/10"
-        },
-        {
-          "titulo": "Layout começa pela tela estreita",
           "texto": [
-            "Abra a base com o HTML completo da aula anterior. A regra global box-sizing inclui borda e preenchimento na largura calculada. Evite campos com largura fixa maior que a tela.",
-            "Uma grade com gap organiza os campos em uma coluna. O código fornecido já mantém inputs com largura de 100% e min-width:0. O objetivo da aula é completar o layout sem alterar os names e as regras HTML."
+            "Siga esta ordem; reteste a cada alteração."
           ],
-          "tipo": "texto",
-          "refs": [
-            "css"
-          ],
-          "numero": 5,
+          "tipo": "mapa",
+          "numero": 3,
           "aula": "03",
-          "data": "30/10"
+          "data": "30/10",
+          "mapa": [
+            [
+              "1 · Organizar em uma coluna",
+              "Na janela estreita, os campos cabem sem rolagem horizontal."
+            ],
+            [
+              "2 · Acrescentar duas colunas",
+              "Na janela larga, duas colunas; a descrição ocupa a linha inteira."
+            ],
+            [
+              "3 · Destacar o foco",
+              "O campo em foco tem contorno visível e segue a ordem do HTML."
+            ]
+          ]
         },
         {
           "titulo": "Exemplo: Layout começa pela tela estreita",
           "texto": [
-            "Observe o papel de cada linha e compare com o arquivo do projeto."
+            "Ajuste o trecho no local indicado. Salve e confira o comportamento antes de avançar."
           ],
           "tipo": "codigo",
           "codigo": "* { box-sizing: border-box; }\n.campos {\n  display: grid;\n  gap: 1.2rem;\n}\n.campo { min-width: 0; }",
           "refs": [
             "css"
           ],
-          "numero": 6,
+          "numero": 4,
           "aula": "03",
-          "data": "30/10"
-        },
-        {
-          "titulo": "Duas colunas quando há espaço",
-          "texto": [
-            "A media query entra a partir de 48rem. Até esse limite, a grade continua em uma coluna. O campo de descrição ocupa a linha inteira por meio da classe largo.",
-            "O ponto de mudança pertence a este projeto. Ele não define um tipo fixo de aparelho: observe quando os campos deixam de caber com conforto."
-          ],
-          "tipo": "texto",
-          "refs": [
-            "grid",
-            "css"
-          ],
-          "numero": 7,
-          "aula": "03",
-          "data": "30/10"
+          "data": "30/10",
+          "onde": "style.css: confira as regras de .campos e .campo.",
+          "quadro": "Use display: grid, gap e min-width: 0; mantenha os rótulos visíveis."
         },
         {
           "titulo": "Exemplo: Duas colunas quando há espaço",
           "texto": [
-            "Observe o papel de cada linha e compare com o arquivo do projeto."
+            "Ajuste o trecho no local indicado. Salve e confira o comportamento antes de avançar."
           ],
           "tipo": "codigo",
           "codigo": "@media (min-width: 48rem) {\n  .campos { grid-template-columns: 1fr 1fr; }\n  .largo { grid-column: 1 / -1; }\n}",
@@ -1262,29 +1308,16 @@ window.WEBLAB_CURSO = {
             "grid",
             "css"
           ],
-          "numero": 8,
+          "numero": 5,
           "aula": "03",
-          "data": "30/10"
-        },
-        {
-          "titulo": "Foco visível e ordem de leitura",
-          "texto": [
-            "Tab percorre os controles e Shift+Tab retorna. A ordem do HTML deve acompanhar a ordem de leitura; não use tabindex positivo para reorganizar o formulário.",
-            "focus-visible mostra uma indicação clara para navegação. Não remova o contorno sem oferecer indicação equivalente. Rótulos e instruções continuam visíveis durante o preenchimento."
-          ],
-          "tipo": "texto",
-          "refs": [
-            "labels",
-            "css"
-          ],
-          "numero": 9,
-          "aula": "03",
-          "data": "30/10"
+          "data": "30/10",
+          "onde": "style.css: no final, acrescente a media query de 48rem.",
+          "quadro": "Dentro de @media, defina grid-template-columns: 1fr 1fr e .largo com grid-column: 1 / -1."
         },
         {
           "titulo": "Exemplo: Foco visível e ordem de leitura",
           "texto": [
-            "Observe o papel de cada linha e compare com o arquivo do projeto."
+            "Ajuste o trecho no local indicado. Salve e confira o comportamento antes de avançar."
           ],
           "tipo": "codigo",
           "codigo": ":focus-visible {\n  outline: 3px solid #6a8f32;\n  outline-offset: 4px;\n}",
@@ -1292,44 +1325,35 @@ window.WEBLAB_CURSO = {
             "labels",
             "css"
           ],
-          "numero": 10,
+          "numero": 6,
           "aula": "03",
-          "data": "30/10"
+          "data": "30/10",
+          "onde": "style.css: acrescente :focus-visible antes da media query.",
+          "quadro": "Defina outline e outline-offset. Percorra o formulário com Tab."
         },
         {
           "titulo": "Teste da experiência",
           "texto": [
-            "Teste aproximadamente 360px, 768px e 1280px, além da ampliação do navegador em 200%. Compare largura, tamanho dos textos, quebra das instruções e acesso aos botões.",
-            "No modo responsivo do navegador, altere a largura e observe o resultado. Medir apenas a quantidade de colunas não comprova que o formulário ficou utilizável."
+            "Redimensione para 360, 768 e 1280 pixels. Há corte ou rolagem horizontal?",
+            "Use Tab, Shift+Tab e 200% de zoom. Você enxerga e alcança cada controle?"
           ],
           "tipo": "texto",
           "refs": [
             "css",
             "labels"
           ],
-          "numero": 11,
+          "numero": 7,
           "aula": "03",
           "data": "30/10"
         },
         {
           "titulo": "Atividade no VS Code",
           "texto": [
-            "Abrir a base desta aula ou continuar o HTML concluído no encontro anterior.",
-            "Completar a media query para duas colunas e fazer a descrição ocupar a largura da grade."
+            "Agora altere sua versão seguindo as etapas da aula.",
+            "A base de apoio deve ser usada apenas se precisar recuperar o ponto de partida."
           ],
           "tipo": "texto",
-          "numero": 12,
-          "aula": "03",
-          "data": "30/10"
-        },
-        {
-          "titulo": "Atividade: conferência e explicação",
-          "texto": [
-            "Acrescentar foco visível e revisar espaçamentos dos grupos e das instruções.",
-            "Pedir a um colega que percorra o formulário pelo teclado e repetir os testes nas larguras indicadas."
-          ],
-          "tipo": "texto",
-          "numero": 13,
+          "numero": 8,
           "aula": "03",
           "data": "30/10"
         },
@@ -1363,7 +1387,7 @@ window.WEBLAB_CURSO = {
               "Quebra de linha sem sobrepor outro campo."
             ]
           ],
-          "numero": 14,
+          "numero": 9,
           "aula": "03",
           "data": "30/10"
         },
@@ -1381,19 +1405,7 @@ window.WEBLAB_CURSO = {
               "Regras HTML da aula anterior continuam ativas."
             ]
           ],
-          "numero": 15,
-          "aula": "03",
-          "data": "30/10"
-        },
-        {
-          "titulo": "Erros que merecem atenção",
-          "texto": [
-            "Trocar a aparência de um campo não deve retirar seu rótulo.",
-            "Uma largura fixa de 900px pode quebrar a versão estreita.",
-            "Não usar cor como única indicação de erro ou obrigatoriedade."
-          ],
-          "tipo": "texto",
-          "numero": 16,
+          "numero": 10,
           "aula": "03",
           "data": "30/10"
         },
@@ -1405,7 +1417,7 @@ window.WEBLAB_CURSO = {
             "Entregue ZIP e TXT ao professor na aula. Os downloads não são enviados automaticamente."
           ],
           "tipo": "texto",
-          "numero": 17,
+          "numero": 11,
           "aula": "03",
           "data": "30/10"
         },
@@ -1416,9 +1428,55 @@ window.WEBLAB_CURSO = {
             "Guarde a versão desta aula: ela será o ponto de partida para a continuidade."
           ],
           "tipo": "texto",
-          "numero": 18,
+          "numero": 12,
           "aula": "03",
           "data": "30/10"
+        }
+      ],
+      "passos": [
+        {
+          "titulo": "1 · Organizar em uma coluna",
+          "onde": "style.css: confira as regras de .campos e .campo.",
+          "quadro": "Use display: grid, gap e min-width: 0; mantenha os rótulos visíveis.",
+          "resultado": "Na janela estreita, os campos cabem sem rolagem horizontal.",
+          "teste": "Execute o caso correspondente na ficha de testes e registre o observado.",
+          "codigo": ".campos {\n  display: grid;\n  gap: 1.2rem;\n}\n.campo { min-width: 0; }",
+          "figura": "materiais/Figura-03-layout.png",
+          "exibirFigura": false
+        },
+        {
+          "titulo": "2 · Acrescentar duas colunas",
+          "onde": "style.css: no final, acrescente a media query de 48rem.",
+          "quadro": "Dentro de @media, defina grid-template-columns: 1fr 1fr e .largo com grid-column: 1 / -1.",
+          "resultado": "Na janela larga, duas colunas; a descrição ocupa a linha inteira.",
+          "teste": "Execute o caso correspondente na ficha de testes e registre o observado.",
+          "codigo": "@media (min-width: 48rem) {\n  .campos { grid-template-columns: 1fr 1fr; }\n  .largo { grid-column: 1 / -1; }\n}",
+          "figura": "materiais/Figura-03-layout.png",
+          "exibirFigura": true
+        },
+        {
+          "titulo": "3 · Destacar o foco",
+          "onde": "style.css: acrescente :focus-visible antes da media query.",
+          "quadro": "Defina outline e outline-offset. Percorra o formulário com Tab.",
+          "resultado": "O campo em foco tem contorno visível e segue a ordem do HTML.",
+          "teste": "Execute o caso correspondente na ficha de testes e registre o observado.",
+          "codigo": ":focus-visible {\n  outline: 3px solid #6a8f32;\n  outline-offset: 4px;\n}",
+          "figura": "materiais/Figura-03-layout.png",
+          "exibirFigura": false
+        }
+      ],
+      "codigoConferencia": [
+        {
+          "nome": "index.html",
+          "codigo": "<!doctype html>\n<html lang=\"pt-BR\">\n  <head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <title>\n      Chamado de suporte ao laboratório - WebLab\n    </title>\n    <link rel=\"stylesheet\" href=\"style.css\">\n    <script src=\"script.js\" defer>\n    </script>\n  </head>\n  <body>\n    <header>\n      <a class=\"voltar\"\n        href=\"https://fabricio-rodrigues-ifpa.github.io/programacao-web/aulas.html?id=aula-03\">\n        ← Voltar à aula no portal (internet)\n      </a>\n      <h1>\n        Chamado de suporte ao laboratório\n      </h1>\n      <p>\n        Modelo de referência para consultar depois de sua tentativa.\n      </p>\n      <p class=\"aviso\">\n        Simulação local com dados fictícios. Não abre uma solicitação real.\n      </p>\n    </header>\n    <main>\n      <form id=\"formulario\">\n        <p>\n          Os rótulos indicam os campos obrigatórios. Os demais são opcionais.\n        </p>\n        <div class=\"campos\">\n          <div class=\"campo\">\n            <label for=\"solicitante\">\n              Solicitante fictício (obrigatório)\n            </label>\n            <input id=\"solicitante\" name=\"solicitante\" type=\"text\" required minlength=\"2\" maxlength=\"60\"\n              autocomplete=\"off\">\n          </div>\n          <div class=\"campo\">\n            <label for=\"equipamento\">\n              Equipamento (obrigatório)\n            </label>\n            <input id=\"equipamento\" name=\"equipamento\" type=\"text\" required minlength=\"2\" maxlength=\"20\"\n              placeholder=\"Ex.: PC-07\" aria-describedby=\"ajuda-equipamento\">\n            <p class=\"ajuda\" id=\"ajuda-equipamento\">\n              Use um código, não uma quantidade.\n            </p>\n          </div>\n          <div class=\"campo\">\n            <label for=\"contato\">\n              E-mail fictício (obrigatório)\n            </label>\n            <input id=\"contato\" name=\"contato\" type=\"email\" required autocomplete=\"off\"\n              placeholder=\"estudante@example.com\">\n          </div>\n          <div class=\"campo\">\n            <label for=\"categoria\">\n              Categoria (obrigatório)\n            </label>\n            <select id=\"categoria\" name=\"categoria\" required>\n              <option value=\"\">\n                Escolha uma opção\n              </option>\n              <option value=\"hardware\">\n                Hardware\n              </option>\n              <option value=\"software\">\n                Software\n              </option>\n              <option value=\"rede\">\n                Rede\n              </option>\n              <option value=\"outro\">\n                Outro\n              </option>\n            </select>\n          </div>\n          <div class=\"campo largo\">\n            <label for=\"descricao\">\n              Descrição do problema (obrigatório)\n            </label>\n            <p class=\"ajuda\" id=\"ajuda-descricao\">\n              Use de 20 a 500 caracteres.\n            </p>\n            <textarea id=\"descricao\" name=\"descricao\" rows=\"5\" required minlength=\"20\" maxlength=\"500\"\n              aria-describedby=\"ajuda-descricao\"></textarea>\n          </div>\n        </div>\n        <fieldset>\n          <legend>\n            Prioridade (obrigatória)\n          </legend>\n          <label>\n            <input type=\"radio\" name=\"prioridade\" value=\"normal\" required>\n            Normal\n          </label>\n          <label>\n            <input type=\"radio\" name=\"prioridade\" value=\"alta\">\n            Alta\n          </label>\n        </fieldset>\n        <fieldset>\n          <legend>\n            Sintomas (opcionais)\n          </legend>\n          <label>\n            <input type=\"checkbox\" name=\"sintomas\" value=\"Lentidão\">\n            Lentidão\n          </label>\n          <label>\n            <input type=\"checkbox\" name=\"sintomas\" value=\"Mensagem de erro\">\n            Mensagem de erro\n          </label>\n        </fieldset>\n        <div class=\"acoes\">\n          <button id=\"simular\" type=\"submit\" disabled>\n            Testar campos\n          </button>\n        </div>\n        <p id=\"status\" role=\"status\">\n        </p>\n      </form>\n      <noscript>\n        <p>\n          Ative JavaScript para habilitar a simulação. Você pode estudar o HTML e o CSS sem executar o envio.\n        </p>\n      </noscript>\n      <p>\n        <a class=\"voltar\"\n          href=\"https://fabricio-rodrigues-ifpa.github.io/programacao-web/aulas.html?id=aula-03\">\n          ← Voltar à aula no portal (internet)\n        </a>\n      </p>\n    </main>\n    <footer>\n      WebLab - Prof. Fabrício Rodrigues - 2026\n    </footer>\n  </body>\n</html>\n"
+        },
+        {
+          "nome": "style.css",
+          "codigo": "* { box-sizing: border-box; }\nbody {\n  margin: 0;\n  font: 1rem/1.65 Arial, sans-serif;\n  color: #183e35;\n  background: #f6f8f1;\n}\nheader, main, footer { width: min(100% - 2rem, 64rem); margin: auto; }\nheader, footer { padding: 1.5rem 0; }\nh1, h2 { line-height: 1.2; }\na { color: #315c30; }\nform, .painel { padding: 1.5rem; border: 1px solid #cad7bd; background: #fff; }\n.campos, .campo { display: grid; gap: .55rem; }\n.campos { gap: 1.2rem; }\n.campo { min-width: 0; align-content: start; }\nlabel, legend { font-weight: bold; }\n.campo > input, .campo > select, .campo > textarea {\n  width: 100%; min-width: 0; padding: .75rem;\n  border: 1px solid #738a68; border-radius: .25rem;\n  color: #183e35; background: #fff;\n}\nbutton, input, select, textarea { font: inherit; }\ntextarea { resize: vertical; }\nfieldset { margin: 1.4rem 0; padding: 1rem; border: 1px solid #9caf8b; }\nfieldset label { display: block; font-weight: normal; margin: .5rem 0; }\n.ajuda { font-size: .9rem; margin: 0; color: #455a3d; }\n.aviso { padding: 1rem; border-left: 4px solid #56783e; background: #e9f1de; }\n.acoes { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.2rem; }\nbutton, .voltar { display: inline-block; padding: .7rem 1rem; border: 1px solid #315c30; }\nbutton { cursor: pointer; background: #183e35; color: #fff; }\nbutton:disabled { cursor: not-allowed; opacity: .65; }\n.voltar { color: #183e35; background: #fff; text-decoration: none; }\n#resultado { margin-top: 1.5rem; }\ndt { font-weight: bold; margin-top: .7rem; }\ndd { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }\npre { white-space: pre-wrap; overflow-wrap: anywhere; }\n[hidden] { display: none !important; }\n\n:focus-visible {\n  outline: 3px solid #6a8f32;\n  outline-offset: 4px;\n}\n\n@media (min-width: 48rem) {\n  .campos { grid-template-columns: 1fr 1fr; }\n  .largo { grid-column: 1 / -1; }\n}\n\n@media print {\n  .acoes, .voltar { display: none; }\n  body { background: #fff; }\n}\n"
+        },
+        {
+          "nome": "script.js",
+          "codigo": "'use strict';\nconst form = document.querySelector('#formulario');\nconst status = document.querySelector('#status');\nconst botao = document.querySelector('#simular');\n// Apoio de simulação fornecido pelo professor. A aula 02 altera o HTML.\nform.addEventListener('submit', (event) => {\n  event.preventDefault();\n  status.textContent = 'As regras HTML permitiram esta tentativa. Simulação local; nenhum envio ao servidor.';\n});\nbotao.disabled = false;\n"
         }
       ]
     },
@@ -1436,7 +1494,7 @@ window.WEBLAB_CURSO = {
         "Coletar campos por name, preservando múltiplos checkboxes.",
         "Montar um resumo com elementos do DOM e textContent."
       ],
-      "retomada": "Retome o projeto e a explicação da aula anterior. Se não tiver os arquivos, baixe a base deste encontro: ela contém o ponto de partida necessário.",
+      "retomada": "Continue a mesma pasta do chamado de suporte criada em 23/10. Faça uma cópia de segurança antes de alterar. Se precisar recuperar o ponto de partida, extraia a base de apoio desta data em outra pasta. Retome o projeto e a explicação da aula anterior. Se não tiver os arquivos, baixe a base deste encontro: ela contém o ponto de partida necessário.",
       "conceitos": [
         "submit e preventDefault",
         "FormData.get e getAll",
@@ -1493,7 +1551,7 @@ window.WEBLAB_CURSO = {
         }
       ],
       "atividade": [
-        "Abrir a base da aula com HTML e CSS concluídos.",
+        "Continue seu chamado de suporte da aula anterior; se precisar, use o ZIP da data como base de apoio. Abra a pasta no VS Code e execute index.html com Live Server.",
         "Substituir o tratamento de submit pela coleta com FormData e pela chamada que monta o resumo.",
         "Mostrar solicitante, equipamento, contato, categoria, prioridade, descrição e todos os sintomas selecionados.",
         "Acrescentar a limpeza do resumo em uma nova simulação e o botão de novo preenchimento."
@@ -1533,7 +1591,7 @@ window.WEBLAB_CURSO = {
         "liveserver"
       ],
       "extensao": "Explique uma alternativa de implementação e compare seu comportamento com o requisito. Conclua primeiro os casos essenciais.",
-      "apoio": "Começar mostrando somente solicitante e descrição. Depois acrescentar os demais campos e getAll.",
+      "apoio": "Começar mostrando somente solicitante e descrição. Depois acrescentar os demais campos e getAll. Use a imagem para conferir o controle e a sequência do quadro para localizar cada alteração. Não avance para a etapa seguinte antes de salvar e observar a atual.",
       "mapa": [
         [
           "Passo",
@@ -1605,7 +1663,7 @@ window.WEBLAB_CURSO = {
           "titulo": "Os dados aparecem na página",
           "texto": [
             "Evento submit, FormData e resumo local com JavaScript",
-            "Prof. Fabrício Rodrigues"
+            "Continue o chamado de suporte."
           ],
           "tipo": "capa",
           "numero": 1,
@@ -1615,75 +1673,43 @@ window.WEBLAB_CURSO = {
         {
           "titulo": "O que vamos construir",
           "texto": [
-            "Escutar submit no formulário e impedir a navegação na simulação.",
-            "Coletar campos por name, preservando múltiplos checkboxes.",
-            "Montar um resumo com elementos do DOM e textContent."
+            "Evento submit, FormData e resumo local com JavaScript",
+            "Relacione o resultado visível às alterações desta aula."
           ],
           "tipo": "texto",
           "numero": 2,
           "aula": "04",
-          "data": "06/11"
-        },
-        {
-          "titulo": "Ponto de partida",
-          "texto": [
-            "Retome o projeto e a explicação da aula anterior. Se não tiver os arquivos, baixe a base deste encontro: ela contém o ponto de partida necessário.",
-            "Abra o projeto deste encontro no VS Code. Salve uma cópia própria antes de alterar."
-          ],
-          "tipo": "texto",
-          "numero": 3,
-          "aula": "04",
-          "data": "06/11"
+          "data": "06/11",
+          "figura": "materiais/Figura-04-resumo.png"
         },
         {
           "titulo": "Mapa da aula",
-          "texto": [],
-          "tipo": "tabela",
-          "tabela": [
-            [
-              "Passo",
-              "O que acontece"
-            ],
-            [
-              "Preencher",
-              "A pessoa informa dados fictícios."
-            ],
-            [
-              "Validar",
-              "O navegador aplica as regras HTML."
-            ],
-            [
-              "submit",
-              "O evento chega ao formulário válido."
-            ],
-            [
-              "JavaScript",
-              "Impede a navegação e apresenta o resumo local."
-            ]
-          ],
-          "numero": 4,
-          "aula": "04",
-          "data": "06/11"
-        },
-        {
-          "titulo": "O evento pertence ao formulário",
           "texto": [
-            "Usar submit permite tratar o botão e a submissão pelo teclado. A validação HTML interativa acontece antes do submit: campos inválidos podem impedir que esse evento aconteça.",
-            "preventDefault interrompe a ação padrão nesta demonstração. Ele não valida, não envia para um servidor e não grava os dados. A base já oferece um bloqueio de navegação; substitua a mensagem pelo processamento do resumo."
+            "Siga esta ordem; reteste a cada alteração."
           ],
-          "tipo": "texto",
-          "refs": [
-            "submit",
-            "validacao"
-          ],
-          "numero": 5,
+          "tipo": "mapa",
+          "numero": 3,
           "aula": "04",
-          "data": "06/11"
+          "data": "06/11",
+          "mapa": [
+            [
+              "1 · Preparar o resultado",
+              "A área do resumo começa oculta; Novo preenchimento permanece acessível."
+            ],
+            [
+              "2 · Coletar no submit",
+              "Ao marcar dois sintomas, ambos permanecem na lista coletada."
+            ],
+            [
+              "3 · Mostrar e reiniciar",
+              "Um envio válido mostra resumo local. Novo preenchimento limpa e foca o solicitante."
+            ]
+          ]
         },
         {
           "titulo": "Exemplo: O evento pertence ao formulário",
           "texto": [
-            "Observe o papel de cada linha e compare com o arquivo do projeto."
+            "Ajuste o trecho no local indicado. Salve e confira o comportamento antes de avançar."
           ],
           "tipo": "codigo",
           "codigo": "form.addEventListener('submit', (event) => {\n  event.preventDefault();\n  const dados = new FormData(form);\n  mostrarResumo(dados);\n});",
@@ -1691,57 +1717,32 @@ window.WEBLAB_CURSO = {
             "submit",
             "validacao"
           ],
-          "numero": 6,
+          "numero": 4,
           "aula": "04",
-          "data": "06/11"
-        },
-        {
-          "titulo": "Coleta por name",
-          "texto": [
-            "new FormData(form) monta os pares de dados dos controles participantes. get recupera um valor; getAll recupera todos os valores com o mesmo name. Checkboxes desmarcados não entram na coleta.",
-            "Um campo com id e sem name continua aparecendo na tela, mas não entra como par nome/valor na coleta. Os sintomas selecionados precisam aparecer juntos no resumo."
-          ],
-          "tipo": "texto",
-          "refs": [
-            "formdata"
-          ],
-          "numero": 7,
-          "aula": "04",
-          "data": "06/11"
+          "data": "06/11",
+          "onde": "script.js: no único listener de submit, após event.preventDefault().",
+          "quadro": "Crie a área para o resumo e mantenha Novo preenchimento fora da área escondida."
         },
         {
           "titulo": "Exemplo: Coleta por name",
           "texto": [
-            "Observe o papel de cada linha e compare com o arquivo do projeto."
+            "Ajuste o trecho no local indicado. Salve e confira o comportamento antes de avançar."
           ],
           "tipo": "codigo",
           "codigo": "const dados = new FormData(form);\nconst contato = dados.get('contato');\nconst sintomas = dados.getAll('sintomas');\n// getAll preserva várias opções com o mesmo name.",
           "refs": [
             "formdata"
           ],
-          "numero": 8,
+          "numero": 5,
           "aula": "04",
-          "data": "06/11"
-        },
-        {
-          "titulo": "Resumo como conteúdo, sem interpretar HTML",
-          "texto": [
-            "Crie dt e dd para cada item da lista de descrição. textContent apresenta o valor como texto. Não use innerHTML para inserir o que a pessoa digitou.",
-            "Limpe o resumo anterior antes de montar o novo. Depois torne a seção visível e leve o foco ao título com tabindex=-1. O resumo corresponde à última simulação, não a um registro persistente."
-          ],
-          "tipo": "texto",
-          "refs": [
-            "textcontent",
-            "formdata"
-          ],
-          "numero": 9,
-          "aula": "04",
-          "data": "06/11"
+          "data": "06/11",
+          "onde": "script.js: no único listener de submit, após event.preventDefault().",
+          "quadro": "Cancele a navegação; crie new FormData(form); use get e getAll."
         },
         {
           "titulo": "Exemplo: Resumo como conteúdo, sem interpretar HTML",
           "texto": [
-            "Observe o papel de cada linha e compare com o arquivo do projeto."
+            "Ajuste o trecho no local indicado. Salve e confira o comportamento antes de avançar."
           ],
           "tipo": "codigo",
           "codigo": "function adicionarLinha(titulo, valor) {\n  const dt = document.createElement('dt');\n  const dd = document.createElement('dd');\n  dt.textContent = titulo;\n  dd.textContent = String(valor);\n  resumo.append(dt, dd);\n}",
@@ -1749,44 +1750,36 @@ window.WEBLAB_CURSO = {
             "textcontent",
             "formdata"
           ],
-          "numero": 10,
+          "numero": 6,
           "aula": "04",
-          "data": "06/11"
+          "data": "06/11",
+          "onde": "script.js: antes do listener de submit, após selecionar #dados-resumo.",
+          "quadro": "Use createElement, textContent e replaceChildren; revele o resultado e leve o foco ao título."
         },
         {
           "titulo": "Estado do formulário depois da tentativa",
           "texto": [
-            "Uma falha de validação deve manter os valores para correção. Um novo envio deve substituir o resumo anterior, sem duplicar linhas.",
-            "O botão Novo preenchimento é type=button. Ele pode chamar reset, ocultar o resumo e devolver o foco ao primeiro campo. Avise que o projeto perde os dados quando a página é recarregada."
+            "Tentativa inválida: mantenha os valores. Novo envio válido: substitua o resumo anterior.",
+            "Novo preenchimento limpa os campos e devolve o foco. Recarregar a página perde os dados."
           ],
           "tipo": "texto",
           "refs": [
             "botao",
             "submit"
           ],
-          "numero": 11,
+          "numero": 7,
           "aula": "04",
-          "data": "06/11"
+          "data": "06/11",
+          "figura": "materiais/Figura-04-resumo.png"
         },
         {
           "titulo": "Atividade no VS Code",
           "texto": [
-            "Abrir a base da aula com HTML e CSS concluídos.",
-            "Substituir o tratamento de submit pela coleta com FormData e pela chamada que monta o resumo."
+            "Agora altere sua versão seguindo as etapas da aula.",
+            "A base de apoio deve ser usada apenas se precisar recuperar o ponto de partida."
           ],
           "tipo": "texto",
-          "numero": 12,
-          "aula": "04",
-          "data": "06/11"
-        },
-        {
-          "titulo": "Atividade: conferência e explicação",
-          "texto": [
-            "Mostrar solicitante, equipamento, contato, categoria, prioridade, descrição e todos os sintomas selecionados.",
-            "Acrescentar a limpeza do resumo em uma nova simulação e o botão de novo preenchimento."
-          ],
-          "tipo": "texto",
-          "numero": 13,
+          "numero": 8,
           "aula": "04",
           "data": "06/11"
         },
@@ -1820,7 +1813,7 @@ window.WEBLAB_CURSO = {
               "As marcas aparecem como texto, sem formatação HTML."
             ]
           ],
-          "numero": 14,
+          "numero": 9,
           "aula": "04",
           "data": "06/11"
         },
@@ -1842,19 +1835,7 @@ window.WEBLAB_CURSO = {
               "Campos reiniciados e foco no primeiro campo."
             ]
           ],
-          "numero": 15,
-          "aula": "04",
-          "data": "06/11"
-        },
-        {
-          "titulo": "Erros que merecem atenção",
-          "texto": [
-            "Escutar somente click do botão deixa de representar a tarefa do formulário.",
-            "get recupera um único valor; sintomas exigem getAll.",
-            "Resumo na tela não significa que o chamado foi enviado ou salvo."
-          ],
-          "tipo": "texto",
-          "numero": 16,
+          "numero": 10,
           "aula": "04",
           "data": "06/11"
         },
@@ -1866,7 +1847,7 @@ window.WEBLAB_CURSO = {
             "Entregue ZIP e TXT ao professor na aula. Os downloads não são enviados automaticamente."
           ],
           "tipo": "texto",
-          "numero": 17,
+          "numero": 11,
           "aula": "04",
           "data": "06/11"
         },
@@ -1877,9 +1858,55 @@ window.WEBLAB_CURSO = {
             "Guarde a versão desta aula: ela será o ponto de partida para a continuidade."
           ],
           "tipo": "texto",
-          "numero": 18,
+          "numero": 12,
           "aula": "04",
           "data": "06/11"
+        }
+      ],
+      "passos": [
+        {
+          "titulo": "1 · Preparar o resultado",
+          "onde": "index.html: depois de form, crie section#resultado hidden com h2#titulo-resumo tabindex=\"-1\" e dl#dados-resumo. Dentro de div.acoes do form, acrescente button#novo type=\"button\".",
+          "quadro": "Crie a área para o resumo e mantenha Novo preenchimento fora da área escondida.",
+          "resultado": "A área do resumo começa oculta; Novo preenchimento permanece acessível.",
+          "teste": "Execute o caso correspondente na ficha de testes e registre o observado.",
+          "codigo": "<!-- Depois do fechamento de form: -->\n<section class=\"painel\" id=\"resultado\" hidden\n  aria-labelledby=\"titulo-resumo\">\n  <h2 id=\"titulo-resumo\" tabindex=\"-1\">Resumo da última simulação</h2>\n  <p>Nenhuma solicitação foi enviada ou gravada em um servidor.</p>\n  <dl id=\"dados-resumo\"></dl>\n</section>\n\n<!-- Dentro de div.acoes do form, depois do botão submit: -->\n<button type=\"button\" id=\"novo\">Novo preenchimento</button>",
+          "figura": "materiais/Figura-04-resumo.png",
+          "exibirFigura": false
+        },
+        {
+          "titulo": "2 · Coletar no submit",
+          "onde": "script.js: substitua o manipulador de submit fornecido; mantenha um único listener.",
+          "quadro": "Cancele a navegação; crie new FormData(form); use get e getAll.",
+          "resultado": "Ao marcar dois sintomas, ambos permanecem na lista coletada.",
+          "teste": "Execute o caso correspondente na ficha de testes e registre o observado.",
+          "codigo": "const resultado = document.querySelector('#resultado');\nconst resumo = document.querySelector('#dados-resumo');\n// No único listener de submit, após preventDefault():\nconst dados = new FormData(form);\nmostrarResumo(dados);",
+          "figura": "materiais/Figura-04-resumo.png",
+          "exibirFigura": false
+        },
+        {
+          "titulo": "3 · Mostrar e reiniciar",
+          "onde": "script.js: implemente mostrarResumo, adicionarLinha e o clique de #novo conforme os exemplos do conteúdo.",
+          "quadro": "Use createElement, textContent e replaceChildren; revele o resultado e leve o foco ao título. Mude o texto do botão submit para Gerar resumo local.",
+          "resultado": "Um envio válido mostra resumo local. Novo preenchimento limpa e foca o solicitante.",
+          "teste": "Execute o caso correspondente na ficha de testes e registre o observado.",
+          "codigo": "",
+          "figura": "materiais/Figura-04-resumo.png",
+          "exibirFigura": true
+        }
+      ],
+      "codigoConferencia": [
+        {
+          "nome": "index.html",
+          "codigo": "<!doctype html>\n<html lang=\"pt-BR\">\n  <head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <title>\n      Chamado de suporte ao laboratório - WebLab\n    </title>\n    <link rel=\"stylesheet\" href=\"style.css\">\n    <script src=\"script.js\" defer>\n    </script>\n  </head>\n  <body>\n    <header>\n      <a class=\"voltar\"\n        href=\"https://fabricio-rodrigues-ifpa.github.io/programacao-web/aulas.html?id=aula-04\">\n        ← Voltar à aula no portal (internet)\n      </a>\n      <h1>\n        Chamado de suporte ao laboratório\n      </h1>\n      <p>\n        Modelo de referência para consultar depois de sua tentativa.\n      </p>\n      <p class=\"aviso\">\n        Simulação local com dados fictícios. Não abre uma solicitação real.\n      </p>\n    </header>\n    <main>\n      <form id=\"formulario\">\n        <p>\n          Os rótulos indicam os campos obrigatórios. Os demais são opcionais.\n        </p>\n        <div class=\"campos\">\n          <div class=\"campo\">\n            <label for=\"solicitante\">\n              Solicitante fictício (obrigatório)\n            </label>\n            <input id=\"solicitante\" name=\"solicitante\" type=\"text\" required minlength=\"2\" maxlength=\"60\"\n              autocomplete=\"off\">\n          </div>\n          <div class=\"campo\">\n            <label for=\"equipamento\">\n              Equipamento (obrigatório)\n            </label>\n            <input id=\"equipamento\" name=\"equipamento\" type=\"text\" required minlength=\"2\" maxlength=\"20\"\n              placeholder=\"Ex.: PC-07\" aria-describedby=\"ajuda-equipamento\">\n            <p class=\"ajuda\" id=\"ajuda-equipamento\">\n              Use um código, não uma quantidade.\n            </p>\n          </div>\n          <div class=\"campo\">\n            <label for=\"contato\">\n              E-mail fictício (obrigatório)\n            </label>\n            <input id=\"contato\" name=\"contato\" type=\"email\" required autocomplete=\"off\"\n              placeholder=\"estudante@example.com\">\n          </div>\n          <div class=\"campo\">\n            <label for=\"categoria\">\n              Categoria (obrigatório)\n            </label>\n            <select id=\"categoria\" name=\"categoria\" required>\n              <option value=\"\">\n                Escolha uma opção\n              </option>\n              <option value=\"hardware\">\n                Hardware\n              </option>\n              <option value=\"software\">\n                Software\n              </option>\n              <option value=\"rede\">\n                Rede\n              </option>\n              <option value=\"outro\">\n                Outro\n              </option>\n            </select>\n          </div>\n          <div class=\"campo largo\">\n            <label for=\"descricao\">\n              Descrição do problema (obrigatório)\n            </label>\n            <p class=\"ajuda\" id=\"ajuda-descricao\">\n              Use de 20 a 500 caracteres.\n            </p>\n            <textarea id=\"descricao\" name=\"descricao\" rows=\"5\" required minlength=\"20\" maxlength=\"500\"\n              aria-describedby=\"ajuda-descricao\"></textarea>\n          </div>\n        </div>\n        <fieldset>\n          <legend>\n            Prioridade (obrigatória)\n          </legend>\n          <label>\n            <input type=\"radio\" name=\"prioridade\" value=\"normal\" required>\n            Normal\n          </label>\n          <label>\n            <input type=\"radio\" name=\"prioridade\" value=\"alta\">\n            Alta\n          </label>\n        </fieldset>\n        <fieldset>\n          <legend>\n            Sintomas (opcionais)\n          </legend>\n          <label>\n            <input type=\"checkbox\" name=\"sintomas\" value=\"Lentidão\">\n            Lentidão\n          </label>\n          <label>\n            <input type=\"checkbox\" name=\"sintomas\" value=\"Mensagem de erro\">\n            Mensagem de erro\n          </label>\n        </fieldset>\n        <div class=\"acoes\">\n          <button id=\"simular\" type=\"submit\" disabled>\n            Gerar resumo local\n          </button>\n          <button type=\"button\" id=\"novo\">\n            Novo preenchimento\n          </button>\n        </div>\n        <p id=\"status\" role=\"status\">\n        </p>\n      </form>\n      <noscript>\n        <p>\n          Ative JavaScript para habilitar a simulação. Você pode estudar o HTML e o CSS sem executar o envio.\n        </p>\n      </noscript>\n      <section class=\"painel\" id=\"resultado\" hidden aria-labelledby=\"titulo-resumo\">\n        <h2 id=\"titulo-resumo\" tabindex=\"-1\">\n          Resumo da última simulação\n        </h2>\n        <p>\n          Nenhuma solicitação foi enviada ou gravada em um servidor.\n        </p>\n        <dl id=\"dados-resumo\">\n        </dl>\n      </section>\n      <p>\n        <a class=\"voltar\"\n          href=\"https://fabricio-rodrigues-ifpa.github.io/programacao-web/aulas.html?id=aula-04\">\n          ← Voltar à aula no portal (internet)\n        </a>\n      </p>\n    </main>\n    <footer>\n      WebLab - Prof. Fabrício Rodrigues - 2026\n    </footer>\n  </body>\n</html>\n"
+        },
+        {
+          "nome": "style.css",
+          "codigo": "* { box-sizing: border-box; }\nbody {\n  margin: 0;\n  font: 1rem/1.65 Arial, sans-serif;\n  color: #183e35;\n  background: #f6f8f1;\n}\nheader, main, footer { width: min(100% - 2rem, 64rem); margin: auto; }\nheader, footer { padding: 1.5rem 0; }\nh1, h2 { line-height: 1.2; }\na { color: #315c30; }\nform, .painel { padding: 1.5rem; border: 1px solid #cad7bd; background: #fff; }\n.campos, .campo { display: grid; gap: .55rem; }\n.campos { gap: 1.2rem; }\n.campo { min-width: 0; align-content: start; }\nlabel, legend { font-weight: bold; }\n.campo > input, .campo > select, .campo > textarea {\n  width: 100%; min-width: 0; padding: .75rem;\n  border: 1px solid #738a68; border-radius: .25rem;\n  color: #183e35; background: #fff;\n}\nbutton, input, select, textarea { font: inherit; }\ntextarea { resize: vertical; }\nfieldset { margin: 1.4rem 0; padding: 1rem; border: 1px solid #9caf8b; }\nfieldset label { display: block; font-weight: normal; margin: .5rem 0; }\n.ajuda { font-size: .9rem; margin: 0; color: #455a3d; }\n.aviso { padding: 1rem; border-left: 4px solid #56783e; background: #e9f1de; }\n.acoes { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.2rem; }\nbutton, .voltar { display: inline-block; padding: .7rem 1rem; border: 1px solid #315c30; }\nbutton { cursor: pointer; background: #183e35; color: #fff; }\nbutton:disabled { cursor: not-allowed; opacity: .65; }\n.voltar { color: #183e35; background: #fff; text-decoration: none; }\n#resultado { margin-top: 1.5rem; }\ndt { font-weight: bold; margin-top: .7rem; }\ndd { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }\npre { white-space: pre-wrap; overflow-wrap: anywhere; }\n[hidden] { display: none !important; }\n\n:focus-visible {\n  outline: 3px solid #6a8f32;\n  outline-offset: 4px;\n}\n\n@media (min-width: 48rem) {\n  .campos { grid-template-columns: 1fr 1fr; }\n  .largo { grid-column: 1 / -1; }\n}\n\n@media print {\n  .acoes, .voltar { display: none; }\n  body { background: #fff; }\n}\n"
+        },
+        {
+          "nome": "script.js",
+          "codigo": "'use strict';\nconst form = document.querySelector('#formulario');\nconst status = document.querySelector('#status');\nconst botao = document.querySelector('#simular');\nconst resultado = document.querySelector('#resultado');\nconst resumo = document.querySelector('#dados-resumo');\nfunction adicionarLinha(titulo, valor) {\n  const dt = document.createElement('dt');\n  const dd = document.createElement('dd');\n  dt.textContent = titulo;\n  dd.textContent = String(valor);\n  resumo.append(dt, dd);\n}\n\nfunction mostrarResumo(dados) {\n  resumo.replaceChildren();\n  adicionarLinha('Solicitante fictício', dados.get('solicitante') || '');\n  adicionarLinha('Equipamento', dados.get('equipamento') || '');\n  adicionarLinha('Contato fictício', dados.get('contato') || '');\n  adicionarLinha('Categoria', dados.get('categoria') || '');\n  adicionarLinha('Prioridade', dados.get('prioridade') || '');\n  adicionarLinha('Descrição', dados.get('descricao') || '');\n  adicionarLinha('Sintomas', dados.getAll('sintomas').join(', ') || 'Nenhum selecionado');\n  resultado.hidden = false;\n  status.textContent = 'Simulação concluída. Nenhum dado foi enviado ao servidor.';\n  document.querySelector('#titulo-resumo').focus();\n}\n\nform.addEventListener('submit', (event) => {\n  event.preventDefault();\n  const dados = new FormData(form);\n  mostrarResumo(dados);\n});\n\nform.addEventListener('invalid', () => {\n  status.textContent = 'Confira o campo indicado. Seus valores foram mantidos.';\n}, true);\nform.addEventListener('input', () => {\n  status.textContent = '';\n  resultado.hidden = true;\n});\n\ndocument.querySelector('#novo').addEventListener('click', () => {\n  form.reset();\n  resultado.hidden = true;\n  resumo.replaceChildren();\n  status.textContent = '';\n  document.querySelector('#solicitante').focus();\n});\nbotao.disabled = false;\n"
         }
       ]
     },
@@ -1897,7 +1924,7 @@ window.WEBLAB_CURSO = {
         "Criar e limpar mensagens com setCustomValidity.",
         "Registrar casos válidos, inválidos e limites da descrição."
       ],
-      "retomada": "Retome o projeto e a explicação da aula anterior. Se não tiver os arquivos, baixe a base deste encontro: ela contém o ponto de partida necessário.",
+      "retomada": "Continue a mesma pasta do chamado de suporte criada em 23/10. Faça uma cópia de segurança antes de alterar. Se precisar recuperar o ponto de partida, extraia a base de apoio desta data em outra pasta. Retome o projeto e a explicação da aula anterior. Se não tiver os arquivos, baixe a base deste encontro: ela contém o ponto de partida necessário.",
       "conceitos": [
         "checkValidity e reportValidity",
         "setCustomValidity",
@@ -1943,7 +1970,7 @@ window.WEBLAB_CURSO = {
         }
       ],
       "atividade": [
-        "Abrir a base e localizar os campos contato, confirmar e descricao.",
+        "Continue seu chamado de suporte da aula anterior; se precisar, use o ZIP da data como base de apoio. Abra a pasta no VS Code e execute index.html com Live Server.",
         "Implementar a comparação e registrar input nos dois e-mails.",
         "Acrescentar a regra da descrição com trim e limpar as mensagens quando o valor for corrigido.",
         "Repetir a tentativa após cada correção e registrar os limites e o reinício."
@@ -1981,7 +2008,7 @@ window.WEBLAB_CURSO = {
         "liveserver"
       ],
       "extensao": "Explique uma alternativa de implementação e compare seu comportamento com o requisito. Conclua primeiro os casos essenciais.",
-      "apoio": "Implementar primeiro a igualdade dos e-mails. Usar uma tabela com entrada e mensagem esperada antes de escrever a função da descrição.",
+      "apoio": "Implementar primeiro a igualdade dos e-mails. Usar uma tabela com entrada e mensagem esperada antes de escrever a função da descrição. Use a imagem para conferir o controle e a sequência do quadro para localizar cada alteração. Não avance para a etapa seguinte antes de salvar e observar a atual.",
       "mapa": [
         [
           "Regra",
@@ -2053,7 +2080,7 @@ window.WEBLAB_CURSO = {
           "titulo": "Mensagens que ajudam a corrigir",
           "texto": [
             "Regras complementares, validade personalizada e casos de teste",
-            "Prof. Fabrício Rodrigues"
+            "Continue o chamado de suporte."
           ],
           "tipo": "capa",
           "numero": 1,
@@ -2063,75 +2090,43 @@ window.WEBLAB_CURSO = {
         {
           "titulo": "O que vamos construir",
           "texto": [
-            "Comparar o contato com sua confirmação sem perder as regras nativas.",
-            "Criar e limpar mensagens com setCustomValidity.",
-            "Registrar casos válidos, inválidos e limites da descrição."
+            "Regras complementares, validade personalizada e casos de teste",
+            "Relacione o resultado visível às alterações desta aula."
           ],
           "tipo": "texto",
           "numero": 2,
           "aula": "05",
-          "data": "13/11"
-        },
-        {
-          "titulo": "Ponto de partida",
-          "texto": [
-            "Retome o projeto e a explicação da aula anterior. Se não tiver os arquivos, baixe a base deste encontro: ela contém o ponto de partida necessário.",
-            "Abra o projeto deste encontro no VS Code. Salve uma cópia própria antes de alterar."
-          ],
-          "tipo": "texto",
-          "numero": 3,
-          "aula": "05",
-          "data": "13/11"
+          "data": "13/11",
+          "figura": "materiais/Figura-05-confirmacao.png"
         },
         {
           "titulo": "Mapa da aula",
-          "texto": [],
-          "tipo": "tabela",
-          "tabela": [
-            [
-              "Regra",
-              "Camada do protótipo"
-            ],
-            [
-              "Obrigatoriedade e formato",
-              "Atributos HTML."
-            ],
-            [
-              "Confirmação de contato",
-              "JavaScript compara dois campos."
-            ],
-            [
-              "Descrição útil",
-              "JavaScript confere o texto sem espaços nas pontas."
-            ],
-            [
-              "Aplicação real",
-              "Servidor precisaria conferir as regras novamente."
-            ]
-          ],
-          "numero": 4,
-          "aula": "05",
-          "data": "13/11"
-        },
-        {
-          "titulo": "Comparação de dois campos",
           "texto": [
-            "A base acrescenta o campo de confirmação com type=email e required. Isso confere cada formato, mas não prova que os dois valores são iguais.",
-            "A função compara os valores e define uma mensagem quando diferem. String vazia limpa a validade personalizada. Escute input nos dois campos, pois qualquer um pode mudar depois."
+            "Siga esta ordem; reteste a cada alteração."
           ],
-          "tipo": "texto",
-          "refs": [
-            "custom",
-            "validacao"
-          ],
-          "numero": 5,
+          "tipo": "mapa",
+          "numero": 3,
           "aula": "05",
-          "data": "13/11"
+          "data": "13/11",
+          "mapa": [
+            [
+              "1 · Adicionar confirmação",
+              "O novo campo pede repetição do contato."
+            ],
+            [
+              "2 · Comparar e limpar mensagens",
+              "Contatos diferentes pedem correção. Ao igualar, o erro desaparece."
+            ],
+            [
+              "3 · Conferir antes do resumo",
+              "Espaços não completam a descrição. Uma tentativa inválida mantém os valores."
+            ]
+          ]
         },
         {
           "titulo": "Exemplo: Comparação de dois campos",
           "texto": [
-            "Observe o papel de cada linha e compare com o arquivo do projeto."
+            "Ajuste o trecho no local indicado. Salve e confira o comportamento antes de avançar."
           ],
           "tipo": "codigo",
           "codigo": "function conferirContato() {\n  const diferente = confirmar.value !== contato.value;\n  confirmar.setCustomValidity(\n    confirmar.value && diferente ? 'Repita o mesmo e-mail.' : ''\n  );\n}\ncontato.addEventListener('input', conferirContato);\nconfirmar.addEventListener('input', conferirContato);",
@@ -2139,29 +2134,16 @@ window.WEBLAB_CURSO = {
             "custom",
             "validacao"
           ],
-          "numero": 6,
+          "numero": 4,
           "aula": "05",
-          "data": "13/11"
-        },
-        {
-          "titulo": "Descrição e limites do teste",
-          "texto": [
-            "minlength e maxlength tratam o comprimento do valor. Nesta aula acrescentamos a regra de pelo menos 20 caracteres depois de trim, para não aceitar uma descrição formada só por espaços.",
-            "A função limpa a mensagem quando o texto passa. Teste digitando no campo; restrições de comprimento nativas têm particularidades quando um script atribui o valor diretamente. Não altere o valor do aluno em silêncio."
-          ],
-          "tipo": "texto",
-          "refs": [
-            "custom",
-            "validacao"
-          ],
-          "numero": 7,
-          "aula": "05",
-          "data": "13/11"
+          "data": "13/11",
+          "onde": "script.js: após selecionar #contato e #confirmar, antes do listener de submit.",
+          "quadro": "Adicione label e input#confirmar name=\"confirmar\" type=\"email\" required."
         },
         {
           "titulo": "Exemplo: Descrição e limites do teste",
           "texto": [
-            "Observe o papel de cada linha e compare com o arquivo do projeto."
+            "Ajuste o trecho no local indicado. Salve e confira o comportamento antes de avançar."
           ],
           "tipo": "codigo",
           "codigo": "function conferirDescricao() {\n  const curta = descricao.value.length > 0\n    && descricao.value.trim().length < 20;\n  descricao.setCustomValidity(\n    curta ? 'Descreva o problema com pelo menos 20 caracteres.' : ''\n  );\n}\ndescricao.addEventListener('input', conferirDescricao);",
@@ -2169,29 +2151,16 @@ window.WEBLAB_CURSO = {
             "custom",
             "validacao"
           ],
-          "numero": 8,
+          "numero": 5,
           "aula": "05",
-          "data": "13/11"
-        },
-        {
-          "titulo": "Nova tentativa sem mensagens antigas",
-          "texto": [
-            "Antes de montar o resumo, atualize as verificações e consulte reportValidity. Os listeners de input são essenciais para limpar um erro anterior que bloquearia a próxima submissão.",
-            "Ao reiniciar, faça reset e limpe a validade personalizada. Mostrar um aviso não deve apagar os campos nem transferir a culpa para a pessoa. A mensagem precisa indicar como corrigir."
-          ],
-          "tipo": "texto",
-          "refs": [
-            "custom",
-            "mensagens"
-          ],
-          "numero": 9,
-          "aula": "05",
-          "data": "13/11"
+          "data": "13/11",
+          "onde": "script.js: após selecionar #descricao, antes do listener de submit.",
+          "quadro": "Crie conferirContato e conferirDescricao; associe eventos input para limpar o erro quando corrigido."
         },
         {
           "titulo": "Exemplo: Nova tentativa sem mensagens antigas",
           "texto": [
-            "Observe o papel de cada linha e compare com o arquivo do projeto."
+            "Ajuste o trecho no local indicado. Salve e confira o comportamento antes de avançar."
           ],
           "tipo": "codigo",
           "codigo": "form.addEventListener('submit', (event) => {\n  event.preventDefault();\n  conferirContato();\n  conferirDescricao();\n  if (!form.reportValidity()) return;\n  mostrarResumo(new FormData(form));\n});",
@@ -2199,29 +2168,20 @@ window.WEBLAB_CURSO = {
             "custom",
             "mensagens"
           ],
-          "numero": 10,
+          "numero": 6,
           "aula": "05",
-          "data": "13/11"
+          "data": "13/11",
+          "onde": "script.js: substitua o listener de submit; mantenha apenas um.",
+          "quadro": "Chame as duas conferências; se reportValidity retornar false, encerre; caso contrário, mostre o resumo."
         },
         {
           "titulo": "Atividade no VS Code",
           "texto": [
-            "Abrir a base e localizar os campos contato, confirmar e descricao.",
-            "Implementar a comparação e registrar input nos dois e-mails."
+            "Agora altere sua versão seguindo as etapas da aula.",
+            "A base de apoio deve ser usada apenas se precisar recuperar o ponto de partida."
           ],
           "tipo": "texto",
-          "numero": 11,
-          "aula": "05",
-          "data": "13/11"
-        },
-        {
-          "titulo": "Atividade: conferência e explicação",
-          "texto": [
-            "Acrescentar a regra da descrição com trim e limpar as mensagens quando o valor for corrigido.",
-            "Repetir a tentativa após cada correção e registrar os limites e o reinício."
-          ],
-          "tipo": "texto",
-          "numero": 12,
+          "numero": 7,
           "aula": "05",
           "data": "13/11"
         },
@@ -2255,7 +2215,7 @@ window.WEBLAB_CURSO = {
               "A simulação fica bloqueada."
             ]
           ],
-          "numero": 13,
+          "numero": 8,
           "aula": "05",
           "data": "13/11"
         },
@@ -2277,19 +2237,7 @@ window.WEBLAB_CURSO = {
               "Não permanece mensagem personalizada antiga."
             ]
           ],
-          "numero": 14,
-          "aula": "05",
-          "data": "13/11"
-        },
-        {
-          "titulo": "Erros que merecem atenção",
-          "texto": [
-            "Mensagem personalizada sem limpeza mantém o campo inválido.",
-            "Comparar apenas no click não cobre todas as formas de tentativa.",
-            "Validação no navegador não substitui a conferência em um servidor real."
-          ],
-          "tipo": "texto",
-          "numero": 15,
+          "numero": 9,
           "aula": "05",
           "data": "13/11"
         },
@@ -2301,7 +2249,7 @@ window.WEBLAB_CURSO = {
             "Entregue ZIP e TXT ao professor na aula. Os downloads não são enviados automaticamente."
           ],
           "tipo": "texto",
-          "numero": 16,
+          "numero": 10,
           "aula": "05",
           "data": "13/11"
         },
@@ -2312,9 +2260,55 @@ window.WEBLAB_CURSO = {
             "Guarde a versão desta aula: ela será o ponto de partida para a continuidade."
           ],
           "tipo": "texto",
-          "numero": 17,
+          "numero": 11,
           "aula": "05",
           "data": "13/11"
+        }
+      ],
+      "passos": [
+        {
+          "titulo": "1 · Adicionar confirmação",
+          "onde": "index.html: depois de contato, ainda dentro de div.campos.",
+          "quadro": "Adicione label e input#confirmar name=\"confirmar\" type=\"email\" required.",
+          "resultado": "O novo campo pede repetição do contato.",
+          "teste": "Execute o caso correspondente na ficha de testes e registre o observado.",
+          "codigo": "<div class=\"campo\">\n  <label for=\"confirmar\">Repita o e-mail fictício (obrigatório)</label>\n  <input id=\"confirmar\" name=\"confirmar\" type=\"email\" required\n    autocomplete=\"off\">\n</div>",
+          "figura": "materiais/Figura-05-confirmacao.png",
+          "exibirFigura": false
+        },
+        {
+          "titulo": "2 · Comparar e limpar mensagens",
+          "onde": "script.js: depois das seleções dos elementos e antes do listener de submit.",
+          "quadro": "Crie conferirContato e conferirDescricao; associe eventos input para limpar o erro quando corrigido.",
+          "resultado": "Contatos diferentes pedem correção. Ao igualar, o erro desaparece.",
+          "teste": "Execute o caso correspondente na ficha de testes e registre o observado.",
+          "codigo": "const contato = document.querySelector('#contato');\nconst confirmar = document.querySelector('#confirmar');\nconst descricao = document.querySelector('#descricao');\n// Acrescente as duas funções de conferência mostradas no conteúdo.",
+          "figura": "materiais/Figura-05-confirmacao.png",
+          "exibirFigura": true
+        },
+        {
+          "titulo": "3 · Conferir antes do resumo",
+          "onde": "script.js: substitua o listener de submit; mantenha apenas um.",
+          "quadro": "Chame as duas conferências; se reportValidity retornar false, encerre; caso contrário, mostre o resumo.",
+          "resultado": "Espaços não completam a descrição. Uma tentativa inválida mantém os valores.",
+          "teste": "Execute o caso correspondente na ficha de testes e registre o observado.",
+          "codigo": "",
+          "figura": "materiais/Figura-05-confirmacao.png",
+          "exibirFigura": false
+        }
+      ],
+      "codigoConferencia": [
+        {
+          "nome": "index.html",
+          "codigo": "<!doctype html>\n<html lang=\"pt-BR\">\n  <head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <title>\n      Chamado de suporte ao laboratório - WebLab\n    </title>\n    <link rel=\"stylesheet\" href=\"style.css\">\n    <script src=\"script.js\" defer>\n    </script>\n  </head>\n  <body>\n    <header>\n      <a class=\"voltar\"\n        href=\"https://fabricio-rodrigues-ifpa.github.io/programacao-web/aulas.html?id=aula-05\">\n        ← Voltar à aula no portal (internet)\n      </a>\n      <h1>\n        Chamado de suporte ao laboratório\n      </h1>\n      <p>\n        Modelo de referência para consultar depois de sua tentativa.\n      </p>\n      <p class=\"aviso\">\n        Simulação local com dados fictícios. Não abre uma solicitação real.\n      </p>\n    </header>\n    <main>\n      <form id=\"formulario\">\n        <p>\n          Os rótulos indicam os campos obrigatórios. Os demais são opcionais.\n        </p>\n        <div class=\"campos\">\n          <div class=\"campo\">\n            <label for=\"solicitante\">\n              Solicitante fictício (obrigatório)\n            </label>\n            <input id=\"solicitante\" name=\"solicitante\" type=\"text\" required minlength=\"2\" maxlength=\"60\"\n              autocomplete=\"off\">\n          </div>\n          <div class=\"campo\">\n            <label for=\"equipamento\">\n              Equipamento (obrigatório)\n            </label>\n            <input id=\"equipamento\" name=\"equipamento\" type=\"text\" required minlength=\"2\" maxlength=\"20\"\n              placeholder=\"Ex.: PC-07\" aria-describedby=\"ajuda-equipamento\">\n            <p class=\"ajuda\" id=\"ajuda-equipamento\">\n              Use um código, não uma quantidade.\n            </p>\n          </div>\n          <div class=\"campo\">\n            <label for=\"contato\">\n              E-mail fictício (obrigatório)\n            </label>\n            <input id=\"contato\" name=\"contato\" type=\"email\" required autocomplete=\"off\"\n              placeholder=\"estudante@example.com\">\n          </div>\n          <div class=\"campo\">\n            <label for=\"confirmar\">\n              Repita o e-mail (obrigatório)\n            </label>\n            <input id=\"confirmar\" name=\"confirmar\" type=\"email\" required autocomplete=\"off\"\n              aria-describedby=\"ajuda-confirmar\">\n            <p class=\"ajuda\" id=\"ajuda-confirmar\">\n              Repita exatamente o contato fictício informado.\n            </p>\n          </div>\n          <div class=\"campo\">\n            <label for=\"categoria\">\n              Categoria (obrigatório)\n            </label>\n            <select id=\"categoria\" name=\"categoria\" required>\n              <option value=\"\">\n                Escolha uma opção\n              </option>\n              <option value=\"hardware\">\n                Hardware\n              </option>\n              <option value=\"software\">\n                Software\n              </option>\n              <option value=\"rede\">\n                Rede\n              </option>\n              <option value=\"outro\">\n                Outro\n              </option>\n            </select>\n          </div>\n          <div class=\"campo largo\">\n            <label for=\"descricao\">\n              Descrição do problema (obrigatório)\n            </label>\n            <p class=\"ajuda\" id=\"ajuda-descricao\">\n              Use de 20 a 500 caracteres. Conteúdo formado apenas por espaços não atende à descrição.\n            </p>\n            <textarea id=\"descricao\" name=\"descricao\" rows=\"5\" required minlength=\"20\" maxlength=\"500\"\n              aria-describedby=\"ajuda-descricao\"></textarea>\n          </div>\n        </div>\n        <fieldset>\n          <legend>\n            Prioridade (obrigatória)\n          </legend>\n          <label>\n            <input type=\"radio\" name=\"prioridade\" value=\"normal\" required>\n            Normal\n          </label>\n          <label>\n            <input type=\"radio\" name=\"prioridade\" value=\"alta\">\n            Alta\n          </label>\n        </fieldset>\n        <fieldset>\n          <legend>\n            Sintomas (opcionais)\n          </legend>\n          <label>\n            <input type=\"checkbox\" name=\"sintomas\" value=\"Lentidão\">\n            Lentidão\n          </label>\n          <label>\n            <input type=\"checkbox\" name=\"sintomas\" value=\"Mensagem de erro\">\n            Mensagem de erro\n          </label>\n        </fieldset>\n        <div class=\"acoes\">\n          <button id=\"simular\" type=\"submit\" disabled>\n            Gerar resumo local\n          </button>\n          <button type=\"button\" id=\"novo\">\n            Novo preenchimento\n          </button>\n        </div>\n        <p id=\"status\" role=\"status\">\n        </p>\n      </form>\n      <noscript>\n        <p>\n          Ative JavaScript para habilitar a simulação. Você pode estudar o HTML e o CSS sem executar o envio.\n        </p>\n      </noscript>\n      <section class=\"painel\" id=\"resultado\" hidden aria-labelledby=\"titulo-resumo\">\n        <h2 id=\"titulo-resumo\" tabindex=\"-1\">\n          Resumo da última simulação\n        </h2>\n        <p>\n          Nenhuma solicitação foi enviada ou gravada em um servidor.\n        </p>\n        <dl id=\"dados-resumo\">\n        </dl>\n      </section>\n      <p>\n        <a class=\"voltar\"\n          href=\"https://fabricio-rodrigues-ifpa.github.io/programacao-web/aulas.html?id=aula-05\">\n          ← Voltar à aula no portal (internet)\n        </a>\n      </p>\n    </main>\n    <footer>\n      WebLab - Prof. Fabrício Rodrigues - 2026\n    </footer>\n  </body>\n</html>\n"
+        },
+        {
+          "nome": "style.css",
+          "codigo": "* { box-sizing: border-box; }\nbody {\n  margin: 0;\n  font: 1rem/1.65 Arial, sans-serif;\n  color: #183e35;\n  background: #f6f8f1;\n}\nheader, main, footer { width: min(100% - 2rem, 64rem); margin: auto; }\nheader, footer { padding: 1.5rem 0; }\nh1, h2 { line-height: 1.2; }\na { color: #315c30; }\nform, .painel { padding: 1.5rem; border: 1px solid #cad7bd; background: #fff; }\n.campos, .campo { display: grid; gap: .55rem; }\n.campos { gap: 1.2rem; }\n.campo { min-width: 0; align-content: start; }\nlabel, legend { font-weight: bold; }\n.campo > input, .campo > select, .campo > textarea {\n  width: 100%; min-width: 0; padding: .75rem;\n  border: 1px solid #738a68; border-radius: .25rem;\n  color: #183e35; background: #fff;\n}\nbutton, input, select, textarea { font: inherit; }\ntextarea { resize: vertical; }\nfieldset { margin: 1.4rem 0; padding: 1rem; border: 1px solid #9caf8b; }\nfieldset label { display: block; font-weight: normal; margin: .5rem 0; }\n.ajuda { font-size: .9rem; margin: 0; color: #455a3d; }\n.aviso { padding: 1rem; border-left: 4px solid #56783e; background: #e9f1de; }\n.acoes { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.2rem; }\nbutton, .voltar { display: inline-block; padding: .7rem 1rem; border: 1px solid #315c30; }\nbutton { cursor: pointer; background: #183e35; color: #fff; }\nbutton:disabled { cursor: not-allowed; opacity: .65; }\n.voltar { color: #183e35; background: #fff; text-decoration: none; }\n#resultado { margin-top: 1.5rem; }\ndt { font-weight: bold; margin-top: .7rem; }\ndd { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }\npre { white-space: pre-wrap; overflow-wrap: anywhere; }\n[hidden] { display: none !important; }\n\n:focus-visible {\n  outline: 3px solid #6a8f32;\n  outline-offset: 4px;\n}\n\n@media (min-width: 48rem) {\n  .campos { grid-template-columns: 1fr 1fr; }\n  .largo { grid-column: 1 / -1; }\n}\n\n@media print {\n  .acoes, .voltar { display: none; }\n  body { background: #fff; }\n}\n"
+        },
+        {
+          "nome": "script.js",
+          "codigo": "'use strict';\nconst form = document.querySelector('#formulario');\nconst status = document.querySelector('#status');\nconst botao = document.querySelector('#simular');\nconst resultado = document.querySelector('#resultado');\nconst resumo = document.querySelector('#dados-resumo');\nconst contato = document.querySelector('#contato');\nconst confirmar = document.querySelector('#confirmar');\nconst descricao = document.querySelector('#descricao');\n\nfunction conferirContato() {\n  const diferente = confirmar.value !== contato.value;\n  confirmar.setCustomValidity(\n    confirmar.value && diferente ? 'Repita o mesmo e-mail.' : ''\n  );\n}\ncontato.addEventListener('input', conferirContato);\nconfirmar.addEventListener('input', conferirContato);\n\nfunction conferirDescricao() {\n  const curta = descricao.value.length > 0\n    && descricao.value.trim().length < 20;\n  descricao.setCustomValidity(\n    curta ? 'Descreva o problema com pelo menos 20 caracteres.' : ''\n  );\n}\ndescricao.addEventListener('input', conferirDescricao);\n\nfunction adicionarLinha(titulo, valor) {\n  const dt = document.createElement('dt');\n  const dd = document.createElement('dd');\n  dt.textContent = titulo;\n  dd.textContent = String(valor);\n  resumo.append(dt, dd);\n}\n\nfunction mostrarResumo(dados) {\n  resumo.replaceChildren();\n  adicionarLinha('Solicitante fictício', dados.get('solicitante') || '');\n  adicionarLinha('Equipamento', dados.get('equipamento') || '');\n  adicionarLinha('Contato fictício', dados.get('contato') || '');\n  adicionarLinha('Categoria', dados.get('categoria') || '');\n  adicionarLinha('Prioridade', dados.get('prioridade') || '');\n  adicionarLinha('Descrição', dados.get('descricao') || '');\n  adicionarLinha('Sintomas', dados.getAll('sintomas').join(', ') || 'Nenhum selecionado');\n  resultado.hidden = false;\n  status.textContent = 'Simulação concluída. Nenhum dado foi enviado ao servidor.';\n  document.querySelector('#titulo-resumo').focus();\n}\n\nform.addEventListener('submit', (event) => {\n  event.preventDefault();\n  conferirContato();\n  conferirDescricao();\n  if (!form.reportValidity()) return;\n  const dados = new FormData(form);\n  mostrarResumo(dados);\n});\n\nform.addEventListener('invalid', () => {\n  status.textContent = 'Confira o campo indicado. Seus valores foram mantidos.';\n}, true);\nform.addEventListener('input', () => {\n  status.textContent = '';\n  resultado.hidden = true;\n});\n\ndocument.querySelector('#novo').addEventListener('click', () => {\n  form.reset();\n  confirmar.setCustomValidity('');\n  descricao.setCustomValidity('');\n  resultado.hidden = true;\n  resumo.replaceChildren();\n  status.textContent = '';\n  document.querySelector('#solicitante').focus();\n});\nbotao.disabled = false;\n"
         }
       ]
     },
@@ -2332,7 +2326,7 @@ window.WEBLAB_CURSO = {
         "Comparar GET e POST e explicar o papel do HTTPS.",
         "Documentar campos e regras de um serviço futuro sem inventar um backend."
       ],
-      "retomada": "Retome o projeto e a explicação da aula anterior. Se não tiver os arquivos, baixe a base deste encontro: ela contém o ponto de partida necessário.",
+      "retomada": "Continue a mesma pasta do chamado de suporte criada em 23/10. Faça uma cópia de segurança antes de alterar. Se precisar recuperar o ponto de partida, extraia a base de apoio desta data em outra pasta. Retome o projeto e a explicação da aula anterior. Se não tiver os arquivos, baixe a base deste encontro: ela contém o ponto de partida necessário.",
       "conceitos": [
         "Cliente e servidor",
         "action e method",
@@ -2389,7 +2383,7 @@ window.WEBLAB_CURSO = {
         }
       ],
       "atividade": [
-        "Abrir a base da aula e observar o resumo e as representações de estudo.",
+        "Continue seu chamado de suporte da aula anterior; se precisar, use o ZIP da data como base de apoio. Abra a pasta no VS Code e execute index.html com Live Server.",
         "Comparar onde os valores apareceriam em GET e POST e explicar por que não houve envio real.",
         "Completar o contrato no HTML: finalidade, POST, rota proposta /chamados, campos, regras e indicação de serviço ainda não implementado.",
         "Conferir se os names coletados correspondem ao contrato e registrar o escopo do integrador."
@@ -2428,7 +2422,7 @@ window.WEBLAB_CURSO = {
         "liveserver"
       ],
       "extensao": "Explique uma alternativa de implementação e compare seu comportamento com o requisito. Conclua primeiro os casos essenciais.",
-      "apoio": "Usar a tabela de comparação e uma URL fictícia já formada. Pedir a explicação antes de editar o contrato.",
+      "apoio": "Usar a tabela de comparação e uma URL fictícia já formada. Pedir a explicação antes de editar o contrato. Use a imagem para conferir o controle e a sequência do quadro para localizar cada alteração. Não avance para a etapa seguinte antes de salvar e observar a atual.",
       "mapa": [
         [
           "Situação",
@@ -2496,7 +2490,7 @@ window.WEBLAB_CURSO = {
           "titulo": "O caminho dos dados",
           "texto": [
             "GET, POST, HTTPS e contrato do projeto integrador",
-            "Prof. Fabrício Rodrigues"
+            "Continue o chamado de suporte."
           ],
           "tipo": "capa",
           "numero": 1,
@@ -2506,133 +2500,89 @@ window.WEBLAB_CURSO = {
         {
           "titulo": "O que vamos construir",
           "texto": [
-            "Distinguir uma simulação local de uma requisição a um serviço.",
-            "Comparar GET e POST e explicar o papel do HTTPS.",
-            "Documentar campos e regras de um serviço futuro sem inventar um backend."
+            "GET, POST, HTTPS e contrato do projeto integrador",
+            "Relacione o resultado visível às alterações desta aula."
           ],
           "tipo": "texto",
           "numero": 2,
           "aula": "06",
-          "data": "27/11"
-        },
-        {
-          "titulo": "Ponto de partida",
-          "texto": [
-            "Retome o projeto e a explicação da aula anterior. Se não tiver os arquivos, baixe a base deste encontro: ela contém o ponto de partida necessário.",
-            "Abra o projeto deste encontro no VS Code. Salve uma cópia própria antes de alterar."
-          ],
-          "tipo": "texto",
-          "numero": 3,
-          "aula": "06",
-          "data": "27/11"
+          "data": "27/11",
+          "figura": "materiais/Figura-06-requisicao.png"
         },
         {
           "titulo": "Mapa da aula",
-          "texto": [],
-          "tipo": "tabela",
-          "tabela": [
-            [
-              "Situação",
-              "Representação"
-            ],
-            [
-              "Busca de dados com GET",
-              "Parâmetros podem aparecer na URL."
-            ],
-            [
-              "Envio com POST",
-              "Dados de formulário podem seguir no corpo."
-            ],
-            [
-              "HTTPS",
-              "Protege o tráfego em trânsito."
-            ],
-            [
-              "Projeto no GitHub Pages",
-              "Site estático; não implementa recebimento de chamados."
-            ]
+          "texto": [
+            "Siga esta ordem; reteste a cada alteração."
           ],
-          "numero": 4,
+          "tipo": "mapa",
+          "numero": 3,
           "aula": "06",
-          "data": "27/11"
+          "data": "27/11",
+          "mapa": [
+            [
+              "1 · Separar simulação e servidor",
+              "O projeto continua local, sem abrir uma solicitação real."
+            ],
+            [
+              "2 · Representar GET e POST",
+              "O navegador mostra dois textos para comparação; não executa uma requisição."
+            ],
+            [
+              "3 · Conferir o contrato",
+              "A representação de POST não duplica confirmar; HTTPS protege o tráfego, não valida os dados."
+            ]
+          ]
         },
         {
           "titulo": "Os limites do protótipo",
           "texto": [
-            "Até aqui o JavaScript trabalha somente na página. Mostrar um resumo não faz uma requisição de envio. O GitHub Pages publica os arquivos estáticos do curso; não executa um serviço próprio para receber chamados.",
-            "Uma aplicação real precisaria de uma rota de servidor e de regras de recebimento. Nesta aula documentaremos esse contrato e compararemos representações, sem enviar dados a um endereço externo."
+            "O resumo é gerado no navegador. Os dados não chegam a um servidor de chamados.",
+            "Hoje vamos comparar representações e documentar uma rota futura, sem fazer o envio."
           ],
           "tipo": "texto",
           "refs": [
             "pages",
             "envio"
           ],
-          "numero": 5,
-          "aula": "06",
-          "data": "27/11"
-        },
-        {
-          "titulo": "GET e os parâmetros da URL",
-          "texto": [
-            "GET costuma ser usado para recuperar informações. Em um formulário com method=get, os pares de dados podem compor a query da URL. Eles podem aparecer no histórico e ser compartilhados junto com o endereço.",
-            "O exemplo gera uma string com URLSearchParams e a mostra como texto. exemplo.test é um domínio de exemplo; o projeto não navega para ele. Observe como nomes, espaços e caracteres são representados."
-          ],
-          "tipo": "texto",
-          "refs": [
-            "envio"
-          ],
-          "numero": 6,
+          "numero": 4,
           "aula": "06",
           "data": "27/11"
         },
         {
           "titulo": "Exemplo: GET e os parâmetros da URL",
           "texto": [
-            "Observe o papel de cada linha e compare com o arquivo do projeto."
+            "Ajuste o trecho no local indicado. Salve e confira o comportamento antes de avançar."
           ],
           "tipo": "codigo",
-          "codigo": "const dados = new FormData(form);\nconst parametros = new URLSearchParams(dados);\nconst exemplo = 'https://exemplo.test/chamados?'\n  + parametros.toString();\n// Apenas exibir o texto. Não navegar para esse endereço.",
+          "codigo": "const parametros = new URLSearchParams(dados);\nconst exemplo = 'https://exemplo.test/chamados?'\n  + parametros.toString();\n// Apenas exibir o texto. Não navegar para esse endereço.",
           "refs": [
             "envio"
           ],
-          "numero": 7,
+          "numero": 5,
           "aula": "06",
-          "data": "27/11"
+          "data": "27/11",
+          "onde": "script.js: trecho dentro de representarEnvio(dados). dados já é o parâmetro da função.",
+          "quadro": "Registre POST /chamados como proposta futura. Não acrescente action para uma rota inexistente."
         },
         {
           "titulo": "POST, HTTPS e conferência no servidor",
           "texto": [
-            "Em um formulário HTML com method=post, os dados podem seguir no corpo da requisição. POST sozinho não criptografa dados. HTTPS protege o tráfego em trânsito. Não coloque informações sensíveis em uma URL por achar que o método resolveu toda a proteção.",
-            "O servidor deve conferir formato, tamanho, escolhas permitidas e demais regras. O usuário pode alterar a página ou enviar outra requisição. A validação HTML e o JavaScript servem à experiência local e precisam de conferência no serviço real."
+            "POST coloca os dados no corpo da requisição. O método sozinho não criptografa os dados.",
+            "HTTPS protege o tráfego. O servidor ainda precisa conferir todas as regras."
           ],
           "tipo": "texto",
           "refs": [
             "envio",
             "https"
           ],
-          "numero": 8,
-          "aula": "06",
-          "data": "27/11"
-        },
-        {
-          "titulo": "Contrato do integrador",
-          "texto": [
-            "Documente no HTML um bloco de contrato: finalidade, método escolhido, rota proposta, campos e regras a aplicar no servidor. Identifique claramente que a rota não está implementada.",
-            "A base exibe exemplos de URL GET e de um corpo para POST depois da simulação. São representações de estudo. Complete o contrato e confronte seus nomes de campos com o que FormData realmente coleta."
-          ],
-          "tipo": "texto",
-          "refs": [
-            "envio",
-            "formdata"
-          ],
-          "numero": 9,
+          "numero": 6,
           "aula": "06",
           "data": "27/11"
         },
         {
           "titulo": "Exemplo: Contrato do integrador",
           "texto": [
-            "Observe o papel de cada linha e compare com o arquivo do projeto."
+            "Ajuste o trecho no local indicado. Salve e confira o comportamento antes de avançar."
           ],
           "tipo": "codigo",
           "codigo": "<!-- Exemplo de contrato para uma aplicação futura.\nMétodo: POST. Rota proposta: /chamados.\nO servidor deve validar os campos novamente.\nEste projeto estático não implementa essa rota.\n-->",
@@ -2640,29 +2590,20 @@ window.WEBLAB_CURSO = {
             "envio",
             "formdata"
           ],
-          "numero": 10,
+          "numero": 7,
           "aula": "06",
-          "data": "27/11"
+          "data": "27/11",
+          "onde": "index.html: antes de form, registre este comentário sobre a aplicação futura.",
+          "quadro": "URLSearchParams representa parâmetros da URL; JSON.stringify representa o corpo proposto."
         },
         {
           "titulo": "Atividade no VS Code",
           "texto": [
-            "Abrir a base da aula e observar o resumo e as representações de estudo.",
-            "Comparar onde os valores apareceriam em GET e POST e explicar por que não houve envio real."
+            "Agora altere sua versão seguindo as etapas da aula.",
+            "A base de apoio deve ser usada apenas se precisar recuperar o ponto de partida."
           ],
           "tipo": "texto",
-          "numero": 11,
-          "aula": "06",
-          "data": "27/11"
-        },
-        {
-          "titulo": "Atividade: conferência e explicação",
-          "texto": [
-            "Completar o contrato no HTML: finalidade, POST, rota proposta /chamados, campos, regras e indicação de serviço ainda não implementado.",
-            "Conferir se os names coletados correspondem ao contrato e registrar o escopo do integrador."
-          ],
-          "tipo": "texto",
-          "numero": 12,
+          "numero": 8,
           "aula": "06",
           "data": "27/11"
         },
@@ -2696,7 +2637,7 @@ window.WEBLAB_CURSO = {
               "Explicar que POST não oferece criptografia."
             ]
           ],
-          "numero": 13,
+          "numero": 9,
           "aula": "06",
           "data": "27/11"
         },
@@ -2714,19 +2655,7 @@ window.WEBLAB_CURSO = {
               "Identificar a ausência na coleta e corrigir o contrato."
             ]
           ],
-          "numero": 14,
-          "aula": "06",
-          "data": "27/11"
-        },
-        {
-          "titulo": "Erros que merecem atenção",
-          "texto": [
-            "O corpo de POST não é uma garantia de criptografia.",
-            "Não afirmar que o Pages recebeu, validou ou armazenou o chamado.",
-            "Um contrato é uma proposta; não é prova de que o endpoint existe."
-          ],
-          "tipo": "texto",
-          "numero": 15,
+          "numero": 10,
           "aula": "06",
           "data": "27/11"
         },
@@ -2738,7 +2667,7 @@ window.WEBLAB_CURSO = {
             "Entregue ZIP e TXT ao professor na aula. Os downloads não são enviados automaticamente."
           ],
           "tipo": "texto",
-          "numero": 16,
+          "numero": 11,
           "aula": "06",
           "data": "27/11"
         },
@@ -2749,9 +2678,55 @@ window.WEBLAB_CURSO = {
             "Guarde a versão desta aula: ela será o ponto de partida para a continuidade."
           ],
           "tipo": "texto",
-          "numero": 17,
+          "numero": 12,
           "aula": "06",
           "data": "27/11"
+        }
+      ],
+      "passos": [
+        {
+          "titulo": "1 · Separar simulação e servidor",
+          "onde": "index.html: acrescente o comentário do contrato proposto antes de form.",
+          "quadro": "Registre POST /chamados como proposta futura. Não acrescente action para uma rota inexistente.",
+          "resultado": "O projeto continua local, sem abrir uma solicitação real.",
+          "teste": "Execute o caso correspondente na ficha de testes e registre o observado.",
+          "codigo": "<!-- Contrato proposto para uma aplicação futura:\n  POST /chamados. O servidor deve validar os campos novamente.\n  Este projeto estático não implementa essa rota.\n-->",
+          "figura": "materiais/Figura-06-requisicao.png",
+          "exibirFigura": false
+        },
+        {
+          "titulo": "2 · Representar GET e POST",
+          "onde": "index.html: dentro de #resultado, adicione pre#representacao. script.js: crie representarEnvio e chame-a após mostrarResumo no listener de submit.",
+          "quadro": "URLSearchParams representa parâmetros da URL; JSON.stringify representa o corpo proposto.",
+          "resultado": "O navegador mostra dois textos para comparação; não executa uma requisição.",
+          "teste": "Execute o caso correspondente na ficha de testes e registre o observado.",
+          "codigo": "<h3>Representação didática de envio</h3>\n<pre id=\"representacao\"></pre>",
+          "figura": "materiais/Figura-06-requisicao.png",
+          "exibirFigura": true
+        },
+        {
+          "titulo": "3 · Conferir o contrato",
+          "onde": "script.js: no objeto de POST, inclua sintomas como array e omita confirmar.",
+          "quadro": "Compare campos, método, destino proposto e formato. Limpe os exemplos ao editar ou reiniciar.",
+          "resultado": "A representação de POST não duplica confirmar; HTTPS protege o tráfego, não valida os dados.",
+          "teste": "Execute o caso correspondente na ficha de testes e registre o observado.",
+          "codigo": "// No listener de submit, após mostrarResumo(dados):\nrepresentarEnvio(dados);\n// Nos listeners de input e de #novo, limpe a representação:\ndocument.querySelector('#representacao').textContent = '';",
+          "figura": "materiais/Figura-06-requisicao.png",
+          "exibirFigura": false
+        }
+      ],
+      "codigoConferencia": [
+        {
+          "nome": "index.html",
+          "codigo": "<!doctype html>\n<html lang=\"pt-BR\">\n  <head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <title>\n      Chamado de suporte ao laboratório - WebLab\n    </title>\n    <link rel=\"stylesheet\" href=\"style.css\">\n    <script src=\"script.js\" defer>\n    </script>\n  </head>\n  <body>\n    <header>\n      <a class=\"voltar\"\n        href=\"https://fabricio-rodrigues-ifpa.github.io/programacao-web/aulas.html?id=aula-06\">\n        ← Voltar à aula no portal (internet)\n      </a>\n      <h1>\n        Chamado de suporte ao laboratório\n      </h1>\n      <p>\n        Modelo de referência para consultar depois de sua tentativa.\n      </p>\n      <p class=\"aviso\">\n        Simulação local com dados fictícios. Não abre uma solicitação real.\n      </p>\n    </header>\n    <main>\n      <form id=\"formulario\">\n        <p>\n          Os rótulos indicam os campos obrigatórios. Os demais são opcionais.\n        </p>\n        <div class=\"campos\">\n          <div class=\"campo\">\n            <label for=\"solicitante\">\n              Solicitante fictício (obrigatório)\n            </label>\n            <input id=\"solicitante\" name=\"solicitante\" type=\"text\" required minlength=\"2\" maxlength=\"60\"\n              autocomplete=\"off\">\n          </div>\n          <div class=\"campo\">\n            <label for=\"equipamento\">\n              Equipamento (obrigatório)\n            </label>\n            <input id=\"equipamento\" name=\"equipamento\" type=\"text\" required minlength=\"2\" maxlength=\"20\"\n              placeholder=\"Ex.: PC-07\" aria-describedby=\"ajuda-equipamento\">\n            <p class=\"ajuda\" id=\"ajuda-equipamento\">\n              Use um código, não uma quantidade.\n            </p>\n          </div>\n          <div class=\"campo\">\n            <label for=\"contato\">\n              E-mail fictício (obrigatório)\n            </label>\n            <input id=\"contato\" name=\"contato\" type=\"email\" required autocomplete=\"off\"\n              placeholder=\"estudante@example.com\">\n          </div>\n          <div class=\"campo\">\n            <label for=\"confirmar\">\n              Repita o e-mail (obrigatório)\n            </label>\n            <input id=\"confirmar\" name=\"confirmar\" type=\"email\" required autocomplete=\"off\"\n              aria-describedby=\"ajuda-confirmar\">\n            <p class=\"ajuda\" id=\"ajuda-confirmar\">\n              Repita exatamente o contato fictício informado.\n            </p>\n          </div>\n          <div class=\"campo\">\n            <label for=\"categoria\">\n              Categoria (obrigatório)\n            </label>\n            <select id=\"categoria\" name=\"categoria\" required>\n              <option value=\"\">\n                Escolha uma opção\n              </option>\n              <option value=\"hardware\">\n                Hardware\n              </option>\n              <option value=\"software\">\n                Software\n              </option>\n              <option value=\"rede\">\n                Rede\n              </option>\n              <option value=\"outro\">\n                Outro\n              </option>\n            </select>\n          </div>\n          <div class=\"campo largo\">\n            <label for=\"descricao\">\n              Descrição do problema (obrigatório)\n            </label>\n            <p class=\"ajuda\" id=\"ajuda-descricao\">\n              Use de 20 a 500 caracteres. Conteúdo formado apenas por espaços não atende à descrição.\n            </p>\n            <textarea id=\"descricao\" name=\"descricao\" rows=\"5\" required minlength=\"20\" maxlength=\"500\"\n              aria-describedby=\"ajuda-descricao\"></textarea>\n          </div>\n        </div>\n        <fieldset>\n          <legend>\n            Prioridade (obrigatória)\n          </legend>\n          <label>\n            <input type=\"radio\" name=\"prioridade\" value=\"normal\" required>\n            Normal\n          </label>\n          <label>\n            <input type=\"radio\" name=\"prioridade\" value=\"alta\">\n            Alta\n          </label>\n        </fieldset>\n        <fieldset>\n          <legend>\n            Sintomas (opcionais)\n          </legend>\n          <label>\n            <input type=\"checkbox\" name=\"sintomas\" value=\"Lentidão\">\n            Lentidão\n          </label>\n          <label>\n            <input type=\"checkbox\" name=\"sintomas\" value=\"Mensagem de erro\">\n            Mensagem de erro\n          </label>\n        </fieldset>\n        <div class=\"acoes\">\n          <button id=\"simular\" type=\"submit\" disabled>\n            Gerar resumo local\n          </button>\n          <button type=\"button\" id=\"novo\">\n            Novo preenchimento\n          </button>\n        </div>\n        <p id=\"status\" role=\"status\">\n        </p>\n      </form>\n      <noscript>\n        <p>\n          Ative JavaScript para habilitar a simulação. Você pode estudar o HTML e o CSS sem executar o envio.\n        </p>\n      </noscript>\n      <section class=\"painel\" id=\"resultado\" hidden aria-labelledby=\"titulo-resumo\">\n        <h2 id=\"titulo-resumo\" tabindex=\"-1\">\n          Resumo da última simulação\n        </h2>\n        <p>\n          Nenhuma solicitação foi enviada ou gravada em um servidor.\n        </p>\n        <dl id=\"dados-resumo\">\n        </dl>\n      </section>\n      <section class=\"painel\" id=\"contrato\">\n        <h2>\n          Contrato de envio proposto\n        </h2>\n        <p>\n          Este bloco documenta uma aplicação futura; a página não envia requisições.\n        </p>\n        <p>\n          Método: POST. Rota proposta: /chamados. Campos: solicitante, equipamento, contato, categoria, prioridade, descricao e sintomas. Confirmar formato, tamanhos, escolhas permitidas e demais regras no servidor.\n        </p>\n      </section>\n      <section class=\"painel\">\n        <h2>\n          Representações para estudo\n        </h2>\n        <pre id=\"representacao\">\n          Preencha e simule para comparar GET e corpo de POST.\n        </pre>\n      </section>\n      <p>\n        <a class=\"voltar\"\n          href=\"https://fabricio-rodrigues-ifpa.github.io/programacao-web/aulas.html?id=aula-06\">\n          ← Voltar à aula no portal (internet)\n        </a>\n      </p>\n    </main>\n    <footer>\n      WebLab - Prof. Fabrício Rodrigues - 2026\n    </footer>\n  </body>\n</html>\n"
+        },
+        {
+          "nome": "style.css",
+          "codigo": "* { box-sizing: border-box; }\nbody {\n  margin: 0;\n  font: 1rem/1.65 Arial, sans-serif;\n  color: #183e35;\n  background: #f6f8f1;\n}\nheader, main, footer { width: min(100% - 2rem, 64rem); margin: auto; }\nheader, footer { padding: 1.5rem 0; }\nh1, h2 { line-height: 1.2; }\na { color: #315c30; }\nform, .painel { padding: 1.5rem; border: 1px solid #cad7bd; background: #fff; }\n.campos, .campo { display: grid; gap: .55rem; }\n.campos { gap: 1.2rem; }\n.campo { min-width: 0; align-content: start; }\nlabel, legend { font-weight: bold; }\n.campo > input, .campo > select, .campo > textarea {\n  width: 100%; min-width: 0; padding: .75rem;\n  border: 1px solid #738a68; border-radius: .25rem;\n  color: #183e35; background: #fff;\n}\nbutton, input, select, textarea { font: inherit; }\ntextarea { resize: vertical; }\nfieldset { margin: 1.4rem 0; padding: 1rem; border: 1px solid #9caf8b; }\nfieldset label { display: block; font-weight: normal; margin: .5rem 0; }\n.ajuda { font-size: .9rem; margin: 0; color: #455a3d; }\n.aviso { padding: 1rem; border-left: 4px solid #56783e; background: #e9f1de; }\n.acoes { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.2rem; }\nbutton, .voltar { display: inline-block; padding: .7rem 1rem; border: 1px solid #315c30; }\nbutton { cursor: pointer; background: #183e35; color: #fff; }\nbutton:disabled { cursor: not-allowed; opacity: .65; }\n.voltar { color: #183e35; background: #fff; text-decoration: none; }\n#resultado { margin-top: 1.5rem; }\ndt { font-weight: bold; margin-top: .7rem; }\ndd { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }\npre { white-space: pre-wrap; overflow-wrap: anywhere; }\n[hidden] { display: none !important; }\n\n:focus-visible {\n  outline: 3px solid #6a8f32;\n  outline-offset: 4px;\n}\n\n@media (min-width: 48rem) {\n  .campos { grid-template-columns: 1fr 1fr; }\n  .largo { grid-column: 1 / -1; }\n}\n\n@media print {\n  .acoes, .voltar { display: none; }\n  body { background: #fff; }\n}\n"
+        },
+        {
+          "nome": "script.js",
+          "codigo": "'use strict';\nconst form = document.querySelector('#formulario');\nconst status = document.querySelector('#status');\nconst botao = document.querySelector('#simular');\nconst resultado = document.querySelector('#resultado');\nconst resumo = document.querySelector('#dados-resumo');\nconst contato = document.querySelector('#contato');\nconst confirmar = document.querySelector('#confirmar');\nconst descricao = document.querySelector('#descricao');\n\nfunction conferirContato() {\n  const diferente = confirmar.value !== contato.value;\n  confirmar.setCustomValidity(\n    confirmar.value && diferente ? 'Repita o mesmo e-mail.' : ''\n  );\n}\ncontato.addEventListener('input', conferirContato);\nconfirmar.addEventListener('input', conferirContato);\n\nfunction conferirDescricao() {\n  const curta = descricao.value.length > 0\n    && descricao.value.trim().length < 20;\n  descricao.setCustomValidity(\n    curta ? 'Descreva o problema com pelo menos 20 caracteres.' : ''\n  );\n}\ndescricao.addEventListener('input', conferirDescricao);\n\nfunction adicionarLinha(titulo, valor) {\n  const dt = document.createElement('dt');\n  const dd = document.createElement('dd');\n  dt.textContent = titulo;\n  dd.textContent = String(valor);\n  resumo.append(dt, dd);\n}\n\nfunction mostrarResumo(dados) {\n  resumo.replaceChildren();\n  adicionarLinha('Solicitante fictício', dados.get('solicitante') || '');\n  adicionarLinha('Equipamento', dados.get('equipamento') || '');\n  adicionarLinha('Contato fictício', dados.get('contato') || '');\n  adicionarLinha('Categoria', dados.get('categoria') || '');\n  adicionarLinha('Prioridade', dados.get('prioridade') || '');\n  adicionarLinha('Descrição', dados.get('descricao') || '');\n  adicionarLinha('Sintomas', dados.getAll('sintomas').join(', ') || 'Nenhum selecionado');\n  resultado.hidden = false;\n  status.textContent = 'Simulação concluída. Nenhum dado foi enviado ao servidor.';\n  document.querySelector('#titulo-resumo').focus();\n}\n\nfunction representarEnvio(dados) {\n  const parametros = new URLSearchParams(dados);\n  const exemplo = 'https://exemplo.test/chamados?'\n    + parametros.toString();\n  // Apenas exibir o texto. Não navegar para esse endereço.\n  const corpo = Object.fromEntries(dados);\n  corpo.sintomas = dados.getAll('sintomas');\n  delete corpo.confirmar;\n  document.querySelector('#representacao').textContent = 'Exemplo GET: ' + exemplo\n    + '\\n\\nExemplo de corpo para POST: ' + JSON.stringify(corpo, null, 2)\n    + '\\n\\nSomente representação: não houve requisição de envio.';\n}\n\nform.addEventListener('submit', (event) => {\n  event.preventDefault();\n  conferirContato();\n  conferirDescricao();\n  if (!form.reportValidity()) return;\n  const dados = new FormData(form);\n  mostrarResumo(dados);\n  representarEnvio(dados);\n});\n\nform.addEventListener('invalid', () => {\n  status.textContent = 'Confira o campo indicado. Seus valores foram mantidos.';\n}, true);\nform.addEventListener('input', () => {\n  status.textContent = '';\n  resultado.hidden = true;\n});\n\ndocument.querySelector('#novo').addEventListener('click', () => {\n  form.reset();\n  confirmar.setCustomValidity('');\n  descricao.setCustomValidity('');\n  resultado.hidden = true;\n  resumo.replaceChildren();\n  status.textContent = '';\n  document.querySelector('#solicitante').focus();\n});\nbotao.disabled = false;\n\nfunction limparRepresentacao() {\n  document.querySelector('#representacao').textContent =\n    'Preencha e simule para comparar GET e corpo de POST.';\n}\nform.addEventListener('input', limparRepresentacao);\ndocument.querySelector('#novo').addEventListener('click', limparRepresentacao);\n"
         }
       ]
     },
@@ -2769,7 +2744,7 @@ window.WEBLAB_CURSO = {
         "Coordenar hidden, disabled e required.",
         "Repetir a coleta e o reinício sem valores de uma opção antiga."
       ],
-      "retomada": "Retome o projeto e a explicação da aula anterior. Se não tiver os arquivos, baixe a base deste encontro: ela contém o ponto de partida necessário.",
+      "retomada": "Continue a mesma pasta do chamado de suporte criada em 23/10. Faça uma cópia de segurança antes de alterar. Se precisar recuperar o ponto de partida, extraia a base de apoio desta data em outra pasta. Retome o projeto e a explicação da aula anterior. Se não tiver os arquivos, baixe a base deste encontro: ela contém o ponto de partida necessário.",
       "conceitos": [
         "Evento change",
         "hidden e disabled",
@@ -2815,7 +2790,7 @@ window.WEBLAB_CURSO = {
         }
       ],
       "atividade": [
-        "Abrir a base e localizar o select, o bloco oculto e o campo adicional.",
+        "Continue seu chamado de suporte da aula anterior; se precisar, use o ZIP da data como base de apoio. Abra a pasta no VS Code e execute index.html com Live Server.",
         "Criar a função de estado, escutar change e aplicá-la na inicialização.",
         "Manter o campo adicional obrigatório apenas em Outro e incluir seu valor no resumo somente quando coletado.",
         "Testar todas as transições e executar novamente os casos de validação das aulas anteriores."
@@ -2854,7 +2829,7 @@ window.WEBLAB_CURSO = {
         "liveserver"
       ],
       "extensao": "Explique uma alternativa de implementação e compare seu comportamento com o requisito. Conclua primeiro os casos essenciais.",
-      "apoio": "Desenhar uma tabela com dois estados antes de escrever a função. Testar cada propriedade separadamente e só então integrar o resumo.",
+      "apoio": "Desenhar uma tabela com dois estados antes de escrever a função. Testar cada propriedade separadamente e só então integrar o resumo. Use a imagem para conferir o controle e a sequência do quadro para localizar cada alteração. Não avance para a etapa seguinte antes de salvar e observar a atual.",
       "mapa": [
         [
           "Categoria",
@@ -2922,7 +2897,7 @@ window.WEBLAB_CURSO = {
           "titulo": "Um formulário que reage ao contexto",
           "texto": [
             "Campos condicionais, estado e organização das funções",
-            "Prof. Fabrício Rodrigues"
+            "Continue o chamado de suporte."
           ],
           "tipo": "capa",
           "numero": 1,
@@ -2932,75 +2907,43 @@ window.WEBLAB_CURSO = {
         {
           "titulo": "O que vamos construir",
           "texto": [
-            "Mostrar um campo adicional somente quando sua opção for escolhida.",
-            "Coordenar hidden, disabled e required.",
-            "Repetir a coleta e o reinício sem valores de uma opção antiga."
+            "Campos condicionais, estado e organização das funções",
+            "Relacione o resultado visível às alterações desta aula."
           ],
           "tipo": "texto",
           "numero": 2,
           "aula": "07",
-          "data": "04/12"
-        },
-        {
-          "titulo": "Ponto de partida",
-          "texto": [
-            "Retome o projeto e a explicação da aula anterior. Se não tiver os arquivos, baixe a base deste encontro: ela contém o ponto de partida necessário.",
-            "Abra o projeto deste encontro no VS Code. Salve uma cópia própria antes de alterar."
-          ],
-          "tipo": "texto",
-          "numero": 3,
-          "aula": "07",
-          "data": "04/12"
+          "data": "04/12",
+          "figura": "materiais/Figura-07-condicional.png"
         },
         {
           "titulo": "Mapa da aula",
-          "texto": [],
-          "tipo": "tabela",
-          "tabela": [
-            [
-              "Categoria",
-              "Estado do campo adicional"
-            ],
-            [
-              "Outra opção não escolhida",
-              "Bloco oculto, campo desabilitado e não obrigatório."
-            ],
-            [
-              "Outro escolhido",
-              "Bloco visível, campo habilitado e obrigatório."
-            ],
-            [
-              "Retorno a uma categoria comum",
-              "Limpar o valor antigo e desativar o campo."
-            ],
-            [
-              "Coleta",
-              "Somente os campos participantes entram no FormData."
-            ]
-          ],
-          "numero": 4,
-          "aula": "07",
-          "data": "04/12"
-        },
-        {
-          "titulo": "A interface responde a uma escolha",
           "texto": [
-            "O HTML da base já contém o bloco de outra categoria e um input inicialmente disabled. A função de estado deve ler o select e atualizar o conjunto de propriedades.",
-            "Registre change no select e chame a função ao iniciar a página. Organize a regra em uma função, para também aplicá-la depois de reset. Não espalhe a mesma decisão em vários handlers."
+            "Siga esta ordem; reteste a cada alteração."
           ],
-          "tipo": "texto",
-          "refs": [
-            "disabled",
-            "submit"
-          ],
-          "numero": 5,
+          "tipo": "mapa",
+          "numero": 3,
           "aula": "07",
-          "data": "04/12"
+          "data": "04/12",
+          "mapa": [
+            [
+              "1 · Adicionar o campo complementar",
+              "O campo começa oculto e desativado."
+            ],
+            [
+              "2 · Sincronizar o estado",
+              "Outro mostra e exige o campo. Hardware esconde e retira o controle da coleta."
+            ],
+            [
+              "3 · Repetir o ciclo completo",
+              "Nenhum valor antigo reaparece no resumo; reiniciar restaura o estado inicial."
+            ]
+          ]
         },
         {
           "titulo": "Exemplo: A interface responde a uma escolha",
           "texto": [
-            "Observe o papel de cada linha e compare com o arquivo do projeto."
+            "Ajuste o trecho no local indicado. Salve e confira o comportamento antes de avançar."
           ],
           "tipo": "codigo",
           "codigo": "function atualizarOutro() {\n  const ativo = categoria.value === 'outro';\n  blocoOutro.hidden = !ativo;\n  outro.disabled = !ativo;\n  outro.required = ativo;\n  if (!ativo) outro.value = '';\n}\ncategoria.addEventListener('change', atualizarOutro);\natualizarOutro();",
@@ -3008,29 +2951,16 @@ window.WEBLAB_CURSO = {
             "disabled",
             "submit"
           ],
-          "numero": 6,
+          "numero": 4,
           "aula": "07",
-          "data": "04/12"
-        },
-        {
-          "titulo": "Esconder não desativa o controle",
-          "texto": [
-            "hidden altera a apresentação do bloco. Um campo obrigatório somente escondido ainda pode interferir na validação. disabled retira o controle da validação e da coleta normal de dados.",
-            "required deve ficar ativo apenas quando o campo é necessário. Ao desativar a opção, o projeto apaga o valor antigo para não sugerir um dado que deixou de pertencer à escolha atual."
-          ],
-          "tipo": "texto",
-          "refs": [
-            "disabled",
-            "formdata"
-          ],
-          "numero": 7,
-          "aula": "07",
-          "data": "04/12"
+          "data": "04/12",
+          "onde": "script.js: após selecionar categoria, blocoOutro e outro; antes do listener de submit.",
+          "quadro": "Crie div#bloco-outro hidden e input#outra_categoria name=\"outra_categoria\" disabled maxlength=\"100\" com label."
         },
         {
           "titulo": "Exemplo: Esconder não desativa o controle",
           "texto": [
-            "Observe o papel de cada linha e compare com o arquivo do projeto."
+            "Ajuste o trecho no local indicado. Salve e confira o comportamento antes de avançar."
           ],
           "tipo": "codigo",
           "codigo": "// hidden controla a apresentação do bloco.\n// disabled retira o campo da validação e do FormData.\n// required pede um valor quando o campo está ativo.",
@@ -3038,9 +2968,11 @@ window.WEBLAB_CURSO = {
             "disabled",
             "formdata"
           ],
-          "numero": 8,
+          "numero": 5,
           "aula": "07",
-          "data": "04/12"
+          "data": "04/12",
+          "onde": "script.js: após selecionar categoria, blocoOutro e outro; antes do listener de submit.",
+          "quadro": "Se categoria for outro: hidden=false, disabled=false, required=true. Fora disso: inverta e limpe o valor."
         },
         {
           "titulo": "Conferência do fluxo inteiro",
@@ -3053,29 +2985,19 @@ window.WEBLAB_CURSO = {
             "custom",
             "disabled"
           ],
-          "numero": 9,
+          "numero": 6,
           "aula": "07",
-          "data": "04/12"
+          "data": "04/12",
+          "figura": "materiais/Figura-07-condicional.png"
         },
         {
           "titulo": "Atividade no VS Code",
           "texto": [
-            "Abrir a base e localizar o select, o bloco oculto e o campo adicional.",
-            "Criar a função de estado, escutar change e aplicá-la na inicialização."
+            "Agora altere sua versão seguindo as etapas da aula.",
+            "A base de apoio deve ser usada apenas se precisar recuperar o ponto de partida."
           ],
           "tipo": "texto",
-          "numero": 10,
-          "aula": "07",
-          "data": "04/12"
-        },
-        {
-          "titulo": "Atividade: conferência e explicação",
-          "texto": [
-            "Manter o campo adicional obrigatório apenas em Outro e incluir seu valor no resumo somente quando coletado.",
-            "Testar todas as transições e executar novamente os casos de validação das aulas anteriores."
-          ],
-          "tipo": "texto",
-          "numero": 11,
+          "numero": 7,
           "aula": "07",
           "data": "04/12"
         },
@@ -3109,7 +3031,7 @@ window.WEBLAB_CURSO = {
               "Não inclui outra_categoria."
             ]
           ],
-          "numero": 12,
+          "numero": 8,
           "aula": "07",
           "data": "04/12"
         },
@@ -3127,19 +3049,7 @@ window.WEBLAB_CURSO = {
               "Estado inicial reaplicado."
             ]
           ],
-          "numero": 13,
-          "aula": "07",
-          "data": "04/12"
-        },
-        {
-          "titulo": "Erros que merecem atenção",
-          "texto": [
-            "hidden sozinho não expressa a participação do campo.",
-            "Não deixar required ativo num campo desabilitado por lógica incompleta.",
-            "reset não substitui a reaplicação explícita da regra de estado."
-          ],
-          "tipo": "texto",
-          "numero": 14,
+          "numero": 9,
           "aula": "07",
           "data": "04/12"
         },
@@ -3151,7 +3061,7 @@ window.WEBLAB_CURSO = {
             "Entregue ZIP e TXT ao professor na aula. Os downloads não são enviados automaticamente."
           ],
           "tipo": "texto",
-          "numero": 15,
+          "numero": 10,
           "aula": "07",
           "data": "04/12"
         },
@@ -3162,9 +3072,55 @@ window.WEBLAB_CURSO = {
             "Guarde a versão desta aula: ela será o ponto de partida para a continuidade."
           ],
           "tipo": "texto",
-          "numero": 16,
+          "numero": 11,
           "aula": "07",
           "data": "04/12"
+        }
+      ],
+      "passos": [
+        {
+          "titulo": "1 · Adicionar o campo complementar",
+          "onde": "index.html: dentro de div.campos, após categoria.",
+          "quadro": "Crie div#bloco-outro hidden e input#outra_categoria name=\"outra_categoria\" disabled maxlength=\"100\" com label.",
+          "resultado": "O campo começa oculto e desativado.",
+          "teste": "Execute o caso correspondente na ficha de testes e registre o observado.",
+          "codigo": "<div class=\"campo\" id=\"bloco-outro\" hidden>\n  <label for=\"outra_categoria\">Qual outra categoria? (obrigatório quando ativo)</label>\n  <input id=\"outra_categoria\" name=\"outra_categoria\" type=\"text\"\n    maxlength=\"100\" disabled>\n</div>",
+          "figura": "materiais/Figura-07-condicional.png",
+          "exibirFigura": false
+        },
+        {
+          "titulo": "2 · Sincronizar o estado",
+          "onde": "script.js: acrescente atualizarOutro e associe change à categoria.",
+          "quadro": "Se categoria for outro: hidden=false, disabled=false, required=true. Fora disso: inverta e limpe o valor.",
+          "resultado": "Outro mostra e exige o campo. Hardware esconde e retira o controle da coleta.",
+          "teste": "Execute o caso correspondente na ficha de testes e registre o observado.",
+          "codigo": "const categoria = document.querySelector('#categoria');\nconst blocoOutro = document.querySelector('#bloco-outro');\nconst outro = document.querySelector('#outra_categoria');\n// Acrescente atualizarOutro e o listener change do conteúdo.",
+          "figura": "materiais/Figura-07-condicional.png",
+          "exibirFigura": true
+        },
+        {
+          "titulo": "3 · Repetir o ciclo completo",
+          "onde": "script.js: chame atualizarOutro na inicialização e depois de form.reset().",
+          "quadro": "Teste Outro → preencher → Hardware → enviar → Novo preenchimento.",
+          "resultado": "Nenhum valor antigo reaparece no resumo; reiniciar restaura o estado inicial.",
+          "teste": "Execute o caso correspondente na ficha de testes e registre o observado.",
+          "codigo": "// Uma vez, após definir atualizarOutro e o listener change:\natualizarOutro();\n// No listener de #novo, depois de form.reset():\natualizarOutro();",
+          "figura": "materiais/Figura-07-condicional.png",
+          "exibirFigura": false
+        }
+      ],
+      "codigoConferencia": [
+        {
+          "nome": "index.html",
+          "codigo": "<!doctype html>\n<html lang=\"pt-BR\">\n  <head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <title>\n      Chamado de suporte ao laboratório - WebLab\n    </title>\n    <link rel=\"stylesheet\" href=\"style.css\">\n    <script src=\"script.js\" defer>\n    </script>\n  </head>\n  <body>\n    <header>\n      <a class=\"voltar\"\n        href=\"https://fabricio-rodrigues-ifpa.github.io/programacao-web/aulas.html?id=aula-07\">\n        ← Voltar à aula no portal (internet)\n      </a>\n      <h1>\n        Chamado de suporte ao laboratório\n      </h1>\n      <p>\n        Modelo de referência para consultar depois de sua tentativa.\n      </p>\n      <p class=\"aviso\">\n        Simulação local com dados fictícios. Não abre uma solicitação real.\n      </p>\n    </header>\n    <main>\n      <form id=\"formulario\">\n        <p>\n          Os rótulos indicam os campos obrigatórios. Os demais são opcionais.\n        </p>\n        <div class=\"campos\">\n          <div class=\"campo\">\n            <label for=\"solicitante\">\n              Solicitante fictício (obrigatório)\n            </label>\n            <input id=\"solicitante\" name=\"solicitante\" type=\"text\" required minlength=\"2\" maxlength=\"60\"\n              autocomplete=\"off\">\n          </div>\n          <div class=\"campo\">\n            <label for=\"equipamento\">\n              Equipamento (obrigatório)\n            </label>\n            <input id=\"equipamento\" name=\"equipamento\" type=\"text\" required minlength=\"2\" maxlength=\"20\"\n              placeholder=\"Ex.: PC-07\" aria-describedby=\"ajuda-equipamento\">\n            <p class=\"ajuda\" id=\"ajuda-equipamento\">\n              Use um código, não uma quantidade.\n            </p>\n          </div>\n          <div class=\"campo\">\n            <label for=\"contato\">\n              E-mail fictício (obrigatório)\n            </label>\n            <input id=\"contato\" name=\"contato\" type=\"email\" required autocomplete=\"off\"\n              placeholder=\"estudante@example.com\">\n          </div>\n          <div class=\"campo\">\n            <label for=\"confirmar\">\n              Repita o e-mail (obrigatório)\n            </label>\n            <input id=\"confirmar\" name=\"confirmar\" type=\"email\" required autocomplete=\"off\"\n              aria-describedby=\"ajuda-confirmar\">\n            <p class=\"ajuda\" id=\"ajuda-confirmar\">\n              Repita exatamente o contato fictício informado.\n            </p>\n          </div>\n          <div class=\"campo\">\n            <label for=\"categoria\">\n              Categoria (obrigatório)\n            </label>\n            <select id=\"categoria\" name=\"categoria\" required>\n              <option value=\"\">\n                Escolha uma opção\n              </option>\n              <option value=\"hardware\">\n                Hardware\n              </option>\n              <option value=\"software\">\n                Software\n              </option>\n              <option value=\"rede\">\n                Rede\n              </option>\n              <option value=\"outro\">\n                Outro\n              </option>\n            </select>\n          </div>\n          <div class=\"campo\" id=\"bloco-outro\" hidden>\n            <label for=\"outra_categoria\">\n              Qual outra categoria? (obrigatório quando ativo)\n            </label>\n            <input id=\"outra_categoria\" name=\"outra_categoria\" type=\"text\" maxlength=\"100\" disabled>\n          </div>\n          <div class=\"campo largo\">\n            <label for=\"descricao\">\n              Descrição do problema (obrigatório)\n            </label>\n            <p class=\"ajuda\" id=\"ajuda-descricao\">\n              Use de 20 a 500 caracteres. Conteúdo formado apenas por espaços não atende à descrição.\n            </p>\n            <textarea id=\"descricao\" name=\"descricao\" rows=\"5\" required minlength=\"20\" maxlength=\"500\"\n              aria-describedby=\"ajuda-descricao\"></textarea>\n          </div>\n        </div>\n        <fieldset>\n          <legend>\n            Prioridade (obrigatória)\n          </legend>\n          <label>\n            <input type=\"radio\" name=\"prioridade\" value=\"normal\" required>\n            Normal\n          </label>\n          <label>\n            <input type=\"radio\" name=\"prioridade\" value=\"alta\">\n            Alta\n          </label>\n        </fieldset>\n        <fieldset>\n          <legend>\n            Sintomas (opcionais)\n          </legend>\n          <label>\n            <input type=\"checkbox\" name=\"sintomas\" value=\"Lentidão\">\n            Lentidão\n          </label>\n          <label>\n            <input type=\"checkbox\" name=\"sintomas\" value=\"Mensagem de erro\">\n            Mensagem de erro\n          </label>\n        </fieldset>\n        <div class=\"acoes\">\n          <button id=\"simular\" type=\"submit\" disabled>\n            Gerar resumo local\n          </button>\n          <button type=\"button\" id=\"novo\">\n            Novo preenchimento\n          </button>\n        </div>\n        <p id=\"status\" role=\"status\">\n        </p>\n      </form>\n      <noscript>\n        <p>\n          Ative JavaScript para habilitar a simulação. Você pode estudar o HTML e o CSS sem executar o envio.\n        </p>\n      </noscript>\n      <section class=\"painel\" id=\"resultado\" hidden aria-labelledby=\"titulo-resumo\">\n        <h2 id=\"titulo-resumo\" tabindex=\"-1\">\n          Resumo da última simulação\n        </h2>\n        <p>\n          Nenhuma solicitação foi enviada ou gravada em um servidor.\n        </p>\n        <dl id=\"dados-resumo\">\n        </dl>\n      </section>\n      <p>\n        <a class=\"voltar\"\n          href=\"https://fabricio-rodrigues-ifpa.github.io/programacao-web/aulas.html?id=aula-07\">\n          ← Voltar à aula no portal (internet)\n        </a>\n      </p>\n    </main>\n    <footer>\n      WebLab - Prof. Fabrício Rodrigues - 2026\n    </footer>\n  </body>\n</html>\n"
+        },
+        {
+          "nome": "style.css",
+          "codigo": "* { box-sizing: border-box; }\nbody {\n  margin: 0;\n  font: 1rem/1.65 Arial, sans-serif;\n  color: #183e35;\n  background: #f6f8f1;\n}\nheader, main, footer { width: min(100% - 2rem, 64rem); margin: auto; }\nheader, footer { padding: 1.5rem 0; }\nh1, h2 { line-height: 1.2; }\na { color: #315c30; }\nform, .painel { padding: 1.5rem; border: 1px solid #cad7bd; background: #fff; }\n.campos, .campo { display: grid; gap: .55rem; }\n.campos { gap: 1.2rem; }\n.campo { min-width: 0; align-content: start; }\nlabel, legend { font-weight: bold; }\n.campo > input, .campo > select, .campo > textarea {\n  width: 100%; min-width: 0; padding: .75rem;\n  border: 1px solid #738a68; border-radius: .25rem;\n  color: #183e35; background: #fff;\n}\nbutton, input, select, textarea { font: inherit; }\ntextarea { resize: vertical; }\nfieldset { margin: 1.4rem 0; padding: 1rem; border: 1px solid #9caf8b; }\nfieldset label { display: block; font-weight: normal; margin: .5rem 0; }\n.ajuda { font-size: .9rem; margin: 0; color: #455a3d; }\n.aviso { padding: 1rem; border-left: 4px solid #56783e; background: #e9f1de; }\n.acoes { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.2rem; }\nbutton, .voltar { display: inline-block; padding: .7rem 1rem; border: 1px solid #315c30; }\nbutton { cursor: pointer; background: #183e35; color: #fff; }\nbutton:disabled { cursor: not-allowed; opacity: .65; }\n.voltar { color: #183e35; background: #fff; text-decoration: none; }\n#resultado { margin-top: 1.5rem; }\ndt { font-weight: bold; margin-top: .7rem; }\ndd { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }\npre { white-space: pre-wrap; overflow-wrap: anywhere; }\n[hidden] { display: none !important; }\n\n:focus-visible {\n  outline: 3px solid #6a8f32;\n  outline-offset: 4px;\n}\n\n@media (min-width: 48rem) {\n  .campos { grid-template-columns: 1fr 1fr; }\n  .largo { grid-column: 1 / -1; }\n}\n\n@media print {\n  .acoes, .voltar { display: none; }\n  body { background: #fff; }\n}\n"
+        },
+        {
+          "nome": "script.js",
+          "codigo": "'use strict';\nconst form = document.querySelector('#formulario');\nconst status = document.querySelector('#status');\nconst botao = document.querySelector('#simular');\nconst resultado = document.querySelector('#resultado');\nconst resumo = document.querySelector('#dados-resumo');\nconst contato = document.querySelector('#contato');\nconst confirmar = document.querySelector('#confirmar');\nconst descricao = document.querySelector('#descricao');\n\nfunction conferirContato() {\n  const diferente = confirmar.value !== contato.value;\n  confirmar.setCustomValidity(\n    confirmar.value && diferente ? 'Repita o mesmo e-mail.' : ''\n  );\n}\ncontato.addEventListener('input', conferirContato);\nconfirmar.addEventListener('input', conferirContato);\n\nfunction conferirDescricao() {\n  const curta = descricao.value.length > 0\n    && descricao.value.trim().length < 20;\n  descricao.setCustomValidity(\n    curta ? 'Descreva o problema com pelo menos 20 caracteres.' : ''\n  );\n}\ndescricao.addEventListener('input', conferirDescricao);\n\nconst categoria = document.querySelector('#categoria');\nconst outro = document.querySelector('#outra_categoria');\nconst blocoOutro = document.querySelector('#bloco-outro');\n\nfunction atualizarOutro() {\n  const ativo = categoria.value === 'outro';\n  blocoOutro.hidden = !ativo;\n  outro.disabled = !ativo;\n  outro.required = ativo;\n  if (!ativo) outro.value = '';\n}\ncategoria.addEventListener('change', atualizarOutro);\natualizarOutro();\n\nfunction adicionarLinha(titulo, valor) {\n  const dt = document.createElement('dt');\n  const dd = document.createElement('dd');\n  dt.textContent = titulo;\n  dd.textContent = String(valor);\n  resumo.append(dt, dd);\n}\n\nfunction mostrarResumo(dados) {\n  resumo.replaceChildren();\n  adicionarLinha('Solicitante fictício', dados.get('solicitante') || '');\n  adicionarLinha('Equipamento', dados.get('equipamento') || '');\n  adicionarLinha('Contato fictício', dados.get('contato') || '');\n  adicionarLinha('Categoria', dados.get('categoria') || '');\n  adicionarLinha('Prioridade', dados.get('prioridade') || '');\n  adicionarLinha('Descrição', dados.get('descricao') || '');\n  adicionarLinha('Sintomas', dados.getAll('sintomas').join(', ') || 'Nenhum selecionado');\n  if (dados.has('outra_categoria')) adicionarLinha('Outra opção', dados.get('outra_categoria'));\n  resultado.hidden = false;\n  status.textContent = 'Simulação concluída. Nenhum dado foi enviado ao servidor.';\n  document.querySelector('#titulo-resumo').focus();\n}\n\nform.addEventListener('submit', (event) => {\n  event.preventDefault();\n  conferirContato();\n  conferirDescricao();\n  if (!form.reportValidity()) return;\n  const dados = new FormData(form);\n  mostrarResumo(dados);\n});\n\nform.addEventListener('invalid', () => {\n  status.textContent = 'Confira o campo indicado. Seus valores foram mantidos.';\n}, true);\nform.addEventListener('input', () => {\n  status.textContent = '';\n  resultado.hidden = true;\n});\n\ndocument.querySelector('#novo').addEventListener('click', () => {\n  form.reset();\n  confirmar.setCustomValidity('');\n  descricao.setCustomValidity('');\n  atualizarOutro();\n  resultado.hidden = true;\n  resumo.replaceChildren();\n  status.textContent = '';\n  document.querySelector('#solicitante').focus();\n});\nbotao.disabled = false;\n"
         }
       ]
     },
@@ -3182,7 +3138,7 @@ window.WEBLAB_CURSO = {
         "Demonstrar estrutura, responsividade, coleta e validação.",
         "Registrar testes e explicar uma decisão de implementação."
       ],
-      "retomada": "Retome o projeto e a explicação da aula anterior. Se não tiver os arquivos, baixe a base deste encontro: ela contém o ponto de partida necessário.",
+      "retomada": "Abra a base específica desta data em outra pasta. Retome o projeto e a explicação da aula anterior. Se não tiver os arquivos, baixe a base deste encontro: ela contém o ponto de partida necessário.",
       "conceitos": [
         "Avaliação prática individual",
         "Casos de teste",
@@ -3266,7 +3222,7 @@ window.WEBLAB_CURSO = {
         "liveserver"
       ],
       "extensao": "Explique uma alternativa de implementação e compare seu comportamento com o requisito. Conclua primeiro os casos essenciais.",
-      "apoio": "Aplicar somente os apoios compatíveis com as regras de avaliação da turma e registrar o apoio. Ajustar exigências conforme adaptações já previstas pelo professor.",
+      "apoio": "Aplicar somente os apoios compatíveis com as regras de avaliação da turma e registrar o apoio. Ajustar exigências conforme adaptações já previstas pelo professor. Use a imagem para conferir o controle e a sequência do quadro para localizar cada alteração. Não avance para a etapa seguinte antes de salvar e observar a atual.",
       "mapa": [
         [
           "Critério",
@@ -3346,7 +3302,7 @@ window.WEBLAB_CURSO = {
           "titulo": "Avaliação prática: inscrição em oficina",
           "texto": [
             "Aplicação individual dos conhecimentos de formulários",
-            "Prof. Fabrício Rodrigues"
+            "Use a nova base da atividade e demonstre o que aprendeu."
           ],
           "tipo": "capa",
           "numero": 1,
@@ -3356,87 +3312,89 @@ window.WEBLAB_CURSO = {
         {
           "titulo": "O que vamos construir",
           "texto": [
-            "Construir um formulário para um contexto diferente do chamado.",
-            "Demonstrar estrutura, responsividade, coleta e validação.",
-            "Registrar testes e explicar uma decisão de implementação."
+            "Aplicação individual dos conhecimentos de formulários",
+            "Relacione o resultado visível às alterações desta aula."
           ],
           "tipo": "texto",
           "numero": 2,
           "aula": "08",
-          "data": "11/12"
-        },
-        {
-          "titulo": "Ponto de partida",
-          "texto": [
-            "Retome o projeto e a explicação da aula anterior. Se não tiver os arquivos, baixe a base deste encontro: ela contém o ponto de partida necessário.",
-            "Abra o projeto deste encontro no VS Code. Salve uma cópia própria antes de alterar."
-          ],
-          "tipo": "texto",
-          "numero": 3,
-          "aula": "08",
-          "data": "11/12"
+          "data": "11/12",
+          "figura": "materiais/Figura-08-avaliacao.png"
         },
         {
           "titulo": "Mapa da aula",
-          "texto": [],
-          "tipo": "tabela",
-          "tabela": [
-            [
-              "Critério",
-              "Valor proposto"
-            ],
-            [
-              "HTML e controles adequados",
-              "2 pontos."
-            ],
-            [
-              "CSS, rótulos e teclado",
-              "2 pontos."
-            ],
-            [
-              "Coleta e resumo local",
-              "2 pontos."
-            ],
-            [
-              "Validação e campo condicional",
-              "2 pontos."
-            ],
-            [
-              "Testes e explicação individual",
-              "2 pontos."
-            ]
+          "texto": [
+            "Siga esta ordem; reteste a cada alteração."
           ],
-          "numero": 4,
+          "tipo": "mapa",
+          "numero": 3,
           "aula": "08",
-          "data": "11/12"
+          "data": "11/12",
+          "mapa": [
+            [
+              "1 · Ler antes de implementar",
+              "Uma base nova permite demonstrar o que você aprendeu no projeto contínuo."
+            ],
+            [
+              "2 · Construir e testar individualmente",
+              "Entregue evidências reais; o professor considera código, comportamento e explicação."
+            ]
+          ]
         },
         {
-          "titulo": "Situação da avaliação",
+          "titulo": "Critérios propostos para a avaliação",
           "texto": [
-            "Uma oficina de informática precisa de um protótipo de inscrição. Use somente dados fictícios e mantenha o envio simulado. O professor explicará as regras de consulta e os critérios antes do início.",
-            "O participante deve escolher uma oficina (Redes, Hardware, Web ou Outra oficina) e um turno (Manhã ou Tarde). Materiais que levará são opcionais: Caderno e Notebook."
+            "Conheça os critérios antes de começar. O professor orienta as regras de consulta e adaptações."
           ],
-          "tipo": "texto",
+          "tipo": "tabela",
           "refs": [
             "primeiro",
             "controles"
           ],
-          "numero": 5,
+          "numero": 4,
           "aula": "08",
-          "data": "11/12"
+          "data": "11/12",
+          "tabela": [
+            [
+              "Dimensão",
+              "Pontos"
+            ],
+            [
+              "HTML e controles",
+              "2"
+            ],
+            [
+              "CSS e acessibilidade de uso",
+              "2"
+            ],
+            [
+              "Coleta e resumo local",
+              "2"
+            ],
+            [
+              "Validação e estado condicional",
+              "2"
+            ],
+            [
+              "Testes e explicação individual",
+              "2"
+            ]
+          ]
         },
         {
           "titulo": "Especificação dos campos",
           "texto": [
-            "Participante fictício: texto de 2 a 60 caracteres. Contato e confirmação: formato de e-mail, obrigatórios e iguais. Oficina: select obrigatório com opção inicial vazia. Turno: uma opção obrigatória em radio.",
-            "Objetivo da participação: de 20 a 500 caracteres úteis. Ao escolher Outra oficina, mostrar Tema sugerido, habilitá-lo e torná-lo obrigatório. Ao sair dessa escolha, limpar e desabilitar esse campo."
+            "Participante: 2 a 60 caracteres. Contato e confirmação: e-mails obrigatórios e iguais.",
+            "Oficina: select obrigatório. Turno: uma escolha em radio. Recursos: escolhas opcionais.",
+            "Objetivo: 20 a 500 caracteres úteis. Outra oficina ativa e exige Tema sugerido.",
+            "Ao sair de Outra oficina, limpe e desabilite o campo complementar. Confira os nomes na ficha."
           ],
           "tipo": "texto",
           "refs": [
             "validacao",
             "disabled"
           ],
-          "numero": 6,
+          "numero": 5,
           "aula": "08",
           "data": "11/12"
         },
@@ -3451,29 +3409,18 @@ window.WEBLAB_CURSO = {
             "formdata",
             "labels"
           ],
-          "numero": 7,
+          "numero": 6,
           "aula": "08",
           "data": "11/12"
         },
         {
           "titulo": "Atividade no VS Code",
           "texto": [
-            "Ler os requisitos e os critérios com o professor. Baixar a base da avaliação.",
-            "Construir individualmente o HTML, completar CSS e JavaScript conforme a especificação."
+            "Agora altere sua versão seguindo as etapas da aula.",
+            "Use a base específica e cumpra os requisitos da ficha."
           ],
           "tipo": "texto",
-          "numero": 8,
-          "aula": "08",
-          "data": "11/12"
-        },
-        {
-          "titulo": "Atividade: conferência e explicação",
-          "texto": [
-            "Realizar os testes da tabela e registrar os resultados reais, inclusive o que ainda falhou.",
-            "Entregar ZIP e TXT e explicar um campo, uma regra e um teste ao professor."
-          ],
-          "tipo": "texto",
-          "numero": 9,
+          "numero": 7,
           "aula": "08",
           "data": "11/12"
         },
@@ -3507,7 +3454,7 @@ window.WEBLAB_CURSO = {
               "Resumo preserva os dois materiais."
             ]
           ],
-          "numero": 10,
+          "numero": 8,
           "aula": "08",
           "data": "11/12"
         },
@@ -3533,19 +3480,7 @@ window.WEBLAB_CURSO = {
               "Regras e estado voltam à condição inicial."
             ]
           ],
-          "numero": 11,
-          "aula": "08",
-          "data": "11/12"
-        },
-        {
-          "titulo": "Erros que merecem atenção",
-          "texto": [
-            "A entrega visual não substitui a explicação do código.",
-            "Não importar o resumo completo do projeto de chamado sem adaptar os names.",
-            "O registro de teste precisa distinguir previsão e resultado observado."
-          ],
-          "tipo": "texto",
-          "numero": 12,
+          "numero": 9,
           "aula": "08",
           "data": "11/12"
         },
@@ -3557,7 +3492,7 @@ window.WEBLAB_CURSO = {
             "Entregue ZIP e TXT ao professor na aula. Os downloads não são enviados automaticamente."
           ],
           "tipo": "texto",
-          "numero": 13,
+          "numero": 10,
           "aula": "08",
           "data": "11/12"
         },
@@ -3565,13 +3500,57 @@ window.WEBLAB_CURSO = {
           "titulo": "Uma explicação para fechar",
           "texto": [
             "Qual requisito você demonstrou com maior autonomia? Qual precisa corrigir?",
-            "Guarde a versão desta aula: ela será o ponto de partida para a continuidade."
+            "Guarde o projeto e o registro para a devolutiva e as correções de 18/12."
           ],
           "tipo": "texto",
-          "numero": 14,
+          "numero": 11,
           "aula": "08",
           "data": "11/12"
         }
+      ],
+      "passos": [
+        {
+          "titulo": "1 · Ler antes de implementar",
+          "onde": "Abra a base específica de 11/12. Esta é uma nova aplicação: inscrição em oficina.",
+          "quadro": "Compare a especificação com os controles necessários; planeje a ordem.",
+          "resultado": "Uma base nova permite demonstrar o que você aprendeu no projeto contínuo.",
+          "teste": "Execute o caso correspondente na ficha de testes e registre o observado.",
+          "codigo": "",
+          "figura": "materiais/Figura-08-avaliacao.png",
+          "exibirFigura": true
+        },
+        {
+          "titulo": "2 · Construir e testar individualmente",
+          "onde": "Edite index.html e script.js; o CSS de apoio está pronto.",
+          "quadro": "Implemente os requisitos da ficha e registre também o que não conseguiu concluir.",
+          "resultado": "Entregue evidências reais; o professor considera código, comportamento e explicação.",
+          "teste": "Execute o caso correspondente na ficha de testes e registre o observado.",
+          "codigo": "",
+          "figura": "materiais/Figura-08-avaliacao.png",
+          "exibirFigura": false
+        }
+      ],
+      "criterios": [
+        [
+          "HTML e controles",
+          "2"
+        ],
+        [
+          "CSS e acessibilidade de uso",
+          "2"
+        ],
+        [
+          "Coleta e resumo local",
+          "2"
+        ],
+        [
+          "Validação e estado condicional",
+          "2"
+        ],
+        [
+          "Testes e explicação individual",
+          "2"
+        ]
       ]
     },
     {
@@ -3588,7 +3567,7 @@ window.WEBLAB_CURSO = {
         "Localizar e corrigir defeitos de rótulo, coleta e estado.",
         "Demonstrar novamente os critérios pendentes."
       ],
-      "retomada": "Retome o projeto e a explicação da aula anterior. Se não tiver os arquivos, baixe a base deste encontro: ela contém o ponto de partida necessário.",
+      "retomada": "Abra a base específica desta data em outra pasta. Retome o projeto e a explicação da aula anterior. Se não tiver os arquivos, baixe a base deste encontro: ela contém o ponto de partida necessário.",
       "conceitos": [
         "Devolutiva",
         "Correção e novo teste",
@@ -3674,7 +3653,7 @@ window.WEBLAB_CURSO = {
         "liveserver"
       ],
       "extensao": "Explique uma alternativa de implementação e compare seu comportamento com o requisito. Conclua primeiro os casos essenciais.",
-      "apoio": "Separar os defeitos por categoria. Oferecer uma pista localizada e registrar o apoio, reduzindo-o na nova demonstração.",
+      "apoio": "Separar os defeitos por categoria. Oferecer uma pista localizada e registrar o apoio, reduzindo-o na nova demonstração. Use a imagem para conferir o controle e a sequência do quadro para localizar cada alteração. Não avance para a etapa seguinte antes de salvar e observar a atual.",
       "mapa": [
         [
           "Etapa",
@@ -3742,7 +3721,7 @@ window.WEBLAB_CURSO = {
           "titulo": "Corrigir, recuperar e concluir",
           "texto": [
             "Devolutiva, depuração e nova evidência de aprendizagem",
-            "Prof. Fabrício Rodrigues"
+            "Use a nova base da atividade e demonstre o que aprendeu."
           ],
           "tipo": "capa",
           "numero": 1,
@@ -3752,90 +3731,54 @@ window.WEBLAB_CURSO = {
         {
           "titulo": "O que vamos construir",
           "texto": [
-            "Interpretar a devolutiva com base em critérios e testes.",
-            "Localizar e corrigir defeitos de rótulo, coleta e estado.",
-            "Demonstrar novamente os critérios pendentes."
+            "Devolutiva, depuração e nova evidência de aprendizagem",
+            "Relacione o resultado visível às alterações desta aula."
           ],
           "tipo": "texto",
           "numero": 2,
           "aula": "09",
-          "data": "18/12"
-        },
-        {
-          "titulo": "Ponto de partida",
-          "texto": [
-            "Retome o projeto e a explicação da aula anterior. Se não tiver os arquivos, baixe a base deste encontro: ela contém o ponto de partida necessário.",
-            "Abra o projeto deste encontro no VS Code. Salve uma cópia própria antes de alterar."
-          ],
-          "tipo": "texto",
-          "numero": 3,
-          "aula": "09",
-          "data": "18/12"
+          "data": "18/12",
+          "figura": "materiais/Figura-09-investigacao.png"
         },
         {
           "titulo": "Mapa da aula",
-          "texto": [],
-          "tipo": "tabela",
-          "tabela": [
-            [
-              "Etapa",
-              "Evidência"
-            ],
-            [
-              "Devolutiva",
-              "Critério, resultado observado e ponto a corrigir."
-            ],
-            [
-              "Correção",
-              "Hipótese, alteração e novo teste."
-            ],
-            [
-              "Recuperação",
-              "Tarefa equivalente do critério pendente."
-            ],
-            [
-              "Fechamento",
-              "Explicação individual e versão corrigida."
-            ]
+          "texto": [
+            "Siga esta ordem; reteste a cada alteração."
           ],
-          "numero": 4,
+          "tipo": "mapa",
+          "numero": 3,
           "aula": "09",
-          "data": "18/12"
+          "data": "18/12",
+          "mapa": [
+            [
+              "1 · Investigar antes de alterar",
+              "Cada correção tem um teste de regressão; aparência sozinha não comprova funcionamento."
+            ],
+            [
+              "2 · Corrigir e demonstrar",
+              "Entregue ZIP e TXT com a correção explicada; combine a evidência com a devolutiva individual."
+            ]
+          ]
         },
         {
-          "titulo": "Devolutiva sem presumir os resultados",
+          "titulo": "Da devolutiva ao plano de correção",
           "texto": [
-            "O professor devolve a avaliação real com os critérios e as evidências observadas. Não existe uma nota antecipada neste material. Escolha o que precisa retomar a partir dessa devolutiva.",
-            "O projeto de recuperação contém defeitos intencionais para investigar. Quem já demonstrou os critérios pode explicar os defeitos e ampliar os testes, conforme orientação do professor."
+            "Leia a devolutiva e identifique os requisitos que ainda precisam de evidência.",
+            "Na base de recuperação há defeitos intencionais. Reproduza, corrija e repita o teste."
           ],
           "tipo": "texto",
           "refs": [
             "labels",
             "mensagens"
           ],
-          "numero": 5,
-          "aula": "09",
-          "data": "18/12"
-        },
-        {
-          "titulo": "Investigação de rótulos e coleta",
-          "texto": [
-            "Clique no rótulo de contato e observe o foco. Compare for com o id. Depois confira se o campo possui name e se a coleta usa o formulário correto.",
-            "Faça uma mudança por vez e repita o mesmo teste. Um formulário vazio de dados no resumo pode indicar um problema de coleta, mesmo que os campos tenham sido preenchidos."
-          ],
-          "tipo": "texto",
-          "refs": [
-            "labels",
-            "formdata"
-          ],
-          "numero": 6,
+          "numero": 4,
           "aula": "09",
           "data": "18/12"
         },
         {
           "titulo": "Exemplo: Investigação de rótulos e coleta",
           "texto": [
-            "Observe o papel de cada linha e compare com o arquivo do projeto."
+            "Ajuste o trecho no local indicado. Salve e confira o comportamento antes de avançar."
           ],
           "tipo": "codigo",
           "codigo": "const dados = new FormData(form);\nconst contato = dados.get('contato');\nconst sintomas = dados.getAll('sintomas');\n// getAll preserva várias opções com o mesmo name.",
@@ -3843,29 +3786,16 @@ window.WEBLAB_CURSO = {
             "labels",
             "formdata"
           ],
-          "numero": 7,
+          "numero": 5,
           "aula": "09",
-          "data": "18/12"
-        },
-        {
-          "titulo": "Estado e nova tentativa",
-          "texto": [
-            "Alterne a opção Outra oficina e confira visibilidade, obrigatoriedade e participação do tema sugerido. Compare as propriedades com a tabela de estados estudada.",
-            "Documente o problema, a hipótese, a alteração feita e o resultado depois da correção. Use uma tarefa equivalente para demonstrar os critérios ainda pendentes; siga as regras de recuperação da turma."
-          ],
-          "tipo": "texto",
-          "refs": [
-            "disabled",
-            "custom"
-          ],
-          "numero": 8,
-          "aula": "09",
-          "data": "18/12"
+          "data": "18/12",
+          "onde": "Abra a base de recuperação de 18/12 em uma pasta separada.",
+          "quadro": "Reproduza a falha; anote esperado e observado; localize a causa no código."
         },
         {
           "titulo": "Exemplo: Estado e nova tentativa",
           "texto": [
-            "Observe o papel de cada linha e compare com o arquivo do projeto."
+            "Ajuste o trecho no local indicado. Salve e confira o comportamento antes de avançar."
           ],
           "tipo": "codigo",
           "codigo": "// hidden controla a apresentação do bloco.\n// disabled retira o campo da validação e do FormData.\n// required pede um valor quando o campo está ativo.",
@@ -3873,29 +3803,20 @@ window.WEBLAB_CURSO = {
             "disabled",
             "custom"
           ],
-          "numero": 9,
+          "numero": 6,
           "aula": "09",
-          "data": "18/12"
+          "data": "18/12",
+          "onde": "Ajuste os arquivos da recuperação e reteste os requisitos pendentes da avaliação.",
+          "quadro": "Mostre a relação entre label e id, a coleta por name e o estado do campo condicional."
         },
         {
           "titulo": "Atividade no VS Code",
           "texto": [
-            "Ler a devolutiva e escolher os critérios a retomar com o professor.",
-            "Abrir a base de recuperação e investigar os defeitos de rótulo, name, coleta e campo condicional."
+            "Agora altere sua versão seguindo as etapas da aula.",
+            "Use a base específica e cumpra os requisitos da ficha."
           ],
           "tipo": "texto",
-          "numero": 10,
-          "aula": "09",
-          "data": "18/12"
-        },
-        {
-          "titulo": "Atividade: conferência e explicação",
-          "texto": [
-            "Corrigir uma hipótese por vez e repetir os testes.",
-            "Entregar a versão corrigida com o registro do progresso e explicar uma correção sem ler a solução."
-          ],
-          "tipo": "texto",
-          "numero": 11,
+          "numero": 7,
           "aula": "09",
           "data": "18/12"
         },
@@ -3929,7 +3850,7 @@ window.WEBLAB_CURSO = {
               "A próxima tentativa pode ocorrer."
             ]
           ],
-          "numero": 12,
+          "numero": 8,
           "aula": "09",
           "data": "18/12"
         },
@@ -3947,19 +3868,7 @@ window.WEBLAB_CURSO = {
               "A evidência do critério pendente fica registrada."
             ]
           ],
-          "numero": 13,
-          "aula": "09",
-          "data": "18/12"
-        },
-        {
-          "titulo": "Erros que merecem atenção",
-          "texto": [
-            "Trocar vários trechos ao mesmo tempo dificulta identificar a causa.",
-            "Uma mensagem de sucesso sozinha não comprova o conteúdo do resumo.",
-            "Recuperação deve produzir nova evidência do critério, conforme as regras da turma."
-          ],
-          "tipo": "texto",
-          "numero": 14,
+          "numero": 9,
           "aula": "09",
           "data": "18/12"
         },
@@ -3971,7 +3880,7 @@ window.WEBLAB_CURSO = {
             "Entregue ZIP e TXT ao professor na aula. Os downloads não são enviados automaticamente."
           ],
           "tipo": "texto",
-          "numero": 15,
+          "numero": 10,
           "aula": "09",
           "data": "18/12"
         },
@@ -3979,17 +3888,39 @@ window.WEBLAB_CURSO = {
           "titulo": "Uma explicação para fechar",
           "texto": [
             "Qual era a causa do erro, como você a corrigiu e qual teste confirmou a mudança?",
-            "Guarde a versão desta aula: ela será o ponto de partida para a continuidade."
+            "Guarde o código e o registro como evidências do que você aprendeu neste período."
           ],
           "tipo": "texto",
-          "numero": 16,
+          "numero": 11,
           "aula": "09",
           "data": "18/12"
+        }
+      ],
+      "passos": [
+        {
+          "titulo": "1 · Investigar antes de alterar",
+          "onde": "Abra a base de recuperação de 18/12 em uma pasta separada.",
+          "quadro": "Reproduza a falha; anote esperado e observado; localize a causa no código.",
+          "resultado": "Cada correção tem um teste de regressão; aparência sozinha não comprova funcionamento.",
+          "teste": "Execute o caso correspondente na ficha de testes e registre o observado.",
+          "codigo": "",
+          "figura": "materiais/Figura-09-investigacao.png",
+          "exibirFigura": true
+        },
+        {
+          "titulo": "2 · Corrigir e demonstrar",
+          "onde": "Ajuste os arquivos da recuperação e reteste os requisitos pendentes da avaliação.",
+          "quadro": "Mostre a relação entre label e id, a coleta por name e o estado do campo condicional.",
+          "resultado": "Entregue ZIP e TXT com a correção explicada; combine a evidência com a devolutiva individual.",
+          "teste": "Execute o caso correspondente na ficha de testes e registre o observado.",
+          "codigo": "",
+          "figura": "materiais/Figura-09-investigacao.png",
+          "exibirFigura": false
         }
       ]
     }
   ],
-  "atualizado": "22/10/2026",
+  "atualizado": "23/10/2026 · figuras, construção guiada e projeto contínuo",
   "rubrica": [
     [
       "HTML e controles",

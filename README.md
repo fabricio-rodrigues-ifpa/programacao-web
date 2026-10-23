@@ -3,7 +3,7 @@
 Professor Fabrício Rodrigues. Curso Técnico em Informática.
 
 Módulo completo de formulários: oito aulas de 23/10 a 18/12/2026, além da abertura de 16/10.
-Cada encontro possui conteúdo, slides, PDF, projeto para VS Code com Live Server e registro de testes.
+As oito aulas têm figuras, slides visuais, conteúdo em PDF, sequência de alterações e registro de testes. Em 23/10 a base começa sem campos. Até 04/12, continue a mesma pasta; as bases por data recuperam a versão anterior. Avaliação e recuperação têm bases específicas.
 Os projetos têm somente index.html, style.css e script.js, com indentação.
 
 Da aula 02 em diante, entregar o projeto em ZIP e o registro de testes em TXT durante a aula.

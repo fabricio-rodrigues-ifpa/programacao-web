@@ -25,3 +25,21 @@
 .slide-controls { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin: 1rem 0; }
 .diagnostic-question select, .diagnostic-question input { width: 100%; font: inherit; padding: .7rem; margin-bottom: 1rem; }
 @media print { .detail-actions, .slide-controls, .site-header, .detail-aside, .return-nav { display: none !important; } .lesson-content { width: 100%; } }
+
+/* Revisão didática: imagens, inserção e conferência por etapa. */
+.construction-step { margin:2rem 0; padding:1.4rem; border:1px solid var(--line, #d5dfcc); border-radius:12px; background:#fff; }
+.construction-step h3 { margin-top:0; font-size:1.45rem; }
+.construction-step figure { margin:1.2rem 0; max-width:650px; }
+.construction-step img, .visual-slide img { display:block; width:100%; height:auto; border:1px solid #d5dfcc; border-radius:8px; }
+.construction-step figcaption, .slide-caption { color:#52664f; font-size:.95rem; }
+.step-place { padding:.8rem 1rem; background:#e8f0de; border-left:4px solid #5d7d3f; }
+.step-test { padding:.8rem 1rem; background:#f4f7ee; }
+.visual-slide { display:grid; grid-template-columns:1.15fr 1fr; gap:2rem; align-items:start; }
+.visual-slide figure { margin:0; }
+.visual-slide pre { font-size:clamp(.9rem,1.5vw,1.25rem); }
+.visual-slide p { font-size:clamp(1rem,1.5vw,1.35rem); }
+.concept-flow { display:flex; gap:1rem; margin:1.5rem 0; }
+.concept-flow>div { flex:1; padding:1rem; background:#e8f0de; border-radius:8px; }
+.concept-flow strong, .concept-flow span { display:block; }
+@media(max-width:800px) { .visual-slide { grid-template-columns:1fr; } .concept-flow { flex-direction:column; } }
+@media print { .construction-step { break-inside:avoid; } }
