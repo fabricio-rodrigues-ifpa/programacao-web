@@ -12,7 +12,7 @@
     <tbody>${rows.slice(1).map((r) => `<tr>${r.map((x) => `<td>${esc(x)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
   const refs = (ids) => '<ul>' + ids.map((id) => C.referencias.find((r) => r.id === id)).filter(Boolean)
     .map((r) => `<li><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.titulo)} ↗</a></li>`).join('') + '</ul>';
-  const resources = (a) => `<div class="detail-actions">
+  const resources = (a) => a.oficina && window.WEBLAB_OFICINA ? window.WEBLAB_OFICINA.resources(a) : `<div class="detail-actions">
     <a class="button primary" href="${esc(a.projetoZIP)}" download>${a.numero === '02' ? 'Baixar projeto-base · 3 arquivos ↓' : a.numero < '08' ? 'Baixar base de apoio · 3 arquivos ↓' : 'Baixar projeto da atividade · 3 arquivos ↓'}</a>
     <a class="button secondary" href="slides.html?id=${esc(a.id)}">Apresentar slides ↗</a>
     <a class="button secondary" href="${esc(a.slidePDF)}">Slides em PDF ↗</a>
@@ -27,6 +27,7 @@
     const a = C.aulas.find((x) => x.id === new URLSearchParams(location.search).get('id'));
     if (!a) { $('#course-lesson').innerHTML = '<h1>Aula não encontrada</h1><a href="index.html#encontros">← Voltar às aulas</a>'; return; }
     document.title = `${a.dataCurta} · ${a.titulo} · WebLab`;
+    if (a.oficina && window.WEBLAB_OFICINA) { window.WEBLAB_OFICINA.render(a); return; }
     const current = Boolean(a.slides);
     const next = C.aulas[C.aulas.indexOf(a) + 1];
     $('#course-lesson').innerHTML = `<header class="detail-hero"><p class="eyebrow">AULA ${esc(a.numero)} / ${esc(a.dataCurta)}/2026 / ${esc(a.eixo)}</p>
@@ -54,6 +55,7 @@
   }
   if ($('#lesson-slide')) {
     const a = C.aulas.find((x) => x.id === new URLSearchParams(location.search).get('id') && x.slides) || C.aulas[1];
+    if (a.oficina && window.WEBLAB_OFICINA) { window.WEBLAB_OFICINA.renderSlides(a); return; }
     let index = 0;
     document.title = `Slides · ${a.dataCurta} · ${a.titulo}`;
     $('#slide-back').href = url(a.id);$('#slide-pdf').href = a.slidePDF;

@@ -4,9 +4,10 @@ Professor Fabrício Rodrigues
 1. Extraia este ZIP para uma pasta do computador ou do pendrive.
 2. No VS Code, use Arquivo > Abrir Pasta. Abra index.html com Open with Live Server.
 3. Escolha a data no calendário. Cada aula tem figuras, slides, PDF e etapas guiadas.
-4. Em 23/10, baixe Aula-02-Projeto.zip: a base começa sem campos. Continue essa pasta
-   até 04/12. Os ZIPs seguintes são apoio para recuperar a versão anterior. Avaliação
-   e recuperação têm novas bases. Cada ZIP tem index.html, style.css e script.js.
+4. O chamado de suporte continua ao longo do módulo, com uma oficina separada em 06/11.
+   Na oficina, baixe aula-04-base.zip: CSS e JavaScript estão prontos; digite os controles
+   no HTML. Em 13/11, retome o chamado usando a base específica da aula 05.
+   Cada base tem somente index.html, style.css e script.js.
 5. Abra essa pasta no VS Code e use Live Server em index.html. Salve com Ctrl+S.
 6. Faça a atividade e confira os casos de teste. Consulte o modelo após tentar.
 7. Volte ao portal deste pacote e abra Registrar testes na aula correspondente.

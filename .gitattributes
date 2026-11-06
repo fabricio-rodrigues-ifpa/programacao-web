@@ -1,0 +1,7 @@
+# Preservar os bytes dos materiais ao trabalhar com Git no Windows.
+*.pdf binary
+*.zip binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary

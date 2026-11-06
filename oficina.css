@@ -1,0 +1,15 @@
+.oficina-content figure { margin: 20px 0; }
+.oficina-content figure img { width: min(100%, 600px); height: auto; border: 1px solid #d5ded1; }
+.oficina-content figcaption { color: #5f6b65; font-size: .9rem; }
+.oficina-content pre { overflow-x: auto; white-space: pre; tab-size: 2; }
+.oficina-deck .lesson-presentation { display: flex; align-items: center; justify-content: center; padding: 0; aspect-ratio: 16 / 9; background: #fff; min-height: 0; overflow: hidden; }
+.oficina-slide-image { display: block; width: 100%; height: 100%; object-fit: contain; }
+.oficina-deck .slide-controls { flex-wrap: wrap; gap: 12px; }
+.oficina-slide-text { margin-top: 20px; }
+.oficina-slide-text pre { padding: 18px; background: #183e35; color: white; overflow-x: auto; white-space: pre; }
+.oficina-presenting { overflow: hidden; }
+.oficina-deck.is-presenting { position: fixed; inset: 0; z-index: 9999; width: 100vw; max-width: none; height: 100dvh; margin: 0; padding: 8px; display: flex; flex-direction: column; gap: 8px; background: #f3f7f1; }
+.oficina-deck.is-presenting > .detail-actions, .oficina-deck.is-presenting > details { display: none; }
+.oficina-deck.is-presenting .lesson-presentation { flex: 1; aspect-ratio: auto; width: 100%; min-height: 0; box-shadow: none; border: 0; }
+.oficina-deck.is-presenting .slide-controls { margin: 0; flex: 0 0 auto; justify-content: center; }
+@media (max-width: 600px) { .oficina-deck .slide-controls .button { font-size: .82rem; padding: 9px 11px; } }
