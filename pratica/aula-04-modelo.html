@@ -3,259 +3,303 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>
-      Chamado de suporte ao laboratório - WebLab
-    </title>
+    <title>Oficina de formulários · WebLab</title>
     <style>
+/* WebLab · Oficina de formulários · 06/11/2026
+   Pronto para os controles dos slides. Edite o index.html. */
+:root {
+  color-scheme: light;
+  font: 16px/1.5 Arial, Helvetica, sans-serif;
+  color: #202d29;
+  background: #f3f7f1;
+  accent-color: #2b6a57;
+}
 * { box-sizing: border-box; }
-body {
-  margin: 0;
-  font: 1rem/1.65 Arial, sans-serif;
-  color: #183e35;
-  background: #f6f8f1;
-}
-header, main, footer { width: min(100% - 2rem, 64rem); margin: auto; }
-header, footer { padding: 1.5rem 0; }
-h1, h2 { line-height: 1.2; }
-a { color: #315c30; }
-form, .painel { padding: 1.5rem; border: 1px solid #cad7bd; background: #fff; }
-.campos, .campo { display: grid; gap: .55rem; }
-.campos { gap: 1.2rem; }
-.campo { min-width: 0; align-content: start; }
-label, legend { font-weight: bold; }
-.campo > input, .campo > select, .campo > textarea {
-  width: 100%; min-width: 0; padding: .75rem;
-  border: 1px solid #738a68; border-radius: .25rem;
-  color: #183e35; background: #fff;
-}
-button, input, select, textarea { font: inherit; }
+body { margin: 0; }
+header, main, footer { width: min(860px, calc(100% - 32px)); margin: 24px auto; }
+header { border-bottom: 3px solid #183e35; padding-bottom: 16px; }
+h1, h2, legend { color: #183e35; }
+h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.15; margin: 8px 0; }
+h2 { font-size: 1.5rem; }
+p { margin: 8px 0; }
+a { color: #245842; text-underline-offset: 3px; }
+form { display: grid; gap: 24px; }
+fieldset { min-width: 0; margin: 0 0 18px; padding: 20px; border: 1px solid #becfc2; border-radius: 10px; background: #fff; }
+fieldset fieldset { margin: 16px 0; background: #f6f8f4; }
+legend { font-size: 1.12rem; font-weight: bold; padding: 0 8px; }
+label { display: block; font-weight: bold; margin-top: 14px; }
+input, select, textarea, button { font: inherit; }
+input:not([type="checkbox"]):not([type="radio"]):not([type="button"]):not([type="reset"]):not([type="submit"]):not([type="image"]):not([type="hidden"]),
+select, textarea { display: block; width: 100%; max-width: 100%; padding: 10px 12px; margin: 5px 0 16px; border: 1px solid #839b8c; border-radius: 6px; background: white; color: #202d29; }
+input[type="checkbox"], input[type="radio"] { width: 1.1rem; height: 1.1rem; vertical-align: -2px; margin: 0 7px 0 0; }
+input[type="range"] { padding: 0 !important; min-height: 36px; }
+input[type="color"] { height: 54px; padding: 4px !important; }
+input[type="file"] { background: #f3f7f1 !important; }
+input[type="file"]::file-selector-button { padding: 7px; margin-right: 10px; }
+select[multiple] { min-height: 120px; }
 textarea { resize: vertical; }
-fieldset { margin: 1.4rem 0; padding: 1rem; border: 1px solid #9caf8b; }
-fieldset label { display: block; font-weight: normal; margin: .5rem 0; }
-.ajuda { font-size: .9rem; margin: 0; color: #455a3d; }
-.aviso { padding: 1rem; border-left: 4px solid #56783e; background: #e9f1de; }
-.acoes { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.2rem; }
-button, .voltar { display: inline-block; padding: .7rem 1rem; border: 1px solid #315c30; }
-button { cursor: pointer; background: #183e35; color: #fff; }
-button:disabled { cursor: not-allowed; opacity: .65; }
-.voltar { color: #183e35; background: #fff; text-decoration: none; }
-#resultado { margin-top: 1.5rem; }
-dt { font-weight: bold; margin-top: .7rem; }
-dd { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
-pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; background: #183e35; color: white; padding: 11px 16px; border: 2px solid #183e35; border-radius: 6px; }
+input[type="reset"] { color: #183e35; background: white; }
+input[type="image"] { width: 140px; height: 42px; object-fit: contain; cursor: pointer; }
+#acoes { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+:focus-visible { outline: 3px solid #d88a20; outline-offset: 3px; }
+output { display: inline-block; padding: 4px 12px; margin: -10px 0 12px; font-weight: bold; background: #e7eee5; border-radius: 6px; }
+#resultado { padding: 24px; margin: 28px 0; background: white; border: 2px solid #2b6a57; border-radius: 10px; scroll-margin-top: 18px; }
+#resultado h2 { margin-top: 0; }
+.tabela-rolagem { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+th, td { text-align: left; border-bottom: 1px solid #d5ded1; padding: 9px 12px; vertical-align: top; overflow-wrap: anywhere; }
+th { background: #e7eee5; }
+td:last-child { white-space: pre-wrap; }
+#status { min-height: 1.5em; color: #245842; font-weight: bold; }
+.aviso { border-left: 4px solid #d88a20; padding: 8px 14px; background: #fdf1dc; }
 [hidden] { display: none !important; }
-
-:focus-visible {
-  outline: 3px solid #6a8f32;
-  outline-offset: 4px;
+@media (max-width: 500px) {
+  fieldset { padding: 14px; }
+  #acoes > :not([type="image"]) { width: 100%; }
+  #resultado { padding: 14px; }
 }
-
-@media (min-width: 48rem) {
-  .campos { grid-template-columns: 1fr 1fr; }
-  .largo { grid-column: 1 / -1; }
-}
-
-@media print {
-  .acoes, .voltar { display: none; }
-  body { background: #fff; }
-}
-
 </style>
-    
+
   </head>
   <body>
     <header>
-      <a class="voltar"
-        href="https://fabricio-rodrigues-ifpa.github.io/programacao-web/aulas.html?id=aula-04">
-        ← Voltar à aula no portal (internet)
-      </a>
-      <h1>
-        Chamado de suporte ao laboratório
-      </h1>
-      <p>
-        Modelo de referência para consultar depois de sua tentativa.
-      </p>
-      <p class="aviso">
-        Simulação local com dados fictícios. Não abre uma solicitação real.
-      </p>
+      <p>WebLab · IFPA Campus Breves · Prof. Fabrício Rodrigues</p>
+      <h1>Oficina de formulários</h1>
+      <p>Digite uma etapa, salve e teste. Use dados inventados.</p>
     </header>
     <main>
+      <p class="aviso">Prática local: o botão mostra os dados abaixo, sem enviar a um servidor. Campos com * são obrigatórios.</p>
+      <!-- O form, as áreas e o resultado já vêm prontos. -->
+      <!-- Substitua somente o comentário de cada etapa pelo código dos slides. -->
       <form id="formulario">
-        <p>
-          Os rótulos indicam os campos obrigatórios. Os demais são opcionais.
-        </p>
-        <div class="campos">
-          <div class="campo">
-            <label for="solicitante">
-              Solicitante fictício (obrigatório)
-            </label>
-            <input id="solicitante" name="solicitante" type="text" required minlength="2" maxlength="60"
-              autocomplete="off">
-          </div>
-          <div class="campo">
-            <label for="equipamento">
-              Equipamento (obrigatório)
-            </label>
-            <input id="equipamento" name="equipamento" type="text" required minlength="2" maxlength="20"
-              placeholder="Ex.: PC-07" aria-describedby="ajuda-equipamento">
-            <p class="ajuda" id="ajuda-equipamento">
-              Use um código, não uma quantidade.
-            </p>
-          </div>
-          <div class="campo">
-            <label for="contato">
-              E-mail fictício (obrigatório)
-            </label>
-            <input id="contato" name="contato" type="email" required autocomplete="off"
-              placeholder="estudante@example.com">
-          </div>
-          <div class="campo">
-            <label for="categoria">
-              Categoria (obrigatório)
-            </label>
-            <select id="categoria" name="categoria" required>
-              <option value="">
-                Escolha uma opção
-              </option>
-              <option value="hardware">
-                Hardware
-              </option>
-              <option value="software">
-                Software
-              </option>
-              <option value="rede">
-                Rede
-              </option>
-              <option value="outro">
-                Outro
-              </option>
-            </select>
-          </div>
-          <div class="campo largo">
-            <label for="descricao">
-              Descrição do problema (obrigatório)
-            </label>
-            <p class="ajuda" id="ajuda-descricao">
-              Use de 20 a 500 caracteres.
-            </p>
-            <textarea id="descricao" name="descricao" rows="5" required minlength="20" maxlength="500"
-              aria-describedby="ajuda-descricao"></textarea>
-          </div>
-        </div>
+        <fieldset id="campos">
+          <legend>Controles da oficina</legend>
+        <label for="nome">Nome fictício *</label>
+        <input type="text" id="nome" name="nome"
+          required minlength="3" autocomplete="off">
+
+        <label for="busca">O que você quer pesquisar?</label>
+        <input type="search" id="busca" name="busca">
+
+        <label for="email">E-mail fictício</label>
+        <input type="email" id="email" name="email">
+
+        <label for="telefone">Telefone fictício</label>
+        <input type="tel" id="telefone" name="telefone">
+
+        <label for="site">Site de exemplo</label>
+        <input type="url" id="site" name="site">
+
+        <label for="senha">Senha inventada</label>
+        <input type="password" id="senha" name="senha">
+
+        <label for="quantidade">Quantidade (1 a 10)</label>
+        <input type="number" id="quantidade"
+          name="quantidade" min="1" max="10" step="1">
+        <label for="nivel">Nível (0 a 10)</label>
+        <input type="range" id="nivel" name="nivel"
+          min="0" max="10" value="5">
+        <output for="nivel" id="valor-nivel">5</output>
+
+        <label for="data">Data do atendimento</label>
+        <input type="date" id="data" name="data">
+
+        <label for="hora">Horário preferido</label>
+        <input type="time" id="hora" name="hora">
+
+        <label for="agendamento">Agendamento</label>
+        <input type="datetime-local" id="agendamento"
+          name="agendamento">
+
+        <label for="mes">Mês de referência</label>
+        <input type="month" id="mes" name="mes">
+
+        <label for="semana">Semana de referência</label>
+        <input type="week" id="semana" name="semana">
+
+        <label for="cor">Cor do tema</label>
+        <input type="color" id="cor" name="cor"
+          value="#183e35">
+
+        <label for="anexos">Arquivos de teste</label>
+        <input type="file" id="anexos" name="anexos"
+          multiple accept=".txt,.png,.jpg,.pdf">
+
         <fieldset>
-          <legend>
-            Prioridade (obrigatória)
-          </legend>
-          <label>
-            <input type="radio" name="prioridade" value="normal" required>
-            Normal
-          </label>
-          <label>
-            <input type="radio" name="prioridade" value="alta">
-            Alta
-          </label>
+          <legend>Turno</legend>
+          <label><input type="radio" name="turno"
+            value="Manhã"> Manhã</label>
+          <label><input type="radio" name="turno"
+            value="Tarde"> Tarde</label>
         </fieldset>
+
         <fieldset>
-          <legend>
-            Sintomas (opcionais)
-          </legend>
-          <label>
-            <input type="checkbox" name="sintomas" value="Lentidão">
-            Lentidão
-          </label>
-          <label>
-            <input type="checkbox" name="sintomas" value="Mensagem de erro">
-            Mensagem de erro
-          </label>
+          <legend>Interesses</legend>
+          <label><input type="checkbox" name="interesses"
+            value="HTML"> HTML</label>
+          <label><input type="checkbox" name="interesses"
+            value="CSS"> CSS</label>
         </fieldset>
-        <div class="acoes">
-          <button id="simular" type="submit" disabled>
-            Gerar resumo local
-          </button>
-          <button type="button" id="novo">
-            Novo preenchimento
-          </button>
+
+        <label for="assunto">Assunto</label>
+        <select id="assunto" name="assunto">
+          <option value="">Escolha uma opção</option>
+          <option value="hardware">Hardware</option>
+          <option value="software">Software</option>
+        </select>
+
+        <label for="oficinas">Oficinas</label>
+        <select id="oficinas" name="oficinas"
+          multiple size="3">
+          <option value="HTML">HTML</option>
+          <option value="CSS">CSS</option>
+          <option value="JavaScript">JavaScript</option>
+        </select>
+
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="mensagem"
+          rows="3" maxlength="200"></textarea>
+
+        <label for="cidade">Cidade</label>
+        <input type="text" id="cidade" name="cidade"
+          list="cidades">
+        <datalist id="cidades">
+          <option value="Breves"></option>
+          <option value="Belém"></option>
+        </datalist>
+
+        <input type="hidden" name="origem"
+          value="oficina-web">
+        </fieldset>
+        <div id="acoes">
+        <input type="button" value="Contar campos"
+          data-acao="contar">
+        <input type="reset" value="Limpar">
+
+        <button type="submit" name="acao" value="principal">
+          Enviar e mostrar os dados
+        </button>
+        <input type="submit" name="acao"
+          value="Enviar com input">
+
+        <input type="image" id="enviar-imagem"
+          name="clique" alt="Enviar por imagem"
+          width="140" height="42">
         </div>
-        <p id="status" role="status">
-        </p>
       </form>
-      <noscript>
-        <p>
-          Ative JavaScript para habilitar a simulação. Você pode estudar o HTML e o CSS sem executar o envio.
-        </p>
-      </noscript>
-      <section class="painel" id="resultado" hidden aria-labelledby="titulo-resumo">
-        <h2 id="titulo-resumo" tabindex="-1">
-          Resumo da última simulação
-        </h2>
-        <p>
-          Nenhuma solicitação foi enviada ou gravada em um servidor.
-        </p>
-        <dl id="dados-resumo">
-        </dl>
+      <p id="status" role="status" aria-live="polite"></p>
+      <section id="resultado" aria-labelledby="titulo-resultado" tabindex="-1" hidden>
+        <h2 id="titulo-resultado">Dados do último envio</h2>
+        <p>O formulário permanece acima. Você pode alterar e enviar novamente.</p>
+        <div class="tabela-rolagem">
+          <table>
+            <caption>Chaves (name) e valores recebidos pelo JavaScript</caption>
+            <thead><tr><th scope="col">name</th><th scope="col">Valor</th></tr></thead>
+            <tbody id="linhas"></tbody>
+          </table>
+        </div>
+        <p>Sem name, disabled e opções desmarcadas não entram. Senhas são ocultadas; arquivos mostram apenas nome e tamanho.</p>
       </section>
-      <p>
-        <a class="voltar"
-          href="https://fabricio-rodrigues-ifpa.github.io/programacao-web/aulas.html?id=aula-04">
-          ← Voltar à aula no portal (internet)
-        </a>
-      </p>
     </main>
     <footer>
-      WebLab - Prof. Fabrício Rodrigues - 2026
+      <a href="../aulas.html?id=aula-04">← Voltar à aula no portal</a>
+      <p>06/11/2026 · Salve seus arquivos antes de fechar o VS Code.</p>
     </footer>
   <script>
+// WebLab · Apoio pronto para a oficina de 06/11/2026.
+// Os alunos digitam os controles no index.html. Não é preciso alterar este JS.
+// Tudo acontece no navegador: sem servidor de dados e sem armazenamento.
 'use strict';
-const form = document.querySelector('#formulario');
-const status = document.querySelector('#status');
-const botao = document.querySelector('#simular');
+
+const formulario = document.querySelector('#formulario');
 const resultado = document.querySelector('#resultado');
-const resumo = document.querySelector('#dados-resumo');
-function adicionarLinha(titulo, valor) {
-  const dt = document.createElement('dt');
-  const dd = document.createElement('dd');
-  dt.textContent = titulo;
-  dd.textContent = String(valor);
-  resumo.append(dt, dd);
+const linhas = document.querySelector('#linhas');
+const status = document.querySelector('#status');
+
+// A imagem fica embutida para manter o download com apenas três arquivos.
+const imagem = document.querySelector('#enviar-imagem');
+if (imagem) {
+  const desenho = '<svg xmlns="http://www.w3.org/2000/svg" width="140" height="42"><rect width="140" height="42" rx="6" fill="#183e35"/><text x="70" y="27" text-anchor="middle" font-family="Arial" font-size="15" fill="white">Enviar imagem</text></svg>';
+  imagem.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(desenho);
 }
 
-function mostrarResumo(dados) {
-  resumo.replaceChildren();
-  adicionarLinha('Solicitante fictício', dados.get('solicitante') || '');
-  adicionarLinha('Equipamento', dados.get('equipamento') || '');
-  adicionarLinha('Contato fictício', dados.get('contato') || '');
-  adicionarLinha('Categoria', dados.get('categoria') || '');
-  adicionarLinha('Prioridade', dados.get('prioridade') || '');
-  adicionarLinha('Descrição', dados.get('descricao') || '');
-  adicionarLinha('Sintomas', dados.getAll('sintomas').join(', ') || 'Nenhum selecionado');
+function atualizarNivel() {
+  const nivel = formulario.querySelector('#nivel');
+  const saida = formulario.querySelector('#valor-nivel');
+  if (nivel && saida) saida.value = nivel.value;
+}
+
+function ocultarResultado() {
+  if (!resultado.hidden) status.textContent = 'Dados alterados. Envie novamente para atualizar o resumo.';
+  resultado.hidden = true;
+}
+
+formulario.addEventListener('input', () => {
+  atualizarNivel();
+  ocultarResultado();
+});
+formulario.addEventListener('change', ocultarResultado);
+
+// O evento submit só é disparado depois de passar pelas regras nativas do HTML.
+formulario.addEventListener('submit', (evento) => {
+  evento.preventDefault();
+  // O segundo argumento inclui o botão que acionou o envio.
+  const dados = evento.submitter
+    ? new FormData(formulario, evento.submitter)
+    : new FormData(formulario);
+  const grupos = new Map();
+  for (const [nome, valor] of dados.entries()) {
+    if (!grupos.has(nome)) grupos.set(nome, []);
+    grupos.get(nome).push(valor);
+  }
+
+  // Guarda apenas os nomes dos campos de senha, para ocultar seus valores.
+  const senhas = new Set(
+    Array.from(formulario.querySelectorAll('input[type="password"]'))
+      .map((campo) => campo.name)
+  );
+
+  linhas.replaceChildren();
+  for (const [nome, valores] of grupos) {
+    const linha = document.createElement('tr');
+    const chave = document.createElement('th');
+    const conteudo = document.createElement('td');
+    chave.scope = 'row';
+    chave.textContent = nome;
+    conteudo.textContent = valores.map((valor) => {
+      if (senhas.has(nome)) return valor ? '•••••• (senha ocultada)' : '(vazio)';
+      if (valor instanceof File) {
+        return valor.name ? `${valor.name} (${valor.size} bytes)` : '(nenhum arquivo selecionado)';
+      }
+      return valor === '' ? '(vazio)' : String(valor);
+    }).join(' | ');
+    linha.append(chave, conteudo);
+    linhas.append(linha);
+  }
+
   resultado.hidden = false;
-  status.textContent = 'Simulação concluída. Nenhum dado foi enviado ao servidor.';
-  document.querySelector('#titulo-resumo').focus();
-}
-
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const dados = new FormData(form);
-  mostrarResumo(dados);
+  status.textContent = 'Resumo atualizado abaixo. Nenhum dado foi enviado a um servidor.';
+  resultado.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  resultado.focus({ preventScroll: true });
 });
 
-form.addEventListener('invalid', () => {
-  status.textContent = 'Confira o campo indicado. Seus valores foram mantidos.';
-}, true);
-form.addEventListener('input', () => {
-  status.textContent = '';
+// O reset nativo restaura os valores iniciais. Depois, atualizamos o output.
+formulario.addEventListener('reset', () => {
   resultado.hidden = true;
+  linhas.replaceChildren();
+  status.textContent = 'Valores iniciais restaurados.';
+  requestAnimationFrame(atualizarNivel);
 });
 
-document.querySelector('#novo').addEventListener('click', () => {
-  form.reset();
-  resultado.hidden = true;
-  resumo.replaceChildren();
-  status.textContent = '';
-  document.querySelector('#solicitante').focus();
+// Um botão do tipo button precisa de uma ação programada.
+formulario.addEventListener('click', (evento) => {
+  if (evento.target.matches('[data-acao="contar"]')) {
+    const quantidade = formulario.querySelectorAll('input, select, textarea, button').length;
+    status.textContent = `Há ${quantidade} controles (incluindo botões e hidden). Este botão não envia.`;
+  }
 });
-botao.disabled = false;
-
+atualizarNivel();
 </script>
 </body>
 </html>
